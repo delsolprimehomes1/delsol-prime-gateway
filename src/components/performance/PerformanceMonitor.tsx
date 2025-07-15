@@ -9,6 +9,23 @@ interface PerformanceMetrics {
   ttfb: number; // Time to First Byte
 }
 
+// Type definitions for performance entries
+interface LayoutShiftEntry extends PerformanceEntry {
+  value: number;
+  hadRecentInput: boolean;
+}
+
+interface FirstInputEntry extends PerformanceEntry {
+  processingStart: number;
+  startTime: number;
+}
+
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
 export function PerformanceMonitor() {
   useEffect(() => {
     // Monitor Core Web Vitals
@@ -34,8 +51,9 @@ export function PerformanceMonitor() {
     let clsValue = 0;
     const clsObserver = new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
-        if (!entry.hadRecentInput) {
-          clsValue += entry.value;
+        const layoutShiftEntry = entry as LayoutShiftEntry;
+        if (!layoutShiftEntry.hadRecentInput) {
+          clsValue += layoutShiftEntry.value;
         }
       }
     });
@@ -44,7 +62,8 @@ export function PerformanceMonitor() {
     // Monitor First Input Delay
     const fidObserver = new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
-        console.log('FID:', entry.processingStart - entry.startTime);
+        const firstInputEntry = entry as FirstInputEntry;
+        console.log('FID:', firstInputEntry.processingStart - firstInputEntry.startTime);
       }
     });
     fidObserver.observe({ entryTypes: ['first-input'] });
