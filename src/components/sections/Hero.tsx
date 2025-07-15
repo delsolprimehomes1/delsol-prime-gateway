@@ -54,21 +54,21 @@ export default function Hero({ className }: HeroProps) {
 
           {/* Clean, Modern Typography */}
           <div className="space-y-6 mb-12">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[0.85] tracking-tight animate-hero-text">
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[0.82] tracking-[-0.02em] animate-hero-text">
               Luxury Living
               <br />
-              <span className="bg-gradient-to-r from-primary via-primary-glow to-secondary bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary via-primary-glow to-secondary bg-clip-text text-transparent font-black">
                 Redefined
               </span>
             </h1>
             
             <div className="max-w-2xl mx-auto space-y-4 animate-fade-in">
-              <p className="text-xl md:text-2xl text-white/90 font-light leading-relaxed">
+              <p className="font-body text-xl md:text-2xl text-white/90 font-light leading-relaxed">
                 Discover exceptional properties where Mediterranean elegance meets modern sophistication
               </p>
               <div className="flex items-center justify-center gap-2 text-white/70">
                 <MapPin className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium tracking-wider">MARBELLA • ESTEPONA • PUERTO BANÚS</span>
+                <span className="font-body text-sm font-medium tracking-wider">MARBELLA • ESTEPONA • PUERTO BANÚS</span>
               </div>
             </div>
           </div>
@@ -78,7 +78,7 @@ export default function Hero({ className }: HeroProps) {
             <Button 
               variant="hero" 
               size="xl" 
-              className="group relative overflow-hidden min-w-[260px] h-14 rounded-lg"
+              className="group relative overflow-hidden min-w-[260px] h-14 rounded-lg font-body font-semibold"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <Calendar className="w-5 h-5 mr-3 relative z-10" />
@@ -88,7 +88,7 @@ export default function Hero({ className }: HeroProps) {
             <Button 
               variant="outline-white" 
               size="xl" 
-              className="group min-w-[260px] h-14 rounded-lg border-2 border-white/30 bg-white/10 hover:bg-white/20 hover:border-white/50"
+              className="group min-w-[260px] h-14 rounded-lg border-2 border-white/30 bg-white/10 hover:bg-white/20 hover:border-white/50 font-body"
             >
               <Play className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300" />
               <span className="font-medium">Watch Virtual Tour</span>
@@ -99,22 +99,22 @@ export default function Hero({ className }: HeroProps) {
           <div className="grid grid-cols-3 gap-8 md:gap-16 max-w-4xl mx-auto animate-fade-in">
             <div className="group text-center">
               <div className="space-y-2">
-                <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white group-hover:text-primary transition-colors duration-300">€2.5M+</div>
-                <div className="text-sm md:text-base text-white/70 uppercase tracking-widest font-medium">Average Value</div>
+                <div className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-white group-hover:text-primary transition-colors duration-300">€2.5M+</div>
+                <div className="font-body text-sm md:text-base text-white/70 uppercase tracking-widest font-medium">Average Value</div>
               </div>
             </div>
             
             <div className="group text-center border-x border-white/20">
               <div className="space-y-2">
-                <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white group-hover:text-primary transition-colors duration-300">15+</div>
-                <div className="text-sm md:text-base text-white/70 uppercase tracking-widest font-medium">Years Excellence</div>
+                <div className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-white group-hover:text-primary transition-colors duration-300">15+</div>
+                <div className="font-body text-sm md:text-base text-white/70 uppercase tracking-widest font-medium">Years Excellence</div>
               </div>
             </div>
             
             <div className="group text-center">
               <div className="space-y-2">
-                <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white group-hover:text-primary transition-colors duration-300">100%</div>
-                <div className="text-sm md:text-base text-white/70 uppercase tracking-widest font-medium">Client Satisfaction</div>
+                <div className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-white group-hover:text-primary transition-colors duration-300">100%</div>
+                <div className="font-body text-sm md:text-base text-white/70 uppercase tracking-widest font-medium">Client Satisfaction</div>
               </div>
             </div>
           </div>
@@ -125,7 +125,7 @@ export default function Hero({ className }: HeroProps) {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-fade-in">
         <button
           onClick={scrollToContent}
-          className="flex flex-col items-center text-white/60 hover:text-white transition-all duration-300 group"
+          className="flex flex-col items-center text-white/60 hover:text-white transition-all duration-300 group font-body"
           aria-label="Scroll to explore properties"
         >
           <div className="w-px h-8 bg-gradient-to-b from-transparent via-white/50 to-transparent mb-2" />
