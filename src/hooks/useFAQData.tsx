@@ -1,3 +1,4 @@
+
 import { useState, useMemo } from 'react';
 import faqData from '@/data/faqData.json';
 
@@ -23,23 +24,32 @@ export const useFAQData = () => {
   const categories = faqData.categories as Record<string, FAQCategory>;
   const faqs = faqData.faqs as FAQ[];
 
+  // Enhanced search with better performance for large datasets
   const filteredFAQs = useMemo(() => {
     let filtered = faqs;
     
-    // Filter by category
+    // Filter by category first (most selective)
     if (selectedCategory !== "all") {
       filtered = filtered.filter(faq => faq.category === selectedCategory);
     }
     
-    // Filter by search term (search in question, answer, keywords)
+    // Then filter by search term
     if (searchTerm) {
       const searchLower = searchTerm.toLowerCase();
-      filtered = filtered.filter(faq =>
-        faq.question.toLowerCase().includes(searchLower) ||
-        faq.answer.toLowerCase().includes(searchLower) ||
-        faq.keywords.some(keyword => keyword.toLowerCase().includes(searchLower)) ||
-        faq.category.toLowerCase().includes(searchLower)
-      );
+      // Split search terms for better matching
+      const searchTerms = searchLower.split(' ').filter(term => term.length > 1);
+      
+      filtered = filtered.filter(faq => {
+        const searchableText = [
+          faq.question,
+          faq.answer,
+          ...faq.keywords,
+          faq.category
+        ].join(' ').toLowerCase();
+        
+        // Match if any search term is found
+        return searchTerms.some(term => searchableText.includes(term));
+      });
     }
     
     return filtered;
@@ -66,6 +76,22 @@ export const useFAQData = () => {
       .slice(0, limit);
   };
 
+  // Get popular/featured FAQs (first 5 from each category)
+  const getFeaturedFAQs = (limit: number = 10): FAQ[] => {
+    const featured: FAQ[] = [];
+    const categoriesUsed = new Set<string>();
+    
+    for (const faq of faqs) {
+      if (featured.length >= limit) break;
+      if (!categoriesUsed.has(faq.category) || featured.length < 6) {
+        featured.push(faq);
+        categoriesUsed.add(faq.category);
+      }
+    }
+    
+    return featured;
+  };
+
   return {
     categories,
     faqs,
@@ -76,6 +102,7 @@ export const useFAQData = () => {
     selectedCategory,
     setSelectedCategory,
     getCategoryCount,
-    getRelatedFAQs
+    getRelatedFAQs,
+    getFeaturedFAQs
   };
 };

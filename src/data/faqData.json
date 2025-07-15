@@ -1,3 +1,4 @@
+
 {
   "categories": {
     "legal": {
@@ -33,6 +34,54 @@
   },
   "faqs": [
     {
+      "id": "what-is-delsolprimehomes",
+      "question": "What is DelSolPrimeHomes?",
+      "answer": "DelSolPrimeHomes is a premier real estate agency specializing in luxury properties along the Costa del Sol, Spain. We offer a curated selection of villas, apartments, and penthouses, along with comprehensive services for buying, selling, and property management.",
+      "category": "services",
+      "keywords": ["DelSolPrimeHomes", "real estate agency", "luxury properties", "Costa del Sol"],
+      "relatedTopics": ["areas-coverage", "property-types-specialization", "after-sales-services"]
+    },
+    {
+      "id": "areas-coverage",
+      "question": "What areas do you cover in Costa del Sol?",
+      "answer": "We cover the entire Costa del Sol region, including popular locations like Marbella, Estepona, Benahavís, Mijas, Sotogrande, and other exclusive coastal and inland areas.",
+      "category": "locations",
+      "keywords": ["Costa del Sol", "Marbella", "Estepona", "Benahavís", "Mijas", "Sotogrande"],
+      "relatedTopics": ["best-areas-marbella", "upcoming-developments-estepona", "transport-connections"]
+    },
+    {
+      "id": "property-types-specialization",
+      "question": "What types of properties do you specialize in?",
+      "answer": "We specialize in high-end residential properties, including luxury villas, modern apartments, penthouses with sea views, and exclusive developments. Our portfolio caters to discerning clients seeking quality, comfort, and prime locations.",
+      "category": "properties",
+      "keywords": ["luxury villas", "modern apartments", "penthouses", "sea views", "exclusive developments"],
+      "relatedTopics": ["luxury-villa-features", "apartment-vs-villa", "penthouse-advantages"]
+    },
+    {
+      "id": "investment-properties",
+      "question": "Do you offer properties for investment?",
+      "answer": "Yes, we have a dedicated selection of properties ideal for investment, including rental income opportunities and properties with high appreciation potential. Our team can provide detailed market analysis and investment advice.",
+      "category": "finance",
+      "keywords": ["investment properties", "rental income", "market analysis", "appreciation"],
+      "relatedTopics": ["investment-returns-costa-del-sol", "rental-yields", "property-management"]
+    },
+    {
+      "id": "property-search-website",
+      "question": "How can I search for properties on your website?",
+      "answer": "You can easily search for properties using our advanced search filters, which allow you to specify location, property type, number of bedrooms, price range, and other criteria. You can also browse our featured listings and new developments.",
+      "category": "services",
+      "keywords": ["property search", "search filters", "featured listings", "new developments"],
+      "relatedTopics": ["viewing-tours", "virtual-tours", "property-selection"]
+    },
+    {
+      "id": "virtual-tours",
+      "question": "Do you offer virtual tours of properties?",
+      "answer": "Yes, many of our listings include high-quality virtual tours, 3D walkthroughs, and drone footage to provide a comprehensive view of the property from anywhere in the world.",
+      "category": "services",
+      "keywords": ["virtual tours", "3D walkthroughs", "drone footage", "property viewing"],
+      "relatedTopics": ["viewing-tours", "property-search-website", "international-clients"]
+    },
+    {
       "id": "property-purchase-process",
       "question": "What is the complete property purchase process in Costa del Sol?",
       "answer": "Our comprehensive purchase process includes: 1) Property selection with virtual tours and market analysis, 2) Legal due diligence including property history and planning permissions, 3) Preliminary contract (10-20% deposit), 4) Mortgage arrangement (if required), 5) Final deed signing at notary (escritura), 6) Property registration and key handover. We guide you through each step with dedicated support in English and Spanish.",
@@ -41,12 +90,12 @@
       "relatedTopics": ["nie-number-process", "legal-representation", "property-taxes-spain"]
     },
     {
-      "id": "nie-number-process",
-      "question": "How do I obtain an NIE number and how long does it take?",
-      "answer": "An NIE (Número de Identificación de Extranjero) is essential for property purchases. You can apply at Spanish consulates in your home country or in Spain at National Police stations. The process typically takes 2-4 weeks. We can assist with NIE applications and provide all necessary documentation to expedite the process.",
+      "id": "legal-assistance-buyers",
+      "question": "What legal assistance do you provide for buyers?",
+      "answer": "We work with trusted independent legal advisors who specialize in Spanish property law. They will conduct thorough due diligence, prepare contracts, and ensure a smooth and secure transaction for you.",
       "category": "legal",
-      "keywords": ["NIE number", "tax identification", "spain residency", "documentation"],
-      "relatedTopics": ["property-purchase-process", "legal-requirements", "residency-requirements"]
+      "keywords": ["legal assistance", "Spanish property law", "due diligence", "contracts"],
+      "relatedTopics": ["legal-representation", "property-purchase-process", "notary-role"]
     },
     {
       "id": "property-taxes-spain",
@@ -57,14 +106,6 @@
       "relatedTopics": ["mortgage-international-buyers", "investment-returns-costa-del-sol", "cost-of-living"]
     },
     {
-      "id": "legal-representation",
-      "question": "Do I need a lawyer when buying property in Costa del Sol?",
-      "answer": "While not mandatory, independent legal representation is highly recommended. Our network of qualified English-speaking lawyers specializes in international property transactions. They ensure proper due diligence, review contracts, handle bank guarantees, and protect your interests throughout the purchase process.",
-      "category": "legal",
-      "keywords": ["lawyer", "legal representation", "property law", "due diligence"],
-      "relatedTopics": ["property-purchase-process", "nie-number-process", "property-taxes-spain"]
-    },
-    {
       "id": "mortgage-international-buyers",
       "question": "Can international buyers get mortgages in Spain?",
       "answer": "Yes, international buyers can secure Spanish mortgages up to 70% of property value (80% for residents). We work with major banks offering competitive rates from 2.5%. Requirements include proof of income (3x mortgage payment), credit history, and 30% deposit. Our mortgage specialists handle the entire application process.",
@@ -73,132 +114,1156 @@
       "relatedTopics": ["property-insurance", "investment-returns-costa-del-sol", "property-taxes-spain"]
     },
     {
-      "id": "investment-returns-costa-del-sol",
-      "question": "What rental yields can I expect in Costa del Sol?",
-      "answer": "Rental yields vary by location and property type: Marbella 4-6%, Estepona 5-7%, Benalmádena 6-8%, central Málaga 7-9%. Luxury beachfront properties generate premium short-term rental income. We provide detailed rental projections and property management services to maximize your investment returns.",
-      "category": "finance",
-      "keywords": ["rental yields", "investment returns", "property investment", "rental income"],
-      "relatedTopics": ["property-management", "best-areas-marbella", "upcoming-developments-estepona"]
+      "id": "golden-visa-program",
+      "question": "What is the Golden Visa program in Spain?",
+      "answer": "The Golden Visa program grants residency to non-EU citizens who make a significant investment in Spain, such as purchasing real estate worth €500,000 or more. It offers benefits like free travel within the Schengen area.",
+      "category": "legal",
+      "keywords": ["Golden Visa", "residency", "non-EU citizens", "investment", "Schengen area"],
+      "relatedTopics": ["residency-requirements", "spanish-residency-permit", "non-lucrative-visa"]
     },
     {
-      "id": "property-insurance",
-      "question": "What insurance do I need for my Costa del Sol property?",
-      "answer": "Essential insurances include: Buildings insurance (required for mortgages), Contents insurance, Public liability coverage. For rental properties, add landlord insurance and loss of rent protection. Annual costs typically range €300-800. We arrange comprehensive insurance packages through trusted providers.",
-      "category": "finance",
-      "keywords": ["property insurance", "buildings insurance", "contents insurance", "landlord insurance"],
-      "relatedTopics": ["mortgage-international-buyers", "property-management", "cost-of-living"]
+      "id": "property-management",
+      "question": "Do you assist with property management after purchase?",
+      "answer": "Yes, we offer comprehensive property management services, including rental management, maintenance, cleaning, and administrative tasks, to ensure your property is well-maintained and generates income if desired.",
+      "category": "services",
+      "keywords": ["property management", "rental management", "maintenance", "administrative tasks"],
+      "relatedTopics": ["investment-returns-costa-del-sol", "after-sales-services", "property-insurance"]
     },
     {
-      "id": "best-areas-marbella",
-      "question": "Which are the most prestigious areas in Marbella?",
-      "answer": "Top luxury areas include: Golden Mile (beachfront mansions), Puerto Banús (marina lifestyle), Sierra Blanca (mountain views), La Zagaleta (ultra-exclusive gated community), Guadalmina (golf course living). Each offers unique advantages from beach access to privacy and investment potential.",
+      "id": "selling-property-process",
+      "question": "How do I sell my property with DelSolPrimeHomes?",
+      "answer": "We provide a full-service selling experience, including professional valuation, marketing strategies, high-quality photography and videography, global exposure, and expert negotiation to achieve the best possible price.",
+      "category": "services",
+      "keywords": ["selling property", "valuation", "marketing", "photography", "negotiation"],
+      "relatedTopics": ["property-valuation", "property-marketing", "selling-documents"]
+    },
+    {
+      "id": "property-valuation",
+      "question": "What is the valuation process for selling a property?",
+      "answer": "Our experienced team conducts a thorough market analysis, considering comparable sales, property condition, location, and current market trends to provide an accurate and competitive valuation for your property.",
+      "category": "services",
+      "keywords": ["property valuation", "market analysis", "comparable sales", "market trends"],
+      "relatedTopics": ["selling-property-process", "property-marketing", "current-market-trend"]
+    },
+    {
+      "id": "property-marketing",
+      "question": "How do you market properties for sale?",
+      "answer": "We utilize a multi-channel marketing approach, including prominent listings on international property portals, our high-traffic website, social media campaigns, professional photography, virtual tours, and our extensive network of international buyers.",
+      "category": "services",
+      "keywords": ["property marketing", "international portals", "social media", "professional photography"],
+      "relatedTopics": ["selling-property-process", "virtual-tours", "international-clients"]
+    },
+    {
+      "id": "energy-performance-certificate",
+      "question": "What is an Energy Performance Certificate (EPC) and do I need one to sell?",
+      "answer": "An EPC is a certificate that rates the energy efficiency of a property. It is legally required to have a valid EPC when selling or renting a property in Spain. We can assist you in obtaining one.",
+      "category": "legal",
+      "keywords": ["Energy Performance Certificate", "EPC", "energy efficiency", "selling requirements"],
+      "relatedTopics": ["selling-documents", "energy-efficiency-certificate", "habitation-certificate"]
+    },
+    {
+      "id": "selling-documents",
+      "question": "What documents do I need to sell my property in Spain?",
+      "answer": "Key documents include the title deed (Escritura Pública), Energy Performance Certificate, latest IBI (council tax) receipt, utility bills, and a certificate from the community of owners stating no outstanding debts.",
+      "category": "legal",
+      "keywords": ["selling documents", "title deed", "Escritura Pública", "IBI receipt"],
+      "relatedTopics": ["energy-performance-certificate", "community-fees", "public-deed"]
+    },
+    {
+      "id": "after-sales-services",
+      "question": "Do you offer after-sales support?",
+      "answer": "Yes, our commitment extends beyond the sale. We provide extensive after-sales support, assisting with utility transfers, local registrations, and any other needs you may have as you settle into your new property.",
+      "category": "services",
+      "keywords": ["after-sales service", "utility transfers", "local registrations", "settling in"],
+      "relatedTopics": ["property-management", "viewing-tours", "legal-representation"]
+    },
+    {
+      "id": "costa-del-sol-attractive",
+      "question": "What makes Costa del Sol an attractive location for property buyers?",
+      "answer": "Costa del Sol offers a fantastic climate, beautiful beaches, world-class golf courses, a vibrant culinary scene, excellent infrastructure, and a high quality of life, making it a highly desirable location for both holidays and permanent residency.",
       "category": "locations",
-      "keywords": ["marbella areas", "golden mile", "puerto banus", "sierra blanca", "luxury areas"],
-      "relatedTopics": ["luxury-villa-features", "golf-properties", "transport-connections"]
-    },
-    {
-      "id": "upcoming-developments-estepona",
-      "question": "What new developments are planned for Estepona?",
-      "answer": "Estepona is experiencing major growth with new beachfront developments, marina expansion, and the Ave high-speed train connection (2027). Key projects include luxury residential complexes near the beach, golf course communities, and the new Estepona port. These developments are driving significant capital appreciation.",
-      "category": "locations",
-      "keywords": ["estepona developments", "new construction", "ave train", "marina expansion"],
-      "relatedTopics": ["investment-returns-costa-del-sol", "transport-connections", "apartment-vs-villa"]
-    },
-    {
-      "id": "transport-connections",
-      "question": "How well connected is Costa del Sol for travel?",
-      "answer": "Excellent connectivity: Málaga Airport (international hub) 30-60 minutes from most locations, High-speed AVE train to Madrid (2.5 hours), Comprehensive highway network (A7 coastal route), Gibraltar Airport nearby. The planned Costa del Sol metro expansion will further improve local transport.",
-      "category": "locations",
-      "keywords": ["transport", "malaga airport", "ave train", "connectivity", "travel"],
-      "relatedTopics": ["upcoming-developments-estepona", "best-areas-marbella", "climate-weather"]
+      "keywords": ["Costa del Sol", "climate", "beaches", "golf courses", "quality of life"],
+      "relatedTopics": ["climate-weather", "golf-properties", "lifestyle-benefits"]
     },
     {
       "id": "climate-weather",
-      "question": "What is the climate like year-round in Costa del Sol?",
-      "answer": "Costa del Sol enjoys 320+ sunny days annually with mild winters (15-20°C) and warm summers (25-30°C). Minimal rainfall from May-September makes it perfect for year-round living. The Mediterranean climate supports outdoor activities, golf, and beach lifestyle throughout the year.",
+      "question": "What is the average temperature in Costa del Sol?",
+      "answer": "The Costa del Sol enjoys over 320 days of sunshine per year, with average annual temperatures around 18-20°C (64-68°F). Summers are warm, and winters are mild and pleasant.",
       "category": "lifestyle",
       "keywords": ["costa del sol climate", "weather", "mediterranean climate", "sunny days"],
       "relatedTopics": ["golf-properties", "lifestyle-benefits", "cost-of-living"]
     },
     {
-      "id": "luxury-villa-features",
-      "question": "What features define luxury villas in Costa del Sol?",
-      "answer": "Luxury villas typically include: Private pools and landscaped gardens, Sea or mountain views, Premium finishes and smart home technology, Private parking and security systems, Outdoor entertainment areas, Proximity to golf courses or beaches. Many feature contemporary architecture blending indoor-outdoor living.",
-      "category": "properties",
-      "keywords": ["luxury villas", "villa features", "private pool", "smart home", "security"],
-      "relatedTopics": ["apartment-vs-villa", "golf-properties", "best-areas-marbella"]
-    },
-    {
-      "id": "apartment-vs-villa",
-      "question": "Should I buy an apartment or villa in Costa del Sol?",
-      "answer": "Apartments offer: Lower maintenance, security, shared amenities (pools, gyms), better rental yields in popular areas. Villas provide: Privacy, garden space, potential for extensions, prestige, typically better capital appreciation. Your choice depends on lifestyle preferences, budget, and investment goals.",
-      "category": "properties",
-      "keywords": ["apartment vs villa", "property types", "investment choice", "lifestyle"],
-      "relatedTopics": ["luxury-villa-features", "investment-returns-costa-del-sol", "property-management"]
-    },
-    {
-      "id": "golf-properties",
-      "question": "What golf course properties are available in Costa del Sol?",
-      "answer": "Costa del Sol features 70+ golf courses with exceptional residential communities: Valderrama (prestigious tournament venue), La Reserva (luxury development), Los Flamingos (villa resort), Finca Cortesín (championship course), Villa Padierna (multiple courses). Golf properties typically offer premium amenities and strong investment potential.",
-      "category": "properties",
-      "keywords": ["golf properties", "golf courses", "valderrama", "villa padierna", "golf communities"],
-      "relatedTopics": ["luxury-villa-features", "best-areas-marbella", "investment-returns-costa-del-sol"]
-    },
-    {
-      "id": "after-sales-services",
-      "question": "What after-sales services does DelSolPrimeHomes provide?",
-      "answer": "Comprehensive after-sales support including: Property management and rental services, Maintenance and renovation coordination, Utility connections and registrations, Tax and legal assistance, Interior design consultation, Concierge services. We ensure your property investment is properly maintained and optimized.",
-      "category": "services",
-      "keywords": ["after-sales service", "property management", "maintenance", "concierge"],
-      "relatedTopics": ["property-management", "viewing-tours", "legal-representation"]
-    },
-    {
-      "id": "property-management",
-      "question": "Do you offer property management for rental properties?",
-      "answer": "Yes, our full property management service includes: Tenant sourcing and screening, Professional photography and marketing, Maintenance coordination, Financial reporting, Legal compliance, 24/7 emergency support. We typically achieve 15-20% higher rental income than self-managed properties.",
-      "category": "services",
-      "keywords": ["property management", "rental management", "tenant screening", "maintenance"],
-      "relatedTopics": ["investment-returns-costa-del-sol", "after-sales-services", "property-insurance"]
-    },
-    {
-      "id": "viewing-tours",
-      "question": "How do property viewing tours work for international clients?",
-      "answer": "We offer flexible viewing options: Virtual 3D tours and video calls, Personalized itineraries for site visits, Airport transfer and accommodation assistance, Multi-day viewing programs, Expert local guidance and market insights. Virtual viewings allow initial screening before traveling to Spain.",
-      "category": "services",
-      "keywords": ["property viewing", "virtual tours", "international clients", "site visits"],
-      "relatedTopics": ["after-sales-services", "transport-connections", "property-purchase-process"]
-    },
-    {
-      "id": "residency-requirements",
-      "question": "What are the residency requirements for living in Spain?",
-      "answer": "EU citizens can live freely in Spain. Non-EU residents need: Tourist visa (90 days), Non-lucrative visa (passive income €2,400/month), Investment visa (€500k+ property), Work/business visa. After 5 years legal residence, you can apply for permanent residency. We assist with visa applications and requirements.",
-      "category": "lifestyle",
-      "keywords": ["spain residency", "visa requirements", "EU citizens", "permanent residency"],
-      "relatedTopics": ["nie-number-process", "healthcare-system", "international-schools"]
-    },
-    {
-      "id": "healthcare-system",
-      "question": "How does healthcare work for residents in Costa del Sol?",
-      "answer": "Spain offers excellent healthcare: Public system for residents with social security, Private insurance widely available and affordable, Top international hospitals and clinics, Many English-speaking doctors, Dental and specialist care accessible. Costa del Sol has modern medical facilities serving the international community.",
-      "category": "lifestyle",
-      "keywords": ["spain healthcare", "medical system", "health insurance", "doctors"],
-      "relatedTopics": ["residency-requirements", "cost-of-living", "international-schools"]
-    },
-    {
       "id": "international-schools",
-      "question": "What international schools are available in Costa del Sol?",
-      "answer": "Excellent international education options: British curriculum schools (Swans International, Aloha College), American schools (The American School of Las Palmas), German and French schools, IB programs available, Multilingual environments. Many schools offer boarding options and university preparation programs.",
+      "question": "Are there international schools in Costa del Sol?",
+      "answer": "Yes, there are numerous reputable international schools along the Costa del Sol, offering various curricula (British, American, IB) to cater to expatriate families.",
       "category": "lifestyle",
       "keywords": ["international schools", "british curriculum", "education", "multilingual"],
       "relatedTopics": ["residency-requirements", "healthcare-system", "cost-of-living"]
     },
     {
+      "id": "healthcare-system",
+      "question": "What healthcare facilities are available in Costa del Sol?",
+      "answer": "The region boasts excellent public and private healthcare facilities, including modern hospitals and clinics with multilingual staff, ensuring high-quality medical care for residents and visitors.",
+      "category": "lifestyle",
+      "keywords": ["spain healthcare", "medical system", "health insurance", "doctors"],
+      "relatedTopics": ["residency-requirements", "cost-of-living", "international-schools"]
+    },
+    {
+      "id": "safety-costa-del-sol",
+      "question": "Is it safe to live in Costa del Sol?",
+      "answer": "Costa del Sol is generally considered a very safe place to live, with low crime rates. Like any popular tourist destination, it's always wise to take standard precautions.",
+      "category": "lifestyle",
+      "keywords": ["safety", "crime rates", "secure living", "tourist destination"],
+      "relatedTopics": ["gated-community-benefits", "best-family-areas", "lifestyle-benefits"]
+    },
+    {
+      "id": "transport-connections",
+      "question": "What are the main transportation options in Costa del Sol?",
+      "answer": "The region is well-connected by road, with the A-7 and AP-7 motorways. Malaga Airport (AGP) offers extensive international flights. There are also local bus services and a coastal train line.",
+      "category": "locations",
+      "keywords": ["transport", "malaga airport", "ave train", "connectivity", "travel"],
+      "relatedTopics": ["upcoming-developments-estepona", "best-areas-marbella", "climate-weather"]
+    },
+    {
+      "id": "rental-property-regulations",
+      "question": "Can I rent out my property in Costa del Sol?",
+      "answer": "Yes, you can rent out your property. If you plan to do so for short-term holiday rentals, you will need to register your property with the Junta de Andalucía and obtain a tourist license.",
+      "category": "legal",
+      "keywords": ["rental property", "tourist license", "Junta de Andalucía", "holiday rentals"],
+      "relatedTopics": ["tourist-license-process", "property-management", "rental-yields"]
+    },
+    {
+      "id": "tourist-license-process",
+      "question": "What is the process for obtaining a tourist license?",
+      "answer": "The process involves submitting an application to the Junta de Andalucía, providing property details, and ensuring it meets specific requirements for holiday rentals. We can guide you through this process.",
+      "category": "legal",
+      "keywords": ["tourist license", "Junta de Andalucía", "holiday rentals", "requirements"],
+      "relatedTopics": ["rental-property-regulations", "property-management", "short-term-rental-regulations"]
+    },
+    {
+      "id": "notary-role",
+      "question": "What is the role of a notary in a Spanish property transaction?",
+      "answer": "The notary is a public official who ensures the legality of the transaction, verifies the identities of the parties, and witnesses the signing of the public deed of sale. They are impartial and protect both buyer and seller.",
+      "category": "legal",
+      "keywords": ["notary", "public official", "transaction legality", "public deed"],
+      "relatedTopics": ["property-purchase-process", "public-deed", "legal-representation"]
+    },
+    {
+      "id": "ibi-tax",
+      "question": "What is IBI (Impuesto sobre Bienes Inmuebles)?",
+      "answer": "IBI is the annual municipal property tax in Spain, similar to council tax. It is paid to the local town hall and is based on the cadastral value of the property.",
+      "category": "finance",
+      "keywords": ["IBI", "municipal property tax", "council tax", "cadastral value"],
+      "relatedTopics": ["property-taxes-spain", "plusvalia-tax", "annual-property-costs"]
+    },
+    {
+      "id": "plusvalia-tax",
+      "question": "What is Plusvalía tax?",
+      "answer": "Plusvalía is a municipal tax levied on the increase in value of urban land from the date of acquisition to the date of sale. It is typically paid by the seller.",
+      "category": "finance",
+      "keywords": ["Plusvalía tax", "municipal tax", "urban land value", "seller tax"],
+      "relatedTopics": ["property-taxes-spain", "capital-gains-tax", "selling-tax-implications"]
+    },
+    {
+      "id": "contract-types-difference",
+      "question": "What is the difference between a private purchase contract and a public deed?",
+      "answer": "A private purchase contract (Contrato de Arras) is a preliminary agreement between buyer and seller. The public deed (Escritura Pública) is the final legal document signed before a notary, which transfers ownership.",
+      "category": "legal",
+      "keywords": ["private contract", "Contrato de Arras", "public deed", "Escritura Pública"],
+      "relatedTopics": ["property-purchase-process", "notary-role", "deposit-contract"]
+    },
+    {
+      "id": "buying-process-duration",
+      "question": "How long does the property buying process usually take?",
+      "answer": "The buying process can vary, but typically takes between 2 to 3 months from the reservation agreement to the signing of the public deed, depending on the complexity and speed of legal processes.",
+      "category": "legal",
+      "keywords": ["buying process duration", "timeline", "reservation agreement", "completion"],
+      "relatedTopics": ["property-purchase-process", "remote-property-buying", "legal-assistance-buyers"]
+    },
+    {
+      "id": "remote-property-buying",
+      "question": "Can I buy a property in Spain remotely?",
+      "answer": "Yes, it is possible to buy a property remotely by granting a Power of Attorney (POA) to a trusted legal representative. This allows them to act on your behalf for the entire process.",
+      "category": "legal",
+      "keywords": ["remote buying", "Power of Attorney", "POA", "legal representative"],
+      "relatedTopics": ["power-of-attorney", "international-clients", "property-purchase-process"]
+    },
+    {
+      "id": "nie-number-process",
+      "question": "What is a NIE number and why do I need it?",
+      "answer": "A NIE (Número de Identificación de Extranjero) is a Foreigner's Identification Number. It is essential for almost all legal and financial activities in Spain, including buying property, opening a bank account, and paying taxes.",
+      "category": "legal",
+      "keywords": ["NIE number", "tax identification", "spain residency", "documentation"],
+      "relatedTopics": ["property-purchase-process", "legal-requirements", "residency-requirements"]
+    },
+    {
+      "id": "nie-number-obtaining",
+      "question": "How do I get a NIE number?",
+      "answer": "You can apply for a NIE number at a Spanish police station (Comisaría de Policía) or through the Spanish Embassy/Consulate in your home country. Legal representatives can also obtain it on your behalf.",
+      "category": "legal",
+      "keywords": ["NIE application", "police station", "Spanish consulate", "legal representative"],
+      "relatedTopics": ["nie-number-process", "legal-representation", "documentation-requirements"]
+    },
+    {
+      "id": "cadastral-reference",
+      "question": "What is a cadastral reference?",
+      "answer": "The cadastral reference is a unique alphanumeric code that identifies a property in the Spanish land registry (Catastro). It is used for tax purposes and to locate the property precisely.",
+      "category": "legal",
+      "keywords": ["cadastral reference", "property identification", "Catastro", "tax purposes"],
+      "relatedTopics": ["property-registry", "cadastre-system", "ibi-tax"]
+    },
+    {
+      "id": "spanish-bank-account",
+      "question": "Do I need a Spanish bank account to buy property?",
+      "answer": "Yes, it is highly recommended to open a Spanish bank account to facilitate property purchase payments, utility bills, and ongoing property expenses.",
+      "category": "finance",
+      "keywords": ["Spanish bank account", "property payments", "utility bills", "expenses"],
+      "relatedTopics": ["bank-account-opening", "mortgage-international-buyers", "international-transfers"]
+    },
+    {
+      "id": "new-build-benefits",
+      "question": "What are the benefits of buying a new build property?",
+      "answer": "New build properties often come with modern designs, energy efficiency, builder's guarantees, and the latest amenities. They are also subject to VAT (IVA) instead of transfer tax, which can sometimes be advantageous.",
+      "category": "properties",
+      "keywords": ["new build", "modern design", "energy efficiency", "builder guarantee", "VAT"],
+      "relatedTopics": ["resale-benefits", "off-plan-considerations", "vat-new-builds"]
+    },
+    {
+      "id": "resale-benefits",
+      "question": "What are the benefits of buying a resale property?",
+      "answer": "Resale properties offer immediate availability, established communities, and often more negotiation flexibility on price. They also allow you to see the exact property and its surroundings.",
+      "category": "properties",
+      "keywords": ["resale property", "immediate availability", "established communities", "price negotiation"],
+      "relatedTopics": ["new-build-benefits", "property-inspection", "itp-transfer-tax"]
+    },
+    {
+      "id": "community-of-owners",
+      "question": "What is a community of owners?",
+      "answer": "If you buy an apartment or a property within a community (e.g., an urbanization with shared facilities), you become part of the community of owners. This community manages common areas and services.",
+      "category": "properties",
+      "keywords": ["community of owners", "shared facilities", "urbanization", "common areas"],
+      "relatedTopics": ["community-fees", "gated-community-benefits", "apartment-vs-villa"]
+    },
+    {
+      "id": "community-fees",
+      "question": "What are community fees?",
+      "answer": "Community fees are regular payments made by property owners within a community to cover the maintenance and running costs of shared facilities like gardens, swimming pools, elevators, and security.",
+      "category": "finance",
+      "keywords": ["community fees", "maintenance costs", "shared facilities", "swimming pools"],
+      "relatedTopics": ["community-of-owners", "annual-property-costs", "gated-community-benefits"]
+    },
+    {
+      "id": "property-renovation",
+      "question": "Can I renovate a property I buy in Costa del Sol?",
+      "answer": "Yes, you can renovate a property, but you may need to obtain planning permission (licencia de obras) from the local town hall, especially for major structural changes. We can advise on this.",
+      "category": "legal",
+      "keywords": ["property renovation", "planning permission", "licencia de obras", "structural changes"],
+      "relatedTopics": ["building-license", "reliable-contractors", "town-hall-role"]
+    },
+    {
+      "id": "winter-climate",
+      "question": "What is the climate like in winter in Costa del Sol?",
+      "answer": "Winters are generally mild and sunny, with average daytime temperatures ranging from 12°C to 18°C (54°F to 64°F). While there can be some rain, it's significantly warmer than most of Northern Europe.",
+      "category": "lifestyle",
+      "keywords": ["winter climate", "mild temperatures", "sunny weather", "Northern Europe comparison"],
+      "relatedTopics": ["climate-weather", "best-visiting-time", "year-round-living"]
+    },
+    {
+      "id": "best-visiting-time",
+      "question": "What is the best time of year to visit Costa del Sol for property viewing?",
+      "answer": "Spring (April-May) and Autumn (September-October) are ideal, offering pleasant temperatures for property viewings and fewer crowds than the peak summer months.",
+      "category": "lifestyle",
+      "keywords": ["property viewing", "spring", "autumn", "pleasant temperatures", "fewer crowds"],
+      "relatedTopics": ["climate-weather", "winter-climate", "viewing-tours"]
+    },
+    {
+      "id": "golf-properties",
+      "question": "Are there good golf courses in Costa del Sol?",
+      "answer": "Costa del Sol is renowned as the 'Costa del Golf' due to its abundance of world-class golf courses. Many properties offer direct access or proximity to these courses.",
+      "category": "properties",
+      "keywords": ["golf properties", "golf courses", "valderrama", "villa padierna", "golf communities"],
+      "relatedTopics": ["luxury-villa-features", "best-areas-marbella", "investment-returns-costa-del-sol"]
+    },
+    {
+      "id": "property-owner-taxes",
+      "question": "What are the property taxes in Spain for owners?",
+      "answer": "Property owners in Spain are subject to various taxes, including annual IBI (municipal property tax), wealth tax (Impuesto sobre el Patrimonio) for high-value assets, and income tax on rental income if applicable.",
+      "category": "finance",
+      "keywords": ["property owner taxes", "annual IBI", "wealth tax", "rental income tax"],
+      "relatedTopics": ["ibi-tax", "wealth-tax", "rental-income-taxation"]
+    },
+    {
+      "id": "long-term-rental-process",
+      "question": "What is the process for renting out my property long-term?",
+      "answer": "For long-term rentals, you'll need a rental contract (contrato de arrendamiento) and may need to register the contract with the regional housing authority. We can assist with tenant finding and contract drafting.",
+      "category": "legal",
+      "keywords": ["long-term rental", "rental contract", "contrato de arrendamiento", "tenant finding"],
+      "relatedTopics": ["property-management", "rental-yields", "rental-property-regulations"]
+    },
+    {
+      "id": "representative-types",
+      "question": "What is the difference between a fiscal representative and a legal representative?",
+      "answer": "A fiscal representative handles your tax obligations in Spain, while a legal representative (lawyer) handles legal aspects of property transactions and other legal matters.",
+      "category": "legal",
+      "keywords": ["fiscal representative", "legal representative", "tax obligations", "lawyer"],
+      "relatedTopics": ["legal-representation", "tax-residency", "non-resident-taxes"]
+    },
+    {
+      "id": "bank-account-opening",
+      "question": "How do I open a bank account in Spain?",
+      "answer": "To open a bank account, you'll typically need your passport, NIE number, and proof of address. Some banks allow non-residents to open accounts remotely.",
+      "category": "finance",
+      "keywords": ["bank account opening", "passport", "NIE number", "proof of address"],
+      "relatedTopics": ["spanish-bank-account", "nie-number-process", "non-resident-banking"]
+    },
+    {
+      "id": "rental-yields",
+      "question": "What is the typical rental yield in Costa del Sol?",
+      "answer": "Rental yields vary depending on property type, location, and market conditions, but Costa del Sol generally offers attractive rental yields, especially for holiday rentals.",
+      "category": "finance",
+      "keywords": ["rental yields", "property investment", "holiday rentals", "investment returns"],
+      "relatedTopics": ["investment-returns-costa-del-sol", "property-management", "tourist-license-process"]
+    },
+    {
+      "id": "foreign-ownership-restrictions",
+      "question": "Are there any restrictions on foreign ownership of property in Spain?",
+      "answer": "Generally, there are no restrictions on foreign ownership of property in Spain. Non-EU citizens may need to obtain a NIE number and follow specific procedures.",
+      "category": "legal",
+      "keywords": ["foreign ownership", "property restrictions", "non-EU citizens", "NIE requirements"],
+      "relatedTopics": ["nie-number-process", "golden-visa-program", "residency-requirements"]
+    },
+    {
+      "id": "real-estate-agent-role",
+      "question": "What is the role of a real estate agent in Spain?",
+      "answer": "A real estate agent assists buyers and sellers throughout the property transaction, providing market knowledge, property search, viewings, negotiation, and coordination with legal and financial professionals.",
+      "category": "services",
+      "keywords": ["real estate agent", "property transaction", "market knowledge", "negotiation"],
+      "relatedTopics": ["property-search-website", "legal-representation", "property-valuation"]
+    },
+    {
+      "id": "freehold-vs-leasehold",
+      "question": "What is the difference between a freehold and leasehold property in Spain?",
+      "answer": "Almost all properties in Spain are freehold, meaning you own the property and the land it stands on indefinitely. Leasehold properties are very rare.",
+      "category": "properties",
+      "keywords": ["freehold", "leasehold", "property ownership", "land ownership"],
+      "relatedTopics": ["property-ownership-types", "community-of-owners", "ownership-rights"]
+    },
+    {
+      "id": "utility-connections",
+      "question": "What is the process for connecting utilities (electricity, water, internet) to my new property?",
+      "answer": "After purchasing, you'll need to transfer utility contracts into your name. This involves contacting the utility companies, providing your NIE and property details. We can assist with this.",
+      "category": "legal",
+      "keywords": ["utility connections", "electricity", "water", "internet", "contract transfer"],
+      "relatedTopics": ["after-sales-services", "nie-number-process", "telecommunications-options"]
+    },
+    {
+      "id": "monthly-running-costs",
+      "question": "What are the typical monthly running costs for a property in Costa del Sol?",
+      "answer": "Monthly running costs include community fees (if applicable), utility bills (electricity, water, gas, internet), IBI (annual tax divided monthly), and potentially mortgage payments and insurance.",
+      "category": "finance",
+      "keywords": ["monthly costs", "utility bills", "community fees", "property expenses"],
+      "relatedTopics": ["community-fees", "ibi-tax", "property-insurance"]
+    },
+    {
+      "id": "best-family-areas",
+      "question": "What are the best areas for families in Costa del Sol?",
+      "answer": "Areas like Benalmádena, Mijas, and Estepona are popular for families, offering a good selection of schools, family-friendly amenities, and safe environments.",
+      "category": "locations",
+      "keywords": ["family areas", "Benalmádena", "Mijas", "Estepona", "schools", "safe environments"],
+      "relatedTopics": ["international-schools", "safety-costa-del-sol", "family-attractions"]
+    },
+    {
+      "id": "luxury-property-areas",
+      "question": "What are the best areas for luxury properties in Costa del Sol?",
+      "answer": "Marbella, particularly the Golden Mile, Puerto Banús, and Benahavís, are renowned for their exclusive luxury properties, high-end amenities, and privacy.",
+      "category": "locations",
+      "keywords": ["luxury areas", "Marbella", "Golden Mile", "Puerto Banús", "Benahavís"],
+      "relatedTopics": ["best-areas-marbella", "luxury-villa-features", "exclusive-developments"]
+    },
+    {
+      "id": "spanish-residency-permit",
+      "question": "What is the process for obtaining a Spanish residency permit?",
+      "answer": "Obtaining a Spanish residency permit depends on your nationality and reason for residency (e.g., non-lucrative visa, Golden Visa, work visa). It typically involves applying at the Spanish consulate in your home country.",
+      "category": "legal",
+      "keywords": ["Spanish residency", "residency permit", "visa types", "consulate application"],
+      "relatedTopics": ["golden-visa-program", "non-lucrative-visa", "residency-requirements"]
+    },
+    {
+      "id": "gated-community-benefits",
+      "question": "What are the benefits of living in a gated community?",
+      "answer": "Gated communities offer enhanced security, privacy, and often exclusive access to amenities like swimming pools, gyms, and communal gardens, providing a luxurious and secure lifestyle.",
+      "category": "properties",
+      "keywords": ["gated community", "security", "privacy", "exclusive amenities", "luxury lifestyle"],
+      "relatedTopics": ["community-of-owners", "luxury-villa-features", "safety-costa-del-sol"]
+    },
+    {
+      "id": "reliable-contractors",
+      "question": "How can I find reliable contractors for property renovations?",
+      "answer": "We can recommend trusted and reputable local contractors and architects who specialize in property renovations and have a proven track record of quality work in Costa del Sol.",
+      "category": "services",
+      "keywords": ["reliable contractors", "property renovations", "architects", "quality work"],
+      "relatedTopics": ["property-renovation", "after-sales-services", "building-license"]
+    },
+    {
+      "id": "telecommunications-options",
+      "question": "What are the options for internet and telecommunications in Costa del Sol?",
+      "answer": "Costa del Sol has excellent internet infrastructure, with options for fiber optic, ADSL, and mobile broadband. Various providers offer competitive packages for internet, TV, and phone services.",
+      "category": "lifestyle",
+      "keywords": ["internet options", "fiber optic", "telecommunications", "broadband"],
+      "relatedTopics": ["utility-connections", "cost-of-living", "technology-infrastructure"]
+    },
+    {
+      "id": "local-cuisine",
+      "question": "What is the local cuisine like in Costa del Sol?",
+      "answer": "The local cuisine is a highlight, featuring fresh seafood, traditional Andalusian dishes like gazpacho and pescaíto frito, and a wide array of international dining options.",
+      "category": "lifestyle",
+      "keywords": ["local cuisine", "seafood", "Andalusian dishes", "gazpacho", "international dining"],
+      "relatedTopics": ["best-restaurants", "lifestyle-benefits", "cultural-experience"]
+    },
+    {
+      "id": "outdoor-activities",
+      "question": "Are there opportunities for outdoor activities in Costa del Sol?",
+      "answer": "Yes, Costa del Sol offers abundant outdoor activities, including golf, water sports, hiking in natural parks, cycling, and equestrian pursuits, thanks to its diverse landscape and climate.",
+      "category": "lifestyle",
+      "keywords": ["outdoor activities", "golf", "water sports", "hiking", "cycling"],
+      "relatedTopics": ["golf-properties", "natural-parks", "climate-weather"]
+    },
+    {
+      "id": "cultural-attractions",
+      "question": "What are the main cultural attractions in Costa del Sol?",
+      "answer": "Cultural attractions include historical sites like the Alcazaba in Málaga, charming white villages (pueblos blancos), art museums (e.g., Picasso Museum), and vibrant local festivals.",
+      "category": "lifestyle",
+      "keywords": ["cultural attractions", "Alcazaba", "white villages", "Picasso Museum", "festivals"],
+      "relatedTopics": ["historical-sites", "white-villages-route", "local-festivals"]
+    },
+    {
+      "id": "business-setup-spain",
+      "question": "What is the process for setting up a business in Spain as a foreigner?",
+      "answer": "Setting up a business involves registering with the tax authorities, obtaining necessary licenses, and complying with Spanish labor laws. Legal and fiscal advisors can guide you through this complex process.",
+      "category": "legal",
+      "keywords": ["business setup", "tax registration", "licenses", "labor laws", "legal advisors"],
+      "relatedTopics": ["tax-residency", "fiscal-representative", "working-hours-spain"]
+    },
+    {
+      "id": "selling-tax-implications",
+      "question": "What are the tax implications of selling a property in Spain?",
+      "answer": "When selling a property, you may be subject to Capital Gains Tax (CGT) on the profit, plus the municipal Plusvalía tax. Non-residents may have a 3% retention on the sale price.",
+      "category": "finance",
+      "keywords": ["selling taxes", "Capital Gains Tax", "CGT", "non-resident retention"],
+      "relatedTopics": ["plusvalia-tax", "capital-gains-tax", "non-resident-taxes"]
+    },
+    {
+      "id": "villa-types-difference",
+      "question": "What is the difference between a detached villa and a semi-detached villa?",
+      "answer": "A detached villa is a standalone property, offering maximum privacy. A semi-detached villa shares one wall with another property, providing a balance of privacy and community.",
+      "category": "properties",
+      "keywords": ["detached villa", "semi-detached villa", "privacy", "standalone property"],
+      "relatedTopics": ["luxury-villa-features", "apartment-vs-villa", "property-types-specialization"]
+    },
+    {
+      "id": "penthouse-advantages",
+      "question": "What is a penthouse and what are its advantages?",
+      "answer": "A penthouse is an apartment located on the highest floor of a building, often featuring large terraces, panoramic views, and exclusive amenities, offering a luxurious living experience.",
+      "category": "properties",
+      "keywords": ["penthouse", "highest floor", "large terraces", "panoramic views", "luxury"],
+      "relatedTopics": ["apartment-vs-villa", "sea-view-benefits", "luxury-villa-features"]
+    },
+    {
+      "id": "townhouse-characteristics",
+      "question": "What is a townhouse and what are its characteristics?",
+      "answer": "A townhouse is a multi-story home that shares one or more walls with adjacent properties, typically found in urbanizations and offering a blend of communal living and private space.",
+      "category": "properties",
+      "keywords": ["townhouse", "multi-story", "shared walls", "urbanizations", "communal living"],
+      "relatedTopics": ["community-of-owners", "villa-types-difference", "community-fees"]
+    },
+    {
+      "id": "property-sizes-typical",
+      "question": "What is the typical size of properties in Costa del Sol?",
+      "answer": "Property sizes vary widely, from compact apartments to expansive villas. Our portfolio includes options to suit various needs, from cozy holiday homes to large family residences.",
+      "category": "properties",
+      "keywords": ["property sizes", "apartments", "villas", "holiday homes", "family residences"],
+      "relatedTopics": ["property-types-specialization", "luxury-villa-features", "apartment-vs-villa"]
+    },
+    {
+      "id": "average-property-prices",
+      "question": "What are the average property prices in Costa del Sol?",
+      "answer": "Property prices vary significantly by location, property type, and condition. Luxury properties in prime areas like Marbella will be higher than those in less developed regions.",
+      "category": "finance",
+      "keywords": ["property prices", "location variation", "luxury properties", "prime areas"],
+      "relatedTopics": ["property-valuation", "current-market-trend", "investment-returns-costa-del-sol"]
+    },
+    {
+      "id": "current-market-trend",
+      "question": "What is the current real estate market trend in Costa del Sol?",
+      "answer": "The Costa del Sol real estate market is generally robust, with steady demand for high-quality properties, particularly in sought-after coastal and golf course areas.",
+      "category": "finance",
+      "keywords": ["market trend", "robust market", "steady demand", "coastal areas", "golf course"],
+      "relatedTopics": ["investment-returns-costa-del-sol", "property-valuation", "luxury-property-areas"]
+    },
+    {
+      "id": "property-lawyer-role",
+      "question": "What is the role of a property lawyer in Spain?",
+      "answer": "A property lawyer (abogado) provides independent legal advice, conducts due diligence, drafts and reviews contracts, and represents your interests throughout the buying or selling process.",
+      "category": "legal",
+      "keywords": ["property lawyer", "abogado", "legal advice", "due diligence", "contracts"],
+      "relatedTopics": ["legal-representation", "legal-assistance-buyers", "property-purchase-process"]
+    },
+    {
+      "id": "nota-simple",
+      "question": "What is a Nota Simple and why is it important?",
+      "answer": "A Nota Simple is an extract from the Spanish Property Registry that provides crucial information about a property, including ownership, charges (e.g., mortgages), and any legal encumbrances.",
+      "category": "legal",
+      "keywords": ["Nota Simple", "Property Registry", "ownership", "mortgages", "legal encumbrances"],
+      "relatedTopics": ["property-registry", "due-diligence", "legal-assistance-buyers"]
+    },
+    {
+      "id": "building-license",
+      "question": "What is the process for obtaining a building license for a new construction or major renovation?",
+      "answer": "Obtaining a building license (licencia de obras) involves submitting plans to the local town hall, which will review them for compliance with zoning regulations and building codes. This can be a lengthy process.",
+      "category": "legal",
+      "keywords": ["building license", "licencia de obras", "town hall", "zoning regulations"],
+      "relatedTopics": ["property-renovation", "town-hall-role", "environmental-regulations"]
+    },
+    {
+      "id": "finca-vs-villa",
+      "question": "What is the difference between a 'finca' and a 'villa'?",
+      "answer": "A 'finca' typically refers to a rural property, often with land for agriculture or equestrian use, while a 'villa' is generally a more luxurious, often detached, residential home, usually in a developed area.",
+      "category": "properties",
+      "keywords": ["finca", "villa", "rural property", "agriculture", "equestrian", "luxury home"],
+      "relatedTopics": ["property-types-specialization", "luxury-villa-features", "rural-properties"]
+    },
+    {
+      "id": "short-term-rental-regulations",
+      "question": "Are there any specific regulations for short-term holiday rentals in different municipalities?",
+      "answer": "Yes, regulations for short-term holiday rentals can vary by municipality in Andalusia. It's crucial to check local rules in addition to regional requirements from the Junta de Andalucía.",
+      "category": "legal",
+      "keywords": ["short-term rentals", "holiday rentals", "municipal regulations", "Andalusia"],
+      "relatedTopics": ["tourist-license-process", "rental-property-regulations", "junta-andalucia-role"]
+    },
+    {
+      "id": "average-selling-time",
+      "question": "What is the average time to sell a property in Costa del Sol?",
+      "answer": "The average time to sell varies greatly depending on market conditions, property type, price, and marketing strategy. Well-priced and well-marketed properties in desirable areas can sell relatively quickly.",
+      "category": "finance",
+      "keywords": ["selling time", "market conditions", "property type", "pricing", "marketing"],
+      "relatedTopics": ["property-marketing", "property-valuation", "current-market-trend"]
+    },
+    {
+      "id": "fiscal-representative-role",
+      "question": "What is the role of a fiscal representative for non-residents?",
+      "answer": "A fiscal representative ensures that non-resident property owners comply with Spanish tax obligations, including filing annual non-resident income tax (IRNR) and wealth tax returns.",
+      "category": "finance",
+      "keywords": ["fiscal representative", "non-residents", "tax obligations", "IRNR", "wealth tax"],
+      "relatedTopics": ["non-resident-taxes", "tax-residency", "representative-types"]
+    },
+    {
+      "id": "foreign-will-spain",
+      "question": "Can I use my foreign will in Spain?",
+      "answer": "It is highly recommended to have a Spanish will for your Spanish assets to simplify inheritance procedures and avoid potential conflicts of law. This can be done in conjunction with your existing will.",
+      "category": "legal",
+      "keywords": ["foreign will", "Spanish will", "inheritance procedures", "conflicts of law"],
+      "relatedTopics": ["inheritance-tax-spain", "succession-planning", "legal-documentation"]
+    },
+    {
+      "id": "inheritance-tax-spain",
+      "question": "What are the inheritance tax implications in Spain?",
+      "answer": "Inheritance tax in Spain varies significantly by region and the relationship between the deceased and the heir. Andalusia has historically offered significant reductions for close family members.",
+      "category": "finance",
+      "keywords": ["inheritance tax", "regional variations", "family relationships", "Andalusia reductions"],
+      "relatedTopics": ["foreign-will-spain", "succession-planning", "wealth-tax"]
+    },
+    {
+      "id": "international-transfers",
+      "question": "What is the process for transferring funds internationally for property purchase?",
+      "answer": "We recommend using a reputable currency exchange specialist for international transfers to ensure competitive rates and lower fees compared to traditional banks. They can guide you through the process.",
+      "category": "finance",
+      "keywords": ["international transfers", "currency exchange", "competitive rates", "lower fees"],
+      "relatedTopics": ["property-purchase-process", "spanish-bank-account", "mortgage-international-buyers"]
+    },
+    {
+      "id": "property-surveyor-role",
+      "question": "What is the role of a property surveyor?",
+      "answer": "A property surveyor can conduct a detailed inspection of the property's condition, identify any structural issues, and provide a comprehensive report, which is highly recommended before purchase.",
+      "category": "services",
+      "keywords": ["property surveyor", "detailed inspection", "structural issues", "comprehensive report"],
+      "relatedTopics": ["mortgage-valuation", "property-inspection", "due-diligence"]
+    },
+    {
+      "id": "off-plan-considerations",
+      "question": "Are there any specific considerations for buying off-plan properties?",
+      "answer": "Buying off-plan involves purchasing a property before it's built. Key considerations include ensuring the developer has bank guarantees for payments, checking their reputation, and understanding the payment schedule.",
+      "category": "properties",
+      "keywords": ["off-plan properties", "bank guarantees", "developer reputation", "payment schedule"],
+      "relatedTopics": ["new-build-benefits", "first-occupation-license", "developer-vs-constructor"]
+    },
+    {
+      "id": "first-occupation-license",
+      "question": "What is the 'Licencia de Primera Ocupación' (First Occupation License)?",
+      "answer": "This is a crucial document for new build properties, certifying that the property has been built according to the approved plans and meets all legal requirements for habitability. It's essential for connecting utilities.",
+      "category": "legal",
+      "keywords": ["First Occupation License", "new build", "habitability requirements", "utility connections"],
+      "relatedTopics": ["new-build-benefits", "occupancy-license", "utility-connections"]
+    },
+    {
+      "id": "golf-course-property-advantages",
+      "question": "What are the advantages of buying a property near a golf course?",
+      "answer": "Properties near golf courses offer beautiful views, a tranquil environment, access to golf facilities, and often higher rental potential, especially for golf enthusiasts.",
+      "category": "properties",
+      "keywords": ["golf course properties", "beautiful views", "tranquil environment", "rental potential"],
+      "relatedTopics": ["golf-properties", "investment-returns-costa-del-sol", "luxury-villa-features"]
+    },
+    {
+      "id": "beachfront-property-advantages",
+      "question": "What are the advantages of buying a beachfront property?",
+      "answer": "Beachfront properties offer direct access to the sea, stunning views, and high rental demand. They are considered prime real estate and often appreciate well.",
+      "category": "properties",
+      "keywords": ["beachfront properties", "sea access", "stunning views", "rental demand", "prime real estate"],
+      "relatedTopics": ["sea-view-benefits", "investment-returns-costa-del-sol", "luxury-property-areas"]
+    },
+    {
+      "id": "property-registry-process",
+      "question": "What is the process for registering my property in the Land Registry?",
+      "answer": "After signing the public deed at the notary, your lawyer will submit the deed to the Land Registry (Registro de la Propiedad) for registration, officially recording your ownership.",
+      "category": "legal",
+      "keywords": ["property registration", "Land Registry", "Registro de la Propiedad", "ownership recording"],
+      "relatedTopics": ["public-deed", "notary-role", "property-registry"]
+    },
+    {
+      "id": "developer-vs-constructor",
+      "question": "What is the difference between a 'promotor' and a 'constructor'?",
+      "answer": "A 'promotor' (developer) is the entity that initiates and finances the construction project, while a 'constructor' (builder) is the company that physically builds the property.",
+      "category": "properties",
+      "keywords": ["promotor", "developer", "constructor", "builder", "construction project"],
+      "relatedTopics": ["off-plan-considerations", "new-build-benefits", "building-guarantees"]
+    },
+    {
+      "id": "environmental-regulations",
+      "question": "Are there any environmental regulations affecting property development in Costa del Sol?",
+      "answer": "Yes, Spain has strict environmental regulations, especially in coastal areas and natural parks. Developers must comply with these laws, which can affect building permits and designs.",
+      "category": "legal",
+      "keywords": ["environmental regulations", "coastal areas", "natural parks", "building permits"],
+      "relatedTopics": ["building-license", "property-renovation", "natural-parks"]
+    },
+    {
+      "id": "municipal-registration",
+      "question": "What is the 'Certificado de Empadronamiento' and why is it important?",
+      "answer": "The 'Certificado de Empadronamiento' is a municipal registration certificate proving you reside at a specific address. It's required for various administrative procedures, like registering for healthcare or voting.",
+      "category": "legal",
+      "keywords": ["municipal registration", "Certificado de Empadronamiento", "address proof", "administrative procedures"],
+      "relatedTopics": ["residency-requirements", "healthcare-system", "municipal-services"]
+    },
+    {
+      "id": "spanish-driving-license",
+      "question": "What is the process for obtaining a Spanish driving license?",
+      "answer": "If you are a resident, you may need to exchange your foreign driving license for a Spanish one, depending on your country of origin. This involves applying at the DGT (Dirección General de Tráfico).",
+      "category": "lifestyle",
+      "keywords": ["Spanish driving license", "license exchange", "DGT", "residents"],
+      "relatedTopics": ["residency-requirements", "transport-connections", "administrative-procedures"]
+    },
+    {
+      "id": "property-ownership-types",
+      "question": "What are the main types of property ownership in Spain?",
+      "answer": "The main types are individual ownership, joint ownership (e.g., with a spouse), and ownership through a company. Each has different tax and legal implications.",
+      "category": "legal",
+      "keywords": ["property ownership", "individual ownership", "joint ownership", "company ownership"],
+      "relatedTopics": ["freehold-vs-leasehold", "community-assets", "tax-implications"]
+    },
+    {
+      "id": "community-assets",
+      "question": "What is the 'Comunidad de Bienes' (Community of Assets)?",
+      "answer": "This is a common form of joint ownership in Spain, where two or more individuals own a property together without forming a separate legal entity. It's often used by unmarried couples.",
+      "category": "legal",
+      "keywords": ["Community of Assets", "joint ownership", "unmarried couples", "legal entity"],
+      "relatedTopics": ["property-ownership-types", "joint-ownership-implications", "inheritance-planning"]
+    },
+    {
+      "id": "professional-property-management-benefits",
+      "question": "What are the benefits of using a professional property management company?",
+      "answer": "A professional property management company handles all aspects of renting out your property, including marketing, tenant screening, maintenance, and financial reporting, saving you time and hassle.",
+      "category": "services",
+      "keywords": ["professional property management", "tenant screening", "maintenance", "financial reporting"],
+      "relatedTopics": ["property-management", "rental-yields", "investment-returns-costa-del-sol"]
+    },
+    {
+      "id": "habitation-certificate",
+      "question": "What is the 'Certificado de Habitabilidad' (Certificate of Habitability)?",
+      "answer": "This certificate confirms that a property meets the minimum conditions for habitability and is suitable for residential use. It's often required for utility connections and rental contracts.",
+      "category": "legal",
+      "keywords": ["Certificate of Habitability", "habitability conditions", "residential use", "utility connections"],
+      "relatedTopics": ["occupancy-license", "energy-efficiency-certificate", "utility-connections"]
+    },
+    {
+      "id": "location-choosing-considerations",
+      "question": "What are the key considerations when choosing a location in Costa del Sol?",
+      "answer": "Consider your lifestyle preferences: proximity to beaches, golf courses, schools, amenities, nightlife, and transport links. Each area offers a different atmosphere.",
+      "category": "locations",
+      "keywords": ["location choice", "lifestyle preferences", "beaches", "golf courses", "amenities"],
+      "relatedTopics": ["best-family-areas", "luxury-property-areas", "transport-connections"]
+    },
+    {
+      "id": "property-registry",
+      "question": "What is the 'Registro de la Propiedad' (Property Registry)?",
+      "answer": "The Property Registry is a public institution where all property ownership and encumbrances (like mortgages) are officially recorded. Registering your property provides legal security.",
+      "category": "legal",
+      "keywords": ["Property Registry", "ownership recording", "encumbrances", "legal security"],
+      "relatedTopics": ["nota-simple", "property-registry-process", "cadastre-system"]
+    },
+    {
+      "id": "cadastre-system",
+      "question": "What is the 'Catastro' (Cadastre)?",
+      "answer": "The Cadastre is an administrative registry that describes the physical characteristics of properties, including their location, size, and use. It's used for tax purposes (IBI).",
+      "category": "legal",
+      "keywords": ["Cadastre", "physical characteristics", "property description", "tax purposes"],
+      "relatedTopics": ["cadastral-reference", "ibi-tax", "property-registry-difference"]
+    },
+    {
+      "id": "property-registry-difference",
+      "question": "What is the difference between the Property Registry and the Cadastre?",
+      "answer": "The Property Registry records legal ownership and rights, while the Cadastre records physical descriptions and is used for tax purposes. They are separate but complementary.",
+      "category": "legal",
+      "keywords": ["Property Registry", "Cadastre", "legal ownership", "physical descriptions"],
+      "relatedTopics": ["property-registry", "cadastre-system", "property-documentation"]
+    },
+    {
+      "id": "mortgage-valuation",
+      "question": "What is the process for obtaining a mortgage valuation?",
+      "answer": "A mortgage valuation (tasación) is carried out by an independent surveyor appointed by the bank to assess the property's market value. This valuation determines the maximum loan amount the bank will offer.",
+      "category": "finance",
+      "keywords": ["mortgage valuation", "tasación", "independent surveyor", "market value"],
+      "relatedTopics": ["mortgage-international-buyers", "property-surveyor-role", "loan-amount"]
+    },
+    {
+      "id": "sea-view-benefits",
+      "question": "What are the benefits of buying a property with sea views?",
+      "answer": "Properties with sea views are highly sought after, offering stunning aesthetics, a sense of tranquility, and often higher resale value and rental income potential.",
+      "category": "properties",
+      "keywords": ["sea views", "stunning aesthetics", "tranquility", "resale value", "rental income"],
+      "relatedTopics": ["beachfront-property-advantages", "penthouse-advantages", "luxury-villa-features"]
+    },
+    {
+      "id": "occupancy-license",
+      "question": "What is the 'Licencia de Ocupación' (Occupancy License)?",
+      "answer": "This license certifies that a property meets the necessary conditions for habitability and is suitable for residential use. It's essential for new builds and often required for utility connections.",
+      "category": "legal",
+      "keywords": ["Occupancy License", "habitability conditions", "residential use", "new builds"],
+      "relatedTopics": ["first-occupation-license", "habitation-certificate", "building-completion"]
+    },
+    {
+      "id": "energy-efficiency-certificate",
+      "question": "What is the 'Certificado de Eficiencia Energética' (Energy Efficiency Certificate)?",
+      "answer": "This certificate rates a property's energy consumption and CO2 emissions. It's mandatory for selling or renting a property in Spain and provides information on energy efficiency.",
+      "category": "legal",
+      "keywords": ["Energy Efficiency Certificate", "energy consumption", "CO2 emissions", "mandatory"],
+      "relatedTopics": ["energy-performance-certificate", "selling-documents", "environmental-compliance"]
+    },
+    {
+      "id": "closing-costs-spain",
+      "question": "What are the typical closing costs for a property purchase in Spain?",
+      "answer": "Closing costs typically include property transfer tax (or VAT for new builds), stamp duty, notary fees, land registry fees, and legal fees. These can range from 8% to 12% of the purchase price.",
+      "category": "finance",
+      "keywords": ["closing costs", "transfer tax", "VAT", "stamp duty", "legal fees"],
+      "relatedTopics": ["property-taxes-spain", "itp-transfer-tax", "vat-new-builds"]
+    },
+    {
+      "id": "itp-transfer-tax",
+      "question": "What is the 'Impuesto sobre Transmisiones Patrimoniales' (ITP)?",
+      "answer": "ITP is the property transfer tax applied to resale properties in Spain. The rate varies by autonomous community, but in Andalusia, it's a progressive scale.",
+      "category": "finance",
+      "keywords": ["ITP", "property transfer tax", "resale properties", "progressive scale"],
+      "relatedTopics": ["property-taxes-spain", "vat-new-builds", "andalusia-tax-rates"]
+    },
+    {
+      "id": "vat-new-builds",
+      "question": "What is VAT (IVA) on new build properties?",
+      "answer": "For new build properties, VAT (IVA) is applied instead of ITP. The current rate for residential properties is 10% in Spain, plus 1.2% stamp duty in Andalusia.",
+      "category": "finance",
+      "keywords": ["VAT", "IVA", "new build", "residential properties", "stamp duty"],
+      "relatedTopics": ["new-build-benefits", "itp-transfer-tax", "ajd-stamp-duty"]
+    },
+    {
+      "id": "ajd-stamp-duty",
+      "question": "What is the 'Impuesto sobre Actos Jurídicos Documentados' (AJD)?",
+      "answer": "AJD is stamp duty, applied to new build property purchases and mortgages. In Andalusia, the rate is currently 1.2% of the purchase price.",
+      "category": "finance",
+      "keywords": ["AJD", "stamp duty", "new build", "mortgages", "Andalusia"],
+      "relatedTopics": ["vat-new-builds", "mortgage-costs", "andalusia-tax-rates"]
+    },
+    {
+      "id": "residency-registration-eu",
+      "question": "What is the process for registering as a resident in Spain?",
+      "answer": "EU citizens can register as residents by obtaining a 'Certificado de Registro de Ciudadano de la Unión'. Non-EU citizens will need to apply for a residency visa first.",
+      "category": "legal",
+      "keywords": ["residency registration", "EU citizens", "Certificado de Registro", "residency visa"],
+      "relatedTopics": ["eu-citizen-registration", "spanish-residency-permit", "residency-requirements"]
+    },
+    {
+      "id": "spanish-residency-benefits",
+      "question": "What are the benefits of obtaining Spanish residency?",
+      "answer": "Spanish residency provides access to public healthcare, education, and other social services, as well as the right to live and work in Spain indefinitely.",
+      "category": "legal",
+      "keywords": ["Spanish residency benefits", "public healthcare", "education", "social services"],
+      "relatedTopics": ["healthcare-system", "international-schools", "social-security-system"]
+    },
+    {
+      "id": "tax-residency",
+      "question": "What is the 'Residencia Fiscal' (Tax Residency)?",
+      "answer": "You become a tax resident in Spain if you spend more than 183 days in a calendar year in the country, or if your main center of economic interests is in Spain. This has significant tax implications.",
+      "category": "finance",
+      "keywords": ["tax residency", "183 days", "economic interests", "tax implications"],
+      "relatedTopics": ["resident-vs-nonresident-tax", "modelo-720", "wealth-tax"]
+    },
+    {
+      "id": "resident-vs-nonresident-tax",
+      "question": "What is the difference between a resident and non-resident for tax purposes?",
+      "answer": "Residents are taxed on their worldwide income, while non-residents are only taxed on income generated in Spain. Tax rates and obligations differ significantly.",
+      "category": "finance",
+      "keywords": ["resident tax", "non-resident tax", "worldwide income", "Spanish income"],
+      "relatedTopics": ["tax-residency", "non-resident-taxes", "irnr-tax"]
+    },
+    {
+      "id": "modelo-720",
+      "question": "What is the 'Modelo 720' declaration?",
+      "answer": "The Modelo 720 is an informative declaration for tax residents in Spain regarding assets held abroad exceeding €50,000. Failure to declare can result in severe penalties.",
+      "category": "finance",
+      "keywords": ["Modelo 720", "assets abroad", "declaration", "severe penalties"],
+      "relatedTopics": ["tax-residency", "foreign-assets", "tax-compliance"]
+    },
+    {
+      "id": "wealth-tax",
+      "question": "What is the 'Impuesto sobre el Patrimonio' (Wealth Tax)?",
+      "answer": "Wealth tax is an annual tax on net assets, applicable to both residents and non-residents with assets in Spain. The thresholds and rates vary by autonomous community.",
+      "category": "finance",
+      "keywords": ["wealth tax", "net assets", "annual tax", "autonomous community"],
+      "relatedTopics": ["property-owner-taxes", "inheritance-tax-spain", "high-value-assets"]
+    },
+    {
+      "id": "irnr-tax",
+      "question": "What is the 'Impuesto sobre la Renta de No Residentes' (IRNR)?",
+      "answer": "IRNR is the income tax for non-residents in Spain. If you own a property and don't rent it out, you are still liable for a deemed income tax on the property.",
+      "category": "finance",
+      "keywords": ["IRNR", "non-resident income tax", "deemed income", "property ownership"],
+      "relatedTopics": ["non-resident-taxes", "fiscal-representative-role", "tax-obligations"]
+    },
+    {
+      "id": "company-property-advantages",
+      "question": "What are the advantages of buying a property through a Spanish company?",
+      "answer": "Buying through a Spanish company can offer tax advantages, especially for high-value properties or if you plan to rent out the property frequently. It requires professional advice.",
+      "category": "finance",
+      "keywords": ["Spanish company", "tax advantages", "high-value properties", "professional advice"],
+      "relatedTopics": ["property-ownership-types", "tax-planning", "corporate-structure"]
+    },
+    {
+      "id": "non-residency-certificate",
+      "question": "What is the 'Certificado de No Residencia' (Non-Residency Certificate)?",
+      "answer": "This certificate proves your non-resident status in Spain and is often required for various administrative and financial procedures, such as opening a non-resident bank account.",
+      "category": "legal",
+      "keywords": ["Non-Residency Certificate", "non-resident status", "administrative procedures", "bank account"],
+      "relatedTopics": ["non-resident-banking", "tax-residency", "administrative-documentation"]
+    },
+    {
+      "id": "double-taxation-treaty",
+      "question": "What is the 'Convenio de Doble Imposición' (Double Taxation Treaty)?",
+      "answer": "Spain has double taxation treaties with many countries to prevent individuals from being taxed twice on the same income or assets. It's important to understand how this applies to your situation.",
+      "category": "finance",
+      "keywords": ["Double Taxation Treaty", "tax prevention", "income protection", "asset protection"],
+      "relatedTopics": ["tax-residency", "international-taxation", "fiscal-advice"]
+    },
+    {
+      "id": "tourist-visa-process",
+      "question": "What is the process for obtaining a tourist visa for Spain?",
+      "answer": "The process for obtaining a tourist visa depends on your nationality. Many countries have visa-free access to the Schengen area for short stays. Others require a Schengen visa application.",
+      "category": "legal",
+      "keywords": ["tourist visa", "nationality", "Schengen area", "visa application"],
+      "relatedTopics": ["schengen-visa", "visa-requirements", "travel-documentation"]
+    },
+    {
+      "id": "main-airports",
+      "question": "What are the main airports serving Costa del Sol?",
+      "answer": "Malaga Airport (AGP) is the primary international airport serving Costa del Sol, offering extensive connections. Gibraltar Airport (GIB) is also an option for some travelers.",
+      "category": "locations",
+      "keywords": ["Malaga Airport", "AGP", "Gibraltar Airport", "international connections"],
+      "relatedTopics": ["transport-connections", "ave-train-service", "travel-options"]
+    },
+    {
+      "id": "ave-train-service",
+      "question": "What is the 'AVE' high-speed train service in Spain?",
+      "answer": "The AVE (Alta Velocidad Española) is Spain's high-speed rail network, connecting Malaga to major Spanish cities like Madrid and Barcelona, offering a fast and efficient travel option.",
+      "category": "locations",
+      "keywords": ["AVE", "high-speed train", "Madrid", "Barcelona", "efficient travel"],
+      "relatedTopics": ["transport-connections", "main-airports", "connectivity"]
+    },
+    {
+      "id": "best-shopping-areas",
+      "question": "What are the best shopping areas in Costa del Sol?",
+      "answer": "Costa del Sol offers a variety of shopping experiences, from luxury boutiques in Puerto Banús and Marbella to large commercial centers like La Cañada and Miramar, and traditional local markets.",
+      "category": "lifestyle",
+      "keywords": ["shopping areas", "luxury boutiques", "Puerto Banús", "commercial centers"],
+      "relatedTopics": ["lifestyle-benefits", "luxury-property-areas", "commercial-amenities"]
+    },
+    {
+      "id": "best-restaurants",
+      "question": "What are the best restaurants and dining experiences in Costa del Sol?",
+      "answer": "The region boasts a diverse culinary scene, from Michelin-starred restaurants to traditional chiringuitos (beach restaurants) serving fresh seafood. Marbella and Malaga city are culinary hotspots.",
+      "category": "lifestyle",
+      "keywords": ["restaurants", "Michelin-starred", "chiringuitos", "culinary scene"],
+      "relatedTopics": ["local-cuisine", "lifestyle-benefits", "cultural-experience"]
+    },
+    {
+      "id": "best-beaches",
+      "question": "What are the best beaches in Costa del Sol?",
+      "answer": "Costa del Sol has numerous beautiful beaches, including the lively beaches of Marbella, the family-friendly shores of Estepona, and the natural dunes of Cabopino. Many hold Blue Flag status.",
+      "category": "lifestyle",
+      "keywords": ["best beaches", "Marbella", "Estepona", "Cabopino", "Blue Flag"],
+      "relatedTopics": ["beachfront-property-advantages", "coastal-lifestyle", "water-activities"]
+    },
+    {
+      "id": "best-nightlife",
+      "question": "What are the best places for nightlife in Costa del Sol?",
+      "answer": "Puerto Banús in Marbella is famous for its glamorous nightlife, with upscale clubs and bars. Malaga city also offers a vibrant scene with a mix of traditional and modern venues.",
+      "category": "lifestyle",
+      "keywords": ["nightlife", "Puerto Banús", "glamorous clubs", "Malaga city"],
+      "relatedTopics": ["entertainment-options", "luxury-property-areas", "cultural-attractions"]
+    },
+    {
+      "id": "family-attractions",
+      "question": "What are the best family attractions in Costa del Sol?",
+      "answer": "Family attractions include Tivoli World amusement park, Bioparc Fuengirola zoo, Selwo Aventura safari park, and numerous water parks along the coast.",
+      "category": "lifestyle",
+      "keywords": ["family attractions", "Tivoli World", "Bioparc Fuengirola", "water parks"],
+      "relatedTopics": ["best-family-areas", "entertainment-options", "child-friendly-activities"]
+    },
+    {
+      "id": "historical-sites",
+      "question": "What are the best historical sites to visit in Costa del Sol?",
+      "answer": "Historical sites include the Alcazaba and Roman Theatre in Malaga, the charming old town of Marbella, and the ancient caves of Nerja.",
+      "category": "lifestyle",
+      "keywords": ["historical sites", "Alcazaba", "Roman Theatre", "Nerja caves"],
+      "relatedTopics": ["cultural-attractions", "heritage-sites", "tourism"]
+    },
+    {
+      "id": "natural-parks",
+      "question": "What are the best natural parks and hiking trails in Costa del Sol?",
+      "answer": "The Sierra de las Nieves Natural Park (a UNESCO Biosphere Reserve) and the Montes de Málaga Natural Park offer stunning landscapes and hiking opportunities.",
+      "category": "lifestyle",
+      "keywords": ["natural parks", "Sierra de las Nieves", "UNESCO Biosphere", "hiking"],
+      "relatedTopics": ["outdoor-activities", "environmental-protection", "nature-tourism"]
+    },
+    {
+      "id": "white-villages-route",
+      "question": "What is the 'Pueblos Blancos' (White Villages) route?",
+      "answer": "The Pueblos Blancos are picturesque white-washed villages nestled in the hills of Andalusia, offering a glimpse into traditional Spanish life. Popular ones include Ronda and Mijas Pueblo.",
+      "category": "lifestyle",
+      "keywords": ["Pueblos Blancos", "white villages", "traditional Spanish life", "Ronda"],
+      "relatedTopics": ["cultural-attractions", "historical-sites", "rural-tourism"]
+    },
+    {
+      "id": "local-festivals",
+      "question": "What are the local festivals and traditions in Costa del Sol?",
+      "answer": "The region celebrates numerous vibrant festivals (ferias) throughout the year, including Semana Santa (Holy Week), Malaga Fair, and local patron saint festivals, offering a rich cultural experience.",
+      "category": "lifestyle",
+      "keywords": ["local festivals", "ferias", "Semana Santa", "Malaga Fair"],
+      "relatedTopics": ["cultural-attractions", "traditional-celebrations", "community-events"]
+    },
+    {
+      "id": "working-hours-spain",
+      "question": "What are the typical working hours in Spain?",
+      "answer": "Typical working hours in Spain often include a midday break (siesta), with businesses opening from around 9 am to 2 pm, and then from 5 pm to 8 pm. This can vary by industry.",
+      "category": "lifestyle",
+      "keywords": ["working hours", "siesta", "business hours", "industry variation"],
+      "relatedTopics": ["business-setup-spain", "cultural-adaptation", "lifestyle-differences"]
+    },
+    {
       "id": "cost-of-living",
-      "question": "What is the cost of living in Costa del Sol compared to other European destinations?",
-      "answer": "Costa del Sol offers excellent value: 20-30% lower than UK/Germany for daily expenses, Restaurant meals €15-40, Utilities €80-150/month, Car insurance €300-600/year, Quality healthcare at reasonable costs. Luxury lifestyle is more affordable than equivalent Northern European locations.",
+      "question": "What is the cost of living in Costa del Sol?",
+      "answer": "The cost of living in Costa del Sol can vary. While property prices can be high in prime areas, daily expenses like food and transportation are generally more affordable than in many other European countries.",
       "category": "lifestyle",
       "keywords": ["cost of living", "expenses", "utilities", "restaurants", "affordable luxury"],
       "relatedTopics": ["healthcare-system", "climate-weather", "property-insurance"]
+    },
+    {
+      "id": "private-healthcare-options",
+      "question": "What are the options for private healthcare in Costa del Sol?",
+      "answer": "There are many private hospitals and clinics offering high-quality medical care. Private health insurance is widely available and often used by expatriates.",
+      "category": "lifestyle",
+      "keywords": ["private healthcare", "hospitals", "clinics", "health insurance"],
+      "relatedTopics": ["healthcare-system", "expatriate-services", "medical-facilities"]
+    },
+    {
+      "id": "social-security-system",
+      "question": "What is the 'Seguridad Social' (Social Security) system in Spain?",
+      "answer": "Seguridad Social is Spain's public social security system, covering healthcare, pensions, and other benefits. Residents contributing to the system have access to public healthcare.",
+      "category": "lifestyle",
+      "keywords": ["Seguridad Social", "public healthcare", "pensions", "benefits"],
+      "relatedTopics": ["healthcare-system", "spanish-residency-benefits", "public-services"]
+    },
+    {
+      "id": "school-enrollment-process",
+      "question": "What is the process for enrolling children in school in Spain?",
+      "answer": "Enrolling children in school involves registering with the local town hall (empadronamiento) and then applying to the desired public or private school. Requirements vary.",
+      "category": "lifestyle",
+      "keywords": ["school enrollment", "empadronamiento", "public schools", "private schools"],
+      "relatedTopics": ["international-schools", "municipal-registration", "education-system"]
+    },
+    {
+      "id": "school-holidays-spain",
+      "question": "What are the typical school holidays in Spain?",
+      "answer": "Spanish schools typically have holidays in summer (July-August), Christmas (late December-early January), and Easter (Semana Santa). There are also various national and regional public holidays.",
+      "category": "lifestyle",
+      "keywords": ["school holidays", "summer break", "Christmas", "Easter"],
+      "relatedTopics": ["education-system", "local-festivals", "family-planning"]
+    },
+    {
+      "id": "town-hall-role",
+      "question": "What is the 'Ayuntamiento' (Town Hall) and its role?",
+      "answer": "The Ayuntamiento is the local town hall, responsible for municipal services, planning permits, local taxes (like IBI), and resident registration (empadronamiento).",
+      "category": "legal",
+      "keywords": ["Ayuntamiento", "town hall", "municipal services", "planning permits"],
+      "relatedTopics": ["municipal-registration", "building-license", "ibi-tax"]
+    },
+    {
+      "id": "junta-andalucia-role",
+      "question": "What is the 'Junta de Andalucía' and its relevance to property?",
+      "answer": "The Junta de Andalucía is the regional government of Andalusia. It sets regional laws and regulations, including those related to tourism, urban planning, and some property taxes.",
+      "category": "legal",
+      "keywords": ["Junta de Andalucía", "regional government", "tourism regulations", "urban planning"],
+      "relatedTopics": ["tourist-license-process", "regional-regulations", "andalusia-tax-rates"]
+    },
+    {
+      "id": "tax-agency-spain",
+      "question": "What is the 'Agencia Tributaria' (Tax Agency)?",
+      "answer": "The Agencia Tributaria is the national tax agency in Spain, responsible for collecting national taxes like income tax, VAT, and capital gains tax.",
+      "category": "finance",
+      "keywords": ["Agencia Tributaria", "tax agency", "income tax", "VAT"],
+      "relatedTopics": ["tax-obligations", "national-taxes", "tax-compliance"]
+    },
+    {
+      "id": "spanish-visa-non-eu",
+      "question": "What is the process for obtaining a Spanish visa for non-EU citizens?",
+      "answer": "Non-EU citizens typically need to apply for a specific type of visa (e.g., Golden Visa, non-lucrative visa, work visa) at the Spanish consulate in their home country before entering Spain.",
+      "category": "legal",
+      "keywords": ["Spanish visa", "non-EU citizens", "Golden Visa", "consulate application"],
+      "relatedTopics": ["golden-visa-program", "non-lucrative-visa", "visa-requirements"]
+    },
+    {
+      "id": "non-lucrative-visa",
+      "question": "What are the requirements for a non-lucrative visa in Spain?",
+      "answer": "A non-lucrative visa allows non-EU citizens to reside in Spain without working. Requirements include proof of sufficient financial means, private health insurance, and a clean criminal record.",
+      "category": "legal",
+      "keywords": ["non-lucrative visa", "financial means", "health insurance", "criminal record"],
+      "relatedTopics": ["spanish-visa-non-eu", "residency-requirements", "visa-types"]
+    },
+    {
+      "id": "tie-card",
+      "question": "What is the 'TIE' (Tarjeta de Identidad de Extranjero)?",
+      "answer": "The TIE is the physical identification card for foreign residents in Spain, issued after your residency visa has been approved and you have arrived in Spain.",
+      "category": "legal",
+      "keywords": ["TIE", "identification card", "foreign residents", "residency visa"],
+      "relatedTopics": ["residency-card", "spanish-residency-permit", "identification-documents"]
+    },
+    {
+      "id": "residency-permit-renewal",
+      "question": "What is the process for renewing a Spanish residency permit?",
+      "answer": "Residency permits need to be renewed periodically. The renewal process typically involves demonstrating continued compliance with the initial visa requirements and submitting updated documentation.",
+      "category": "legal",
+      "keywords": ["permit renewal", "continued compliance", "updated documentation", "periodic renewal"],
+      "relatedTopics": ["spanish-residency-permit", "visa-requirements", "administrative-procedures"]
+    },
+    {
+      "id": "mortgage-types-spain",
+      "question": "What are the main types of mortgages available in Spain?",
+      "answer": "Main types include fixed-rate mortgages, variable-rate mortgages, and interest-only mortgages. The best option depends on your financial situation and market outlook.",
+      "category": "finance",
+      "keywords": ["mortgage types", "fixed-rate", "variable-rate", "interest-only"],
+      "relatedTopics": ["mortgage-international-buyers", "euribor-rate", "mortgage-broker-benefits"]
+    },
+    {
+      "id": "euribor-rate",
+      "question": "What is the 'Euribor' and how does it affect mortgages?",
+      "answer": "Euribor is the Euro Interbank Offered Rate, a benchmark interest rate. It is commonly used as a reference for variable-rate mortgages in Spain, so changes in Euribor affect your mortgage payments.",
+      "category": "finance",
+      "keywords": ["Euribor", "benchmark rate", "variable-rate mortgages", "payment changes"],
+      "relatedTopics": ["mortgage-types-spain", "variable-rate-risks", "interest-rate-trends"]
+    },
+    {
+      "id": "reverse-mortgage",
+      "question": "What is the 'Hipoteca Inversa' (Reverse Mortgage)?",
+      "answer": "A reverse mortgage allows homeowners (typically seniors) to convert part of their home equity into cash without selling the property or making monthly mortgage payments. It's a niche product.",
+      "category": "finance",
+      "keywords": ["reverse mortgage", "home equity", "seniors", "niche product"],
+      "relatedTopics": ["mortgage-types-spain", "equity-release", "retirement-planning"]
+    },
+    {
+      "id": "mortgage-broker-benefits",
+      "question": "What are the benefits of using a mortgage broker in Spain?",
+      "answer": "A mortgage broker can help you find the best mortgage deals from various Spanish banks, negotiate terms, and guide you through the application process, saving you time and potentially money.",
+      "category": "finance",
+      "keywords": ["mortgage broker", "best deals", "negotiate terms", "application process"],
+      "relatedTopics": ["mortgage-international-buyers", "mortgage-types-spain", "banking-services"]
+    },
+    {
+      "id": "reference-value",
+      "question": "What is the 'Valor de Referencia' (Reference Value) for properties?",
+      "answer": "The 'Valor de Referencia' is a new value set by the Cadastre for all properties, used as the tax base for property transfer tax and inheritance tax. It can impact your tax liabilities.",
+      "category": "finance",
+      "keywords": ["Reference Value", "Cadastre", "tax base", "tax liabilities"],
+      "relatedTopics": ["cadastre-system", "property-taxes-spain", "tax-implications"]
+    },
+    {
+      "id": "zero-debt-certificate",
+      "question": "What is the 'Certificado de Deuda Cero' (Zero Debt Certificate)?",
+      "answer": "This certificate is issued by the bank to confirm that a mortgage on a property has been fully paid off. It's required when selling a property that previously had a mortgage.",
+      "category": "finance",
+      "keywords": ["Zero Debt Certificate", "mortgage paid off", "selling requirements", "bank certificate"],
+      "relatedTopics": ["mortgage-clearance", "selling-documents", "property-transfer"]
+    },
+    {
+      "id": "deposit-contract",
+      "question": "What is the 'Contrato de Arras' (Deposit Contract)?",
+      "answer": "The Contrato de Arras is a preliminary contract where the buyer pays a deposit to the seller to reserve the property. It sets out the terms of the sale and penalties if either party backs out.",
+      "category": "legal",
+      "keywords": ["Contrato de Arras", "deposit contract", "preliminary agreement", "penalties"],
+      "relatedTopics": ["contract-types-difference", "property-purchase-process", "reservation-agreement"]
+    },
+    {
+      "id": "public-deed",
+      "question": "What is the 'Escritura Pública' (Public Deed)?",
+      "answer": "The Escritura Pública is the official public deed of sale, signed before a notary. It's the legal document that transfers ownership of the property from the seller to the buyer.",
+      "category": "legal",
+      "keywords": ["Escritura Pública", "public deed", "notary", "ownership transfer"],
+      "relatedTopics": ["notary-role", "contract-types-difference", "property-registry-process"]
+    },
+    {
+      "id": "civil-registry",
+      "question": "What is the 'Registro Civil' (Civil Registry)?",
+      "answer": "The Civil Registry records births, marriages, deaths, and other civil status events. You may need documents from here for various legal procedures in Spain.",
+      "category": "legal",
+      "keywords": ["Civil Registry", "births", "marriages", "deaths", "civil status"],
+      "relatedTopics": ["legal-documentation", "administrative-procedures", "vital-records"]
+    },
+    {
+      "id": "power-of-attorney",
+      "question": "What is the 'Poder Notarial' (Power of Attorney)?",
+      "answer": "A Power of Attorney is a legal document that grants another person the authority to act on your behalf in specific matters, such as buying or selling property, managing bank accounts, or handling legal affairs.",
+      "category": "legal",
+      "keywords": ["Power of Attorney", "legal authority", "property transactions", "legal representation"],
+      "relatedTopics": ["remote-property-buying", "legal-representation", "proxy-services"]
+    },
+    {
+      "id": "eu-citizen-registration",
+      "question": "What is the 'Certificado de Registro de Ciudadano de la Unión' (EU Citizen Registration Certificate)?",
+      "answer": "This is the green certificate issued to EU citizens who register as residents in Spain, confirming their right to reside in the country.",
+      "category": "legal",
+      "keywords": ["EU citizen registration", "green certificate", "resident registration", "EU rights"],
+      "relatedTopics": ["residency-registration-eu", "spanish-residency-benefits", "eu-privileges"]
+    },
+    {
+      "id": "residency-card",
+      "question": "What is the 'Tarjeta de Residencia' (Residency Card)?",
+      "answer": "This is the physical identification card for foreign residents in Spain, issued after your residency visa has been approved and you have arrived in Spain.",
+      "category": "legal",
+      "keywords": ["Residency Card", "identification card", "foreign residents", "physical card"],
+      "relatedTopics": ["tie-card", "identification-documents", "residency-proof"]
     }
   ]
 }

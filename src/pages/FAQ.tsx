@@ -1,3 +1,4 @@
+
 import { useMemo } from "react";
 import { ChevronDown, Search, HelpCircle, FileText, Home, DollarSign, MapPin, Filter, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,7 +10,7 @@ import { Link } from "react-router-dom";
 import SEOHead from "@/components/seo/SEOHead";
 import BreadcrumbNavigation from "@/components/seo/BreadcrumbNavigation";
 import { generateFAQSchema, organizationSchema } from "@/utils/seo/structuredData";
-import { generateTitle, META_DESCRIPTIONS } from "@/utils/seo/metaUtils";
+import { generateTitle } from "@/utils/seo/metaUtils";
 import { useFAQData } from "@/hooks/useFAQData";
 
 const categoryIcons = {
@@ -33,7 +34,7 @@ const FAQ = () => {
     getCategoryCount
   } = useFAQData();
 
-  // Generate structured data for SEO
+  // Generate structured data for SEO with all FAQs
   const faqSchema = useMemo(() => {
     return generateFAQSchema(
       faqs.map(faq => ({
@@ -48,8 +49,8 @@ const FAQ = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30">
       <SEOHead
-        title={generateTitle("Costa del Sol Real Estate FAQ - Expert Property Guidance")}
-        description="Get expert answers to Costa del Sol property questions. Comprehensive FAQ covering buying process, legal requirements, financing, locations, and lifestyle in Spain's premier real estate market."
+        title={generateTitle("Costa del Sol Real Estate FAQ - 100+ Expert Property Answers")}
+        description="Get expert answers to 100+ Costa del Sol property questions. Comprehensive FAQ covering buying process, legal requirements, financing, locations, and lifestyle in Spain's premier real estate market."
         canonical="/faq"
         structuredData={structuredData}
       />
@@ -73,10 +74,24 @@ const FAQ = () => {
           <h1 className="text-6xl font-bold bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent mb-6">
             Costa del Sol Property FAQ
           </h1>
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-12 leading-relaxed">
-            Expert answers to your Costa del Sol real estate questions. From legal processes to luxury lifestyle, 
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-4 leading-relaxed">
+            Expert answers to 100+ Costa del Sol real estate questions. From legal processes to luxury lifestyle, 
             get comprehensive guidance for international property investment in Spain's most prestigious region.
           </p>
+          <div className="flex justify-center gap-6 text-sm text-muted-foreground mb-12">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
+              <span>{faqs.length} Total Questions</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              <span>6 Categories</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              <span>Expert Verified</span>
+            </div>
+          </div>
           
           {/* Search and Filter Controls */}
           <div className="max-w-4xl mx-auto">
