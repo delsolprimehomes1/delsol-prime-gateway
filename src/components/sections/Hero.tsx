@@ -1,11 +1,12 @@
 
-import { ChevronDown, Calendar, Search, MapPin, Star, Play } from "lucide-react";
+import { ChevronDown, Calendar, Search, MapPin, Star, Play, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ParallaxSection } from "@/components/ui/ParallaxSection";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { LoadingButton } from "@/components/ui/LoadingButton";
 import { RippleEffect } from "@/components/ui/RippleEffect";
+import { useAuth } from "@/hooks/useAuth";
 import heroImage from "@/assets/hero-costa-del-sol-luxury.jpg";
 
 interface HeroProps {
@@ -13,6 +14,8 @@ interface HeroProps {
 }
 
 export default function Hero({ className }: HeroProps) {
+  const { user } = useAuth();
+  
   const scrollToContent = () => {
     window.scrollTo({
       top: window.innerHeight,
@@ -78,7 +81,7 @@ export default function Hero({ className }: HeroProps) {
           </div>
 
           {/* Modern CTA Section */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-scale-in">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 animate-scale-in">
             <RippleEffect>
               <MagneticButton 
                 variant="hero" 
@@ -101,6 +104,35 @@ export default function Hero({ className }: HeroProps) {
                 <span className="font-medium">Watch Virtual Tour</span>
               </MagneticButton>
             </RippleEffect>
+          </div>
+
+          {/* SEO Dashboard Access */}
+          <div className="flex justify-center mb-16 animate-fade-in">
+            {user ? (
+              <Button 
+                asChild
+                variant="ghost" 
+                size="sm"
+                className="text-white/70 hover:text-primary border border-white/20 hover:border-primary/50 bg-white/5 hover:bg-primary/10 transition-all duration-300"
+              >
+                <a href="/seo-dashboard" className="flex items-center gap-2">
+                  <BarChart3 className="w-4 h-4" />
+                  <span className="text-sm font-medium">SEO Dashboard</span>
+                </a>
+              </Button>
+            ) : (
+              <Button 
+                asChild
+                variant="ghost" 
+                size="sm"
+                className="text-white/70 hover:text-primary border border-white/20 hover:border-primary/50 bg-white/5 hover:bg-primary/10 transition-all duration-300"
+              >
+                <a href="/auth" className="flex items-center gap-2">
+                  <BarChart3 className="w-4 h-4" />
+                  <span className="text-sm font-medium">Access SEO Dashboard</span>
+                </a>
+              </Button>
+            )}
           </div>
 
           {/* Professional Stats Section */}

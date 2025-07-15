@@ -1,18 +1,23 @@
 
 import { useState, useEffect } from "react";
-import { Menu, X, Globe, Search, ChevronDown, MapPin, User, Bell } from "lucide-react";
+import { Menu, X, Globe, Search, ChevronDown, MapPin, User, Bell, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 import { EnhancedMegaMenu } from "./EnhancedMegaMenu";
 import MobileMenu from "./MobileMenu";
 import SearchOverlay from "./SearchOverlay";
+import { useAuth } from "@/hooks/useAuth";
+import { useToast } from "@/hooks/use-toast";
 
 interface NavigationProps {
   className?: string;
 }
 
 export default function Navigation({ className }: NavigationProps) {
+  const { user, signOut } = useAuth();
+  const { toast } = useToast();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [currentLang, setCurrentLang] = useState("EN");
@@ -65,6 +70,22 @@ export default function Navigation({ className }: NavigationProps) {
       e.preventDefault();
       e.stopPropagation();
       setActiveMenu(activeMenu === itemLabel ? null : itemLabel);
+    }
+  };
+
+  const handleSignOut = async () => {
+    const { error } = await signOut();
+    if (error) {
+      toast({
+        title: "Error",
+        description: "Failed to sign out. Please try again.",
+        variant: "destructive",
+      });
+    } else {
+      toast({
+        title: "Signed out",
+        description: "You have been successfully signed out.",
+      });
     }
   };
 
@@ -176,16 +197,46 @@ export default function Navigation({ className }: NavigationProps) {
               </Button>
 
               {/* User Account */}
-              <Button
-                variant="ghost"
-                size="sm"
-                className={cn(
-                  "transition-all duration-300",
-                  isScrolled ? "text-foreground" : "text-white hover:bg-white/10"
-                )}
-              >
-                <User className="w-4 h-4" />
-              </Button>
+              {user ? (
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className={cn(
+                        "transition-all duration-300",
+                        isScrolled ? "text-foreground" : "text-white hover:bg-white/10"
+                      )}
+                    >
+                      <User className="w-4 h-4" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="bg-background/95 backdrop-blur-md border border-border/50">
+                    <DropdownMenuItem className="font-medium">
+                      {user.email}
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={handleSignOut}>
+                      <LogOut className="w-4 h-4 mr-2" />
+                      Sign Out
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  asChild
+                  className={cn(
+                    "transition-all duration-300",
+                    isScrolled ? "text-foreground" : "text-white hover:bg-white/10"
+                  )}
+                >
+                  <a href="/auth">
+                    <User className="w-4 h-4" />
+                  </a>
+                </Button>
+              )}
 
               {/* Contact Button */}
               <MagneticButton

@@ -9,10 +9,13 @@ import { ErrorBoundary } from "@/components/integrations/ErrorBoundary";
 import { AnalyticsProvider } from "@/components/integrations/AnalyticsProvider";
 import { PerformanceMonitor } from "@/components/performance/PerformanceMonitor";
 import { ServiceWorkerProvider } from "@/components/performance/ServiceWorker";
+import { AuthProvider } from "@/hooks/useAuth";
+import ProtectedRoute from "@/components/ProtectedRoute";
 import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import FAQ from "./pages/FAQ";
+import Auth from "./pages/Auth";
 import SEODashboard from "./pages/SEODashboard";
 import NotFound from "./pages/NotFound";
 
@@ -34,23 +37,33 @@ const App = () => (
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
         <AnalyticsProvider>
-          <TooltipProvider>
-            <PerformanceMonitor />
-            <ServiceWorkerProvider />
-            <Toaster />
-            <Sonner />
-            <BrowserRouter>
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/:slug" element={<BlogPost />} />
-                <Route path="/faq" element={<FAQ />} />
-                <Route path="/seo-dashboard" element={<SEODashboard />} />
-                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </BrowserRouter>
-          </TooltipProvider>
+          <AuthProvider>
+            <TooltipProvider>
+              <PerformanceMonitor />
+              <ServiceWorkerProvider />
+              <Toaster />
+              <Sonner />
+              <BrowserRouter>
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/blog" element={<Blog />} />
+                  <Route path="/blog/:slug" element={<BlogPost />} />
+                  <Route path="/faq" element={<FAQ />} />
+                  <Route path="/auth" element={<Auth />} />
+                  <Route 
+                    path="/seo-dashboard" 
+                    element={
+                      <ProtectedRoute>
+                        <SEODashboard />
+                      </ProtectedRoute>
+                    } 
+                  />
+                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </BrowserRouter>
+            </TooltipProvider>
+          </AuthProvider>
         </AnalyticsProvider>
       </QueryClientProvider>
     </HelmetProvider>
