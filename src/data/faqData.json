@@ -1,0 +1,204 @@
+{
+  "categories": {
+    "legal": {
+      "name": "Legal & Process",
+      "icon": "FileText",
+      "description": "Legal requirements, documentation, and property purchase processes"
+    },
+    "finance": {
+      "name": "Finance & Investment",
+      "icon": "DollarSign", 
+      "description": "Mortgages, taxes, investment returns, and financial planning"
+    },
+    "locations": {
+      "name": "Locations & Areas",
+      "icon": "MapPin",
+      "description": "Best areas, transport, climate, and regional information"
+    },
+    "properties": {
+      "name": "Property Types",
+      "icon": "Home",
+      "description": "Villas, apartments, luxury features, and property selection"
+    },
+    "services": {
+      "name": "Our Services", 
+      "icon": "HelpCircle",
+      "description": "DelSolPrimeHomes services, support, and property management"
+    },
+    "lifestyle": {
+      "name": "Lifestyle & Living",
+      "icon": "MapPin",
+      "description": "Living in Spain, healthcare, education, and cost of living"
+    }
+  },
+  "faqs": [
+    {
+      "id": "property-purchase-process",
+      "question": "What is the complete property purchase process in Costa del Sol?",
+      "answer": "Our comprehensive purchase process includes: 1) Property selection with virtual tours and market analysis, 2) Legal due diligence including property history and planning permissions, 3) Preliminary contract (10-20% deposit), 4) Mortgage arrangement (if required), 5) Final deed signing at notary (escritura), 6) Property registration and key handover. We guide you through each step with dedicated support in English and Spanish.",
+      "category": "legal",
+      "keywords": ["property purchase", "buying process", "costa del sol", "legal process", "notary"],
+      "relatedTopics": ["nie-number-process", "legal-representation", "property-taxes-spain"]
+    },
+    {
+      "id": "nie-number-process",
+      "question": "How do I obtain an NIE number and how long does it take?",
+      "answer": "An NIE (Número de Identificación de Extranjero) is essential for property purchases. You can apply at Spanish consulates in your home country or in Spain at National Police stations. The process typically takes 2-4 weeks. We can assist with NIE applications and provide all necessary documentation to expedite the process.",
+      "category": "legal",
+      "keywords": ["NIE number", "tax identification", "spain residency", "documentation"],
+      "relatedTopics": ["property-purchase-process", "legal-requirements", "residency-requirements"]
+    },
+    {
+      "id": "property-taxes-spain",
+      "question": "What taxes apply when buying property in Spain?",
+      "answer": "Main taxes include: Transfer Tax (ITP) 7-10% for resale properties, VAT (IVA) 10% + Stamp Duty 1.2% for new builds, Notary fees €600-1,200, Land Registry €400-800, Legal fees 1-2% of purchase price. Annual property tax (IBI) varies by location. We provide detailed tax calculations for each property.",
+      "category": "finance",
+      "keywords": ["property taxes", "ITP", "VAT spain", "stamp duty", "notary fees"],
+      "relatedTopics": ["mortgage-international-buyers", "investment-returns-costa-del-sol", "cost-of-living"]
+    },
+    {
+      "id": "legal-representation",
+      "question": "Do I need a lawyer when buying property in Costa del Sol?",
+      "answer": "While not mandatory, independent legal representation is highly recommended. Our network of qualified English-speaking lawyers specializes in international property transactions. They ensure proper due diligence, review contracts, handle bank guarantees, and protect your interests throughout the purchase process.",
+      "category": "legal",
+      "keywords": ["lawyer", "legal representation", "property law", "due diligence"],
+      "relatedTopics": ["property-purchase-process", "nie-number-process", "property-taxes-spain"]
+    },
+    {
+      "id": "mortgage-international-buyers",
+      "question": "Can international buyers get mortgages in Spain?",
+      "answer": "Yes, international buyers can secure Spanish mortgages up to 70% of property value (80% for residents). We work with major banks offering competitive rates from 2.5%. Requirements include proof of income (3x mortgage payment), credit history, and 30% deposit. Our mortgage specialists handle the entire application process.",
+      "category": "finance",
+      "keywords": ["spanish mortgage", "international buyers", "financing", "bank loans"],
+      "relatedTopics": ["property-insurance", "investment-returns-costa-del-sol", "property-taxes-spain"]
+    },
+    {
+      "id": "investment-returns-costa-del-sol",
+      "question": "What rental yields can I expect in Costa del Sol?",
+      "answer": "Rental yields vary by location and property type: Marbella 4-6%, Estepona 5-7%, Benalmádena 6-8%, central Málaga 7-9%. Luxury beachfront properties generate premium short-term rental income. We provide detailed rental projections and property management services to maximize your investment returns.",
+      "category": "finance",
+      "keywords": ["rental yields", "investment returns", "property investment", "rental income"],
+      "relatedTopics": ["property-management", "best-areas-marbella", "upcoming-developments-estepona"]
+    },
+    {
+      "id": "property-insurance",
+      "question": "What insurance do I need for my Costa del Sol property?",
+      "answer": "Essential insurances include: Buildings insurance (required for mortgages), Contents insurance, Public liability coverage. For rental properties, add landlord insurance and loss of rent protection. Annual costs typically range €300-800. We arrange comprehensive insurance packages through trusted providers.",
+      "category": "finance",
+      "keywords": ["property insurance", "buildings insurance", "contents insurance", "landlord insurance"],
+      "relatedTopics": ["mortgage-international-buyers", "property-management", "cost-of-living"]
+    },
+    {
+      "id": "best-areas-marbella",
+      "question": "Which are the most prestigious areas in Marbella?",
+      "answer": "Top luxury areas include: Golden Mile (beachfront mansions), Puerto Banús (marina lifestyle), Sierra Blanca (mountain views), La Zagaleta (ultra-exclusive gated community), Guadalmina (golf course living). Each offers unique advantages from beach access to privacy and investment potential.",
+      "category": "locations",
+      "keywords": ["marbella areas", "golden mile", "puerto banus", "sierra blanca", "luxury areas"],
+      "relatedTopics": ["luxury-villa-features", "golf-properties", "transport-connections"]
+    },
+    {
+      "id": "upcoming-developments-estepona",
+      "question": "What new developments are planned for Estepona?",
+      "answer": "Estepona is experiencing major growth with new beachfront developments, marina expansion, and the Ave high-speed train connection (2027). Key projects include luxury residential complexes near the beach, golf course communities, and the new Estepona port. These developments are driving significant capital appreciation.",
+      "category": "locations",
+      "keywords": ["estepona developments", "new construction", "ave train", "marina expansion"],
+      "relatedTopics": ["investment-returns-costa-del-sol", "transport-connections", "apartment-vs-villa"]
+    },
+    {
+      "id": "transport-connections",
+      "question": "How well connected is Costa del Sol for travel?",
+      "answer": "Excellent connectivity: Málaga Airport (international hub) 30-60 minutes from most locations, High-speed AVE train to Madrid (2.5 hours), Comprehensive highway network (A7 coastal route), Gibraltar Airport nearby. The planned Costa del Sol metro expansion will further improve local transport.",
+      "category": "locations",
+      "keywords": ["transport", "malaga airport", "ave train", "connectivity", "travel"],
+      "relatedTopics": ["upcoming-developments-estepona", "best-areas-marbella", "climate-weather"]
+    },
+    {
+      "id": "climate-weather",
+      "question": "What is the climate like year-round in Costa del Sol?",
+      "answer": "Costa del Sol enjoys 320+ sunny days annually with mild winters (15-20°C) and warm summers (25-30°C). Minimal rainfall from May-September makes it perfect for year-round living. The Mediterranean climate supports outdoor activities, golf, and beach lifestyle throughout the year.",
+      "category": "lifestyle",
+      "keywords": ["costa del sol climate", "weather", "mediterranean climate", "sunny days"],
+      "relatedTopics": ["golf-properties", "lifestyle-benefits", "cost-of-living"]
+    },
+    {
+      "id": "luxury-villa-features",
+      "question": "What features define luxury villas in Costa del Sol?",
+      "answer": "Luxury villas typically include: Private pools and landscaped gardens, Sea or mountain views, Premium finishes and smart home technology, Private parking and security systems, Outdoor entertainment areas, Proximity to golf courses or beaches. Many feature contemporary architecture blending indoor-outdoor living.",
+      "category": "properties",
+      "keywords": ["luxury villas", "villa features", "private pool", "smart home", "security"],
+      "relatedTopics": ["apartment-vs-villa", "golf-properties", "best-areas-marbella"]
+    },
+    {
+      "id": "apartment-vs-villa",
+      "question": "Should I buy an apartment or villa in Costa del Sol?",
+      "answer": "Apartments offer: Lower maintenance, security, shared amenities (pools, gyms), better rental yields in popular areas. Villas provide: Privacy, garden space, potential for extensions, prestige, typically better capital appreciation. Your choice depends on lifestyle preferences, budget, and investment goals.",
+      "category": "properties",
+      "keywords": ["apartment vs villa", "property types", "investment choice", "lifestyle"],
+      "relatedTopics": ["luxury-villa-features", "investment-returns-costa-del-sol", "property-management"]
+    },
+    {
+      "id": "golf-properties",
+      "question": "What golf course properties are available in Costa del Sol?",
+      "answer": "Costa del Sol features 70+ golf courses with exceptional residential communities: Valderrama (prestigious tournament venue), La Reserva (luxury development), Los Flamingos (villa resort), Finca Cortesín (championship course), Villa Padierna (multiple courses). Golf properties typically offer premium amenities and strong investment potential.",
+      "category": "properties",
+      "keywords": ["golf properties", "golf courses", "valderrama", "villa padierna", "golf communities"],
+      "relatedTopics": ["luxury-villa-features", "best-areas-marbella", "investment-returns-costa-del-sol"]
+    },
+    {
+      "id": "after-sales-services",
+      "question": "What after-sales services does DelSolPrimeHomes provide?",
+      "answer": "Comprehensive after-sales support including: Property management and rental services, Maintenance and renovation coordination, Utility connections and registrations, Tax and legal assistance, Interior design consultation, Concierge services. We ensure your property investment is properly maintained and optimized.",
+      "category": "services",
+      "keywords": ["after-sales service", "property management", "maintenance", "concierge"],
+      "relatedTopics": ["property-management", "viewing-tours", "legal-representation"]
+    },
+    {
+      "id": "property-management",
+      "question": "Do you offer property management for rental properties?",
+      "answer": "Yes, our full property management service includes: Tenant sourcing and screening, Professional photography and marketing, Maintenance coordination, Financial reporting, Legal compliance, 24/7 emergency support. We typically achieve 15-20% higher rental income than self-managed properties.",
+      "category": "services",
+      "keywords": ["property management", "rental management", "tenant screening", "maintenance"],
+      "relatedTopics": ["investment-returns-costa-del-sol", "after-sales-services", "property-insurance"]
+    },
+    {
+      "id": "viewing-tours",
+      "question": "How do property viewing tours work for international clients?",
+      "answer": "We offer flexible viewing options: Virtual 3D tours and video calls, Personalized itineraries for site visits, Airport transfer and accommodation assistance, Multi-day viewing programs, Expert local guidance and market insights. Virtual viewings allow initial screening before traveling to Spain.",
+      "category": "services",
+      "keywords": ["property viewing", "virtual tours", "international clients", "site visits"],
+      "relatedTopics": ["after-sales-services", "transport-connections", "property-purchase-process"]
+    },
+    {
+      "id": "residency-requirements",
+      "question": "What are the residency requirements for living in Spain?",
+      "answer": "EU citizens can live freely in Spain. Non-EU residents need: Tourist visa (90 days), Non-lucrative visa (passive income €2,400/month), Investment visa (€500k+ property), Work/business visa. After 5 years legal residence, you can apply for permanent residency. We assist with visa applications and requirements.",
+      "category": "lifestyle",
+      "keywords": ["spain residency", "visa requirements", "EU citizens", "permanent residency"],
+      "relatedTopics": ["nie-number-process", "healthcare-system", "international-schools"]
+    },
+    {
+      "id": "healthcare-system",
+      "question": "How does healthcare work for residents in Costa del Sol?",
+      "answer": "Spain offers excellent healthcare: Public system for residents with social security, Private insurance widely available and affordable, Top international hospitals and clinics, Many English-speaking doctors, Dental and specialist care accessible. Costa del Sol has modern medical facilities serving the international community.",
+      "category": "lifestyle",
+      "keywords": ["spain healthcare", "medical system", "health insurance", "doctors"],
+      "relatedTopics": ["residency-requirements", "cost-of-living", "international-schools"]
+    },
+    {
+      "id": "international-schools",
+      "question": "What international schools are available in Costa del Sol?",
+      "answer": "Excellent international education options: British curriculum schools (Swans International, Aloha College), American schools (The American School of Las Palmas), German and French schools, IB programs available, Multilingual environments. Many schools offer boarding options and university preparation programs.",
+      "category": "lifestyle",
+      "keywords": ["international schools", "british curriculum", "education", "multilingual"],
+      "relatedTopics": ["residency-requirements", "healthcare-system", "cost-of-living"]
+    },
+    {
+      "id": "cost-of-living",
+      "question": "What is the cost of living in Costa del Sol compared to other European destinations?",
+      "answer": "Costa del Sol offers excellent value: 20-30% lower than UK/Germany for daily expenses, Restaurant meals €15-40, Utilities €80-150/month, Car insurance €300-600/year, Quality healthcare at reasonable costs. Luxury lifestyle is more affordable than equivalent Northern European locations.",
+      "category": "lifestyle",
+      "keywords": ["cost of living", "expenses", "utilities", "restaurants", "affordable luxury"],
+      "relatedTopics": ["healthcare-system", "climate-weather", "property-insurance"]
+    }
+  ]
+}
