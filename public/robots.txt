@@ -1,8 +1,11 @@
+
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
@@ -12,3 +15,22 @@ Allow: /
 
 User-agent: *
 Allow: /
+Crawl-delay: 2
+
+# Sitemaps
+Sitemap: https://delsolprimehomes.com/sitemap.xml
+Sitemap: https://delsolprimehomes.com/sitemap-blog.xml
+Sitemap: https://delsolprimehomes.com/sitemap-faq.xml
+Sitemap: https://delsolprimehomes.com/sitemap-properties.xml
+
+# Disallow admin and internal pages
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /tmp/
+
+# Allow important pages
+Allow: /blog/
+Allow: /faq/
+Allow: /properties/
+Allow: /locations/
