@@ -3,6 +3,9 @@ import { Search, Scale, Users } from "lucide-react";
 import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
 import { Button } from "@/components/ui/button";
+import { AnimatedElement } from "@/components/ui/AnimatedElement";
+import { InteractiveCard } from "@/components/ui/InteractiveCard";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 
 const ServicesSection = () => {
   const services = [
@@ -33,7 +36,7 @@ const ServicesSection = () => {
     <Section id="services" padding="xl" background="muted">
       <Container size="xl">
         {/* Modern Header Section */}
-        <div className="text-center max-w-5xl mx-auto mb-20">
+        <AnimatedElement animation="fade-in-up" className="text-center max-w-5xl mx-auto mb-20">
           <div className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold tracking-wider mb-8 backdrop-blur-sm">
             PREMIUM SERVICES
           </div>
@@ -58,66 +61,69 @@ const ServicesSection = () => {
               most prestigious properties.
             </p>
           </div>
-        </div>
+        </AnimatedElement>
 
         {/* Modern Services Grid */}
         <div className="grid lg:grid-cols-3 gap-8 lg:gap-10">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <div
+              <AnimatedElement
                 key={service.title}
-                className={`group relative bg-card/80 backdrop-blur-sm rounded-3xl p-10 border-l-4 ${service.borderColor} hover:shadow-luxury transition-all duration-700 hover:-translate-y-3 hover:bg-card`}
-                style={{ animationDelay: `${index * 150}ms` }}
+                animation="fade-in-up"
+                delay={index * 150}
+                className="relative"
               >
-                {/* Subtle Background Pattern */}
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                {/* Icon Container */}
-                <div className={`relative w-20 h-20 rounded-2xl bg-card border-2 ${service.borderColor.replace('border-l-', 'border-')} flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 ${service.bgColor} shadow-elegant`}>
-                  <IconComponent className="w-10 h-10 text-foreground group-hover:text-primary transition-colors duration-300" />
-                </div>
-                
-                {/* Content */}
-                <div className="relative">
-                  <h3 className="text-2xl font-bold font-display mb-5 group-hover:text-primary transition-colors duration-300 leading-tight">
-                    {service.title}
-                  </h3>
+                <InteractiveCard variant="luxury" hover="lift" className={`group relative bg-card/80 backdrop-blur-sm rounded-3xl p-10 border-l-4 ${service.borderColor} hover:shadow-luxury transition-all duration-700 hover:-translate-y-3 hover:bg-card`}>
+                  {/* Subtle Background Pattern */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
-                  <p className="text-muted-foreground leading-relaxed mb-8 text-lg">
-                    {service.description}
-                  </p>
+                  {/* Icon Container */}
+                  <div className={`relative w-20 h-20 rounded-2xl bg-card border-2 ${service.borderColor.replace('border-l-', 'border-')} flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 ${service.bgColor} shadow-elegant`}>
+                    <IconComponent className="w-10 h-10 text-foreground group-hover:text-primary transition-colors duration-300" />
+                  </div>
                   
-                  <Button 
-                    variant="outline" 
-                    size="lg"
-                    className="group/btn w-full group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300 font-medium"
-                  >
-                    Learn More
-                    <div className="ml-2 w-0 group-hover/btn:w-4 transition-all duration-300 overflow-hidden">
-                      →
-                    </div>
-                  </Button>
-                </div>
+                  {/* Content */}
+                  <div className="relative">
+                    <h3 className="text-2xl font-bold font-display mb-5 group-hover:text-primary transition-colors duration-300 leading-tight">
+                      {service.title}
+                    </h3>
+                    
+                    <p className="text-muted-foreground leading-relaxed mb-8 text-lg">
+                      {service.description}
+                    </p>
+                    
+                    <MagneticButton 
+                      variant="outline" 
+                      size="lg"
+                      className="group/btn w-full group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300 font-medium"
+                    >
+                      Learn More
+                      <div className="ml-2 w-0 group-hover/btn:w-4 transition-all duration-300 overflow-hidden">
+                        →
+                      </div>
+                    </MagneticButton>
+                  </div>
 
-                {/* Hover Indicator */}
-                <div className="absolute top-8 right-8 w-2 h-2 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" />
-              </div>
+                  {/* Hover Indicator */}
+                  <div className="absolute top-8 right-8 w-2 h-2 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" />
+                </InteractiveCard>
+              </AnimatedElement>
             );
           })}
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
+        <AnimatedElement animation="fade-in-up" delay={600} className="text-center mt-16">
           <div className="inline-flex flex-col sm:flex-row gap-4">
-            <Button size="xl" className="font-semibold">
+            <MagneticButton size="xl" className="font-semibold">
               Schedule Consultation
-            </Button>
-            <Button variant="outline" size="xl" className="font-medium">
+            </MagneticButton>
+            <MagneticButton variant="outline" size="xl" className="font-medium">
               View All Services
-            </Button>
+            </MagneticButton>
           </div>
-        </div>
+        </AnimatedElement>
       </Container>
     </Section>
   );

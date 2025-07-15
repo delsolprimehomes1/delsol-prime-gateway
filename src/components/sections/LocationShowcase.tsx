@@ -2,6 +2,14 @@ import { MapPin, ArrowRight } from "lucide-react";
 import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
 import { Button } from "@/components/ui/button";
+import { AnimatedElement } from "@/components/ui/AnimatedElement";
+import { InteractiveCard } from "@/components/ui/InteractiveCard";
+import { MagneticButton } from "@/components/ui/MagneticButton";
+import marbellaImage from "@/assets/location-marbella-golden-mile.jpg";
+import esteponaImage from "@/assets/location-estepona-old-town.jpg";
+import mijasImage from "@/assets/location-mijas-pueblo.jpg";
+import fuengirolaImage from "@/assets/location-fuengirola-beach.jpg";
+import benalmadenaImage from "@/assets/location-benalmadena-marina.jpg";
 
 const LocationShowcase = () => {
   const locations = [
@@ -10,35 +18,40 @@ const LocationShowcase = () => {
       description: "Luxury beachfront living",
       properties: "120+ Properties",
       priceRange: "€500K - €15M",
-      image: "https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?w=800&h=600&fit=crop"
+      image: marbellaImage,
+      alt: "Luxury properties on Marbella Golden Mile"
     },
     {
       name: "Estepona", 
       description: "Charming coastal town",
       properties: "85+ Properties",
       priceRange: "€300K - €8M",
-      image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop"
+      image: esteponaImage,
+      alt: "Charming old town street in Estepona"
     },
     {
       name: "Mijas",
       description: "Traditional Spanish charm", 
       properties: "65+ Properties",
       priceRange: "€250K - €5M",
-      image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=600&fit=crop"
+      image: mijasImage,
+      alt: "Traditional white village street in Mijas"
     },
     {
       name: "Fuengirola",
       description: "Modern amenities",
       properties: "95+ Properties", 
       priceRange: "€200K - €4M",
-      image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&h=600&fit=crop"
+      image: fuengirolaImage,
+      alt: "Fuengirola beachfront promenade with people"
     },
     {
       name: "Benalmádena",
       description: "Entertainment hub",
       properties: "70+ Properties",
       priceRange: "€180K - €3M", 
-      image: "https://images.unsplash.com/photo-1519451241324-20b4bd2bebae?w=800&h=600&fit=crop"
+      image: benalmadenaImage,
+      alt: "Luxury yachts and restaurants at Benalmádena Marina"
     }
   ];
 
@@ -46,7 +59,7 @@ const LocationShowcase = () => {
     <Section id="locations" padding="xl">
       <Container size="xl">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <AnimatedElement animation="fade-in-up" className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-medium mb-6">
             FEATURED LOCATIONS
           </div>
@@ -60,21 +73,23 @@ const LocationShowcase = () => {
             Explore our premium properties across the most sought-after locations 
             along the stunning Costa del Sol coastline.
           </p>
-        </div>
+        </AnimatedElement>
 
         {/* Locations Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {locations.map((location, index) => (
-            <div
+            <AnimatedElement
               key={location.name}
-              className="group relative bg-card rounded-3xl overflow-hidden shadow-elegant hover:shadow-luxury transition-all duration-700 hover:-translate-y-4"
-              style={{ animationDelay: `${index * 150}ms` }}
+              animation="fade-in-up"
+              delay={index * 150}
+              className="relative"
             >
+              <InteractiveCard variant="luxury" hover="lift" className="group relative bg-card rounded-3xl overflow-hidden shadow-elegant hover:shadow-luxury transition-all duration-700 hover:-translate-y-4">
               {/* Image */}
               <div className="relative h-64 overflow-hidden">
                 <img
                   src={location.image}
-                  alt={location.name}
+                  alt={location.alt}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-overlay opacity-40 group-hover:opacity-20 transition-opacity duration-300" />
@@ -108,25 +123,26 @@ const LocationShowcase = () => {
                 </div>
 
                 {/* CTA Button */}
-                <Button 
+                <MagneticButton 
                   className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
                   variant="outline"
                 >
                   Explore Properties
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                </Button>
+                </MagneticButton>
               </div>
-            </div>
+            </InteractiveCard>
+          </AnimatedElement>
           ))}
         </div>
 
         {/* View All Locations */}
-        <div className="text-center mt-12">
-          <Button size="lg" className="font-medium">
+        <AnimatedElement animation="fade-in-up" delay={600} className="text-center mt-12">
+          <MagneticButton size="lg" className="font-medium">
             View All Locations
             <ArrowRight className="w-5 h-5 ml-2" />
-          </Button>
-        </div>
+          </MagneticButton>
+        </AnimatedElement>
       </Container>
     </Section>
   );

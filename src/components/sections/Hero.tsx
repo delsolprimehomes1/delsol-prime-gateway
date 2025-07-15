@@ -2,6 +2,10 @@
 import { ChevronDown, Calendar, Search, MapPin, Star, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { ParallaxSection } from "@/components/ui/ParallaxSection";
+import { MagneticButton } from "@/components/ui/MagneticButton";
+import { LoadingButton } from "@/components/ui/LoadingButton";
+import { RippleEffect } from "@/components/ui/RippleEffect";
 import heroImage from "@/assets/hero-costa-del-sol-luxury.jpg";
 
 interface HeroProps {
@@ -75,24 +79,28 @@ export default function Hero({ className }: HeroProps) {
 
           {/* Modern CTA Section */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-scale-in">
-            <Button 
-              variant="hero" 
-              size="xl" 
-              className="group relative overflow-hidden min-w-[260px] h-14 rounded-lg font-body font-semibold"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <Calendar className="w-5 h-5 mr-3 relative z-10" />
-              <span className="relative z-10 font-semibold">Schedule Private Viewing</span>
-            </Button>
+            <RippleEffect>
+              <MagneticButton 
+                variant="hero" 
+                size="xl" 
+                className="group relative overflow-hidden min-w-[260px] h-14 rounded-lg font-body font-semibold"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <Calendar className="w-5 h-5 mr-3 relative z-10" />
+                <span className="relative z-10 font-semibold">Schedule Private Viewing</span>
+              </MagneticButton>
+            </RippleEffect>
             
-            <Button 
-              variant="outline-white" 
-              size="xl" 
-              className="group min-w-[260px] h-14 rounded-lg border-2 border-white/30 bg-white/10 hover:bg-white/20 hover:border-white/50 font-body"
-            >
-              <Play className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300" />
-              <span className="font-medium">Watch Virtual Tour</span>
-            </Button>
+            <RippleEffect>
+              <MagneticButton 
+                variant="outline-white" 
+                size="xl" 
+                className="group min-w-[260px] h-14 rounded-lg border-2 border-white/30 bg-white/10 hover:bg-white/20 hover:border-white/50 font-body"
+              >
+                <Play className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300" />
+                <span className="font-medium">Watch Virtual Tour</span>
+              </MagneticButton>
+            </RippleEffect>
           </div>
 
           {/* Professional Stats Section */}
