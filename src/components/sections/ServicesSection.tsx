@@ -1,3 +1,4 @@
+
 import { Search, Scale, Users } from "lucide-react";
 import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
@@ -38,7 +39,7 @@ const ServicesSection = () => {
           </div>
           
           <h2 className="text-4xl lg:text-6xl font-bold font-display mb-6 leading-tight">
-            LUXURY COSTA DEL SOL
+            DELSOL<span className="text-primary">PRIME</span>HOMES
             <br />
             <span className="text-primary">PROPERTIES</span>
           </h2>
