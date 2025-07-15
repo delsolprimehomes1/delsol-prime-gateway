@@ -1,8 +1,9 @@
-import { useState } from "react";
-import { ChevronDown, Search, HelpCircle, FileText, Home, DollarSign, MapPin } from "lucide-react";
+import { useState, useMemo } from "react";
+import { ChevronDown, Search, HelpCircle, FileText, Home, DollarSign, MapPin, Filter, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Badge } from "@/components/ui/badge";
 import Section from "@/components/layout/Section";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/seo/SEOHead";
@@ -184,11 +185,37 @@ const allFAQs = featuredFAQs;
 
 const FAQ = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
   
-  const filteredFAQs = featuredFAQs.filter(faq =>
-    faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const categoryNames = {
+    all: 'All Questions',
+    legal: 'Legal & Process',
+    finance: 'Finance & Investment', 
+    locations: 'Locations & Areas',
+    properties: 'Property Types',
+    services: 'Our Services',
+    lifestyle: 'Lifestyle & Living'
+  };
+
+  const filteredFAQs = useMemo(() => {
+    let filtered = featuredFAQs;
+    
+    // Filter by category
+    if (selectedCategory !== "all") {
+      filtered = filtered.filter(faq => faq.category === selectedCategory);
+    }
+    
+    // Filter by search term
+    if (searchTerm) {
+      filtered = filtered.filter(faq =>
+        faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        faq.answer.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        faq.category.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+    
+    return filtered;
+  }, [searchTerm, selectedCategory]);
 
   const faqSchema = generateFAQSchema(
     allFAQs.map(faq => ({
@@ -200,10 +227,10 @@ const FAQ = () => {
   const structuredData = [organizationSchema, faqSchema];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30">
       <SEOHead
-        title={generateTitle("Frequently Asked Questions")}
-        description={META_DESCRIPTIONS.faq}
+        title={generateTitle("Costa del Sol Real Estate FAQ - Expert Property Guidance")}
+        description="Get expert answers to Costa del Sol property questions. Comprehensive FAQ covering buying process, legal requirements, financing, locations, and lifestyle in Spain's premier real estate market."
         canonical="/faq"
         structuredData={structuredData}
       />
@@ -216,59 +243,134 @@ const FAQ = () => {
       <Section
         id="faq"
         padding="xl"
-        background="muted"
-        containerSize="lg"
+        background="default"
+        containerSize="xl"
       >
+        {/* Hero Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
-            <HelpCircle className="w-8 h-8 text-primary" />
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-sm border border-primary/20 mb-8">
+            <HelpCircle className="w-10 h-10 text-primary" />
           </div>
-          <h1 className="text-5xl font-bold text-foreground mb-6">
+          <h1 className="text-6xl font-bold bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent mb-6">
             Costa del Sol Property FAQ
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Comprehensive answers to your questions about buying, investing, and living in Costa del Sol's luxury real estate market. Expert guidance for international property buyers.
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-12 leading-relaxed">
+            Expert answers to your Costa del Sol real estate questions. From legal processes to luxury lifestyle, 
+            get comprehensive guidance for international property investment in Spain's most prestigious region.
           </p>
           
-          {/* Search Bar */}
-          <div className="relative max-w-md mx-auto mb-12">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
-            <Input
-              type="text"
-              placeholder="Search frequently asked questions..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 h-12 bg-background/80 backdrop-blur-sm border-border/50 focus:border-primary transition-all duration-300"
-            />
+          {/* Search and Filter Controls */}
+          <div className="max-w-4xl mx-auto">
+            <div className="flex flex-col lg:flex-row gap-4 mb-8">
+              {/* Search Bar */}
+              <div className="relative flex-1">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
+                <Input
+                  type="text"
+                  placeholder="Search questions, answers, or topics..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="pl-12 h-14 bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 focus:bg-white focus:shadow-xl text-base"
+                />
+                {searchTerm && (
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setSearchTerm("")}
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 h-8 w-8 p-0 hover:bg-muted"
+                  >
+                    <X className="w-4 h-4" />
+                  </Button>
+                )}
+              </div>
+              
+              {/* Category Filter */}
+              <div className="relative">
+                <Filter className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
+                <select
+                  value={selectedCategory}
+                  onChange={(e) => setSelectedCategory(e.target.value)}
+                  className="pl-12 pr-8 h-14 bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 focus:bg-white focus:shadow-xl rounded-lg text-base min-w-[200px] appearance-none cursor-pointer"
+                >
+                  {Object.entries(categoryNames).map(([value, label]) => (
+                    <option key={value} value={value}>{label}</option>
+                  ))}
+                </select>
+                <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5 pointer-events-none" />
+              </div>
+            </div>
+
+            {/* Category Badges */}
+            <div className="flex flex-wrap justify-center gap-2 mb-12">
+              {Object.entries(categoryNames).map(([category, name]) => {
+                const count = category === "all" ? featuredFAQs.length : featuredFAQs.filter(faq => faq.category === category).length;
+                const isActive = selectedCategory === category;
+                return (
+                  <Badge
+                    key={category}
+                    variant={isActive ? "default" : "outline"}
+                    className={`cursor-pointer transition-all duration-300 px-4 py-2 text-sm ${
+                      isActive 
+                        ? "bg-primary text-primary-foreground shadow-lg" 
+                        : "bg-white/80 backdrop-blur-sm hover:bg-white hover:shadow-md border-0"
+                    }`}
+                    onClick={() => setSelectedCategory(category)}
+                  >
+                    {name} ({count})
+                  </Badge>
+                );
+              })}
+            </div>
           </div>
         </div>
 
-        {/* FAQ Accordion */}
-        <div className="max-w-4xl mx-auto mb-12">
-          <Accordion type="single" collapsible className="space-y-4">
+        {/* FAQ Content */}
+        <div className="max-w-5xl mx-auto">
+          {/* Results Count */}
+          <div className="mb-8">
+            <p className="text-center text-muted-foreground">
+              {filteredFAQs.length === featuredFAQs.length 
+                ? `Showing all ${filteredFAQs.length} questions`
+                : `Showing ${filteredFAQs.length} of ${featuredFAQs.length} questions`
+              }
+              {selectedCategory !== "all" && (
+                <span className="ml-2">
+                  in <span className="font-medium text-primary">{categoryNames[selectedCategory as keyof typeof categoryNames]}</span>
+                </span>
+              )}
+            </p>
+          </div>
+
+          {/* FAQ Accordion */}
+          <Accordion type="single" collapsible className="space-y-6">
             {filteredFAQs.map((faq, index) => {
               const IconComponent = categoryIcons[faq.category as keyof typeof categoryIcons];
               return (
                 <AccordionItem
                   key={faq.id}
                   value={faq.id}
-                  className="border border-border/50 rounded-xl bg-background/60 backdrop-blur-sm hover:bg-background/80 transition-all duration-300 hover:shadow-elegant overflow-hidden"
+                  className="border-0 rounded-2xl bg-white/60 backdrop-blur-sm hover:bg-white/80 transition-all duration-500 hover:shadow-xl shadow-lg overflow-hidden group"
                 >
-                  <AccordionTrigger className="px-6 py-4 hover:no-underline group">
-                    <div className="flex items-start gap-4 text-left">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                        <IconComponent className="w-5 h-5 text-primary" />
+                  <AccordionTrigger className="px-8 py-6 hover:no-underline">
+                    <div className="flex items-start gap-6 text-left w-full">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300 border border-primary/20">
+                        <IconComponent className="w-6 h-6 text-primary" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                        <div className="mb-2">
+                          <Badge variant="outline" className="bg-white/80 text-xs font-medium">
+                            {categoryNames[faq.category as keyof typeof categoryNames]}
+                          </Badge>
+                        </div>
+                        <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300 leading-relaxed">
                           {faq.question}
                         </h3>
                       </div>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-6">
-                    <div className="ml-14">
-                      <p className="text-muted-foreground leading-relaxed">
+                  <AccordionContent className="px-8 pb-8">
+                    <div className="ml-18 bg-gradient-to-br from-muted/30 to-muted/20 rounded-xl p-6 border border-muted/40">
+                      <p className="text-muted-foreground leading-relaxed text-base">
                         {faq.answer}
                       </p>
                     </div>
@@ -278,83 +380,73 @@ const FAQ = () => {
             })}
           </Accordion>
 
-          {filteredFAQs.length === 0 && searchTerm && (
-            <div className="text-center py-12">
-              <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center mx-auto mb-4">
-                <Search className="w-8 h-8 text-muted-foreground" />
+          {/* No Results State */}
+          {filteredFAQs.length === 0 && (
+            <div className="text-center py-16">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-muted/40 to-muted/20 flex items-center justify-center mx-auto mb-6 backdrop-blur-sm border border-muted/40">
+                <Search className="w-10 h-10 text-muted-foreground" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">No results found</h3>
-              <p className="text-muted-foreground">
-                Try adjusting your search terms or browse all FAQs.
+              <h3 className="text-2xl font-semibold text-foreground mb-3">No Results Found</h3>
+              <p className="text-muted-foreground mb-6">
+                We couldn't find any FAQs matching your search criteria. Try adjusting your search terms or browse all categories.
               </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Button 
+                  variant="outline" 
+                  onClick={() => setSearchTerm("")}
+                  className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl"
+                >
+                  Clear Search
+                </Button>
+                <Button 
+                  onClick={() => {
+                    setSearchTerm("");
+                    setSelectedCategory("all");
+                  }}
+                  className="shadow-lg hover:shadow-xl"
+                >
+                  Show All FAQs
+                </Button>
+              </div>
             </div>
           )}
         </div>
 
-        {/* Category Navigation */}
-        <div className="mb-8">
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
-            {Object.entries(categoryIcons).map(([category, IconComponent]) => {
-              const categoryFAQs = featuredFAQs.filter(faq => faq.category === category);
-              const categoryCount = categoryFAQs.length;
-              const categoryNames = {
-                legal: 'Legal & Process',
-                finance: 'Finance & Investment', 
-                locations: 'Locations & Areas',
-                properties: 'Property Types',
-                services: 'Our Services',
-                lifestyle: 'Lifestyle & Living'
-              };
-              
-              return (
-                <Button
-                  key={category}
-                  variant="outline"
-                  size="sm"
-                  className="flex items-center gap-2 rounded-full border-primary/20 hover:bg-primary/10 transition-all duration-300"
-                  onClick={() => {
-                    const firstCategoryFAQ = categoryFAQs[0];
-                    if (firstCategoryFAQ) {
-                      document.getElementById(firstCategoryFAQ.id)?.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
-                >
-                  <IconComponent className="w-4 h-4" />
-                  {categoryNames[category as keyof typeof categoryNames]} ({categoryCount})
-                </Button>
-              );
-            })}
-          </div>
-        </div>
-
         {/* CTA Section */}
-        <div className="text-center">
-          <div className="bg-gradient-premium rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">
-              Ready to Start Your Costa del Sol Journey?
-            </h3>
-            <p className="text-white/90 mb-6 max-w-2xl mx-auto">
-              Get personalized guidance from our expert team of Costa del Sol property specialists. We're here to make your dream property a reality.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                asChild
-                variant="outline-white"
-                size="lg"
-                className="group"
-              >
-                <Link to="/">
-                  Explore Properties
-                  <ChevronDown className="ml-2 w-4 h-4 group-hover:translate-y-0.5 transition-transform duration-300" />
-                </Link>
-              </Button>
-              <Button 
-                variant="secondary"
-                size="lg"
-                className="bg-white text-primary hover:bg-white/90"
-              >
-                Schedule Consultation
-              </Button>
+        <div className="text-center mt-20">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-primary to-primary/90 p-12 text-white shadow-2xl">
+            {/* Background decoration */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+            
+            <div className="relative z-10">
+              <h3 className="text-4xl font-bold mb-6">
+                Still Have Questions?
+              </h3>
+              <p className="text-white/90 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
+                Our expert team is ready to provide personalized guidance for your Costa del Sol property journey. 
+                Get in touch for tailored advice and exclusive market insights.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="group bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  <Link to="/">
+                    Explore Properties
+                    <ChevronDown className="ml-2 w-4 h-4 group-hover:translate-y-0.5 transition-transform duration-300" />
+                  </Link>
+                </Button>
+                <Button 
+                  size="lg"
+                  className="bg-white text-primary hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  Schedule Consultation
+                </Button>
+              </div>
             </div>
           </div>
         </div>
