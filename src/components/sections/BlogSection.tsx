@@ -4,6 +4,9 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Section from "@/components/layout/Section";
 import { Link } from "react-router-dom";
+import costaDelSolMarketImage from "@/assets/blog-costa-del-sol-market.jpg";
+import marbellaEsteponaVillasImage from "@/assets/blog-marbella-estepona-villas.jpg";
+import buyingGuideSpainImage from "@/assets/blog-buying-guide-spain.jpg";
 
 // Sample blog data - in real app this would come from CMS/API
 const featuredPosts = [
@@ -11,7 +14,7 @@ const featuredPosts = [
     id: 1,
     title: "Costa del Sol Property Market Outlook 2024",
     excerpt: "Discover the latest trends and investment opportunities in Spain's premier coastal real estate market.",
-    image: "/placeholder.svg",
+    image: costaDelSolMarketImage,
     category: "Market Analysis",
     author: "Maria Rodriguez",
     publishDate: "2024-01-15",
@@ -22,7 +25,7 @@ const featuredPosts = [
     id: 2,
     title: "Luxury Villa Investment Guide: Marbella vs Estepona",
     excerpt: "Compare investment potential between two of Costa del Sol's most prestigious locations.",
-    image: "/placeholder.svg",
+    image: marbellaEsteponaVillasImage,
     category: "Investment",
     author: "James Thompson",
     publishDate: "2024-01-12",
@@ -33,7 +36,7 @@ const featuredPosts = [
     id: 3,
     title: "Complete Guide to Buying Property in Spain as a Foreigner",
     excerpt: "Everything you need to know about the legal process, taxes, and requirements for international buyers.",
-    image: "/placeholder.svg",
+    image: buyingGuideSpainImage,
     category: "Buyer's Guide",
     author: "Ana Fernandez",
     publishDate: "2024-01-10",
