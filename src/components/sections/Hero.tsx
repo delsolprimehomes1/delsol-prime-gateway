@@ -2,7 +2,7 @@
 import { ChevronDown, Calendar, Search, MapPin, Star, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import heroImage from "@/assets/hero-costa-del-sol.jpg";
+import heroImage from "@/assets/hero-costa-del-sol-luxury.jpg";
 
 interface HeroProps {
   className?: string;
@@ -27,7 +27,7 @@ export default function Hero({ className }: HeroProps) {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Luxury Costa del Sol property with stunning sea views"
+          alt="Luxury villa with infinity pool overlooking the Mediterranean Sea on Costa del Sol"
           className="w-full h-full object-cover"
           loading="eager"
         />
