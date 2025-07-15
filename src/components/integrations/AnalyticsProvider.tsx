@@ -7,6 +7,14 @@ interface AnalyticsProviderProps {
   enableDebug?: boolean;
 }
 
+// Global type declarations
+declare global {
+  interface Window {
+    dataLayer: any[];
+    gtag: (...args: any[]) => void;
+  }
+}
+
 export function AnalyticsProvider({ 
   children, 
   gaId = 'G-XXXXXXXXXX', // Replace with actual GA4 ID
@@ -85,11 +93,3 @@ export const analytics = {
     }
   }
 };
-
-// Global type declarations
-declare global {
-  interface Window {
-    dataLayer: any[];
-    gtag: (...args: any[]) => void;
-  }
-}
