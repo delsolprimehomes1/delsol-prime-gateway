@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -76,7 +77,8 @@ export default {
 			},
 			transitionTimingFunction: {
 				'premium': 'var(--ease-premium)',
-				'smooth': 'var(--ease-smooth)'
+				'smooth': 'var(--ease-smooth)',
+				'luxury': 'var(--ease-luxury)'
 			},
 			fontFamily: {
 				'display': ['Inter', 'system-ui', 'sans-serif'],
@@ -89,25 +91,17 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
 				},
 				'fade-in': {
 					'0%': {
 						opacity: '0',
-						transform: 'translateY(20px)'
+						transform: 'translateY(30px)'
 					},
 					'100%': {
 						opacity: '1',
@@ -117,7 +111,7 @@ export default {
 				'slide-in-down': {
 					'0%': {
 						opacity: '0',
-						transform: 'translateY(-20px)'
+						transform: 'translateY(-30px)'
 					},
 					'100%': {
 						opacity: '1',
@@ -127,31 +121,40 @@ export default {
 				'scale-in': {
 					'0%': {
 						opacity: '0',
-						transform: 'scale(0.95)'
+						transform: 'scale(0.9) translateY(20px)'
 					},
 					'100%': {
 						opacity: '1',
-						transform: 'scale(1)'
+						transform: 'scale(1) translateY(0)'
 					}
 				},
 				'hero-text': {
 					'0%': {
 						opacity: '0',
-						transform: 'translateY(30px)'
+						transform: 'translateY(50px) scale(0.95)'
 					},
 					'100%': {
 						opacity: '1',
-						transform: 'translateY(0)'
+						transform: 'translateY(0) scale(1)'
 					}
+				},
+				'zoom-out': {
+					'0%': { transform: 'scale(1.05)' },
+					'100%': { transform: 'scale(1)' }
+				},
+				'glow-pulse': {
+					'0%, 100%': { boxShadow: '0 0 20px hsl(var(--primary) / 0.4)' },
+					'50%': { boxShadow: '0 0 40px hsl(var(--primary) / 0.6), 0 0 60px hsl(var(--primary) / 0.4)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.8s var(--ease-premium)',
-				'slide-in-down': 'slide-in-down 0.6s var(--ease-premium)',
-				'scale-in': 'scale-in 0.4s var(--ease-premium)',
-				'hero-text': 'hero-text 1s var(--ease-premium) 0.3s both'
+				'fade-in': 'fade-in 1.2s var(--ease-luxury) 0.3s both',
+				'slide-in-down': 'slide-in-down 1s var(--ease-luxury) 0.1s both',
+				'scale-in': 'scale-in 0.8s var(--ease-luxury) 0.6s both',
+				'hero-text': 'hero-text 1.4s var(--ease-luxury) 0.4s both',
+				'glow-pulse': 'glow-pulse 3s ease-in-out infinite'
 			}
 		}
 	},
