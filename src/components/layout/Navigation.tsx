@@ -2,8 +2,9 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Globe, Search, ChevronDown, MapPin, User, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 import { cn } from "@/lib/utils";
-import MegaMenu from "./MegaMenu";
+import { EnhancedMegaMenu } from "./EnhancedMegaMenu";
 import MobileMenu from "./MobileMenu";
 import SearchOverlay from "./SearchOverlay";
 
@@ -120,9 +121,12 @@ export default function Navigation({ className }: NavigationProps) {
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-premium transition-all duration-300 group-hover:w-full" />
                   </a>
                   
-                  {/* Mega Menu */}
+                  {/* Enhanced Mega Menu */}
                   {item.megaMenu && activeMenu === item.label && (
-                    <MegaMenu onClose={() => setActiveMenu(null)} />
+                    <EnhancedMegaMenu 
+                      isOpen={true} 
+                      onClose={() => setActiveMenu(null)} 
+                    />
                   )}
                 </div>
               ))}
@@ -183,13 +187,13 @@ export default function Navigation({ className }: NavigationProps) {
               </Button>
 
               {/* Contact Button */}
-              <Button
+              <MagneticButton
                 variant={isScrolled ? "hero" : "outline-white"}
                 size="sm"
                 className="font-semibold"
               >
                 Contact Us
-              </Button>
+              </MagneticButton>
             </div>
 
             {/* Mobile Menu Button */}
