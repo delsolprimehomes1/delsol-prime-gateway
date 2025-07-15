@@ -52,6 +52,7 @@ export default function Navigation({ className }: NavigationProps) {
     },
     { label: "About", href: "/about" },
     { label: "Blog", href: "/blog" },
+    { label: "SEO", href: "/seo-dashboard" },
     { label: "Contact", href: "/contact" },
   ];
 
