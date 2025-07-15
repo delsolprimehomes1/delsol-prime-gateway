@@ -39,8 +39,12 @@ export default function Hero({ className }: HeroProps) {
       </ParallaxSection>
 
       {/* Animated Background Elements */}
-      <FloatingElement delay={0} duration={4} className="absolute top-1/4 right-1/4 w-72 h-72 bg-primary/10 rounded-full blur-3xl opacity-60 hidden lg:block" />
-      <FloatingElement delay={2} duration={5} className="absolute bottom-1/3 left-1/4 w-48 h-48 bg-secondary/10 rounded-full blur-2xl opacity-40 hidden lg:block" />
+      <FloatingElement delay={0} duration={4} className="absolute top-1/4 right-1/4 w-72 h-72 bg-primary/10 rounded-full blur-3xl opacity-60 hidden lg:block">
+        <div />
+      </FloatingElement>
+      <FloatingElement delay={2} duration={5} className="absolute bottom-1/3 left-1/4 w-48 h-48 bg-secondary/10 rounded-full blur-2xl opacity-40 hidden lg:block">
+        <div />
+      </FloatingElement>
       
       {/* Floating orbs */}
       <FloatingElement delay={1} duration={6} className="absolute top-1/3 left-1/3 hidden xl:block">
@@ -170,12 +174,20 @@ export default function Hero({ className }: HeroProps) {
       </RevealOnScroll>
 
       {/* Enhanced Geometric Accents */}
-      <FloatingElement delay={2} duration={8} className="absolute top-1/4 right-16 w-20 h-20 border-2 border-white/20 rotate-45 hidden xl:block hover:border-primary transition-colors duration-500" />
-      <FloatingElement delay={4} duration={6} className="absolute bottom-1/4 left-16 w-16 h-16 border-2 border-primary/40 rotate-12 hidden xl:block hover:border-primary transition-colors duration-500" />
+      <FloatingElement delay={2} duration={8} className="absolute top-1/4 right-16 w-20 h-20 border-2 border-white/20 rotate-45 hidden xl:block hover:border-primary transition-colors duration-500">
+        <div />
+      </FloatingElement>
+      <FloatingElement delay={4} duration={6} className="absolute bottom-1/4 left-16 w-16 h-16 border-2 border-primary/40 rotate-12 hidden xl:block hover:border-primary transition-colors duration-500">
+        <div />
+      </FloatingElement>
       
       {/* Additional floating elements */}
-      <FloatingElement delay={1} duration={10} className="absolute top-1/2 right-8 w-2 h-2 bg-primary rounded-full opacity-60 hidden lg:block" />
-      <FloatingElement delay={3} duration={7} className="absolute top-3/4 left-8 w-1 h-1 bg-secondary rounded-full opacity-40 hidden lg:block" />
+      <FloatingElement delay={1} duration={10} className="absolute top-1/2 right-8 w-2 h-2 bg-primary rounded-full opacity-60 hidden lg:block">
+        <div />
+      </FloatingElement>
+      <FloatingElement delay={3} duration={7} className="absolute top-3/4 left-8 w-1 h-1 bg-secondary rounded-full opacity-40 hidden lg:block">
+        <div />
+      </FloatingElement>
     </section>
   );
 }
