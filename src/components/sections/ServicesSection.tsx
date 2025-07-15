@@ -9,80 +9,114 @@ const ServicesSection = () => {
     {
       icon: Search,
       title: "Property Search & Selection",
-      description: "Expert property matching with local market knowledge",
-      borderColor: "border-l-green-500",
-      bgColor: "group-hover:bg-green-50 dark:group-hover:bg-green-950/20"
+      description: "Expert property matching with local market knowledge and personalized consultation services",
+      borderColor: "border-l-emerald-500",
+      bgColor: "group-hover:bg-emerald-50/50 dark:group-hover:bg-emerald-950/10"
     },
     {
       icon: Scale,
       title: "Legal & Financial Guidance", 
-      description: "Complete legal support and financing assistance",
-      borderColor: "border-l-red-500",
-      bgColor: "group-hover:bg-red-50 dark:group-hover:bg-red-950/20"
+      description: "Comprehensive legal support, financing assistance, and transparent transaction management",
+      borderColor: "border-l-rose-500",
+      bgColor: "group-hover:bg-rose-50/50 dark:group-hover:bg-rose-950/10"
     },
     {
       icon: Users,
       title: "Lifestyle Integration",
-      description: "Community integration and lifestyle planning services", 
+      description: "Community integration services and comprehensive lifestyle planning for seamless relocation", 
       borderColor: "border-l-blue-500",
-      bgColor: "group-hover:bg-blue-50 dark:group-hover:bg-blue-950/20"
+      bgColor: "group-hover:bg-blue-50/50 dark:group-hover:bg-blue-950/10"
     }
   ];
 
   return (
     <Section id="services" padding="xl" background="muted">
       <Container size="xl">
-        {/* Main Heading Section */}
-        <div className="text-center max-w-4xl mx-auto mb-16">
-          <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-            BEST SOLUTIONS
+        {/* Modern Header Section */}
+        <div className="text-center max-w-5xl mx-auto mb-20">
+          <div className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold tracking-wider mb-8 backdrop-blur-sm">
+            PREMIUM SERVICES
           </div>
           
-          <h2 className="text-4xl lg:text-6xl font-bold font-display mb-6 leading-tight">
-            DELSOL<span className="text-primary">PRIME</span>HOMES
+          <h2 className="text-5xl lg:text-7xl font-bold font-display mb-8 leading-[0.9] tracking-tight">
+            <span className="text-foreground">DELSOL</span>
+            <span className="text-primary">PRIME</span>
+            <span className="text-foreground">HOMES</span>
             <br />
-            <span className="text-primary">PROPERTIES</span>
+            <span className="bg-gradient-premium bg-clip-text text-transparent">
+              EXCELLENCE
+            </span>
           </h2>
           
-          <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
-            Unlock your dream property with our comprehensive real estate 
-            solutions, tailored to match your needs, preferences, and 
-            aspirations. Experience seamless transactions and unparalleled 
-            expertise in the Costa del Sol market.
-          </p>
+          <div className="max-w-3xl mx-auto space-y-6">
+            <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed font-light">
+              Unlock your dream property with our comprehensive real estate solutions, 
+              tailored to match your vision and exceed your expectations.
+            </p>
+            <p className="text-lg text-muted-foreground/80 leading-relaxed">
+              Experience seamless transactions and unparalleled expertise in the Costa del Sol's 
+              most prestigious properties.
+            </p>
+          </div>
         </div>
 
-        {/* Services Cards */}
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+        {/* Modern Services Grid */}
+        <div className="grid lg:grid-cols-3 gap-8 lg:gap-10">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
               <div
                 key={service.title}
-                className={`group bg-card rounded-2xl p-8 border-l-4 ${service.borderColor} hover:shadow-luxury transition-all duration-500 hover:-translate-y-2`}
-                style={{ animationDelay: `${index * 100}ms` }}
+                className={`group relative bg-card/80 backdrop-blur-sm rounded-3xl p-10 border-l-4 ${service.borderColor} hover:shadow-luxury transition-all duration-700 hover:-translate-y-3 hover:bg-card`}
+                style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className={`w-16 h-16 rounded-2xl bg-card border-2 ${service.borderColor.replace('border-l-', 'border-')} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 ${service.bgColor}`}>
-                  <IconComponent className="w-8 h-8 text-foreground" />
+                {/* Subtle Background Pattern */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Icon Container */}
+                <div className={`relative w-20 h-20 rounded-2xl bg-card border-2 ${service.borderColor.replace('border-l-', 'border-')} flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 ${service.bgColor} shadow-elegant`}>
+                  <IconComponent className="w-10 h-10 text-foreground group-hover:text-primary transition-colors duration-300" />
                 </div>
                 
-                <h3 className="text-xl font-bold font-display mb-4 group-hover:text-primary transition-colors duration-300">
-                  {service.title}
-                </h3>
-                
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  {service.description}
-                </p>
-                
-                <Button 
-                  variant="outline" 
-                  className="group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300"
-                >
-                  Learn More
-                </Button>
+                {/* Content */}
+                <div className="relative">
+                  <h3 className="text-2xl font-bold font-display mb-5 group-hover:text-primary transition-colors duration-300 leading-tight">
+                    {service.title}
+                  </h3>
+                  
+                  <p className="text-muted-foreground leading-relaxed mb-8 text-lg">
+                    {service.description}
+                  </p>
+                  
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    className="group/btn w-full group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300 font-medium"
+                  >
+                    Learn More
+                    <div className="ml-2 w-0 group-hover/btn:w-4 transition-all duration-300 overflow-hidden">
+                      →
+                    </div>
+                  </Button>
+                </div>
+
+                {/* Hover Indicator */}
+                <div className="absolute top-8 right-8 w-2 h-2 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" />
               </div>
             );
           })}
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center mt-16">
+          <div className="inline-flex flex-col sm:flex-row gap-4">
+            <Button size="xl" className="font-semibold">
+              Schedule Consultation
+            </Button>
+            <Button variant="outline" size="xl" className="font-medium">
+              View All Services
+            </Button>
+          </div>
         </div>
       </Container>
     </Section>
