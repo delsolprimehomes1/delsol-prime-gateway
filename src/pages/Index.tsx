@@ -1,10 +1,10 @@
-
 import Navigation from "@/components/layout/Navigation";
 import Hero from "@/components/sections/Hero";
 import ServicesSection from "@/components/sections/ServicesSection";
 import LocationShowcase from "@/components/sections/LocationShowcase";
 import PropertySearch from "@/components/sections/PropertySearch";
 import BlogSection from "@/components/sections/BlogSection";
+import FAQSection from "@/components/sections/FAQSection";
 
 const Index = () => {
   return (
@@ -15,6 +15,7 @@ const Index = () => {
       <LocationShowcase />
       <PropertySearch />
       <BlogSection />
+      <FAQSection />
     </div>
   );
 };
