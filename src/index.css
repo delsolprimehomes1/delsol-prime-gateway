@@ -42,20 +42,21 @@ All colors MUST be HSL.
     --input: 45 25% 95%;
     --ring: 24 95% 53%;
     
-    /* Luxury gradients */
+    /* Modern gradients */
     --gradient-hero: linear-gradient(135deg, hsl(24 95% 53% / 0.9), hsl(210 100% 50% / 0.9));
     --gradient-overlay: linear-gradient(180deg, hsl(0 0% 0% / 0.4), hsl(0 0% 0% / 0.7));
-    --gradient-premium: linear-gradient(135deg, hsl(24 95% 53%), hsl(24 95% 65%), hsl(45 100% 60%));
+    --gradient-premium: linear-gradient(135deg, hsl(24 95% 53%), hsl(24 95% 65%), hsl(210 100% 50%));
     
-    /* Shadows & Effects */
+    /* Professional shadows & effects */
     --shadow-luxury: 0 25px 50px -12px hsl(24 95% 53% / 0.25), 0 0 0 1px hsl(24 95% 53% / 0.05);
     --shadow-elegant: 0 20px 40px -10px hsl(0 0% 0% / 0.3), 0 0 0 1px hsl(0 0% 100% / 0.05);
     --shadow-glow: 0 0 60px hsl(24 95% 65% / 0.4), 0 0 100px hsl(24 95% 65% / 0.2);
     
-    /* Animation curves */
+    /* Modern animation curves */
     --ease-premium: cubic-bezier(0.19, 1, 0.22, 1);
     --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
     --ease-luxury: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-modern: cubic-bezier(0.165, 0.84, 0.44, 1);
 
     --radius: 0.5rem;
 
@@ -103,7 +104,7 @@ All colors MUST be HSL.
     /* Dark mode gradients */
     --gradient-hero: linear-gradient(135deg, hsl(24 95% 53% / 0.9), hsl(210 100% 50% / 0.9));
     --gradient-overlay: linear-gradient(180deg, hsl(0 0% 0% / 0.6), hsl(0 0% 0% / 0.9));
-    --gradient-premium: linear-gradient(135deg, hsl(24 95% 53%), hsl(24 95% 65%), hsl(45 100% 60%));
+    --gradient-premium: linear-gradient(135deg, hsl(24 95% 53%), hsl(24 95% 65%), hsl(210 100% 50%));
     
     --shadow-luxury: 0 25px 50px -12px hsl(24 95% 53% / 0.3), 0 0 0 1px hsl(24 95% 53% / 0.1);
     --shadow-elegant: 0 20px 40px -10px hsl(0 0% 0% / 0.5), 0 0 0 1px hsl(0 0% 100% / 0.05);
@@ -127,5 +128,6 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
