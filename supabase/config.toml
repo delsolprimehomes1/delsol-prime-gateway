@@ -1,1 +1,4 @@
 project_id = "qvrvcvmoudxchipvzksh"
+
+[functions.fetch-seo-data]
+verify_jwt = true

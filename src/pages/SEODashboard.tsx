@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { LoadingSpinner } from "@/components/ui/LoadingSpinner";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 import { 
   Search, 
   TrendingUp, 
@@ -27,31 +30,178 @@ import {
 
 const SEODashboard = () => {
   const [activeTab, setActiveTab] = useState("overview");
+  const [loading, setLoading] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
+  const { toast } = useToast();
 
-  // Mock data - will be replaced with real Supabase data
-  const overviewStats = {
-    totalKeywords: 245,
-    avgPosition: 8.3,
-    totalClicks: 12847,
-    totalImpressions: 89234,
-    ctr: 14.4,
-    organicTraffic: 15623
+  // Real data state
+  const [overviewStats, setOverviewStats] = useState({
+    totalKeywords: 0,
+    avgPosition: 0,
+    totalClicks: 0,
+    totalImpressions: 0,
+    ctr: 0,
+    organicTraffic: 0
+  });
+
+  const [topKeywords, setTopKeywords] = useState<any[]>([]);
+  const [backlinksData, setBacklinksData] = useState<any[]>([]);
+  const [analyticsData, setAnalyticsData] = useState<any[]>([]);
+  const [seoTasks, setSeoTasks] = useState<any[]>([]);
+
+  // Fetch data from database
+  const fetchDashboardData = async () => {
+    setLoading(true);
+    try {
+      // Fetch search console data
+      const { data: searchData, error: searchError } = await supabase
+        .from('search_console_data')
+        .select('*')
+        .order('date', { ascending: false });
+
+      if (searchError) throw searchError;
+
+      // Fetch keywords data
+      const { data: keywordsData, error: keywordsError } = await supabase
+        .from('seo_keywords')
+        .select('*')
+        .order('current_position', { ascending: true });
+
+      if (keywordsError) throw keywordsError;
+
+      // Fetch backlinks data
+      const { data: backlinksData, error: backlinksError } = await supabase
+        .from('backlinks')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (backlinksError) throw backlinksError;
+
+      // Fetch analytics data
+      const { data: analyticsData, error: analyticsError } = await supabase
+        .from('analytics_data')
+        .select('*')
+        .order('date', { ascending: false });
+
+      if (analyticsError) throw analyticsError;
+
+      // Fetch SEO tasks
+      const { data: tasksData, error: tasksError } = await supabase
+        .from('seo_tasks')
+        .select('*')
+        .order('priority', { ascending: true });
+
+      if (tasksError) throw tasksError;
+
+      // Process data for overview stats
+      const totalClicks = searchData?.reduce((sum, item) => sum + (item.clicks || 0), 0) || 0;
+      const totalImpressions = searchData?.reduce((sum, item) => sum + (item.impressions || 0), 0) || 0;
+      const avgPosition = searchData?.length > 0 
+        ? searchData.reduce((sum, item) => sum + (item.position || 0), 0) / searchData.length
+        : 0;
+
+      setOverviewStats({
+        totalKeywords: keywordsData?.length || 0,
+        avgPosition: Math.round(avgPosition * 10) / 10,
+        totalClicks,
+        totalImpressions,
+        ctr: totalImpressions > 0 ? Math.round((totalClicks / totalImpressions) * 1000) / 10 : 0,
+        organicTraffic: analyticsData?.reduce((sum, item) => sum + (item.page_views || 0), 0) || 0
+      });
+
+      // Process keywords data
+      const processedKeywords = keywordsData?.slice(0, 5).map(keyword => ({
+        keyword: keyword.keyword,
+        position: keyword.current_position || 0,
+        volume: keyword.search_volume || 0,
+        change: (keyword.best_position && keyword.current_position) 
+          ? keyword.best_position - keyword.current_position
+          : 0
+      })) || [];
+
+      setTopKeywords(processedKeywords);
+      setBacklinksData(backlinksData || []);
+      setAnalyticsData(analyticsData || []);
+      setSeoTasks(tasksData || []);
+
+    } catch (error) {
+      console.error('Error fetching dashboard data:', error);
+      toast({
+        title: "Error",
+        description: "Failed to load dashboard data. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const topKeywords = [
-    { keyword: "Costa del Sol properties", position: 3, volume: 2400, change: 2 },
-    { keyword: "Marbella apartments", position: 5, volume: 1900, change: -1 },
-    { keyword: "Luxury villas Spain", position: 7, volume: 1200, change: 3 },
-    { keyword: "Property investment Spain", position: 12, volume: 890, change: 0 },
-    { keyword: "Real estate Malaga", position: 8, volume: 760, change: 1 }
-  ];
+  // Fetch fresh data from APIs
+  const fetchFreshData = async () => {
+    setRefreshing(true);
+    try {
+      // Get auth token
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) throw new Error('Not authenticated');
 
-  const seoTasks = [
-    { id: 1, title: "Optimize homepage meta description", priority: "high", status: "pending" },
-    { id: 2, title: "Add schema markup to property pages", priority: "medium", status: "in-progress" },
-    { id: 3, title: "Build backlinks from local directories", priority: "low", status: "completed" },
-    { id: 4, title: "Fix broken internal links", priority: "high", status: "pending" }
-  ];
+      // Fetch keywords data
+      const { data: keywordsResult, error: keywordsError } = await supabase.functions.invoke('fetch-seo-data', {
+        body: { 
+          dataType: 'keywords', 
+          domain: 'delsolprimehomes.com',
+          keywords: ['costa del sol properties', 'marbella apartments']
+        },
+        headers: { authorization: `Bearer ${session.access_token}` }
+      });
+
+      if (keywordsError) throw keywordsError;
+
+      // Fetch backlinks data
+      const { data: backlinksResult, error: backlinksError } = await supabase.functions.invoke('fetch-seo-data', {
+        body: { 
+          dataType: 'backlinks', 
+          domain: 'delsolprimehomes.com'
+        },
+        headers: { authorization: `Bearer ${session.access_token}` }
+      });
+
+      if (backlinksError) throw backlinksError;
+
+      // Fetch analytics data
+      const { data: analyticsResult, error: analyticsError } = await supabase.functions.invoke('fetch-seo-data', {
+        body: { 
+          dataType: 'analytics', 
+          domain: 'delsolprimehomes.com'
+        },
+        headers: { authorization: `Bearer ${session.access_token}` }
+      });
+
+      if (analyticsError) throw analyticsError;
+
+      toast({
+        title: "Success",
+        description: "Fresh SEO data has been fetched and stored successfully!"
+      });
+
+      // Refresh dashboard data
+      await fetchDashboardData();
+
+    } catch (error) {
+      console.error('Error fetching fresh data:', error);
+      toast({
+        title: "Error",
+        description: "Failed to fetch fresh data. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setRefreshing(false);
+    }
+  };
+
+  // Load data on component mount
+  useEffect(() => {
+    fetchDashboardData();
+  }, []);
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
@@ -93,9 +243,9 @@ const SEODashboard = () => {
               <Download className="w-4 h-4 mr-2" />
               Export
             </Button>
-            <Button size="sm">
-              <RefreshCw className="w-4 h-4 mr-2" />
-              Refresh Data
+            <Button size="sm" onClick={fetchFreshData} disabled={refreshing}>
+              <RefreshCw className={`w-4 h-4 mr-2 ${refreshing ? 'animate-spin' : ''}`} />
+              {refreshing ? 'Refreshing...' : 'Refresh Data'}
             </Button>
           </div>
         </div>
@@ -248,11 +398,49 @@ const SEODashboard = () => {
                 </Button>
               </CardHeader>
               <CardContent>
-                <div className="text-center py-12 text-muted-foreground">
-                  <Search className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                  <p className="text-lg font-medium mb-2">No keyword data available</p>
-                  <p>Connect your Google Search Console to start tracking keywords</p>
-                </div>
+                {loading ? (
+                  <div className="flex items-center justify-center py-12">
+                    <LoadingSpinner />
+                  </div>
+                ) : topKeywords.length > 0 ? (
+                  <div className="space-y-4">
+                    {topKeywords.map((keyword, index) => (
+                      <div key={index} className="flex items-center justify-between p-4 border rounded-lg">
+                        <div className="flex-1">
+                          <div className="font-medium">{keyword.keyword}</div>
+                          <div className="text-sm text-muted-foreground">
+                            Volume: {keyword.volume.toLocaleString()} searches/month
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-4">
+                          <div className="text-center">
+                            <div className="text-2xl font-bold">#{keyword.position}</div>
+                            <div className="text-xs text-muted-foreground">Position</div>
+                          </div>
+                          <div className="flex items-center">
+                            {keyword.change > 0 ? (
+                              <TrendingUp className="w-4 h-4 text-green-500" />
+                            ) : keyword.change < 0 ? (
+                              <TrendingDown className="w-4 h-4 text-destructive" />
+                            ) : null}
+                            <span className={`text-sm ml-1 ${
+                              keyword.change > 0 ? 'text-green-500' : 
+                              keyword.change < 0 ? 'text-destructive' : 'text-muted-foreground'
+                            }`}>
+                              {keyword.change > 0 ? '+' : ''}{keyword.change}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-center py-12 text-muted-foreground">
+                    <Search className="w-12 h-12 mx-auto mb-4 opacity-50" />
+                    <p className="text-lg font-medium mb-2">No keyword data available</p>
+                    <p>Click "Refresh Data" to fetch fresh keyword rankings</p>
+                  </div>
+                )}
               </CardContent>
             </Card>
           </TabsContent>
@@ -261,16 +449,44 @@ const SEODashboard = () => {
           <TabsContent value="analytics" className="space-y-6">
             <Card>
               <CardHeader>
-                <CardTitle>Analytics Integration</CardTitle>
-                <CardDescription>Connect your Google Analytics for traffic insights</CardDescription>
+                <CardTitle>Analytics Data</CardTitle>
+                <CardDescription>Website traffic and user behavior insights</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="text-center py-12 text-muted-foreground">
-                  <BarChart3 className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                  <p className="text-lg font-medium mb-2">Analytics Not Connected</p>
-                  <p className="mb-4">Connect Google Analytics to view traffic data and user behavior</p>
-                  <Button>Connect Google Analytics</Button>
-                </div>
+                {loading ? (
+                  <div className="flex items-center justify-center py-12">
+                    <LoadingSpinner />
+                  </div>
+                ) : analyticsData.length > 0 ? (
+                  <div className="space-y-4">
+                    {analyticsData.slice(0, 10).map((item, index) => (
+                      <div key={index} className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 border rounded-lg">
+                        <div>
+                          <div className="text-sm text-muted-foreground">Page</div>
+                          <div className="font-medium">{item.page_path}</div>
+                        </div>
+                        <div>
+                          <div className="text-sm text-muted-foreground">Page Views</div>
+                          <div className="font-medium">{(item.page_views || 0).toLocaleString()}</div>
+                        </div>
+                        <div>
+                          <div className="text-sm text-muted-foreground">Unique Visitors</div>
+                          <div className="font-medium">{(item.unique_visitors || 0).toLocaleString()}</div>
+                        </div>
+                        <div>
+                          <div className="text-sm text-muted-foreground">Bounce Rate</div>
+                          <div className="font-medium">{((item.bounce_rate || 0) * 100).toFixed(1)}%</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-center py-12 text-muted-foreground">
+                    <BarChart3 className="w-12 h-12 mx-auto mb-4 opacity-50" />
+                    <p className="text-lg font-medium mb-2">No analytics data available</p>
+                    <p>Click "Refresh Data" to fetch fresh analytics data</p>
+                  </div>
+                )}
               </CardContent>
             </Card>
           </TabsContent>
@@ -283,11 +499,41 @@ const SEODashboard = () => {
                 <CardDescription>Monitor your website's backlink portfolio</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="text-center py-12 text-muted-foreground">
-                  <Link className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                  <p className="text-lg font-medium mb-2">Backlink Tracking Coming Soon</p>
-                  <p>We're working on integrating backlink monitoring tools</p>
-                </div>
+                {loading ? (
+                  <div className="flex items-center justify-center py-12">
+                    <LoadingSpinner />
+                  </div>
+                ) : backlinksData.length > 0 ? (
+                  <div className="space-y-4">
+                    {backlinksData.slice(0, 10).map((backlink, index) => (
+                      <div key={index} className="flex items-center justify-between p-4 border rounded-lg">
+                        <div className="flex-1">
+                          <div className="font-medium">{backlink.source_url}</div>
+                          <div className="text-sm text-muted-foreground">
+                            {backlink.anchor_text && `Anchor: ${backlink.anchor_text}`}
+                            {backlink.anchor_text && backlink.link_type && ' • '}
+                            {backlink.link_type && `Type: ${backlink.link_type}`}
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-4">
+                          <div className="text-center">
+                            <div className="text-lg font-bold">{backlink.domain_authority || 'N/A'}</div>
+                            <div className="text-xs text-muted-foreground">DA</div>
+                          </div>
+                          <Badge variant={backlink.is_active ? 'default' : 'secondary'}>
+                            {backlink.is_active ? 'Active' : 'Inactive'}
+                          </Badge>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-center py-12 text-muted-foreground">
+                    <Link className="w-12 h-12 mx-auto mb-4 opacity-50" />
+                    <p className="text-lg font-medium mb-2">No backlink data available</p>
+                    <p>Click "Refresh Data" to fetch fresh backlink data</p>
+                  </div>
+                )}
               </CardContent>
             </Card>
           </TabsContent>
