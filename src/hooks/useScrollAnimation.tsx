@@ -14,7 +14,7 @@ export function useScrollAnimation(options: UseScrollAnimationOptions = {}) {
     rootMargin = '0px 0px -100px 0px'
   } = options;
 
-  const elementRef = useRef<HTMLElement>(null);
+  const elementRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
