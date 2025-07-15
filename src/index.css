@@ -8,33 +8,52 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* DelSolPrimeHomes Color Palette - Inspired by Costa del Sol */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 225 15% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 225 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 225 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Mediterranean Orange */
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 24 95% 65%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary: Costa del Sol Blue */
+    --secondary: 210 100% 50%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent: Warm Sand */
+    --accent: 45 80% 88%;
+    --accent-foreground: 225 15% 15%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 45 25% 95%;
+    --muted-foreground: 225 10% 55%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 45 25% 90%;
+    --input: 45 25% 95%;
+    --ring: 24 95% 53%;
+    
+    /* Luxury gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(24 95% 53% / 0.9), hsl(210 100% 50% / 0.9));
+    --gradient-overlay: linear-gradient(180deg, hsl(0 0% 0% / 0.4), hsl(0 0% 0% / 0.7));
+    --gradient-premium: linear-gradient(135deg, hsl(24 95% 53%), hsl(24 95% 65%));
+    
+    /* Shadows & Effects */
+    --shadow-luxury: 0 25px 50px -12px hsl(24 95% 53% / 0.25);
+    --shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 0 40px hsl(24 95% 65% / 0.4);
+    
+    /* Animation curves */
+    --ease-premium: cubic-bezier(0.19, 1, 0.22, 1);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.5rem;
 
@@ -56,33 +75,44 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode for DelSolPrimeHomes */
+    --background: 225 25% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 225 25% 10%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 225 25% 10%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 24 95% 65%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 100% 50%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 225 25% 15%;
+    --accent-foreground: 0 0% 95%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --muted: 225 25% 12%;
+    --muted-foreground: 225 10% 65%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 225 25% 20%;
+    --input: 225 25% 15%;
+    --ring: 24 95% 53%;
+    
+    /* Dark mode gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(24 95% 53% / 0.9), hsl(210 100% 50% / 0.9));
+    --gradient-overlay: linear-gradient(180deg, hsl(0 0% 0% / 0.6), hsl(0 0% 0% / 0.9));
+    --gradient-premium: linear-gradient(135deg, hsl(24 95% 53%), hsl(24 95% 65%));
+    
+    --shadow-luxury: 0 25px 50px -12px hsl(24 95% 53% / 0.3);
+    --shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 40px hsl(24 95% 65% / 0.5);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
