@@ -20,12 +20,6 @@ interface FirstInputEntry extends PerformanceEntry {
   startTime: number;
 }
 
-declare global {
-  interface Window {
-    gtag?: (...args: any[]) => void;
-  }
-}
-
 export function PerformanceMonitor() {
   useEffect(() => {
     // Monitor Core Web Vitals
