@@ -14,7 +14,359 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      analytics_data: {
+        Row: {
+          avg_session_duration: number | null
+          bounce_rate: number | null
+          conversions: number | null
+          created_at: string
+          date: string
+          id: string
+          page_path: string
+          page_views: number | null
+          unique_visitors: number | null
+          user_id: string
+        }
+        Insert: {
+          avg_session_duration?: number | null
+          bounce_rate?: number | null
+          conversions?: number | null
+          created_at?: string
+          date: string
+          id?: string
+          page_path: string
+          page_views?: number | null
+          unique_visitors?: number | null
+          user_id: string
+        }
+        Update: {
+          avg_session_duration?: number | null
+          bounce_rate?: number | null
+          conversions?: number | null
+          created_at?: string
+          date?: string
+          id?: string
+          page_path?: string
+          page_views?: number | null
+          unique_visitors?: number | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      backlinks: {
+        Row: {
+          anchor_text: string | null
+          created_at: string
+          domain_authority: number | null
+          first_seen_at: string | null
+          id: string
+          is_active: boolean | null
+          last_seen_at: string | null
+          link_type: string | null
+          source_url: string
+          target_url: string
+          user_id: string
+        }
+        Insert: {
+          anchor_text?: string | null
+          created_at?: string
+          domain_authority?: number | null
+          first_seen_at?: string | null
+          id?: string
+          is_active?: boolean | null
+          last_seen_at?: string | null
+          link_type?: string | null
+          source_url: string
+          target_url: string
+          user_id: string
+        }
+        Update: {
+          anchor_text?: string | null
+          created_at?: string
+          domain_authority?: number | null
+          first_seen_at?: string | null
+          id?: string
+          is_active?: boolean | null
+          last_seen_at?: string | null
+          link_type?: string | null
+          source_url?: string
+          target_url?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      keyword_rankings: {
+        Row: {
+          clicks: number | null
+          created_at: string
+          ctr: number | null
+          date: string
+          id: string
+          impressions: number | null
+          keyword_id: string
+          position: number | null
+          search_volume: number | null
+        }
+        Insert: {
+          clicks?: number | null
+          created_at?: string
+          ctr?: number | null
+          date: string
+          id?: string
+          impressions?: number | null
+          keyword_id: string
+          position?: number | null
+          search_volume?: number | null
+        }
+        Update: {
+          clicks?: number | null
+          created_at?: string
+          ctr?: number | null
+          date?: string
+          id?: string
+          impressions?: number | null
+          keyword_id?: string
+          position?: number | null
+          search_volume?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "keyword_rankings_keyword_id_fkey"
+            columns: ["keyword_id"]
+            isOneToOne: false
+            referencedRelation: "seo_keywords"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          email: string | null
+          full_name: string | null
+          id: string
+          role: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          role?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          role?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      search_console_data: {
+        Row: {
+          clicks: number | null
+          created_at: string
+          ctr: number | null
+          date: string
+          id: string
+          impressions: number | null
+          page_url: string
+          position: number | null
+          query: string
+          user_id: string
+        }
+        Insert: {
+          clicks?: number | null
+          created_at?: string
+          ctr?: number | null
+          date: string
+          id?: string
+          impressions?: number | null
+          page_url: string
+          position?: number | null
+          query: string
+          user_id: string
+        }
+        Update: {
+          clicks?: number | null
+          created_at?: string
+          ctr?: number | null
+          date?: string
+          id?: string
+          impressions?: number | null
+          page_url?: string
+          position?: number | null
+          query?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      seo_keywords: {
+        Row: {
+          best_position: number | null
+          created_at: string
+          current_position: number | null
+          difficulty_score: number | null
+          id: string
+          intent: Database["public"]["Enums"]["keyword_intent"] | null
+          keyword: string
+          search_volume: number | null
+          target_url: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          best_position?: number | null
+          created_at?: string
+          current_position?: number | null
+          difficulty_score?: number | null
+          id?: string
+          intent?: Database["public"]["Enums"]["keyword_intent"] | null
+          keyword: string
+          search_volume?: number | null
+          target_url?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          best_position?: number | null
+          created_at?: string
+          current_position?: number | null
+          difficulty_score?: number | null
+          id?: string
+          intent?: Database["public"]["Enums"]["keyword_intent"] | null
+          keyword?: string
+          search_volume?: number | null
+          target_url?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      seo_pages: {
+        Row: {
+          created_at: string
+          id: string
+          last_crawled_at: string | null
+          meta_description: string | null
+          page_type: Database["public"]["Enums"]["page_type"] | null
+          target_keywords: string[] | null
+          title: string | null
+          updated_at: string
+          url: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          last_crawled_at?: string | null
+          meta_description?: string | null
+          page_type?: Database["public"]["Enums"]["page_type"] | null
+          target_keywords?: string[] | null
+          title?: string | null
+          updated_at?: string
+          url: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          last_crawled_at?: string | null
+          meta_description?: string | null
+          page_type?: Database["public"]["Enums"]["page_type"] | null
+          target_keywords?: string[] | null
+          title?: string | null
+          updated_at?: string
+          url?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      seo_reports: {
+        Row: {
+          created_at: string
+          data: Json | null
+          expires_at: string | null
+          generated_at: string | null
+          id: string
+          report_type: string
+          status: Database["public"]["Enums"]["report_status"] | null
+          title: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          data?: Json | null
+          expires_at?: string | null
+          generated_at?: string | null
+          id?: string
+          report_type: string
+          status?: Database["public"]["Enums"]["report_status"] | null
+          title: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          data?: Json | null
+          expires_at?: string | null
+          generated_at?: string | null
+          id?: string
+          report_type?: string
+          status?: Database["public"]["Enums"]["report_status"] | null
+          title?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      seo_tasks: {
+        Row: {
+          category: string | null
+          completed_at: string | null
+          created_at: string
+          description: string | null
+          due_date: string | null
+          id: string
+          is_completed: boolean | null
+          priority: number | null
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          category?: string | null
+          completed_at?: string | null
+          created_at?: string
+          description?: string | null
+          due_date?: string | null
+          id?: string
+          is_completed?: boolean | null
+          priority?: number | null
+          title: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          category?: string | null
+          completed_at?: string | null
+          created_at?: string
+          description?: string | null
+          due_date?: string | null
+          id?: string
+          is_completed?: boolean | null
+          priority?: number | null
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +375,13 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      keyword_intent:
+        | "informational"
+        | "commercial"
+        | "transactional"
+        | "navigational"
+      page_type: "homepage" | "property" | "location" | "blog" | "service"
+      report_status: "pending" | "processing" | "completed" | "failed"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +508,15 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      keyword_intent: [
+        "informational",
+        "commercial",
+        "transactional",
+        "navigational",
+      ],
+      page_type: ["homepage", "property", "location", "blog", "service"],
+      report_status: ["pending", "processing", "completed", "failed"],
+    },
   },
 } as const
