@@ -9,6 +9,7 @@ import { RippleEffect } from "@/components/ui/RippleEffect";
 import { useAuth } from "@/hooks/useAuth";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
+import { Link, useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-costa-del-sol-luxury.jpg";
 
 interface HeroProps {
@@ -17,6 +18,7 @@ interface HeroProps {
 
 export default function Hero({ className }: HeroProps) {
   const { user } = useAuth();
+  const navigate = useNavigate();
   const { elementRef: statsRef, isVisible: statsVisible } = useIntersectionObserver({ threshold: 0.3 });
   
   // Animated counters for stats
@@ -95,13 +97,11 @@ export default function Hero({ className }: HeroProps) {
                 variant="hero" 
                 size="xl" 
                 className="group relative overflow-hidden min-w-[260px] h-14 rounded-lg font-body font-semibold"
-                asChild
+                onClick={() => navigate("/calendar")}
               >
-                <a href="/calendar">
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <Calendar className="w-5 h-5 mr-3 relative z-10" />
-                  <span className="relative z-10 font-semibold">Schedule Private Viewing</span>
-                </a>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <Calendar className="w-5 h-5 mr-3 relative z-10" />
+                <span className="relative z-10 font-semibold">Schedule Private Viewing</span>
               </MagneticButton>
             </RippleEffect>
             
@@ -126,10 +126,10 @@ export default function Hero({ className }: HeroProps) {
                 size="sm"
                 className="text-white/70 hover:text-primary border border-white/20 hover:border-primary/50 bg-white/5 hover:bg-primary/10 transition-all duration-300"
               >
-                <a href="/seo-dashboard" className="flex items-center gap-2">
+                <Link to="/seo-dashboard" className="flex items-center gap-2">
                   <BarChart3 className="w-4 h-4" />
                   <span className="text-sm font-medium">SEO Dashboard</span>
-                </a>
+                </Link>
               </Button>
             ) : (
               <Button 
@@ -138,10 +138,10 @@ export default function Hero({ className }: HeroProps) {
                 size="sm"
                 className="text-white/70 hover:text-primary border border-white/20 hover:border-primary/50 bg-white/5 hover:bg-primary/10 transition-all duration-300"
               >
-                <a href="/auth" className="flex items-center gap-2">
+                <Link to="/auth" className="flex items-center gap-2">
                   <BarChart3 className="w-4 h-4" />
                   <span className="text-sm font-medium">Access SEO Dashboard</span>
-                </a>
+                </Link>
               </Button>
             )}
           </div>
