@@ -63,66 +63,43 @@ const ServicesSection = () => {
           </div>
         </AnimatedElement>
 
-        {/* Modern Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+        {/* Compact Modern Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
               <AnimatedElement
                 key={service.title}
                 animation="fade-in-up"
-                delay={index * 150}
-                className="relative group"
+                delay={index * 100}
+                className="group"
               >
-                <div className="relative h-full">
-                  <InteractiveCard 
-                    variant="luxury" 
-                    hover="lift" 
-                    className={`group/card relative bg-card/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border border-border/50 hover:border-primary/30 hover:shadow-luxury transition-all duration-700 hover:-translate-y-2 hover:bg-card h-full flex flex-col`}
-                  >
-                    {/* Modern Background Gradient */}
-                    <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-primary/[0.03] via-transparent to-secondary/[0.02] opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
-                    
-                    {/* Accent Border */}
-                    <div className={`absolute top-0 left-0 w-full h-1 rounded-t-2xl sm:rounded-t-3xl ${service.borderColor.replace('border-l-', 'bg-')} opacity-60 group-hover/card:opacity-100 transition-opacity duration-300`} />
-                    
-                    {/* Icon Container */}
-                    <div className="relative flex-shrink-0 mb-6 sm:mb-8">
-                      <div className={`relative w-16 h-16 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl bg-gradient-to-br from-card to-card/80 border border-border/50 flex items-center justify-center group-hover/card:scale-105 group-hover/card:rotate-2 transition-all duration-500 shadow-sm ${service.bgColor}`}>
-                        <div className="absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300" />
-                        <IconComponent className="relative w-8 h-8 sm:w-10 sm:h-10 text-foreground group-hover/card:text-primary transition-colors duration-300" />
-                      </div>
+                <div className="relative bg-card/60 backdrop-blur-sm rounded-xl border border-border/30 p-6 hover:bg-card hover:border-primary/40 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full">
+                  {/* Minimal accent line */}
+                  <div className={`absolute top-0 left-6 right-6 h-0.5 ${service.borderColor.replace('border-l-', 'bg-')} rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-300`} />
+                  
+                  {/* Compact header with icon and title */}
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className={`flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-background to-background/80 border border-border/40 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 ${service.bgColor}`}>
+                      <IconComponent className="w-6 h-6 text-foreground group-hover:text-primary transition-colors duration-300" />
                     </div>
-                    
-                    {/* Content */}
-                    <div className="relative flex-grow flex flex-col">
-                      <h3 className="text-xl sm:text-2xl font-bold font-display mb-4 sm:mb-5 group-hover/card:text-primary transition-colors duration-300 leading-tight">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg font-semibold font-display mb-2 group-hover:text-primary transition-colors duration-300 leading-tight">
                         {service.title}
                       </h3>
-                      
-                      <p className="text-muted-foreground leading-relaxed mb-6 sm:mb-8 text-base sm:text-lg flex-grow">
+                      <p className="text-sm text-muted-foreground leading-relaxed">
                         {service.description}
                       </p>
-                      
-                      <div className="mt-auto">
-                        <MagneticButton 
-                          variant="outline" 
-                          size="lg"
-                          className="group/btn w-full bg-card/50 hover:bg-primary hover:text-primary-foreground border-border/50 hover:border-primary transition-all duration-300 font-medium text-sm sm:text-base py-2.5 sm:py-3"
-                        >
-                          <span className="relative">Learn More</span>
-                          <div className="ml-2 w-0 group-hover/btn:w-4 transition-all duration-300 overflow-hidden">
-                            →
-                          </div>
-                        </MagneticButton>
-                      </div>
                     </div>
-
-                    {/* Modern Status Indicator */}
-                    <div className="absolute top-4 sm:top-6 right-4 sm:right-6">
-                      <div className="w-2 h-2 bg-primary/60 rounded-full opacity-0 group-hover/card:opacity-100 transition-all duration-300 animate-pulse" />
-                    </div>
-                  </InteractiveCard>
+                  </div>
+                  
+                  {/* Compact action button */}
+                  <div className="pt-2">
+                    <button className="text-sm font-medium text-primary/70 hover:text-primary flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
+                      Learn more
+                      <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200">→</span>
+                    </button>
+                  </div>
                 </div>
               </AnimatedElement>
             );
