@@ -1,0 +1,45 @@
+
+{
+  "nav": {
+    "home": "Accueil",
+    "properties": "Propriétés",
+    "locations": "Emplacements",
+    "about": "À Propos",
+    "blog": "Blog",
+    "seo": "SEO",
+    "contact": "Contact",
+    "contactUs": "Nous Contacter"
+  },
+  "hero": {
+    "badge": "PROPRIÉTÉS PREMIUM COSTA DEL SOL",
+    "title": "Vie de Luxe",
+    "titleHighlight": "Redéfinie",
+    "subtitle": "Découvrez des propriétés exceptionnelles où l'élégance méditerranéenne rencontre la sophistication moderne",
+    "locations": "MARBELLA • ESTEPONA • PUERTO BANÚS",
+    "scheduleViewing": "Programmer Visite Privée",
+    "virtualTour": "Voir la Visite Virtuelle",
+    "seoDashboard": "Tableau de Bord SEO",
+    "explore": "Explorer",
+    "stats": {
+      "averageValue": "Valeur Moyenne",
+      "yearsExcellence": "Années d'Excellence",
+      "clientSatisfaction": "Satisfaction Client"
+    }
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "nl": "Nederlands",
+    "zh": "中文",
+    "hi": "हिन्दी",
+    "ar": "العربية",
+    "pt": "Português",
+    "fr": "Français"
+  },
+  "common": {
+    "search": "Rechercher",
+    "notifications": "Notifications",
+    "signOut": "Se Déconnecter",
+    "signIn": "Se Connecter"
+  }
+}

@@ -1,0 +1,45 @@
+
+{
+  "nav": {
+    "home": "首页",
+    "properties": "房产",
+    "locations": "位置",
+    "about": "关于我们",
+    "blog": "博客",
+    "seo": "SEO",
+    "contact": "联系",
+    "contactUs": "联系我们"
+  },
+  "hero": {
+    "badge": "太阳海岸优质房产",
+    "title": "奢华生活",
+    "titleHighlight": "重新定义",
+    "subtitle": "发现卓越的房产，地中海的优雅与现代精致完美结合",
+    "locations": "马贝拉 • 埃斯特波纳 • 巴努斯港",
+    "scheduleViewing": "安排私人看房",
+    "virtualTour": "观看虚拟游览",
+    "seoDashboard": "SEO仪表板",
+    "explore": "探索",
+    "stats": {
+      "averageValue": "平均价值",
+      "yearsExcellence": "卓越年数",
+      "clientSatisfaction": "客户满意度"
+    }
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "nl": "Nederlands",
+    "zh": "中文",
+    "hi": "हिन्दी",
+    "ar": "العربية",
+    "pt": "Português",
+    "fr": "Français"
+  },
+  "common": {
+    "search": "搜索",
+    "notifications": "通知",
+    "signOut": "退出",
+    "signIn": "登录"
+  }
+}

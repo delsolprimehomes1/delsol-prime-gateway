@@ -1,14 +1,16 @@
 
 import { useState, useEffect } from "react";
-import { Menu, X, Globe, Search, ChevronDown, MapPin, User, Bell, LogOut } from "lucide-react";
+import { Menu, X, Search, ChevronDown, User, Bell, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { LanguageSelector } from "@/components/ui/LanguageSelector";
 import { cn } from "@/lib/utils";
 import { EnhancedMegaMenu } from "./EnhancedMegaMenu";
 import MobileMenu from "./MobileMenu";
 import SearchOverlay from "./SearchOverlay";
 import { useAuth } from "@/hooks/useAuth";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { useToast } from "@/hooks/use-toast";
 
 interface NavigationProps {
@@ -17,10 +19,10 @@ interface NavigationProps {
 
 export default function Navigation({ className }: NavigationProps) {
   const { user, signOut } = useAuth();
+  const { t } = useLanguage();
   const { toast } = useToast();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [currentLang, setCurrentLang] = useState("EN");
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
@@ -43,27 +45,23 @@ export default function Navigation({ className }: NavigationProps) {
   }, []);
 
   const navigationItems = [
-    { label: "Home", href: "/" },
+    { label: t('nav.home'), href: "/" },
     { 
-      label: "Properties", 
+      label: t('nav.properties'), 
       href: "/properties",
       hasDropdown: true,
       megaMenu: true
     },
     { 
-      label: "Locations", 
+      label: t('nav.locations'), 
       href: "/locations",
       hasDropdown: true
     },
-    { label: "About", href: "/about" },
-    { label: "Blog", href: "/blog" },
-    { label: "SEO", href: "/seo-dashboard" },
-    { label: "Contact", href: "/contact" },
+    { label: t('nav.about'), href: "/about" },
+    { label: t('nav.blog'), href: "/blog" },
+    { label: t('nav.seo'), href: "/seo-dashboard" },
+    { label: t('nav.contact'), href: "/contact" },
   ];
-
-  const toggleLanguage = () => {
-    setCurrentLang(currentLang === "EN" ? "ES" : "EN");
-  };
 
   const handleMenuClick = (e: React.MouseEvent, itemLabel: string, hasDropdown?: boolean) => {
     if (hasDropdown) {
@@ -165,6 +163,7 @@ export default function Navigation({ className }: NavigationProps) {
                   "transition-all duration-300",
                   isScrolled ? "text-foreground" : "text-white hover:bg-white/10"
                 )}
+                aria-label={t('common.search')}
               >
                 <Search className="w-4 h-4" />
               </Button>
@@ -177,24 +176,20 @@ export default function Navigation({ className }: NavigationProps) {
                   "transition-all duration-300 relative",
                   isScrolled ? "text-foreground" : "text-white hover:bg-white/10"
                 )}
+                aria-label={t('common.notifications')}
               >
                 <Bell className="w-4 h-4" />
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full animate-pulse" />
               </Button>
 
-              {/* Language Toggle */}
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={toggleLanguage}
+              {/* Language Selector */}
+              <LanguageSelector 
+                variant="navigation" 
                 className={cn(
                   "transition-all duration-300",
                   isScrolled ? "text-foreground" : "text-white hover:bg-white/10"
                 )}
-              >
-                <Globe className="w-4 h-4 mr-2" />
-                {currentLang}
-              </Button>
+              />
 
               {/* User Account */}
               {user ? (
@@ -218,7 +213,7 @@ export default function Navigation({ className }: NavigationProps) {
                     <DropdownMenuSeparator />
                     <DropdownMenuItem onClick={handleSignOut}>
                       <LogOut className="w-4 h-4 mr-2" />
-                      Sign Out
+                      {t('common.signOut')}
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
@@ -244,7 +239,7 @@ export default function Navigation({ className }: NavigationProps) {
                 size="sm"
                 className="font-semibold"
               >
-                Contact Us
+                {t('nav.contactUs')}
               </MagneticButton>
             </div>
 
@@ -270,8 +265,6 @@ export default function Navigation({ className }: NavigationProps) {
       <MobileMenu 
         isOpen={isOpen} 
         onClose={() => setIsOpen(false)}
-        currentLang={currentLang}
-        onToggleLanguage={toggleLanguage}
         navigationItems={navigationItems}
       />
 

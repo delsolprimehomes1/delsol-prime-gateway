@@ -1,0 +1,45 @@
+
+{
+  "nav": {
+    "home": "الرئيسية",
+    "properties": "العقارات",
+    "locations": "المواقع",
+    "about": "حولنا",
+    "blog": "المدونة",
+    "seo": "SEO",
+    "contact": "اتصل بنا",
+    "contactUs": "تواصل معنا"
+  },
+  "hero": {
+    "badge": "عقارات كوستا ديل سول المميزة",
+    "title": "الحياة الفاخرة",
+    "titleHighlight": "معاد تعريفها",
+    "subtitle": "اكتشف العقارات الاستثنائية حيث تلتقي الأناقة المتوسطية بالرقي الحديث",
+    "locations": "مربيا • إستيبونا • بويرتو بانوس",
+    "scheduleViewing": "جدولة معاينة خاصة",
+    "virtualTour": "مشاهدة الجولة الافتراضية",
+    "seoDashboard": "لوحة SEO",
+    "explore": "استكشف",
+    "stats": {
+      "averageValue": "القيمة المتوسطة",
+      "yearsExcellence": "سنوات التميز",
+      "clientSatisfaction": "رضا العملاء"
+    }
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "nl": "Nederlands",
+    "zh": "中文",
+    "hi": "हिन्दी",
+    "ar": "العربية",
+    "pt": "Português",
+    "fr": "Français"
+  },
+  "common": {
+    "search": "بحث",
+    "notifications": "الإشعارات",
+    "signOut": "تسجيل الخروج",
+    "signIn": "تسجيل الدخول"
+  }
+}

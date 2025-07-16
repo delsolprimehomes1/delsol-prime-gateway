@@ -1,0 +1,45 @@
+
+{
+  "nav": {
+    "home": "Home",
+    "properties": "Eigendommen",
+    "locations": "Locaties",
+    "about": "Over Ons",
+    "blog": "Blog",
+    "seo": "SEO",
+    "contact": "Contact",
+    "contactUs": "Neem Contact Op"
+  },
+  "hero": {
+    "badge": "PREMIUM COSTA DEL SOL EIGENDOMMEN",
+    "title": "Luxe Leven",
+    "titleHighlight": "Herdefinieerd",
+    "subtitle": "Ontdek uitzonderlijke eigendommen waar mediterrane elegantie moderne verfijning ontmoet",
+    "locations": "MARBELLA • ESTEPONA • PUERTO BANÚS",
+    "scheduleViewing": "Plan Privé Bezichtiging",
+    "virtualTour": "Bekijk Virtuele Tour",
+    "seoDashboard": "SEO Dashboard",
+    "explore": "Verkennen",
+    "stats": {
+      "averageValue": "Gemiddelde Waarde",
+      "yearsExcellence": "Jaren Excellentie",
+      "clientSatisfaction": "Klanttevredenheid"
+    }
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "nl": "Nederlands",
+    "zh": "中文",
+    "hi": "हिन्दी",
+    "ar": "العربية",
+    "pt": "Português",
+    "fr": "Français"
+  },
+  "common": {
+    "search": "Zoeken",
+    "notifications": "Meldingen",
+    "signOut": "Uitloggen",
+    "signIn": "Inloggen"
+  }
+}

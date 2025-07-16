@@ -1,0 +1,45 @@
+
+{
+  "nav": {
+    "home": "होम",
+    "properties": "संपत्ति",
+    "locations": "स्थान",
+    "about": "हमारे बारे में",
+    "blog": "ब्लॉग",
+    "seo": "SEO",
+    "contact": "संपर्क",
+    "contactUs": "संपर्क करें"
+  },
+  "hero": {
+    "badge": "प्रीमियम कोस्टा डेल सोल संपत्ति",
+    "title": "लक्जरी जीवन",
+    "titleHighlight": "पुनर्परिभाषित",
+    "subtitle": "असाधारण संपत्तियां खोजें जहां भूमध्यसागरीय शैली आधुनिक परिष्कार से मिलती है",
+    "locations": "मार्बेला • एस्टेपोना • पुएर्टो बनूस",
+    "scheduleViewing": "निजी दर्शन का समय",
+    "virtualTour": "वर्चुअल टूर देखें",
+    "seoDashboard": "SEO डैशबोर्ड",
+    "explore": "अन्वेषण",
+    "stats": {
+      "averageValue": "औसत मूल्य",
+      "yearsExcellence": "उत्कृष्टता के वर्ष",
+      "clientSatisfaction": "ग्राहक संतुष्टि"
+    }
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "nl": "Nederlands",
+    "zh": "中文",
+    "hi": "हिन्दी",
+    "ar": "العربية",
+    "pt": "Português",
+    "fr": "Français"
+  },
+  "common": {
+    "search": "खोज",
+    "notifications": "सूचनाएं",
+    "signOut": "साइन आउट",
+    "signIn": "साइन इन"
+  }
+}
