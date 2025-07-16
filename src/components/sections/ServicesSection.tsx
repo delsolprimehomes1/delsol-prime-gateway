@@ -64,7 +64,7 @@ const ServicesSection = () => {
         </AnimatedElement>
 
         {/* Modern Services Grid */}
-        <div className="grid lg:grid-cols-3 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
@@ -72,42 +72,58 @@ const ServicesSection = () => {
                 key={service.title}
                 animation="fade-in-up"
                 delay={index * 150}
-                className="relative"
+                className="relative group"
               >
-                <InteractiveCard variant="luxury" hover="lift" className={`group relative bg-card/80 backdrop-blur-sm rounded-3xl p-10 border-l-4 ${service.borderColor} hover:shadow-luxury transition-all duration-700 hover:-translate-y-3 hover:bg-card`}>
-                  {/* Subtle Background Pattern */}
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  {/* Icon Container */}
-                  <div className={`relative w-20 h-20 rounded-2xl bg-card border-2 ${service.borderColor.replace('border-l-', 'border-')} flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 ${service.bgColor} shadow-elegant`}>
-                    <IconComponent className="w-10 h-10 text-foreground group-hover:text-primary transition-colors duration-300" />
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="relative">
-                    <h3 className="text-2xl font-bold font-display mb-5 group-hover:text-primary transition-colors duration-300 leading-tight">
-                      {service.title}
-                    </h3>
+                <div className="relative h-full">
+                  <InteractiveCard 
+                    variant="luxury" 
+                    hover="lift" 
+                    className={`group/card relative bg-card/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border border-border/50 hover:border-primary/30 hover:shadow-luxury transition-all duration-700 hover:-translate-y-2 hover:bg-card h-full flex flex-col`}
+                  >
+                    {/* Modern Background Gradient */}
+                    <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-primary/[0.03] via-transparent to-secondary/[0.02] opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
                     
-                    <p className="text-muted-foreground leading-relaxed mb-8 text-lg">
-                      {service.description}
-                    </p>
+                    {/* Accent Border */}
+                    <div className={`absolute top-0 left-0 w-full h-1 rounded-t-2xl sm:rounded-t-3xl ${service.borderColor.replace('border-l-', 'bg-')} opacity-60 group-hover/card:opacity-100 transition-opacity duration-300`} />
                     
-                    <MagneticButton 
-                      variant="outline" 
-                      size="lg"
-                      className="group/btn w-full group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300 font-medium"
-                    >
-                      Learn More
-                      <div className="ml-2 w-0 group-hover/btn:w-4 transition-all duration-300 overflow-hidden">
-                        →
+                    {/* Icon Container */}
+                    <div className="relative flex-shrink-0 mb-6 sm:mb-8">
+                      <div className={`relative w-16 h-16 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl bg-gradient-to-br from-card to-card/80 border border-border/50 flex items-center justify-center group-hover/card:scale-105 group-hover/card:rotate-2 transition-all duration-500 shadow-sm ${service.bgColor}`}>
+                        <div className="absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300" />
+                        <IconComponent className="relative w-8 h-8 sm:w-10 sm:h-10 text-foreground group-hover/card:text-primary transition-colors duration-300" />
                       </div>
-                    </MagneticButton>
-                  </div>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="relative flex-grow flex flex-col">
+                      <h3 className="text-xl sm:text-2xl font-bold font-display mb-4 sm:mb-5 group-hover/card:text-primary transition-colors duration-300 leading-tight">
+                        {service.title}
+                      </h3>
+                      
+                      <p className="text-muted-foreground leading-relaxed mb-6 sm:mb-8 text-base sm:text-lg flex-grow">
+                        {service.description}
+                      </p>
+                      
+                      <div className="mt-auto">
+                        <MagneticButton 
+                          variant="outline" 
+                          size="lg"
+                          className="group/btn w-full bg-card/50 hover:bg-primary hover:text-primary-foreground border-border/50 hover:border-primary transition-all duration-300 font-medium text-sm sm:text-base py-2.5 sm:py-3"
+                        >
+                          <span className="relative">Learn More</span>
+                          <div className="ml-2 w-0 group-hover/btn:w-4 transition-all duration-300 overflow-hidden">
+                            →
+                          </div>
+                        </MagneticButton>
+                      </div>
+                    </div>
 
-                  {/* Hover Indicator */}
-                  <div className="absolute top-8 right-8 w-2 h-2 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" />
-                </InteractiveCard>
+                    {/* Modern Status Indicator */}
+                    <div className="absolute top-4 sm:top-6 right-4 sm:right-6">
+                      <div className="w-2 h-2 bg-primary/60 rounded-full opacity-0 group-hover/card:opacity-100 transition-all duration-300 animate-pulse" />
+                    </div>
+                  </InteractiveCard>
+                </div>
               </AnimatedElement>
             );
           })}
