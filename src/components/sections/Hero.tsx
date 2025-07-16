@@ -117,9 +117,9 @@ export default function Hero({ className }: HeroProps) {
             </RippleEffect>
           </div>
 
-          {/* SEO Dashboard Access */}
-          <div className="flex justify-center mb-16 animate-fade-in">
-            {user ? (
+          {/* SEO Dashboard Access - Only for authenticated users */}
+          {user && (
+            <div className="flex justify-center mb-16 animate-fade-in">
               <Button 
                 asChild
                 variant="ghost" 
@@ -131,20 +131,8 @@ export default function Hero({ className }: HeroProps) {
                   <span className="text-sm font-medium">SEO Dashboard</span>
                 </Link>
               </Button>
-            ) : (
-              <Button 
-                asChild
-                variant="ghost" 
-                size="sm"
-                className="text-white/70 hover:text-primary border border-white/20 hover:border-primary/50 bg-white/5 hover:bg-primary/10 transition-all duration-300"
-              >
-                <Link to="/auth" className="flex items-center gap-2">
-                  <BarChart3 className="w-4 h-4" />
-                  <span className="text-sm font-medium">Access SEO Dashboard</span>
-                </Link>
-              </Button>
-            )}
-          </div>
+            </div>
+          )}
 
           {/* Professional Stats Section */}
           <div ref={statsRef} className="grid grid-cols-3 gap-8 md:gap-16 max-w-4xl mx-auto animate-fade-in">
