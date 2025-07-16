@@ -10,6 +10,7 @@ import MobileMenu from "./MobileMenu";
 import SearchOverlay from "./SearchOverlay";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/hooks/useLanguage";
 
 interface NavigationProps {
   className?: string;
@@ -18,9 +19,9 @@ interface NavigationProps {
 export default function Navigation({ className }: NavigationProps) {
   const { user, signOut } = useAuth();
   const { toast } = useToast();
+  const { currentLanguage, setLanguage, languages } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [currentLang, setCurrentLang] = useState("EN");
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
@@ -61,10 +62,6 @@ export default function Navigation({ className }: NavigationProps) {
     { label: "Contact", href: "/contact" },
   ];
 
-  const toggleLanguage = () => {
-    setCurrentLang(currentLang === "EN" ? "ES" : "EN");
-  };
-
   const handleMenuClick = (e: React.MouseEvent, itemLabel: string, hasDropdown?: boolean) => {
     if (hasDropdown) {
       e.preventDefault();
@@ -87,6 +84,14 @@ export default function Navigation({ className }: NavigationProps) {
         description: "You have been successfully signed out.",
       });
     }
+  };
+
+  const handleLanguageChange = (languageCode: string) => {
+    setLanguage(languageCode);
+    toast({
+      title: "Language Changed",
+      description: `Website language changed to ${languages.find(lang => lang.code === languageCode)?.name}`,
+    });
   };
 
   return (
@@ -182,19 +187,41 @@ export default function Navigation({ className }: NavigationProps) {
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full animate-pulse" />
               </Button>
 
-              {/* Language Toggle */}
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={toggleLanguage}
-                className={cn(
-                  "transition-all duration-300",
-                  isScrolled ? "text-foreground" : "text-white hover:bg-white/10"
-                )}
-              >
-                <Globe className="w-4 h-4 mr-2" />
-                {currentLang}
-              </Button>
+              {/* Language Dropdown */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className={cn(
+                      "transition-all duration-300",
+                      isScrolled ? "text-foreground" : "text-white hover:bg-white/10"
+                    )}
+                  >
+                    <Globe className="w-4 h-4 mr-2" />
+                    {currentLanguage.flag} {currentLanguage.code.toUpperCase()}
+                    <ChevronDown className="w-3 h-3 ml-1" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="bg-background/95 backdrop-blur-md border border-border/50">
+                  {languages.map((language) => (
+                    <DropdownMenuItem
+                      key={language.code}
+                      onClick={() => handleLanguageChange(language.code)}
+                      className={cn(
+                        "flex items-center gap-3 cursor-pointer",
+                        currentLanguage.code === language.code && "bg-accent"
+                      )}
+                    >
+                      <span className="text-lg">{language.flag}</span>
+                      <div className="flex flex-col">
+                        <span className="font-medium">{language.name}</span>
+                        <span className="text-xs text-muted-foreground">{language.nativeName}</span>
+                      </div>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
 
               {/* User Account */}
               {user ? (
@@ -270,8 +297,8 @@ export default function Navigation({ className }: NavigationProps) {
       <MobileMenu 
         isOpen={isOpen} 
         onClose={() => setIsOpen(false)}
-        currentLang={currentLang}
-        onToggleLanguage={toggleLanguage}
+        currentLang={currentLanguage.code.toUpperCase()}
+        onToggleLanguage={() => {}}
         navigationItems={navigationItems}
       />
 

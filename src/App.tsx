@@ -10,6 +10,7 @@ import { AnalyticsProvider } from "@/components/integrations/AnalyticsProvider";
 import { PerformanceMonitor } from "@/components/performance/PerformanceMonitor";
 import { ServiceWorkerProvider } from "@/components/performance/ServiceWorker";
 import { AuthProvider } from "@/hooks/useAuth";
+import { LanguageProvider } from "@/hooks/useLanguage";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import ScrollToTop from "@/components/layout/ScrollToTop";
 import Index from "./pages/Index";
@@ -45,38 +46,40 @@ const App = () => (
       <QueryClientProvider client={queryClient}>
         <AnalyticsProvider>
           <AuthProvider>
-            <TooltipProvider>
-              <PerformanceMonitor />
-              <ServiceWorkerProvider />
-              <Toaster />
-              <Sonner />
-              <BrowserRouter>
-                <ScrollToTop />
-                <Routes>
-                  <Route path="/" element={<Index />} />
-                  <Route path="/blog" element={<Blog />} />
-                  <Route path="/blog/:slug" element={<BlogPost />} />
-                  <Route path="/faq" element={<FAQ />} />
-                  <Route path="/auth" element={<Auth />} />
-                  <Route path="/calendar" element={<Calendar />} />
-                  <Route path="/locations/marbella" element={<Marbella />} />
-                  <Route path="/locations/estepona" element={<Estepona />} />
-                  <Route path="/locations/mijas" element={<Mijas />} />
-                  <Route path="/locations/fuengirola" element={<Fuengirola />} />
-                  <Route path="/locations/benalmadena" element={<Benalmadena />} />
-                  <Route 
-                    path="/seo-dashboard" 
-                    element={
-                      <ProtectedRoute>
-                        <SEODashboard />
-                      </ProtectedRoute>
-                    } 
-                  />
-                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </BrowserRouter>
-            </TooltipProvider>
+            <LanguageProvider>
+              <TooltipProvider>
+                <PerformanceMonitor />
+                <ServiceWorkerProvider />
+                <Toaster />
+                <Sonner />
+                <BrowserRouter>
+                  <ScrollToTop />
+                  <Routes>
+                    <Route path="/" element={<Index />} />
+                    <Route path="/blog" element={<Blog />} />
+                    <Route path="/blog/:slug" element={<BlogPost />} />
+                    <Route path="/faq" element={<FAQ />} />
+                    <Route path="/auth" element={<Auth />} />
+                    <Route path="/calendar" element={<Calendar />} />
+                    <Route path="/locations/marbella" element={<Marbella />} />
+                    <Route path="/locations/estepona" element={<Estepona />} />
+                    <Route path="/locations/mijas" element={<Mijas />} />
+                    <Route path="/locations/fuengirola" element={<Fuengirola />} />
+                    <Route path="/locations/benalmadena" element={<Benalmadena />} />
+                    <Route 
+                      path="/seo-dashboard" 
+                      element={
+                        <ProtectedRoute>
+                          <SEODashboard />
+                        </ProtectedRoute>
+                      } 
+                    />
+                    {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                </BrowserRouter>
+              </TooltipProvider>
+            </LanguageProvider>
           </AuthProvider>
         </AnalyticsProvider>
       </QueryClientProvider>
