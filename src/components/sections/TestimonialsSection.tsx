@@ -187,65 +187,82 @@ export default function TestimonialsSection() {
       </div>
 
       {/* Main Testimonial Card */}
-      <div className="max-w-4xl mx-auto mb-12">
-        <Card className="border-0 bg-white/80 backdrop-blur-sm shadow-2xl hover:shadow-3xl transition-all duration-500">
-          <CardContent className="p-12">
-            <div className="grid lg:grid-cols-3 gap-8 items-start">
-              {/* Client Info */}
-              <div className="text-center lg:text-left">
-                <div className="w-24 h-24 rounded-full overflow-hidden mx-auto lg:mx-0 mb-4 border-4 border-primary/20">
-                  <img
-                    src={currentTestimonial.image}
-                    alt={currentTestimonial.name}
-                    className="w-full h-full object-cover"
-                  />
+      <div className="max-w-5xl mx-auto mb-12">
+        <Card className="border-0 bg-white/90 backdrop-blur-md shadow-luxury hover:shadow-glow transition-all duration-700 group overflow-hidden">
+          <CardContent className="p-0">
+            <div className="grid lg:grid-cols-3 gap-0 min-h-[400px]">
+              {/* Client Info Section */}
+              <div className="lg:col-span-1 bg-gradient-to-br from-primary/5 to-secondary/5 p-8 flex flex-col items-center justify-center text-center border-r border-border/20">
+                <div className="relative mb-6">
+                  <div className="w-28 h-28 rounded-full overflow-hidden mx-auto border-4 border-white shadow-elegant">
+                    <img
+                      src={currentTestimonial.image}
+                      alt={currentTestimonial.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-lg">
+                    <Quote className="w-4 h-4 text-white" />
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">
+                
+                <h3 className="text-xl font-semibold text-foreground mb-3">
                   {currentTestimonial.name}
                 </h3>
-                <div className="flex items-center gap-2 justify-center lg:justify-start mb-3">
-                  <MapPin className="w-4 h-4 text-muted-foreground" />
-                  <span className="text-sm text-muted-foreground">{currentTestimonial.location}</span>
-                </div>
-                <div className="flex items-center gap-2 justify-center lg:justify-start mb-4">
-                  <Calendar className="w-4 h-4 text-muted-foreground" />
-                  <span className="text-sm text-muted-foreground">{currentTestimonial.purchaseDate}</span>
+                
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center gap-2 justify-center text-sm text-muted-foreground">
+                    <MapPin className="w-4 h-4" />
+                    <span>{currentTestimonial.location}</span>
+                  </div>
+                  <div className="flex items-center gap-2 justify-center text-sm text-muted-foreground">
+                    <Calendar className="w-4 h-4" />
+                    <span>{currentTestimonial.purchaseDate}</span>
+                  </div>
                 </div>
                 
                 {/* Property Details */}
-                <div className="space-y-2 mb-4">
-                  <Badge variant="outline" className="text-xs">
+                <div className="space-y-3 w-full">
+                  <Badge variant="outline" className="bg-white/80 border-primary/20 text-primary font-medium">
                     {currentTestimonial.propertyType}
                   </Badge>
                   <div className="text-sm text-muted-foreground">
                     {currentTestimonial.purchaseLocation}
                   </div>
-                  <div className="text-sm font-medium text-primary">
+                  <div className="text-lg font-bold text-primary bg-white/80 rounded-lg px-3 py-1">
                     {currentTestimonial.propertyValue}
                   </div>
                 </div>
 
                 {/* Rating */}
-                <div className="flex justify-center lg:justify-start">
+                <div className="flex justify-center mt-6">
                   {[...Array(currentTestimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
+                    <Star key={i} className="w-5 h-5 text-yellow-500 fill-current" />
                   ))}
                 </div>
               </div>
 
-              {/* Review Content */}
-              <div className="lg:col-span-2">
-                <Quote className="w-8 h-8 text-primary/20 mb-4" />
-                <blockquote className="text-lg text-muted-foreground leading-relaxed mb-6 italic">
-                  "{currentTestimonial.review}"
-                </blockquote>
+              {/* Review Content Section */}
+              <div className="lg:col-span-2 p-8 lg:p-12 flex flex-col justify-center">
+                <div className="relative">
+                  <Quote className="w-12 h-12 text-primary/20 absolute -top-4 -left-2" />
+                  <blockquote className="text-lg lg:text-xl text-muted-foreground leading-relaxed mb-8 italic font-light pl-8">
+                    "{currentTestimonial.review}"
+                  </blockquote>
+                </div>
                 
                 {/* Service Highlights */}
-                <div>
-                  <h4 className="text-sm font-semibold text-foreground mb-3">Services Provided:</h4>
+                <div className="mt-auto">
+                  <h4 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">
+                    Services Provided
+                  </h4>
                   <div className="flex flex-wrap gap-2">
                     {currentTestimonial.highlights.map((highlight, index) => (
-                      <Badge key={index} variant="secondary" className="text-xs">
+                      <Badge 
+                        key={index} 
+                        variant="secondary" 
+                        className="bg-muted/50 hover:bg-primary/10 transition-colors duration-300 text-xs font-medium"
+                      >
                         {highlight}
                       </Badge>
                     ))}
@@ -263,11 +280,11 @@ export default function TestimonialsSection() {
           variant="outline"
           size="sm"
           onClick={prevTestimonial}
-          className="w-10 h-10 p-0 rounded-full"
+          className="w-12 h-12 p-0 rounded-full border-2 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
         >
-          <ChevronLeft className="w-4 h-4" />
+          <ChevronLeft className="w-5 h-5" />
         </Button>
         
         {/* Dots */}
@@ -280,10 +297,10 @@ export default function TestimonialsSection() {
                 setIsAutoPlaying(false);
                 setTimeout(() => setIsAutoPlaying(true), 3000);
               }}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`h-3 rounded-full transition-all duration-300 ${
                 index === currentIndex
-                  ? "bg-primary w-8"
-                  : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                  ? "bg-primary w-8 shadow-glow"
+                  : "bg-muted-foreground/30 hover:bg-muted-foreground/50 w-3"
               }`}
               aria-label={`View testimonial ${index + 1}`}
             />
@@ -294,11 +311,11 @@ export default function TestimonialsSection() {
           variant="outline" 
           size="sm"
           onClick={nextTestimonial}
-          className="w-10 h-10 p-0 rounded-full"
+          className="w-12 h-12 p-0 rounded-full border-2 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
         >
-          <ChevronRight className="w-4 h-4" />
+          <ChevronRight className="w-5 h-5" />
         </Button>
       </div>
 
