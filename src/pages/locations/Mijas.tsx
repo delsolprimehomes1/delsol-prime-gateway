@@ -1,4 +1,4 @@
-import { ArrowLeft, MapPin, Users, TrendingUp, Sun, Home, Mountain, TreePine, Car, Phone, Mail, Clock } from "lucide-react";
+import { ArrowLeft, MapPin, Users, TrendingUp, Sun, Utensils, Palette, TreePine, Car, Phone, Mail, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
@@ -17,31 +17,31 @@ const Mijas = () => {
   
   const properties = useAnimatedCounter({ target: 65, isVisible: statsVisible, suffix: "+", duration: 2000 });
   const avgPrice = useAnimatedCounter({ target: 1.2, isVisible: statsVisible, prefix: "€", suffix: "M", duration: 2500 });
-  const satisfaction = useAnimatedCounter({ target: 95, isVisible: statsVisible, suffix: "%", duration: 2200 });
+  const satisfaction = useAnimatedCounter({ target: 94, isVisible: statsVisible, suffix: "%", duration: 2200 });
 
   const highlights = [
-    { icon: Home, title: "Traditional Style", description: "Authentic whitewashed village" },
-    { icon: Mountain, title: "Mountain Views", description: "Stunning panoramic vistas" },
-    { icon: TreePine, title: "Natural Setting", description: "Surrounded by pine forests" },
-    { icon: Users, title: "Peaceful Living", description: "Tranquil residential area" }
+    { icon: Palette, title: "Art & Culture", description: "Traditional crafts and galleries" },
+    { icon: TreePine, title: "Natural Beauty", description: "Stunning mountain views" },
+    { icon: Utensils, title: "Authentic Cuisine", description: "Traditional Spanish dining" },
+    { icon: Users, title: "Local Charm", description: "Genuine community spirit" }
   ];
 
   const amenities = [
-    "Traditional Village Center",
-    "Scenic Mountain Walks",
-    "Local Artisan Shops", 
-    "Spanish Schools",
-    "Health Centers",
-    "Authentic Tapas Bars",
-    "Cultural Festivals",
-    "Nature Reserves"
+    "Traditional Markets",
+    "Local Schools",
+    "Medical Centers",
+    "Authentic Restaurants",
+    "Cultural Events",
+    "Nature Walks",
+    "Golf Courses",
+    "Hiking Trails"
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Properties in Mijas | Traditional Spanish Mountain Village"
-        description="Discover authentic properties in Mijas, Costa del Sol. Traditional Spanish charm with mountain views from €250K to €5M."
+        title="Properties in Mijas | Traditional Costa del Sol Village"
+        description="Discover traditional properties in Mijas, Costa del Sol. Authentic Spanish village living from €250K to €5M in this picturesque mountain setting."
         canonical="/locations/mijas"
       />
       
@@ -79,14 +79,14 @@ const Mijas = () => {
               Mijas
               <br />
               <span className="bg-gradient-premium bg-clip-text text-transparent">
-                Mountain Serenity
+                Traditional Charm
               </span>
             </h1>
           </AnimatedElement>
 
           <AnimatedElement animation="fade-in-up" delay={450}>
             <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-8">
-              Experience traditional Spanish village life with breathtaking mountain and sea views
+              Discover genuine Spanish village living in this picturesque mountain setting
             </p>
           </AnimatedElement>
 
@@ -96,7 +96,7 @@ const Mijas = () => {
                 <Phone className="w-5 h-5 mr-2" />
                 Schedule Viewing
               </MagneticButton>
-              <MagneticButton variant="outline" size="xl" className="border-white/30 text-white hover:bg-white/10">
+              <MagneticButton variant="outline-white" size="xl">
                 <Mail className="w-5 h-5 mr-2" />
                 Get Brochure
               </MagneticButton>
@@ -133,7 +133,7 @@ const Mijas = () => {
               Why Choose <span className="text-primary">Mijas</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Discover the perfect blend of traditional Spanish charm and peaceful mountain living
+              Experience authentic Spanish village living with stunning mountain views and timeless charm
             </p>
           </AnimatedElement>
 
@@ -166,10 +166,10 @@ const Mijas = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedElement animation="fade-in-up">
               <h2 className="text-4xl md:text-5xl font-bold font-display mb-6">
-                Village <span className="text-primary">Amenities</span>
+                Local <span className="text-primary">Amenities</span>
               </h2>
               <p className="text-xl text-muted-foreground mb-8">
-                Mijas offers peaceful mountain living with authentic Spanish village amenities and stunning natural beauty.
+                Mijas offers authentic Spanish living with all the amenities you need for comfortable village life.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {amenities.map((amenity, index) => (
@@ -188,9 +188,9 @@ const Mijas = () => {
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 p-8 flex items-center justify-center">
                   <div className="text-center">
                     <TrendingUp className="w-16 h-16 text-primary mx-auto mb-4" />
-                    <h3 className="text-2xl font-bold mb-2">Peaceful Investment</h3>
+                    <h3 className="text-2xl font-bold mb-2">Growing Value</h3>
                     <p className="text-muted-foreground">
-                      Mijas offers excellent value for those seeking traditional Spanish village life
+                      Mijas is experiencing steady growth while maintaining its authentic character
                     </p>
                   </div>
                 </div>
@@ -209,8 +209,8 @@ const Mijas = () => {
                 Ready to Explore <span className="text-primary">Mijas</span>?
               </h2>
               <p className="text-xl text-muted-foreground mb-8">
-                Discover the tranquil beauty of traditional Spanish mountain living. 
-                Our experts are here to guide you to your perfect home.
+                Our local experts know Mijas inside and out. Let us help you find your perfect 
+                home in this charming mountain village.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <MagneticButton size="xl">
