@@ -11,6 +11,7 @@ import { PerformanceMonitor } from "@/components/performance/PerformanceMonitor"
 import { ServiceWorkerProvider } from "@/components/performance/ServiceWorker";
 import { AuthProvider } from "@/hooks/useAuth";
 import ProtectedRoute from "@/components/ProtectedRoute";
+import ScrollToTop from "@/components/layout/ScrollToTop";
 import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -49,6 +50,7 @@ const App = () => (
               <Toaster />
               <Sonner />
               <BrowserRouter>
+                <ScrollToTop />
                 <Routes>
                   <Route path="/" element={<Index />} />
                   <Route path="/blog" element={<Blog />} />
