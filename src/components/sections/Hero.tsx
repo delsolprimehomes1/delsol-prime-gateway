@@ -7,6 +7,8 @@ import { MagneticButton } from "@/components/ui/MagneticButton";
 import { LoadingButton } from "@/components/ui/LoadingButton";
 import { RippleEffect } from "@/components/ui/RippleEffect";
 import { useAuth } from "@/hooks/useAuth";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
 import heroImage from "@/assets/hero-costa-del-sol-luxury.jpg";
 
 interface HeroProps {
@@ -15,6 +17,12 @@ interface HeroProps {
 
 export default function Hero({ className }: HeroProps) {
   const { user } = useAuth();
+  const { elementRef: statsRef, isVisible: statsVisible } = useIntersectionObserver({ threshold: 0.3 });
+  
+  // Animated counters for stats
+  const averageValue = useAnimatedCounter({ target: 2.5, isVisible: statsVisible, suffix: "M+", prefix: "€", duration: 2500 });
+  const yearsExperience = useAnimatedCounter({ target: 15, isVisible: statsVisible, suffix: "+", duration: 2000 });
+  const clientSatisfaction = useAnimatedCounter({ target: 100, isVisible: statsVisible, suffix: "%", duration: 2200 });
   
   const scrollToContent = () => {
     window.scrollTo({
@@ -136,24 +144,24 @@ export default function Hero({ className }: HeroProps) {
           </div>
 
           {/* Professional Stats Section */}
-          <div className="grid grid-cols-3 gap-8 md:gap-16 max-w-4xl mx-auto animate-fade-in">
+          <div ref={statsRef} className="grid grid-cols-3 gap-8 md:gap-16 max-w-4xl mx-auto animate-fade-in">
             <div className="group text-center">
               <div className="space-y-2">
-                <div className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-white group-hover:text-primary transition-colors duration-300">€2.5M+</div>
+                <div className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-white group-hover:text-primary transition-colors duration-300">{averageValue}</div>
                 <div className="font-body text-sm md:text-base text-white/70 uppercase tracking-widest font-medium">Average Value</div>
               </div>
             </div>
             
             <div className="group text-center border-x border-white/20">
               <div className="space-y-2">
-                <div className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-white group-hover:text-primary transition-colors duration-300">15+</div>
+                <div className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-white group-hover:text-primary transition-colors duration-300">{yearsExperience}</div>
                 <div className="font-body text-sm md:text-base text-white/70 uppercase tracking-widest font-medium">Years Excellence</div>
               </div>
             </div>
             
             <div className="group text-center">
               <div className="space-y-2">
-                <div className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-white group-hover:text-primary transition-colors duration-300">100%</div>
+                <div className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-white group-hover:text-primary transition-colors duration-300">{clientSatisfaction}</div>
                 <div className="font-body text-sm md:text-base text-white/70 uppercase tracking-widest font-medium">Client Satisfaction</div>
               </div>
             </div>
