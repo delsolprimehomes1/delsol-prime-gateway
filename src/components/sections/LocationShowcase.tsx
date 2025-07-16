@@ -129,16 +129,15 @@ const LocationShowcase = () => {
                 </div>
 
                 {/* CTA Button */}
-                <MagneticButton 
-                  asChild
-                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
-                  variant="outline"
-                >
-                  <Link to={location.link}>
+                <Link to={location.link} className="block">
+                  <MagneticButton 
+                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
+                    variant="outline"
+                  >
                     Explore Properties
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                  </Link>
-                </MagneticButton>
+                  </MagneticButton>
+                </Link>
               </div>
             </InteractiveCard>
           </AnimatedElement>
