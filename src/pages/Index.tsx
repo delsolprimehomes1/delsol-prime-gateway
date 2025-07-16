@@ -7,15 +7,16 @@ import LocationShowcase from "@/components/sections/LocationShowcase";
 import PropertySearch from "@/components/sections/PropertySearch";
 import BlogSection from "@/components/sections/BlogSection";
 import FAQSection from "@/components/sections/FAQSection";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import SEOHead from "@/components/seo/SEOHead";
-import { organizationSchema, realEstateAgentSchema, websiteSchema } from "@/utils/seo/structuredData";
+import { enhancedOrganizationSchema, localBusinessSchema, propertyBuyingGuideSchema } from "@/utils/seo/enhancedStructuredData";
 import { generateTitle, META_DESCRIPTIONS } from "@/utils/seo/metaUtils";
 
 const Index = () => {
   const structuredData = [
-    organizationSchema,
-    realEstateAgentSchema,
-    websiteSchema
+    enhancedOrganizationSchema,
+    localBusinessSchema,
+    propertyBuyingGuideSchema
   ];
 
   return (
@@ -31,6 +32,7 @@ const Index = () => {
       <ServicesSection />
       <LocationShowcase />
       <PropertySearch />
+      <TestimonialsSection />
       <BlogSection />
       <FAQSection />
       <Footer />

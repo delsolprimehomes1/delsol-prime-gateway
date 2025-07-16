@@ -1,0 +1,190 @@
+
+{
+  "categories": {
+    "legal": {
+      "name": "Legal & Documentation",
+      "icon": "FileText",
+      "description": "Legal requirements, documentation, and compliance for international property buyers"
+    },
+    "finance": {
+      "name": "Financing & Investment",
+      "icon": "DollarSign", 
+      "description": "Mortgage options, investment strategies, and financial planning for property purchases"
+    },
+    "locations": {
+      "name": "Locations & Areas",
+      "icon": "MapPin",
+      "description": "Detailed information about different areas, neighborhoods, and amenities across Costa del Sol"
+    },
+    "properties": {
+      "name": "Property Types & Features",
+      "icon": "Home",
+      "description": "Information about different property types, features, and what to expect"
+    },
+    "services": {
+      "name": "Our Services",
+      "icon": "HelpCircle",
+      "description": "DelSolPrimeHomes services, process, and what we provide to our clients"
+    },
+    "lifestyle": {
+      "name": "Living in Spain",
+      "icon": "MapPin",
+      "description": "Lifestyle, culture, utilities, and practical aspects of living in Costa del Sol"
+    }
+  },
+  "faqs": [
+    {
+      "id": "legal-01",
+      "question": "What documents do I need as a foreign buyer to purchase property in Spain?",
+      "answer": "As a foreign buyer, you need: NIE number (tax identification), passport, proof of income/funds, Spanish bank account, and legal representation. We assist with obtaining all required documentation through our trusted legal partners.",
+      "category": "legal",
+      "keywords": ["NIE number", "foreign buyer", "documentation", "legal requirements", "Spanish property"],
+      "relatedTopics": ["legal-02", "legal-03", "services-01"],
+      "voiceQueries": ["what documents do I need to buy property in Spain", "foreign buyer requirements Spain", "NIE number for property purchase"]
+    },
+    {
+      "id": "legal-02", 
+      "question": "How long does the property buying process take in Spain?",
+      "answer": "The typical process takes 6-12 weeks from offer acceptance to completion. This includes legal checks, mortgage approval (if applicable), and final signing. Our streamlined process often achieves faster completion times.",
+      "category": "legal",
+      "keywords": ["buying process", "timeline", "property purchase", "completion", "Spain"],
+      "relatedTopics": ["legal-01", "legal-03", "finance-01"],
+      "voiceQueries": ["how long to buy property in Spain", "Spanish property purchase timeline", "property buying process duration"]
+    },
+    {
+      "id": "legal-03",
+      "question": "Do I need a Spanish lawyer when buying property?",
+      "answer": "Yes, independent legal representation is essential. Spanish law requires notarized property transfers, and a lawyer ensures due diligence, reviews contracts, and protects your interests. We recommend trusted, English-speaking legal partners.",
+      "category": "legal", 
+      "keywords": ["Spanish lawyer", "legal representation", "property law", "notary", "due diligence"],
+      "relatedTopics": ["legal-01", "legal-04", "services-02"],
+      "voiceQueries": ["do I need lawyer buying property Spain", "Spanish property lawyer required", "legal representation property purchase"]
+    },
+    {
+      "id": "legal-04",
+      "question": "What are the property taxes and ongoing costs in Spain?",
+      "answer": "Main costs include: Property Transfer Tax (6-10%), Notary fees (€600-1,200), Registry fees (€400-800), annual IBI tax (0.4-1.1% of cadastral value), and community fees for apartments. We provide detailed cost breakdowns for each property.",
+      "category": "legal",
+      "keywords": ["property taxes", "transfer tax", "IBI tax", "notary fees", "ongoing costs"],
+      "relatedTopics": ["legal-05", "finance-02", "properties-01"],
+      "voiceQueries": ["Spanish property taxes costs", "property transfer tax Spain", "ongoing property costs Spain"]
+    },
+    {
+      "id": "legal-05",
+      "question": "Can I get Spanish residency by buying property?",
+      "answer": "Property purchase alone doesn't grant residency, but investments over €500,000 may qualify for Golden Visa residency. EU citizens have automatic residency rights. We partner with immigration specialists to advise on residency options.",
+      "category": "legal",
+      "keywords": ["Spanish residency", "Golden Visa", "property investment", "immigration", "EU citizens"],
+      "relatedTopics": ["legal-01", "finance-03", "lifestyle-01"],
+      "voiceQueries": ["Spanish residency buying property", "Golden Visa property investment", "residency rights Spain property"]
+    },
+    {
+      "id": "finance-01",
+      "question": "Can foreign buyers get mortgages in Spain?",
+      "answer": "Yes, non-resident foreigners can obtain Spanish mortgages up to 70% of property value. EU residents may qualify for up to 80%. Interest rates are competitive, and we work with specialist international mortgage brokers to secure the best terms.",
+      "category": "finance",
+      "keywords": ["Spanish mortgages", "foreign buyers", "non-resident", "mortgage rates", "financing"],
+      "relatedTopics": ["finance-02", "legal-02", "services-03"],
+      "voiceQueries": ["can foreigners get mortgages in Spain", "Spanish mortgage foreign buyer", "property financing Spain non-resident"]
+    },
+    {
+      "id": "finance-02",
+      "question": "What are current mortgage rates and terms in Spain?",
+      "answer": "Current rates range from 3.5-5.5% for non-residents, with terms up to 25-30 years. Fixed and variable rate options available. Minimum income requirements typically 3x annual mortgage payments. We connect you with competitive lenders.",
+      "category": "finance",
+      "keywords": ["mortgage rates", "interest rates", "mortgage terms", "financing options", "Spanish banks"],
+      "relatedTopics": ["finance-01", "finance-03", "legal-04"],
+      "voiceQueries": ["Spanish mortgage rates 2024", "property loan rates Spain", "current mortgage interest rates Spain"]
+    },
+    {
+      "id": "finance-03",
+      "question": "Is Costa del Sol property a good investment?",
+      "answer": "Costa del Sol offers strong investment potential with consistent rental demand, especially in Marbella and Estepona. Average rental yields 4-6%, with capital appreciation averaging 3-5% annually. Tourism and international demand drive the market.",
+      "category": "finance",
+      "keywords": ["property investment", "rental yields", "capital appreciation", "Costa del Sol market", "ROI"],
+      "relatedTopics": ["locations-01", "properties-02", "finance-04"],
+      "voiceQueries": ["Costa del Sol property investment returns", "rental yields Marbella", "property investment Spain returns"]
+    },
+    {
+      "id": "finance-04",
+      "question": "What are the rental income tax implications in Spain?",
+      "answer": "Rental income is taxed at 24% for non-residents, 19-47% for residents. Expenses like management, maintenance, and mortgage interest are deductible. We recommend specialist tax advisors for optimization strategies.",
+      "category": "finance",
+      "keywords": ["rental income tax", "non-resident tax", "tax deductions", "property tax Spain", "tax optimization"],
+      "relatedTopics": ["finance-03", "legal-04", "lifestyle-02"],
+      "voiceQueries": ["rental income tax Spain", "property tax non-resident Spain", "tax on rental income Spanish property"]
+    },
+    {
+      "id": "locations-01",
+      "question": "What makes Marbella special for property investment?",
+      "answer": "Marbella offers luxury lifestyle, international community, excellent climate, world-class amenities, and strong rental demand. The Golden Mile and Puerto Banús are particularly prestigious, with properties holding value exceptionally well.",
+      "category": "locations",
+      "keywords": ["Marbella", "luxury properties", "Golden Mile", "Puerto Banús", "investment location"],
+      "relatedTopics": ["locations-02", "properties-01", "finance-03"],
+      "voiceQueries": ["why invest in Marbella property", "Marbella property investment benefits", "best areas Marbella property"]
+    },
+    {
+      "id": "locations-02",
+      "question": "How does Estepona compare to Marbella for buyers?",
+      "answer": "Estepona offers better value for money, authentic Spanish charm, beautiful beaches, and rapid development. Properties are 30-40% less expensive than Marbella while offering similar amenities and lifestyle, making it ideal for first-time buyers.",
+      "category": "locations", 
+      "keywords": ["Estepona", "Marbella comparison", "property value", "Spanish charm", "first-time buyers"],
+      "relatedTopics": ["locations-01", "locations-03", "properties-03"],
+      "voiceQueries": ["Estepona vs Marbella property", "Estepona property investment", "best value Costa del Sol property"]
+    },
+    {
+      "id": "locations-03",
+      "question": "What are the best family-friendly areas in Costa del Sol?",
+      "answer": "Mijas, Fuengirola, and Benalmádena offer excellent schools, family amenities, beaches, and community atmosphere. These areas have lower crime rates, good transport links, and more affordable family-sized properties than Marbella.",
+      "category": "locations",
+      "keywords": ["family-friendly", "schools", "Mijas", "Fuengirola", "Benalmádena", "family properties"],
+      "relatedTopics": ["lifestyle-03", "properties-04", "locations-04"],
+      "voiceQueries": ["best family areas Costa del Sol", "family-friendly locations Spain", "good schools Costa del Sol"]
+    },
+    {
+      "id": "properties-01",
+      "question": "What types of properties are available in Costa del Sol?",
+      "answer": "Options include luxury villas, modern apartments, penthouses, townhouses, country estates, and new developments. From beachfront to golf course properties, mountain views to city center locations - we have extensive portfolio across all price ranges.",
+      "category": "properties",
+      "keywords": ["property types", "villas", "apartments", "penthouses", "townhouses", "luxury properties"],
+      "relatedTopics": ["properties-02", "locations-01", "finance-01"],
+      "voiceQueries": ["types of properties Costa del Sol", "luxury villas Marbella", "apartments for sale Spain"]
+    },
+    {
+      "id": "properties-02",
+      "question": "What should I look for when viewing properties in Spain?",
+      "answer": "Check legal documentation, building quality, community fees, location amenities, resale potential, and rental viability. We provide comprehensive viewing reports and arrange professional surveys for serious buyers.",
+      "category": "properties",
+      "keywords": ["property viewing", "due diligence", "property inspection", "building quality", "location analysis"],
+      "relatedTopics": ["legal-03", "services-01", "properties-03"],
+      "voiceQueries": ["what to check when viewing Spanish property", "property inspection checklist Spain", "viewing properties Costa del Sol"]
+    },
+    {
+      "id": "services-01",
+      "question": "What services does DelSolPrimeHomes provide?",
+      "answer": "We offer complete property search, viewing trips, legal assistance, financing guidance, market analysis, property management, and ongoing support. Our end-to-end service ensures a smooth, stress-free property purchase experience.",
+      "category": "services",
+      "keywords": ["DelSolPrimeHomes services", "property search", "viewing trips", "legal assistance", "property management"],
+      "relatedTopics": ["services-02", "services-03", "legal-01"],
+      "voiceQueries": ["DelSolPrimeHomes services", "what services property agent Spain", "property buying assistance Costa del Sol"]
+    },
+    {
+      "id": "services-02",
+      "question": "Do you arrange property viewing trips?",
+      "answer": "Yes, we organize comprehensive viewing trips including airport transfers, accommodation recommendations, property tours, area orientation, and meetings with legal/financial partners. Typically 2-3 days with 8-12 carefully selected properties.",
+      "category": "services",
+      "keywords": ["viewing trips", "property tours", "accommodation", "airport transfers", "area orientation"],
+      "relatedTopics": ["services-01", "properties-02", "locations-01"],
+      "voiceQueries": ["property viewing trips Spain", "organized property tours Costa del Sol", "viewing trip arrangements"]
+    },
+    {
+      "id": "lifestyle-01",
+      "question": "What is the cost of living in Costa del Sol?",
+      "answer": "Living costs are 20-30% lower than UK/Northern Europe. Dining out €15-25 per person, utilities €80-120/month, groceries similar to home country. Healthcare excellent and affordable. Overall, high quality of life at reasonable cost.",
+      "category": "lifestyle",
+      "keywords": ["cost of living", "living expenses", "utilities", "healthcare", "quality of life"],
+      "relatedTopics": ["lifestyle-02", "lifestyle-03", "legal-05"],
+      "voiceQueries": ["cost of living Costa del Sol", "living expenses Spain", "how much to live in Marbella"]
+    }
+  ]
+}

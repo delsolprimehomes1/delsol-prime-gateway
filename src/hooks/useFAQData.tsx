@@ -1,6 +1,6 @@
 
 import { useState, useMemo } from 'react';
-import faqData from '@/data/faqData.json';
+import enhancedFaqData from '@/data/enhancedFaqData.json';
 
 export interface FAQ {
   id: string;
@@ -9,6 +9,7 @@ export interface FAQ {
   category: string;
   keywords: string[];
   relatedTopics: string[];
+  voiceQueries?: string[];
 }
 
 export interface FAQCategory {
@@ -21,10 +22,10 @@ export const useFAQData = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
-  const categories = faqData.categories as Record<string, FAQCategory>;
-  const faqs = faqData.faqs as FAQ[];
+  const categories = enhancedFaqData.categories as Record<string, FAQCategory>;
+  const faqs = enhancedFaqData.faqs as FAQ[];
 
-  // Enhanced search with better performance for large datasets
+  // Enhanced search with voice query optimization
   const filteredFAQs = useMemo(() => {
     let filtered = faqs;
     
@@ -33,10 +34,9 @@ export const useFAQData = () => {
       filtered = filtered.filter(faq => faq.category === selectedCategory);
     }
     
-    // Then filter by search term
+    // Enhanced search with voice queries and keywords
     if (searchTerm) {
       const searchLower = searchTerm.toLowerCase();
-      // Split search terms for better matching
       const searchTerms = searchLower.split(' ').filter(term => term.length > 1);
       
       filtered = filtered.filter(faq => {
@@ -44,11 +44,16 @@ export const useFAQData = () => {
           faq.question,
           faq.answer,
           ...faq.keywords,
+          ...(faq.voiceQueries || []),
           faq.category
         ].join(' ').toLowerCase();
         
-        // Match if any search term is found
-        return searchTerms.some(term => searchableText.includes(term));
+        // Enhanced matching for better AI optimization
+        return searchTerms.some(term => 
+          searchableText.includes(term) || 
+          faq.keywords.some(keyword => keyword.toLowerCase().includes(term)) ||
+          (faq.voiceQueries || []).some(query => query.toLowerCase().includes(term))
+        );
       });
     }
     
@@ -76,12 +81,17 @@ export const useFAQData = () => {
       .slice(0, limit);
   };
 
-  // Get popular/featured FAQs (first 5 from each category)
+  // Get popular/featured FAQs optimized for AI engines
   const getFeaturedFAQs = (limit: number = 10): FAQ[] => {
     const featured: FAQ[] = [];
     const categoriesUsed = new Set<string>();
     
-    for (const faq of faqs) {
+    // Prioritize high-value questions for voice search and featured snippets
+    const priorityQuestions = faqs.filter(faq => 
+      faq.voiceQueries && faq.voiceQueries.length > 0
+    );
+    
+    for (const faq of priorityQuestions) {
       if (featured.length >= limit) break;
       if (!categoriesUsed.has(faq.category) || featured.length < 6) {
         featured.push(faq);
@@ -89,7 +99,27 @@ export const useFAQData = () => {
       }
     }
     
-    return featured;
+    // Fill remaining slots with other high-quality FAQs
+    for (const faq of faqs) {
+      if (featured.length >= limit) break;
+      if (!featured.some(f => f.id === faq.id)) {
+        featured.push(faq);
+      }
+    }
+    
+    return featured.slice(0, limit);
+  };
+
+  // Get voice search optimized FAQs
+  const getVoiceSearchFAQs = (): FAQ[] => {
+    return faqs.filter(faq => faq.voiceQueries && faq.voiceQueries.length > 0);
+  };
+
+  // Get FAQs by keyword for entity optimization
+  const getFAQsByKeyword = (keyword: string): FAQ[] => {
+    return faqs.filter(faq => 
+      faq.keywords.some(k => k.toLowerCase().includes(keyword.toLowerCase()))
+    );
   };
 
   return {
@@ -103,6 +133,8 @@ export const useFAQData = () => {
     setSelectedCategory,
     getCategoryCount,
     getRelatedFAQs,
-    getFeaturedFAQs
+    getFeaturedFAQs,
+    getVoiceSearchFAQs,
+    getFAQsByKeyword
   };
 };
