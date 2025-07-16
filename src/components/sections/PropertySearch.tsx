@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Search, MapPin, Home, Euro, Bed, Bath, Filter } from "lucide-react";
 import Section from "@/components/layout/Section";
@@ -6,10 +7,19 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import { Checkbox } from "@/components/ui/checkbox";
+import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 const PropertySearch = () => {
   const [priceRange, setPriceRange] = useState([500000]);
   const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
+
+  // Animated counters for stats
+  const { elementRef: statsRef, isVisible: statsVisible } = useIntersectionObserver({ threshold: 0.3 });
+  
+  const propertiesCount = useAnimatedCounter({ target: 500, isVisible: statsVisible, suffix: "+", duration: 2000 });
+  const locationsCount = useAnimatedCounter({ target: 50, isVisible: statsVisible, suffix: "+", duration: 2200 });
+  const satisfactionRate = useAnimatedCounter({ target: 95, isVisible: statsVisible, suffix: "%", duration: 2400 });
 
   const locations = [
     "All Locations", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena", "Nerja", "Torrox"
@@ -208,11 +218,11 @@ const PropertySearch = () => {
         </div>
 
         {/* Quick Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+        <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
           {[
-            { number: "500+", label: "Properties Available", color: "text-white" },
-            { number: "50+", label: "Locations Covered", color: "text-white/90" },
-            { number: "95%", label: "Client Satisfaction", color: "text-white/90" },
+            { number: propertiesCount, label: "Properties Available", color: "text-white" },
+            { number: locationsCount, label: "Locations Covered", color: "text-white/90" },
+            { number: satisfactionRate, label: "Client Satisfaction", color: "text-white/90" },
             { number: "24/7", label: "Expert Support", color: "text-white/90" }
           ].map((stat, index) => (
             <div key={stat.label} className="text-center">
