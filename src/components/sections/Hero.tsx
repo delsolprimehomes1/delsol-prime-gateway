@@ -95,10 +95,13 @@ export default function Hero({ className }: HeroProps) {
                 variant="hero" 
                 size="xl" 
                 className="group relative overflow-hidden min-w-[260px] h-14 rounded-lg font-body font-semibold"
+                asChild
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <Calendar className="w-5 h-5 mr-3 relative z-10" />
-                <span className="relative z-10 font-semibold">Schedule Private Viewing</span>
+                <a href="/calendar">
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <Calendar className="w-5 h-5 mr-3 relative z-10" />
+                  <span className="relative z-10 font-semibold">Schedule Private Viewing</span>
+                </a>
               </MagneticButton>
             </RippleEffect>
             

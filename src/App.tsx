@@ -17,6 +17,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import FAQ from "./pages/FAQ";
 import Auth from "./pages/Auth";
+import Calendar from "./pages/Calendar";
 import SEODashboard from "./pages/SEODashboard";
 import NotFound from "./pages/NotFound";
 import Marbella from "./pages/locations/Marbella";
@@ -57,6 +58,7 @@ const App = () => (
                   <Route path="/blog/:slug" element={<BlogPost />} />
                   <Route path="/faq" element={<FAQ />} />
                   <Route path="/auth" element={<Auth />} />
+                  <Route path="/calendar" element={<Calendar />} />
                   <Route path="/locations/marbella" element={<Marbella />} />
                   <Route path="/locations/estepona" element={<Estepona />} />
                   <Route path="/locations/mijas" element={<Mijas />} />
