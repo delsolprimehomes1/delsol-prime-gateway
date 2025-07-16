@@ -20,28 +20,28 @@ export function EnhancedMegaMenu({ isOpen, onClose, className }: EnhancedMegaMen
     { 
       name: 'Luxury Villas', 
       count: '120+', 
-      image: '/assets/featured-traditional-villa.jpg',
+      image: '/src/assets/property-type-villa.jpg',
       description: 'Exclusive Mediterranean villas',
       priceFrom: '€1.5M'
     },
     { 
       name: 'Beachfront Apartments', 
       count: '85+', 
-      image: '/assets/featured-modern-apartment.jpg',
+      image: '/src/assets/property-type-apartment.jpg',
       description: 'Modern seaside living',
       priceFrom: '€750K'
     },
     { 
       name: 'Penthouses', 
       count: '45+', 
-      image: '/assets/featured-luxury-penthouse.jpg',
+      image: '/src/assets/property-type-penthouse.jpg',
       description: 'Premium sky-high living',
       priceFrom: '€2.2M'
     },
     { 
       name: 'Townhouses', 
       count: '65+', 
-      image: '/assets/featured-contemporary-kitchen.jpg',
+      image: '/src/assets/property-type-townhouse.jpg',
       description: 'Contemporary family homes',
       priceFrom: '€980K'
     },
