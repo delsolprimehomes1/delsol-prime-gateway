@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { Globe, Search, User, Bell, ChevronRight, ChevronDown, MapPin, Home, Building } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { LanguageSelector } from "@/components/ui/LanguageSelector";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { cn } from "@/lib/utils";
 
 interface NavigationItem {
@@ -14,19 +16,16 @@ interface NavigationItem {
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
-  currentLang: string;
-  onToggleLanguage: () => void;
   navigationItems: NavigationItem[];
 }
 
 export default function MobileMenu({ 
   isOpen, 
   onClose, 
-  currentLang, 
-  onToggleLanguage, 
   navigationItems 
 }: MobileMenuProps) {
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const { t } = useLanguage();
 
   const propertyTypes = [
     { name: "Luxury Villas", icon: Home, href: "/properties/villas" },
@@ -76,7 +75,7 @@ export default function MobileMenu({
           <div className="grid grid-cols-2 gap-3">
             <Button variant="outline" size="sm" className="justify-start gap-2">
               <Search className="w-4 h-4" />
-              Search
+              {t('common.search')}
             </Button>
             <Button variant="outline" size="sm" className="justify-start gap-2">
               <User className="w-4 h-4" />
@@ -127,7 +126,7 @@ export default function MobileMenu({
                 </div>
 
                 {/* Submenu for Properties */}
-                {item.label === "Properties" && activeSubmenu === item.label && (
+                {item.label === t('nav.properties') && activeSubmenu === item.label && (
                   <div className="ml-4 mt-2 space-y-2 animate-fade-in">
                     <div className="text-sm font-semibold text-muted-foreground mb-3">Property Types</div>
                     {propertyTypes.map((type) => (
@@ -145,7 +144,7 @@ export default function MobileMenu({
                 )}
 
                 {/* Submenu for Locations */}
-                {item.label === "Locations" && activeSubmenu === item.label && (
+                {item.label === t('nav.locations') && activeSubmenu === item.label && (
                   <div className="ml-4 mt-2 space-y-2 animate-fade-in">
                     <div className="text-sm font-semibold text-muted-foreground mb-3">Popular Areas</div>
                     {locations.map((location) => (
@@ -168,20 +167,16 @@ export default function MobileMenu({
           {/* Bottom Actions */}
           <div className="border-t border-border/50 pt-6 space-y-4">
             <div className="flex items-center justify-between">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={onToggleLanguage}
-                className="justify-start gap-2"
-              >
-                <Globe className="w-4 h-4" />
-                Language: {currentLang}
-              </Button>
+              <LanguageSelector 
+                variant="default" 
+                className="flex-1 mr-3"
+              />
               
               <Button
                 variant="ghost"
                 size="sm"
                 className="relative"
+                aria-label={t('common.notifications')}
               >
                 <Bell className="w-4 h-4" />
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full animate-pulse" />
@@ -189,7 +184,7 @@ export default function MobileMenu({
             </div>
             
             <Button variant="hero" size="lg" className="w-full">
-              Contact Us
+              {t('nav.contactUs')}
             </Button>
           </div>
         </div>
