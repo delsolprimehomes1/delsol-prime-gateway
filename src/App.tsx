@@ -18,6 +18,11 @@ import FAQ from "./pages/FAQ";
 import Auth from "./pages/Auth";
 import SEODashboard from "./pages/SEODashboard";
 import NotFound from "./pages/NotFound";
+import Marbella from "./pages/locations/Marbella";
+import Estepona from "./pages/locations/Estepona";
+import Mijas from "./pages/locations/Mijas";
+import Fuengirola from "./pages/locations/Fuengirola";
+import Benalmadena from "./pages/locations/Benalmadena";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -50,6 +55,11 @@ const App = () => (
                   <Route path="/blog/:slug" element={<BlogPost />} />
                   <Route path="/faq" element={<FAQ />} />
                   <Route path="/auth" element={<Auth />} />
+                  <Route path="/locations/marbella" element={<Marbella />} />
+                  <Route path="/locations/estepona" element={<Estepona />} />
+                  <Route path="/locations/mijas" element={<Mijas />} />
+                  <Route path="/locations/fuengirola" element={<Fuengirola />} />
+                  <Route path="/locations/benalmadena" element={<Benalmadena />} />
                   <Route 
                     path="/seo-dashboard" 
                     element={

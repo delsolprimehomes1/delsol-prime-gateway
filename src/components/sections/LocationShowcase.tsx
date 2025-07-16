@@ -1,4 +1,5 @@
 import { MapPin, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
 import { Button } from "@/components/ui/button";
@@ -19,7 +20,8 @@ const LocationShowcase = () => {
       properties: "120+ Properties",
       priceRange: "€500K - €15M",
       image: marbellaImage,
-      alt: "Luxury properties on Marbella Golden Mile"
+      alt: "Luxury properties on Marbella Golden Mile",
+      link: "/locations/marbella"
     },
     {
       name: "Estepona", 
@@ -27,7 +29,8 @@ const LocationShowcase = () => {
       properties: "85+ Properties",
       priceRange: "€300K - €8M",
       image: esteponaImage,
-      alt: "Charming old town street in Estepona"
+      alt: "Charming old town street in Estepona",
+      link: "/locations/estepona"
     },
     {
       name: "Mijas",
@@ -35,7 +38,8 @@ const LocationShowcase = () => {
       properties: "65+ Properties",
       priceRange: "€250K - €5M",
       image: mijasImage,
-      alt: "Traditional white village street in Mijas"
+      alt: "Traditional white village street in Mijas",
+      link: "/locations/mijas"
     },
     {
       name: "Fuengirola",
@@ -43,7 +47,8 @@ const LocationShowcase = () => {
       properties: "95+ Properties", 
       priceRange: "€200K - €4M",
       image: fuengirolaImage,
-      alt: "Fuengirola beachfront promenade with people"
+      alt: "Fuengirola beachfront promenade with people",
+      link: "/locations/fuengirola"
     },
     {
       name: "Benalmádena",
@@ -51,7 +56,8 @@ const LocationShowcase = () => {
       properties: "70+ Properties",
       priceRange: "€180K - €3M", 
       image: benalmadenaImage,
-      alt: "Luxury yachts and restaurants at Benalmádena Marina"
+      alt: "Luxury yachts and restaurants at Benalmádena Marina",
+      link: "/locations/benalmadena"
     }
   ];
 
@@ -124,11 +130,14 @@ const LocationShowcase = () => {
 
                 {/* CTA Button */}
                 <MagneticButton 
+                  asChild
                   className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
                   variant="outline"
                 >
-                  Explore Properties
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  <Link to={location.link}>
+                    Explore Properties
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Link>
                 </MagneticButton>
               </div>
             </InteractiveCard>
