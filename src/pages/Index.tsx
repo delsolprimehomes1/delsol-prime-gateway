@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
@@ -11,6 +10,7 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import SEOHead from "@/components/seo/SEOHead";
 import { enhancedOrganizationSchema, localBusinessSchema, propertyBuyingGuideSchema } from "@/utils/seo/enhancedStructuredData";
 import { generateTitle, META_DESCRIPTIONS } from "@/utils/seo/metaUtils";
+import ROICalculatorSection from "@/components/sections/ROICalculatorSection";
 
 const Index = () => {
   const structuredData = [
@@ -32,6 +32,7 @@ const Index = () => {
       <ServicesSection />
       <LocationShowcase />
       <PropertySearch />
+      <ROICalculatorSection />
       <TestimonialsSection />
       <BlogSection />
       <FAQSection />
