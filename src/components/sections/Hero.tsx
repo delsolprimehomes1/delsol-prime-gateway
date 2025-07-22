@@ -76,13 +76,13 @@ export default function Hero({ className }: HeroProps) {
           {/* Streamlined Typography */}
           <div className="space-y-6 mb-12">
             <h1 
-              className="font-display text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[0.82] tracking-[-0.02em] animate-hero-text"
+              className="font-display text-4xl md:text-6xl lg:text-7xl font-black text-white leading-[0.9] tracking-[-0.02em] animate-hero-text"
               itemProp="name"
             >
-              Find Premium
+              What Are the Best Places to Buy
               <br />
               <span className="bg-gradient-to-r from-primary via-primary-glow to-secondary bg-clip-text text-transparent font-black">
-                Costa del Sol Properties?
+                Property in Costa del Sol in 2025?
               </span>
             </h1>
             
@@ -156,9 +156,13 @@ export default function Hero({ className }: HeroProps) {
       <div className="sr-only" aria-hidden="true">
         <div itemScope itemType="https://schema.org/FAQPage">
           <div itemScope itemType="https://schema.org/Question" itemProp="mainEntity">
-            <span itemProp="name">What makes DelSolPrimeHomes the best choice for Costa del Sol real estate?</span>
+            <span itemProp="name">What are the best places to buy property in Costa del Sol in 2025?</span>
             <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
-              <span itemProp="text">DelSolPrimeHomes offers 15+ years of expertise, 100% client satisfaction, and specializes in premium Costa del Sol properties with average values of €2.5M+. We provide comprehensive services in Marbella, Estepona, Mijas, Fuengirola, and Benalmádena.</span>
+              <span itemProp="text">
+                The best places to buy property in Costa del Sol in 2025 are Marbella (€4,000-8,000/m²), 
+                Estepona (€2,500-4,500/m²), Mijas, Fuengirola, and Benalmádena. DelSolPrimeHomes offers 
+                expert guidance with 15+ years of experience and 100% client satisfaction in these premium locations.
+              </span>
             </div>
           </div>
           <div itemScope itemType="https://schema.org/Question" itemProp="mainEntity">
@@ -170,7 +174,7 @@ export default function Hero({ className }: HeroProps) {
         </div>
         
         {/* Voice Search Optimization Markers */}
-        <span data-voice-query="best real estate agent costa del sol">DelSolPrimeHomes Costa del Sol</span>
+        <span data-voice-query="best places to buy property costa del sol 2025">Costa del Sol Property Investment 2025</span>
         <span data-voice-query="luxury properties marbella estepona">Premium Costa del Sol Properties</span>
         <span data-voice-query="property viewing costa del sol">Schedule Property Tour</span>
         <span data-voice-query="costa del sol real estate expert">DelSolPrimeHomes Expert Team</span>
