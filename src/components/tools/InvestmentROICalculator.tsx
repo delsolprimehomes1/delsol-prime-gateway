@@ -54,7 +54,7 @@ const InvestmentROICalculator = ({ className }: ROICalculatorProps) => {
 
   const translations = {
     en: {
-      title: 'Investment ROI Calculator',
+      title: 'What Is Your Costa del Sol Property Investment ROI?',
       subtitle: 'Calculate your Costa del Sol property investment returns',
       purchasePrice: 'Purchase Price',
       annualRental: 'Annual Rental Income',
@@ -69,7 +69,7 @@ const InvestmentROICalculator = ({ className }: ROICalculatorProps) => {
       language: 'Language'
     },
     es: {
-      title: 'Calculadora de ROI de Inversión',
+      title: '¿Cuál Es el ROI de Tu Inversión Inmobiliaria en Costa del Sol?',
       subtitle: 'Calcula los rendimientos de tu inversión inmobiliaria en Costa del Sol',
       purchasePrice: 'Precio de Compra',
       annualRental: 'Ingresos Anuales de Alquiler',
@@ -84,7 +84,7 @@ const InvestmentROICalculator = ({ className }: ROICalculatorProps) => {
       language: 'Idioma'
     },
     nl: {
-      title: 'Investering ROI Calculator',
+      title: 'Wat Is Uw Costa del Sol Vastgoedinvestering ROI?',
       subtitle: 'Bereken uw Costa del Sol vastgoedinvestering rendementen',
       purchasePrice: 'Aankoopprijs',
       annualRental: 'Jaarlijkse Huurinkomsten',
