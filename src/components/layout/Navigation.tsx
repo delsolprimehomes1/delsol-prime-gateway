@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Search, ChevronDown, User, Bell, LogOut } from "lucide-react";
+import { Menu, X, Search, ChevronDown, User, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -164,20 +164,6 @@ export default function Navigation({ className }: NavigationProps) {
                 aria-label={t('common.search')}
               >
                 <Search className="w-4 h-4" />
-              </Button>
-
-              {/* Notifications */}
-              <Button
-                variant="ghost"
-                size="sm"
-                className={cn(
-                  "transition-all duration-300 relative",
-                  isScrolled ? "text-foreground" : "text-white hover:bg-white/10"
-                )}
-                aria-label={t('common.notifications')}
-              >
-                <Bell className="w-4 h-4" />
-                <span className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full animate-pulse" />
               </Button>
 
               {/* Language Selector */}
