@@ -9,6 +9,8 @@ interface SectionProps {
   padding?: "none" | "sm" | "md" | "lg" | "xl";
   background?: "default" | "muted" | "accent" | "primary" | "gradient";
   id?: string;
+  itemScope?: boolean;
+  itemType?: string;
 }
 
 export default function Section({ 
@@ -17,7 +19,9 @@ export default function Section({
   containerSize = "xl",
   padding = "lg",
   background = "default",
-  id
+  id,
+  itemScope,
+  itemType
 }: SectionProps) {
   const paddingClasses = {
     none: "",
@@ -43,6 +47,8 @@ export default function Section({
         backgroundClasses[background],
         className
       )}
+      itemScope={itemScope}
+      itemType={itemType}
     >
       <Container size={containerSize}>
         {children}
