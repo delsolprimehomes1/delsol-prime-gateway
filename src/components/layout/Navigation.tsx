@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Menu, X, Search, ChevronDown, User, Bell, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -59,7 +58,6 @@ export default function Navigation({ className }: NavigationProps) {
     },
     { label: t('nav.about'), href: "/about" },
     { label: t('nav.blog'), href: "/blog" },
-    { label: t('nav.seo'), href: "/seo-dashboard" },
     { label: t('nav.contact'), href: "/contact" },
   ];
 
