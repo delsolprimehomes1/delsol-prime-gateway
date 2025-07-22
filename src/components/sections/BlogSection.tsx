@@ -66,7 +66,7 @@ export default function BlogSection() {
         {/* Header */}
         <div className="text-center space-y-4">
           <h2 className="text-4xl lg:text-5xl font-bold tracking-tight">
-            Latest <span className="text-primary">Insights</span>
+            What's New in <span className="text-primary">Costa del Sol Real Estate?</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Stay informed with expert analysis, market trends, and insider knowledge 
