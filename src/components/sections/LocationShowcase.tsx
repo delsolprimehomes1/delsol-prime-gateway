@@ -1,3 +1,4 @@
+
 import { MapPin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Section from "@/components/layout/Section";
@@ -71,8 +72,8 @@ const LocationShowcase = () => {
           </div>
           
           <h2 className="text-4xl lg:text-5xl font-bold font-display mb-6">
-            Discover the
-            <span className="text-primary"> Costa del Sol</span>
+            Which Costa del Sol Location
+            <span className="text-primary"> Should You Choose?</span>
           </h2>
           
           <p className="text-lg text-muted-foreground">
