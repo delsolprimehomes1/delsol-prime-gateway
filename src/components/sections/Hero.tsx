@@ -69,17 +69,17 @@ export default function Hero({ className }: HeroProps) {
           <div className="animate-fade-in mb-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white/90 text-sm font-medium tracking-wide border border-white/20">
               <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-              <span>Why Choose DelSolPrimeHomes for Costa del Sol Real Estate?</span>
+              <span>Costa del Sol Real Estate Experts</span>
             </div>
           </div>
 
-          {/* AEO-Enhanced Typography */}
+          {/* Streamlined Typography */}
           <div className="space-y-6 mb-12">
             <h1 
               className="font-display text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[0.82] tracking-[-0.02em] animate-hero-text"
               itemProp="name"
             >
-              Looking for Premium
+              Find Premium
               <br />
               <span className="bg-gradient-to-r from-primary via-primary-glow to-secondary bg-clip-text text-transparent font-black">
                 Costa del Sol Properties?
@@ -88,7 +88,7 @@ export default function Hero({ className }: HeroProps) {
             
             <div className="max-w-2xl mx-auto space-y-4 animate-fade-in" itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
               <p className="font-body text-xl md:text-2xl text-white/90 font-light leading-relaxed" itemProp="text">
-                Discover luxury properties with DelSolPrimeHomes, your trusted Costa del Sol real estate experts specializing in Marbella, Estepona, and premium Mediterranean locations.
+                Discover luxury homes with DelSolPrimeHomes - your trusted Costa del Sol specialists.
               </p>
               <div className="flex items-center justify-center gap-2 text-white/70">
                 <MapPin className="w-4 h-4 text-primary" />
