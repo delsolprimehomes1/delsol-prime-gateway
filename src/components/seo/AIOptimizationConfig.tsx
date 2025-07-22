@@ -7,7 +7,7 @@ interface AIOptimizationConfigProps {
   pageType: 'homepage' | 'location' | 'property' | 'blog' | 'faq';
   primaryKeywords: string[];
   voiceSearchQueries: string[];
-  aiOptimizationLevel: 'basic' | 'enhanced' | 'premium';
+  aiOptimizationLevel?: 'basic' | 'enhanced' | 'premium';
 }
 
 export function AIOptimizationConfig({

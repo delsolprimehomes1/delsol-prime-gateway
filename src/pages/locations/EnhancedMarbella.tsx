@@ -12,7 +12,7 @@ import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import SEOHead from "@/components/seo/SEOHead";
 import marbellaHero from "@/assets/location-marbella-golden-mile.jpg";
 import { LocationPageEnhancer } from "@/components/seo/LocationPageEnhancer";
-import { EnhancedFAQSection } from "@/components/sections/EnhancedFAQSection";
+import EnhancedFAQSection from "@/components/sections/EnhancedFAQSection";
 
 const EnhancedMarbella = () => {
   const { elementRef: statsRef, isVisible: statsVisible } = useIntersectionObserver({ threshold: 0.3 });

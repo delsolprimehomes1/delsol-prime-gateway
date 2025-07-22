@@ -38,9 +38,10 @@ interface VoiceSearchFAQProps {
   answer: string;
   category: string;
   relatedQuestions?: string[];
+  children?: ReactNode;
 }
 
-export function VoiceSearchFAQ({ question, answer, category, relatedQuestions = [] }: VoiceSearchFAQProps) {
+export function VoiceSearchFAQ({ question, answer, category, relatedQuestions = [], children }: VoiceSearchFAQProps) {
   return (
     <div 
       itemScope 
@@ -56,6 +57,7 @@ export function VoiceSearchFAQ({ question, answer, category, relatedQuestions = 
       >
         <p itemProp="text" className="text-muted-foreground">{answer}</p>
       </div>
+      {children}
       {relatedQuestions.length > 0 && (
         <div className="mt-4">
           <h4 className="text-sm font-medium mb-2">Related Questions:</h4>
