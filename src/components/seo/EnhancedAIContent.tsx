@@ -1,4 +1,3 @@
-
 import { ReactNode } from 'react';
 import { AIOptimizedContent, VoiceSearchFAQ, FeaturedSnippet, EntityContent, StructuredContent } from './AIOptimizedContent';
 
@@ -237,3 +236,6 @@ export function LocationAIContent({
     </EnhancedAIContent>
   );
 }
+
+// Export FeaturedSnippet so it can be imported by other components
+export { FeaturedSnippet };
