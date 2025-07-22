@@ -148,19 +148,19 @@ const InvestmentROICalculator = ({ className }: ROICalculatorProps) => {
   };
 
   return (
-    <div className={cn('w-full max-w-4xl mx-auto space-y-8', className)}>
+    <div className={cn('w-full max-w-7xl mx-auto', className)}>
       {/* Header */}
-      <AnimatedElement animation="fade-in-up" className="text-center space-y-4">
-        <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+      <AnimatedElement animation="fade-in-up" className="text-center space-y-4 mb-8 lg:mb-12">
+        <div className="inline-flex items-center justify-center px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
           <Calculator className="w-4 h-4 mr-2" />
           INVESTMENT TOOLS
         </div>
         
-        <h2 className="text-4xl lg:text-5xl font-bold font-display text-foreground mb-4">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold font-display text-foreground mb-4">
           {t.title}
         </h2>
         
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
           {t.subtitle}
         </p>
 
@@ -173,7 +173,7 @@ const InvestmentROICalculator = ({ className }: ROICalculatorProps) => {
               variant={language === lang ? "default" : "outline"}
               size="sm"
               onClick={() => setLanguage(lang)}
-              className="min-w-[60px]"
+              className="min-w-[50px] text-xs sm:text-sm"
             >
               {lang.toUpperCase()}
             </Button>
@@ -181,20 +181,21 @@ const InvestmentROICalculator = ({ className }: ROICalculatorProps) => {
         </div>
       </AnimatedElement>
 
-      <div className="grid lg:grid-cols-2 gap-8 items-start">
+      <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 xl:gap-12 items-start">
         {/* Calculator Form */}
         <AnimatedElement animation="fade-in-left" delay={200}>
-          <InteractiveCard variant="luxury" hover="lift" className="p-8">
-            <CardHeader className="text-center pb-6">
-              <CardTitle className="flex items-center justify-center gap-3 text-2xl">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <TrendingUp className="w-6 h-6 text-primary" />
+          <InteractiveCard variant="luxury" hover="lift" className="p-4 sm:p-6 lg:p-8">
+            <CardHeader className="text-center pb-4 lg:pb-6 px-0">
+              <CardTitle className="flex items-center justify-center gap-3 text-lg sm:text-xl lg:text-2xl">
+                <div className="p-2 lg:p-3 rounded-full bg-primary/10">
+                  <TrendingUp className="w-4 h-4 lg:w-6 lg:h-6 text-primary" />
                 </div>
-                {t.title}
+                <span className="hidden sm:inline">{t.title}</span>
+                <span className="sm:hidden">ROI Calculator</span>
               </CardTitle>
             </CardHeader>
 
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-4 lg:space-y-6 px-0">
               {/* Purchase Price Input */}
               <div className="space-y-2">
                 <label className="text-sm font-medium text-foreground flex items-center gap-2">
@@ -211,7 +212,7 @@ const InvestmentROICalculator = ({ className }: ROICalculatorProps) => {
                     onFocus={() => setFocusedField('purchasePrice')}
                     onBlur={() => setFocusedField('')}
                     className={cn(
-                      'pl-10 text-lg h-14 transition-all duration-300',
+                      'pl-10 text-base lg:text-lg h-12 lg:h-14 transition-all duration-300',
                       focusedField === 'purchasePrice' && 'ring-2 ring-primary/20 scale-[1.02]'
                     )}
                   />
@@ -234,7 +235,7 @@ const InvestmentROICalculator = ({ className }: ROICalculatorProps) => {
                     onFocus={() => setFocusedField('annualRental')}
                     onBlur={() => setFocusedField('')}
                     className={cn(
-                      'pl-10 text-lg h-14 transition-all duration-300',
+                      'pl-10 text-base lg:text-lg h-12 lg:h-14 transition-all duration-300',
                       focusedField === 'annualRental' && 'ring-2 ring-secondary/20 scale-[1.02]'
                     )}
                   />
@@ -257,7 +258,7 @@ const InvestmentROICalculator = ({ className }: ROICalculatorProps) => {
                     onFocus={() => setFocusedField('annualCosts')}
                     onBlur={() => setFocusedField('')}
                     className={cn(
-                      'pl-10 text-lg h-14 transition-all duration-300',
+                      'pl-10 text-base lg:text-lg h-12 lg:h-14 transition-all duration-300',
                       focusedField === 'annualCosts' && 'ring-2 ring-orange-500/20 scale-[1.02]'
                     )}
                   />
@@ -268,17 +269,17 @@ const InvestmentROICalculator = ({ className }: ROICalculatorProps) => {
               <Button
                 onClick={calculateROI}
                 disabled={!formData.purchasePrice || !formData.annualRental || isCalculating}
-                className="w-full h-14 text-lg font-semibold mt-8"
+                className="w-full h-12 lg:h-14 text-base lg:text-lg font-semibold mt-6 lg:mt-8"
                 variant="hero"
               >
                 {isCalculating ? (
                   <>
-                    <Calculator className="w-5 h-5 mr-2 animate-spin" />
+                    <Calculator className="w-4 h-4 lg:w-5 lg:h-5 mr-2 animate-spin" />
                     {t.calculating}
                   </>
                 ) : (
                   <>
-                    <TrendingUp className="w-5 h-5 mr-2" />
+                    <TrendingUp className="w-4 h-4 lg:w-5 lg:h-5 mr-2" />
                     {t.calculate}
                   </>
                 )}
@@ -288,30 +289,30 @@ const InvestmentROICalculator = ({ className }: ROICalculatorProps) => {
         </AnimatedElement>
 
         {/* Results Display */}
-        <div className="space-y-6" ref={resultRef}>
+        <div className="space-y-4 lg:space-y-6" ref={resultRef}>
           {result.isVisible && (
             <AnimatedElement animation="fade-in-right" delay={300}>
-              <InteractiveCard variant="luxury" hover="glow" className="p-8 border-primary/20">
-                <CardContent className="text-center space-y-6">
-                  <div className="inline-flex items-center justify-center p-4 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20">
-                    <TrendingUp className="w-8 h-8 text-primary" />
+              <InteractiveCard variant="luxury" hover="glow" className="p-4 sm:p-6 lg:p-8 border-primary/20">
+                <CardContent className="text-center space-y-4 lg:space-y-6 px-0">
+                  <div className="inline-flex items-center justify-center p-3 lg:p-4 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20">
+                    <TrendingUp className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
                   </div>
 
                   <div>
-                    <h3 className="text-2xl font-bold text-foreground mb-2">{t.result}</h3>
-                    <div className="text-6xl font-bold font-display bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground mb-2">{t.result}</h3>
+                    <div className="text-4xl sm:text-5xl lg:text-6xl font-bold font-display bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4">
                       {animatedROI}
                     </div>
                   </div>
 
-                  <div className="space-y-3 p-6 bg-muted/30 rounded-xl">
-                    <div className="flex justify-between items-center">
+                  <div className="space-y-3 p-4 lg:p-6 bg-muted/30 rounded-xl">
+                    <div className="flex justify-between items-center text-sm lg:text-base">
                       <span className="text-muted-foreground">{t.netIncome}:</span>
-                      <span className="font-semibold text-lg">{formatCurrency(result.netIncome)}</span>
+                      <span className="font-semibold">{formatCurrency(result.netIncome)}</span>
                     </div>
                   </div>
 
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed px-2">
                     {t.explanation}
                   </p>
                 </CardContent>
@@ -322,20 +323,20 @@ const InvestmentROICalculator = ({ className }: ROICalculatorProps) => {
           {/* CTA Section */}
           {showLeadForm && (
             <AnimatedElement animation="scale-in" delay={500}>
-              <InteractiveCard variant="luxury" hover="lift" className="p-8 bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/30">
-                <CardContent className="text-center space-y-6">
-                  <div className="inline-flex items-center justify-center p-4 rounded-full bg-primary/10">
-                    <Home className="w-8 h-8 text-primary" />
+              <InteractiveCard variant="luxury" hover="lift" className="p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/30">
+                <CardContent className="text-center space-y-4 lg:space-y-6 px-0">
+                  <div className="inline-flex items-center justify-center p-3 lg:p-4 rounded-full bg-primary/10">
+                    <Home className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
                   </div>
 
                   <div>
-                    <h3 className="text-2xl font-bold text-foreground mb-2">{t.cta}</h3>
-                    <p className="text-muted-foreground">{t.ctaSubtext}</p>
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground mb-2">{t.cta}</h3>
+                    <p className="text-sm lg:text-base text-muted-foreground">{t.ctaSubtext}</p>
                   </div>
 
-                  <Button size="lg" variant="hero" className="px-8">
+                  <Button size="lg" variant="hero" className="px-6 lg:px-8 text-sm lg:text-base">
                     {t.cta}
-                    <ArrowRight className="w-5 h-5 ml-2" />
+                    <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 ml-2" />
                   </Button>
                 </CardContent>
               </InteractiveCard>
