@@ -1,6 +1,5 @@
-
 import { useState, useEffect } from 'react';
-import { Calculator, TrendingUp, Euro, Home, BarChart3, ArrowRight, ChevronDown, Download, Share2, Bot, MapPin, Info } from 'lucide-react';
+import { Calculator, TrendingUp, Euro, Home, BarChart3, ArrowRight, ChevronDown, Download, Share2, Bot, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -12,8 +11,10 @@ import { Slider } from '@/components/ui/slider';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, PieChart, Pie, Cell, LineChart, Line, ResponsiveContainer } from 'recharts';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+import { TooltipProvider } from '@/components/ui/tooltip';
+import { ROIResultsDisplay } from './ROIResultsDisplay';
+import { ROIProfitTimeline } from './ROIProfitTimeline';
 import { cn } from '@/lib/utils';
 
 interface AdvancedROICalculatorProps {
@@ -81,7 +82,7 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
   });
 
   const [isCalculating, setIsCalculating] = useState(false);
-  const [activeChart, setActiveChart] = useState<'income' | 'costs' | 'growth'>('income');
+  const [activeChart, setActiveChart] = useState<'timeline' | 'costs' | 'scenarios'>('timeline');
 
   const { elementRef: resultRef, isVisible: resultVisible } = useIntersectionObserver({ threshold: 0.3 });
 
@@ -103,22 +104,14 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
       managementFee: 'Property Management Fee %',
       appreciationRate: 'Expected Appreciation Rate %',
       occupancyRate: 'Occupancy Rate %',
-      netIncome: 'Annual Net Income',
-      netIncomeTooltip: 'Your annual profit after all expenses and financing costs',
-      fiveYearEquity: '5-Year Equity Growth',
-      totalProfit: 'Total Profit (5 Years)',
-      breakEvenYear: 'Break-even Year',
       region: 'Region',
       currency: 'Currency',
       downloadReport: 'Download PDF Report',
       shareResults: 'Share Results',
       askAI: 'Ask AI Assistant',
       scheduleViewing: 'Schedule Viewing Trip',
-      chartIncome: 'Income vs Expenses',
-      chartCosts: 'Cost Breakdown',
-      chartGrowth: 'Value Growth Over Time',
-      aiPrompt: 'Need help finding properties that match your investment goals?',
-      investmentReturns: 'Investment Returns'
+      aiPrompt: 'Need help optimizing your investment strategy?',
+      investmentReturns: 'Investment Analysis'
     },
     es: {
       title: 'Calcula los Rendimientos de Tu Inversión en Costa del Sol',
@@ -137,22 +130,14 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
       managementFee: 'Tarifa de Administración %',
       appreciationRate: 'Tasa de Apreciación Esperada %',
       occupancyRate: 'Tasa de Ocupación %',
-      netIncome: 'Ingresos Netos Anuales',
-      netIncomeTooltip: 'Tu beneficio anual después de todos los gastos y costos de financiamiento',
-      fiveYearEquity: 'Crecimiento del Patrimonio (5 Años)',
-      totalProfit: 'Beneficio Total (5 Años)',
-      breakEvenYear: 'Año de Equilibrio',
       region: 'Región',
       currency: 'Moneda',
       downloadReport: 'Descargar Informe PDF',
       shareResults: 'Compartir Resultados',
       askAI: 'Consultar IA',
       scheduleViewing: 'Programar Viaje de Visita',
-      chartIncome: 'Ingresos vs Gastos',
-      chartCosts: 'Desglose de Costos',
-      chartGrowth: 'Crecimiento del Valor',
-      aiPrompt: '¿Necesitas ayuda para encontrar propiedades que coincidan con tus objetivos de inversión?',
-      investmentReturns: 'Rendimientos de Inversión'
+      aiPrompt: '¿Necesitas ayuda para optimizar tu estrategia de inversión?',
+      investmentReturns: 'Análisis de Inversión'
     },
     nl: {
       title: 'Bereken Uw Costa del Sol Investeringsrendementen',
@@ -171,22 +156,14 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
       managementFee: 'Beheerkosten %',
       appreciationRate: 'Verwachte Waardestijging %',
       occupancyRate: 'Bezettingsgraad %',
-      netIncome: 'Jaarlijks Netto Inkomen',
-      netIncomeTooltip: 'Uw jaarlijkse winst na alle kosten en financieringskosten',
-      fiveYearEquity: 'Eigenkapitalgroei (5 Jaar)',
-      totalProfit: 'Totale Winst (5 Jaar)',
-      breakEvenYear: 'Break-even Jaar',
       region: 'Regio',
       currency: 'Valuta',
       downloadReport: 'PDF Rapport Downloaden',
       shareResults: 'Resultaten Delen',
       askAI: 'AI Assistent Vragen',
       scheduleViewing: 'Bezichtigingsreis Plannen',
-      chartIncome: 'Inkomsten vs Uitgaven',
-      chartCosts: 'Kostenverdeling',
-      chartGrowth: 'Waardeontwikkeling',
-      aiPrompt: 'Wilt u hulp bij het vinden van eigendommen die passen bij uw investeringsdoelen?',
-      investmentReturns: 'Investeringsrendementen'
+      aiPrompt: 'Wilt u hulp bij het optimaliseren van uw investeringsstrategie?',
+      investmentReturns: 'Investeringsanalyse'
     }
   };
 
@@ -279,7 +256,7 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
 
       setIsCalculating(false);
       
-      if (leveragedNetIncome > 0) {
+      if (totalProfit > 0) {
         setTimeout(() => setShowAIAssistant(true), 2000);
       }
     }, 1000);
@@ -299,11 +276,6 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
     const annualRental = parseFloat(basicData.annualRental) || 0;
     const annualCosts = parseFloat(basicData.annualCosts) || 0;
 
-    const incomeVsExpenses = [
-      { name: 'Rental Income', value: annualRental, fill: 'hsl(var(--primary))' },
-      { name: 'Annual Costs', value: annualCosts, fill: 'hsl(var(--destructive))' }
-    ];
-
     const propertyTaxRate = parseFloat(advancedData.propertyTax) / 100;
     const propertyTaxAmount = purchasePrice * propertyTaxRate;
     const maintenanceAmount = (purchasePrice * advancedData.maintenanceReserve) / 100;
@@ -316,12 +288,7 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
       { name: 'Other Costs', value: annualCosts, fill: 'hsl(var(--chart-4))' }
     ];
 
-    const valueGrowth = Array.from({ length: 6 }, (_, i) => ({
-      year: i,
-      value: purchasePrice * Math.pow(1 + advancedData.appreciationRate / 100, i)
-    }));
-
-    return { incomeVsExpenses, costBreakdown, valueGrowth };
+    return { costBreakdown };
   };
 
   const chartData = getChartData();
@@ -577,84 +544,30 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
             {results.isVisible && (
               <>
                 <AnimatedElement animation="fade-in-right" delay={300}>
-                  <InteractiveCard variant="luxury" hover="glow" className="p-6 border-primary/20">
-                    <CardContent className="space-y-6 px-0">
-                      <div className="text-center">
-                        <div className="inline-flex items-center justify-center p-4 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 mb-4">
-                          <TrendingUp className="w-8 h-8 text-primary" />
-                        </div>
-
-                        <div className="flex items-center justify-center gap-2 mb-2">
-                          <h3 className="text-2xl font-bold text-foreground">{t.investmentReturns}</h3>
-                        </div>
-
-                        <div className="text-center p-6 bg-muted/30 rounded-lg mb-6">
-                          <div className="flex items-center justify-center gap-2 mb-2">
-                            <div className="text-4xl font-bold text-primary">{formatCurrency(results.netIncome)}</div>
-                            <Tooltip>
-                              <TooltipTrigger>
-                                <Info className="w-4 h-4 text-muted-foreground" />
-                              </TooltipTrigger>
-                              <TooltipContent>
-                                <p className="max-w-xs text-sm">{t.netIncomeTooltip}</p>
-                              </TooltipContent>
-                            </Tooltip>
-                          </div>
-                          <div className="text-sm text-muted-foreground">{t.netIncome}</div>
-                        </div>
-                      </div>
-
-                      <div className="space-y-3">
-                        <div className="flex justify-between text-sm">
-                          <span className="text-muted-foreground">{t.fiveYearEquity}:</span>
-                          <span className="font-semibold">{formatCurrency(results.fiveYearEquity)}</span>
-                        </div>
-                        <div className="flex justify-between text-sm">
-                          <span className="text-muted-foreground">{t.totalProfit}:</span>
-                          <span className="font-semibold">{formatCurrency(results.totalProfit)}</span>
-                        </div>
-                        <div className="flex justify-between text-sm">
-                          <span className="text-muted-foreground">{t.breakEvenYear}:</span>
-                          <span className="font-semibold">{results.breakEvenYear.toFixed(1)} years</span>
-                        </div>
-                      </div>
-
-                      <div className="flex flex-wrap gap-2">
-                        <Button variant="outline" size="sm" className="flex-1">
-                          <Download className="w-4 h-4 mr-2" />
-                          {t.downloadReport}
-                        </Button>
-                        <Button variant="outline" size="sm" className="flex-1">
-                          <Share2 className="w-4 h-4 mr-2" />
-                          {t.shareResults}
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </InteractiveCard>
+                  <ROIResultsDisplay 
+                    results={results}
+                    formatCurrency={formatCurrency}
+                    translations={t}
+                  />
                 </AnimatedElement>
 
-                {/* Charts */}
+                {/* Enhanced Charts */}
                 <AnimatedElement animation="fade-in-up" delay={500}>
                   <InteractiveCard variant="luxury" className="p-6">
                     <Tabs value={activeChart} onValueChange={(value: any) => setActiveChart(value)}>
                       <TabsList className="grid w-full grid-cols-3">
-                        <TabsTrigger value="income">{t.chartIncome}</TabsTrigger>
-                        <TabsTrigger value="costs">{t.chartCosts}</TabsTrigger>
-                        <TabsTrigger value="growth">{t.chartGrowth}</TabsTrigger>
+                        <TabsTrigger value="timeline">Profit Timeline</TabsTrigger>
+                        <TabsTrigger value="costs">Cost Breakdown</TabsTrigger>
+                        <TabsTrigger value="scenarios">Scenarios</TabsTrigger>
                       </TabsList>
 
-                      <TabsContent value="income" className="mt-6">
-                        <ChartContainer config={{ income: { label: "Income", color: "hsl(var(--primary))" } }}>
-                          <ResponsiveContainer width="100%" height={300}>
-                            <BarChart data={chartData.incomeVsExpenses}>
-                              <CartesianGrid strokeDasharray="3 3" />
-                              <XAxis dataKey="name" />
-                              <YAxis />
-                              <ChartTooltip content={<ChartTooltipContent />} />
-                              <Bar dataKey="value" fill="currentColor" />
-                            </BarChart>
-                          </ResponsiveContainer>
-                        </ChartContainer>
+                      <TabsContent value="timeline" className="mt-6">
+                        <ROIProfitTimeline 
+                          results={results}
+                          advancedData={advancedData}
+                          basicData={basicData}
+                          formatCurrency={formatCurrency}
+                        />
                       </TabsContent>
 
                       <TabsContent value="costs" className="mt-6">
@@ -678,18 +591,10 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
                         </ChartContainer>
                       </TabsContent>
 
-                      <TabsContent value="growth" className="mt-6">
-                        <ChartContainer config={{ growth: { label: "Growth", color: "hsl(var(--primary))" } }}>
-                          <ResponsiveContainer width="100%" height={300}>
-                            <LineChart data={chartData.valueGrowth}>
-                              <CartesianGrid strokeDasharray="3 3" />
-                              <XAxis dataKey="year" />
-                              <YAxis />
-                              <ChartTooltip content={<ChartTooltipContent />} />
-                              <Line type="monotone" dataKey="value" stroke="hsl(var(--primary))" strokeWidth={2} />
-                            </LineChart>
-                          </ResponsiveContainer>
-                        </ChartContainer>
+                      <TabsContent value="scenarios" className="mt-6">
+                        <div className="text-center text-muted-foreground">
+                          Advanced scenario analysis coming soon
+                        </div>
                       </TabsContent>
                     </Tabs>
                   </InteractiveCard>
@@ -706,7 +611,7 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
 
                         <div>
                           <h3 className="text-xl font-bold text-foreground mb-2">{t.aiPrompt}</h3>
-                          <p className="text-sm text-muted-foreground">Get personalized property recommendations and deeper investment analysis</p>
+                          <p className="text-sm text-muted-foreground">Get personalized recommendations to maximize your investment returns</p>
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-3">
