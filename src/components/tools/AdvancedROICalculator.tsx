@@ -6,7 +6,6 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { InteractiveCard } from '@/components/ui/InteractiveCard';
 import { AnimatedElement } from '@/components/ui/AnimatedElement';
-import { useAnimatedCounter } from '@/hooks/useAnimatedCounter';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { Slider } from '@/components/ui/slider';
@@ -41,11 +40,8 @@ interface AdvancedFormData {
   occupancyRate: number;
 }
 
-interface ROIResults {
-  basicROI: number;
+interface InvestmentResults {
   netIncome: number;
-  cashOnCashReturn: number;
-  capRate: number;
   fiveYearEquity: number;
   totalProfit: number;
   breakEvenYear: number;
@@ -76,11 +72,8 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
     occupancyRate: 85
   });
 
-  const [results, setResults] = useState<ROIResults>({
-    basicROI: 0,
+  const [results, setResults] = useState<InvestmentResults>({
     netIncome: 0,
-    cashOnCashReturn: 0,
-    capRate: 0,
     fiveYearEquity: 0,
     totalProfit: 0,
     breakEvenYear: 0,
@@ -92,21 +85,14 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
 
   const { elementRef: resultRef, isVisible: resultVisible } = useIntersectionObserver({ threshold: 0.3 });
 
-  const animatedROI = useAnimatedCounter({
-    target: results.basicROI,
-    isVisible: results.isVisible && resultVisible,
-    duration: 1500,
-    suffix: '%'
-  });
-
   const translations = {
     en: {
-      title: 'What Is Your Costa del Sol Property Investment ROI?',
-      subtitle: 'Calculate comprehensive returns with advanced analytics',
+      title: 'Calculate Your Costa del Sol Investment Returns',
+      subtitle: 'Analyze property investment potential with detailed financial projections',
       purchasePrice: 'Purchase Price',
       annualRental: 'Annual Rental Income',
       annualCosts: 'Annual Costs & Expenses',
-      calculate: 'Calculate ROI',
+      calculate: 'Calculate Returns',
       calculating: 'Calculating...',
       advancedOptions: 'Advanced Options',
       downPayment: 'Down Payment %',
@@ -117,12 +103,8 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
       managementFee: 'Property Management Fee %',
       appreciationRate: 'Expected Appreciation Rate %',
       occupancyRate: 'Occupancy Rate %',
-      basicROI: 'Basic ROI',
-      basicROITooltip: 'Unleveraged return on investment without financing costs - shows property performance before considering loan payments',
       netIncome: 'Annual Net Income',
-      cashOnCash: 'Cash-on-Cash Return',
-      cashOnCashTooltip: 'Leveraged return on actual cash invested - shows return after loan payments divided by down payment',
-      capRate: 'Cap Rate',
+      netIncomeTooltip: 'Your annual profit after all expenses and financing costs',
       fiveYearEquity: '5-Year Equity Growth',
       totalProfit: 'Total Profit (5 Years)',
       breakEvenYear: 'Break-even Year',
@@ -135,18 +117,16 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
       chartIncome: 'Income vs Expenses',
       chartCosts: 'Cost Breakdown',
       chartGrowth: 'Value Growth Over Time',
-      aboveAverage: 'above average',
-      belowAverage: 'below average',
-      regionalComparison: 'Your ROI is {comparison} for {region}',
-      aiPrompt: 'Would you like help finding properties that match your ROI goal?'
+      aiPrompt: 'Need help finding properties that match your investment goals?',
+      investmentReturns: 'Investment Returns'
     },
     es: {
-      title: '¿Cuál Es el ROI de Tu Inversión Inmobiliaria en Costa del Sol?',
-      subtitle: 'Calcula rendimientos integrales con análisis avanzados',
+      title: 'Calcula los Rendimientos de Tu Inversión en Costa del Sol',
+      subtitle: 'Analiza el potencial de inversión inmobiliaria con proyecciones financieras detalladas',
       purchasePrice: 'Precio de Compra',
       annualRental: 'Ingresos Anuales de Alquiler',
       annualCosts: 'Costos y Gastos Anuales',
-      calculate: 'Calcular ROI',
+      calculate: 'Calcular Rendimientos',
       calculating: 'Calculando...',
       advancedOptions: 'Opciones Avanzadas',
       downPayment: 'Pago Inicial %',
@@ -157,12 +137,8 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
       managementFee: 'Tarifa de Administración %',
       appreciationRate: 'Tasa de Apreciación Esperada %',
       occupancyRate: 'Tasa de Ocupación %',
-      basicROI: 'ROI Básico',
-      basicROITooltip: 'Retorno de inversión sin apalancamiento, sin costos de financiamiento - muestra el rendimiento de la propiedad antes de considerar los pagos del préstamo',
       netIncome: 'Ingresos Netos Anuales',
-      cashOnCash: 'Retorno Efectivo',
-      cashOnCashTooltip: 'Retorno apalancado sobre el efectivo invertido - muestra el retorno después de los pagos del préstamo dividido por el pago inicial',
-      capRate: 'Tasa de Capitalización',
+      netIncomeTooltip: 'Tu beneficio anual después de todos los gastos y costos de financiamiento',
       fiveYearEquity: 'Crecimiento del Patrimonio (5 Años)',
       totalProfit: 'Beneficio Total (5 Años)',
       breakEvenYear: 'Año de Equilibrio',
@@ -175,18 +151,16 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
       chartIncome: 'Ingresos vs Gastos',
       chartCosts: 'Desglose de Costos',
       chartGrowth: 'Crecimiento del Valor',
-      aboveAverage: 'por encima del promedio',
-      belowAverage: 'por debajo del promedio',
-      regionalComparison: 'Tu ROI está {comparison} para {region}',
-      aiPrompt: '¿Te gustaría ayuda para encontrar propiedades que coincidan con tu objetivo de ROI?'
+      aiPrompt: '¿Necesitas ayuda para encontrar propiedades que coincidan con tus objetivos de inversión?',
+      investmentReturns: 'Rendimientos de Inversión'
     },
     nl: {
-      title: 'Wat Is Uw Costa del Sol Vastgoedinvestering ROI?',
-      subtitle: 'Bereken uitgebreide rendementen met geavanceerde analyses',
+      title: 'Bereken Uw Costa del Sol Investeringsrendementen',
+      subtitle: 'Analyseer vastgoedinvestering potentieel met gedetailleerde financiële projecties',
       purchasePrice: 'Aankoopprijs',
       annualRental: 'Jaarlijkse Huurinkomsten',
       annualCosts: 'Jaarlijkse Kosten & Uitgaven',
-      calculate: 'ROI Berekenen',
+      calculate: 'Rendement Berekenen',
       calculating: 'Berekenen...',
       advancedOptions: 'Geavanceerde Opties',
       downPayment: 'Aanbetaling %',
@@ -197,12 +171,8 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
       managementFee: 'Beheerkosten %',
       appreciationRate: 'Verwachte Waardestijging %',
       occupancyRate: 'Bezettingsgraad %',
-      basicROI: 'Basis ROI',
-      basicROITooltip: 'Ongevinancieerd rendement op investering zonder financieringskosten - toont prestatie van eigendom voor leningbetalingen',
       netIncome: 'Jaarlijks Netto Inkomen',
-      cashOnCash: 'Cash-on-Cash Rendement',
-      cashOnCashTooltip: 'Gefinancierd rendement op werkelijk geïnvesteerde cash - toont rendement na leningbetalingen gedeeld door aanbetaling',
-      capRate: 'Kapitalisatievoet',
+      netIncomeTooltip: 'Uw jaarlijkse winst na alle kosten en financieringskosten',
       fiveYearEquity: 'Eigenkapitalgroei (5 Jaar)',
       totalProfit: 'Totale Winst (5 Jaar)',
       breakEvenYear: 'Break-even Jaar',
@@ -215,24 +185,22 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
       chartIncome: 'Inkomsten vs Uitgaven',
       chartCosts: 'Kostenverdeling',
       chartGrowth: 'Waardeontwikkeling',
-      aboveAverage: 'boven gemiddeld',
-      belowAverage: 'onder gemiddeld',
-      regionalComparison: 'Uw ROI is {comparison} voor {region}',
-      aiPrompt: 'Wilt u hulp bij het vinden van eigendommen die passen bij uw ROI-doel?'
+      aiPrompt: 'Wilt u hulp bij het vinden van eigendommen die passen bij uw investeringsdoelen?',
+      investmentReturns: 'Investeringsrendementen'
     }
   };
 
   const t = translations[language];
 
   const regions = [
-    { value: 'marbella', label: 'Marbella', averageROI: 6.5 },
-    { value: 'estepona', label: 'Estepona', averageROI: 7.2 },
-    { value: 'fuengirola', label: 'Fuengirola', averageROI: 6.8 },
-    { value: 'benalmadena', label: 'Benalmadena', averageROI: 6.3 },
-    { value: 'mijas', label: 'Mijas', averageROI: 5.9 }
+    { value: 'marbella', label: 'Marbella' },
+    { value: 'estepona', label: 'Estepona' },
+    { value: 'fuengirola', label: 'Fuengirola' },
+    { value: 'benalmadena', label: 'Benalmadena' },
+    { value: 'mijas', label: 'Mijas' }
   ];
 
-  const calculateAdvancedROI = () => {
+  const calculateInvestmentReturns = () => {
     const purchasePrice = parseFloat(basicData.purchasePrice);
     const annualRental = parseFloat(basicData.annualRental);
     const annualCosts = parseFloat(basicData.annualCosts) || 0;
@@ -286,15 +254,6 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
         leveragedNetIncome
       });
 
-      // Basic ROI: Unleveraged return on total investment (Cap Rate)
-      const basicROI = Math.max(0, (unleveragedNOI / purchasePrice) * 100);
-      
-      // Cash-on-Cash Return: Leveraged return on actual cash invested
-      const cashOnCashReturn = Math.max(0, (leveragedNetIncome / downPaymentAmount) * 100);
-      
-      // Cap Rate: Same as Basic ROI in this context
-      const capRate = basicROI;
-      
       // Calculate 5-year projections
       const fiveYearValue = purchasePrice * Math.pow(1 + advancedData.appreciationRate / 100, 5);
       const fiveYearEquity = fiveYearValue - purchasePrice;
@@ -304,17 +263,14 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
       const breakEvenYear = leveragedNetIncome > 0 ? downPaymentAmount / leveragedNetIncome : 50;
 
       console.log('Final results:', {
-        basicROI,
-        cashOnCashReturn,
-        capRate,
-        leveragedNetIncome
+        leveragedNetIncome,
+        fiveYearEquity,
+        totalProfit,
+        breakEvenYear
       });
 
       setResults({
-        basicROI,
         netIncome: leveragedNetIncome,
-        cashOnCashReturn,
-        capRate,
         fiveYearEquity,
         totalProfit,
         breakEvenYear: Math.min(breakEvenYear, 50),
@@ -323,14 +279,13 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
 
       setIsCalculating(false);
       
-      if (basicROI > 5) {
+      if (leveragedNetIncome > 0) {
         setTimeout(() => setShowAIAssistant(true), 2000);
       }
     }, 1000);
   };
 
   const formatCurrency = (amount: number, currencyType: Currency = currency) => {
-    const currencyMap = { EUR: '€', USD: '$', GBP: '£' };
     return new Intl.NumberFormat('en-EU', {
       style: 'currency',
       currency: currencyType,
@@ -370,8 +325,6 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
   };
 
   const chartData = getChartData();
-  const currentRegion = regions.find(r => r.value === region);
-  const isAboveAverage = results.basicROI > (currentRegion?.averageROI || 0);
 
   return (
     <TooltipProvider>
@@ -446,7 +399,7 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
                   <div className="p-3 rounded-full bg-primary/10">
                     <TrendingUp className="w-6 h-6 text-primary" />
                   </div>
-                  ROI Calculator
+                  Investment Calculator
                 </CardTitle>
               </CardHeader>
 
@@ -598,7 +551,7 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
                 </Collapsible>
 
                 <Button
-                  onClick={calculateAdvancedROI}
+                  onClick={calculateInvestmentReturns}
                   disabled={!basicData.purchasePrice || !basicData.annualRental || isCalculating}
                   className="w-full h-14 text-lg font-semibold"
                   variant="hero"
@@ -632,59 +585,33 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
                         </div>
 
                         <div className="flex items-center justify-center gap-2 mb-2">
-                          <h3 className="text-2xl font-bold text-foreground">{t.basicROI}</h3>
-                          <Tooltip>
-                            <TooltipTrigger>
-                              <Info className="w-4 h-4 text-muted-foreground" />
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              <p className="max-w-xs text-sm">{t.basicROITooltip}</p>
-                            </TooltipContent>
-                          </Tooltip>
+                          <h3 className="text-2xl font-bold text-foreground">{t.investmentReturns}</h3>
                         </div>
 
-                        <div className="text-6xl font-bold font-display bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4">
-                          {animatedROI}
-                        </div>
-
-                        {currentRegion && (
-                          <p className="text-sm text-muted-foreground mb-4">
-                            {t.regionalComparison
-                              .replace('{comparison}', isAboveAverage ? t.aboveAverage : t.belowAverage)
-                              .replace('{region}', currentRegion.label)}
-                          </p>
-                        )}
-                      </div>
-
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="text-center p-4 bg-muted/30 rounded-lg">
-                          <div className="flex items-center justify-center gap-1 mb-1">
-                            <div className="text-2xl font-bold text-primary">{results.cashOnCashReturn.toFixed(1)}%</div>
+                        <div className="text-center p-6 bg-muted/30 rounded-lg mb-6">
+                          <div className="flex items-center justify-center gap-2 mb-2">
+                            <div className="text-4xl font-bold text-primary">{formatCurrency(results.netIncome)}</div>
                             <Tooltip>
                               <TooltipTrigger>
-                                <Info className="w-3 h-3 text-muted-foreground" />
+                                <Info className="w-4 h-4 text-muted-foreground" />
                               </TooltipTrigger>
                               <TooltipContent>
-                                <p className="max-w-xs text-sm">{t.cashOnCashTooltip}</p>
+                                <p className="max-w-xs text-sm">{t.netIncomeTooltip}</p>
                               </TooltipContent>
                             </Tooltip>
                           </div>
-                          <div className="text-xs text-muted-foreground">{t.cashOnCash}</div>
-                        </div>
-                        <div className="text-center p-4 bg-muted/30 rounded-lg">
-                          <div className="text-2xl font-bold text-secondary">{results.capRate.toFixed(1)}%</div>
-                          <div className="text-xs text-muted-foreground">{t.capRate}</div>
+                          <div className="text-sm text-muted-foreground">{t.netIncome}</div>
                         </div>
                       </div>
 
                       <div className="space-y-3">
                         <div className="flex justify-between text-sm">
-                          <span className="text-muted-foreground">{t.netIncome}:</span>
-                          <span className="font-semibold">{formatCurrency(results.netIncome)}</span>
-                        </div>
-                        <div className="flex justify-between text-sm">
                           <span className="text-muted-foreground">{t.fiveYearEquity}:</span>
                           <span className="font-semibold">{formatCurrency(results.fiveYearEquity)}</span>
+                        </div>
+                        <div className="flex justify-between text-sm">
+                          <span className="text-muted-foreground">{t.totalProfit}:</span>
+                          <span className="font-semibold">{formatCurrency(results.totalProfit)}</span>
                         </div>
                         <div className="flex justify-between text-sm">
                           <span className="text-muted-foreground">{t.breakEvenYear}:</span>
