@@ -1,6 +1,5 @@
-
 import { useState, useEffect } from 'react';
-import { Calculator, TrendingUp, Euro, Home, BarChart3, ArrowRight, ChevronDown, Download, Share2, Bot, MapPin } from 'lucide-react';
+import { Calculator, TrendingUp, Euro, Home, BarChart3, ArrowRight, ChevronDown, Download, Share2, Bot, MapPin, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -14,6 +13,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, PieChart, Pie, Cell, LineChart, Line, ResponsiveContainer } from 'recharts';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { cn } from '@/lib/utils';
 
 interface AdvancedROICalculatorProps {
@@ -117,8 +117,10 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
       appreciationRate: 'Expected Appreciation Rate %',
       occupancyRate: 'Occupancy Rate %',
       basicROI: 'Basic ROI',
+      basicROITooltip: 'Unleveraged return on investment without financing costs',
       netIncome: 'Annual Net Income',
       cashOnCash: 'Cash-on-Cash Return',
+      cashOnCashTooltip: 'Return on actual cash invested, accounting for financing',
       capRate: 'Cap Rate',
       fiveYearEquity: '5-Year Equity Growth',
       totalProfit: 'Total Profit (5 Years)',
@@ -155,8 +157,10 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
       appreciationRate: 'Tasa de Apreciación Esperada %',
       occupancyRate: 'Tasa de Ocupación %',
       basicROI: 'ROI Básico',
+      basicROITooltip: 'Retorno de inversión sin apalancamiento, sin costos de financiamiento',
       netIncome: 'Ingresos Netos Anuales',
       cashOnCash: 'Retorno Efectivo',
+      cashOnCashTooltip: 'Retorno sobre el efectivo invertido, contabilizando el financiamiento',
       capRate: 'Tasa de Capitalización',
       fiveYearEquity: 'Crecimiento del Patrimonio (5 Años)',
       totalProfit: 'Beneficio Total (5 Años)',
@@ -193,8 +197,10 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
       appreciationRate: 'Verwachte Waardestijging %',
       occupancyRate: 'Bezettingsgraad %',
       basicROI: 'Basis ROI',
+      basicROITooltip: 'Ongevinancierd rendement op investering zonder financieringskosten',
       netIncome: 'Jaarlijks Netto Inkomen',
       cashOnCash: 'Cash-on-Cash Rendement',
+      cashOnCashTooltip: 'Rendement op werkelijk geïnvesteerde cash, rekening houdend met financiering',
       capRate: 'Kapitalisatievoet',
       fiveYearEquity: 'Eigenkapitalgroei (5 Jaar)',
       totalProfit: 'Totale Winst (5 Jaar)',
@@ -249,23 +255,32 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
       const maintenanceAmount = (purchasePrice * advancedData.maintenanceReserve) / 100;
       const managementAmount = (adjustedRental * advancedData.managementFee) / 100;
       
-      const totalAnnualCosts = annualCosts + propertyTaxAmount + maintenanceAmount + managementAmount + (monthlyPayment * 12);
-      const netIncome = adjustedRental - totalAnnualCosts;
-      const basicROI = (netIncome / purchasePrice) * 100;
-      const cashOnCashReturn = (netIncome / downPaymentAmount) * 100;
-      const capRate = (adjustedRental - annualCosts) / purchasePrice * 100;
+      // Calculate unleveraged NOI (for Basic ROI and Cap Rate)
+      const unleveragedNOI = adjustedRental - annualCosts - propertyTaxAmount - maintenanceAmount - managementAmount;
+      
+      // Calculate leveraged net income (for Cash-on-Cash Return)
+      const leveragedNetIncome = unleveragedNOI - (monthlyPayment * 12);
+      
+      // Basic ROI: Unleveraged return on total investment
+      const basicROI = Math.max(0, (unleveragedNOI / purchasePrice) * 100);
+      
+      // Cash-on-Cash Return: Leveraged return on actual cash invested
+      const cashOnCashReturn = Math.max(0, (leveragedNetIncome / downPaymentAmount) * 100);
+      
+      // Cap Rate: Unleveraged NOI / Purchase Price
+      const capRate = Math.max(0, (unleveragedNOI / purchasePrice) * 100);
       
       const fiveYearValue = purchasePrice * Math.pow(1 + advancedData.appreciationRate / 100, 5);
       const fiveYearEquity = fiveYearValue - purchasePrice;
-      const totalProfit = (netIncome * 5) + fiveYearEquity;
+      const totalProfit = (leveragedNetIncome * 5) + fiveYearEquity;
       
-      const breakEvenYear = downPaymentAmount / Math.max(netIncome, 1);
+      const breakEvenYear = downPaymentAmount / Math.max(leveragedNetIncome, 1);
 
       setResults({
-        basicROI: Math.max(0, basicROI),
-        netIncome,
-        cashOnCashReturn: Math.max(0, cashOnCashReturn),
-        capRate: Math.max(0, capRate),
+        basicROI,
+        netIncome: leveragedNetIncome,
+        cashOnCashReturn,
+        capRate,
         fiveYearEquity,
         totalProfit,
         breakEvenYear: Math.min(breakEvenYear, 50),
@@ -320,385 +335,408 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
   const isAboveAverage = results.basicROI > (currentRegion?.averageROI || 0);
 
   return (
-    <div className={cn('w-full max-w-7xl mx-auto space-y-8', className)}>
-      {/* Header */}
-      <AnimatedElement animation="fade-in-up" className="text-center space-y-6">
-        <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
-          <Calculator className="w-4 h-4 mr-2" />
-          ADVANCED INVESTMENT TOOLS
-        </div>
-        
-        <h2 className="text-3xl lg:text-5xl font-bold font-display text-foreground">
-          {t.title}
-        </h2>
-        
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          {t.subtitle}
-        </p>
-
-        {/* Controls */}
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          <div className="flex items-center gap-2">
-            <span className="text-sm text-muted-foreground">Language:</span>
-            {(['en', 'es', 'nl'] as const).map((lang) => (
-              <Button
-                key={lang}
-                variant={language === lang ? "default" : "outline"}
-                size="sm"
-                onClick={() => setLanguage(lang)}
-                className="min-w-[50px] text-xs"
-              >
-                {lang.toUpperCase()}
-              </Button>
-            ))}
+    <TooltipProvider>
+      <div className={cn('w-full max-w-7xl mx-auto space-y-8', className)}>
+        {/* Header */}
+        <AnimatedElement animation="fade-in-up" className="text-center space-y-6">
+          <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
+            <Calculator className="w-4 h-4 mr-2" />
+            ADVANCED INVESTMENT TOOLS
           </div>
           
-          <Select value={currency} onValueChange={(value: Currency) => setCurrency(value)}>
-            <SelectTrigger className="w-20">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="EUR">€ EUR</SelectItem>
-              <SelectItem value="USD">$ USD</SelectItem>
-              <SelectItem value="GBP">£ GBP</SelectItem>
-            </SelectContent>
-          </Select>
+          <h2 className="text-3xl lg:text-5xl font-bold font-display text-foreground">
+            {t.title}
+          </h2>
+          
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            {t.subtitle}
+          </p>
 
-          <Select value={region} onValueChange={setRegion}>
-            <SelectTrigger className="w-40">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              {regions.map((r) => (
-                <SelectItem key={r.value} value={r.value}>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-3 h-3" />
-                    {r.label}
-                  </div>
-                </SelectItem>
+          {/* Controls */}
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-muted-foreground">Language:</span>
+              {(['en', 'es', 'nl'] as const).map((lang) => (
+                <Button
+                  key={lang}
+                  variant={language === lang ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setLanguage(lang)}
+                  className="min-w-[50px] text-xs"
+                >
+                  {lang.toUpperCase()}
+                </Button>
               ))}
-            </SelectContent>
-          </Select>
-        </div>
-      </AnimatedElement>
+            </div>
+            
+            <Select value={currency} onValueChange={(value: Currency) => setCurrency(value)}>
+              <SelectTrigger className="w-20">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="EUR">€ EUR</SelectItem>
+                <SelectItem value="USD">$ USD</SelectItem>
+                <SelectItem value="GBP">£ GBP</SelectItem>
+              </SelectContent>
+            </Select>
 
-      <div className="grid lg:grid-cols-2 gap-8 items-start">
-        {/* Calculator Form */}
-        <AnimatedElement animation="fade-in-left" delay={200}>
-          <InteractiveCard variant="luxury" hover="lift" className="p-6 space-y-6">
-            <CardHeader className="text-center pb-6 px-0">
-              <CardTitle className="flex items-center justify-center gap-3 text-xl">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <TrendingUp className="w-6 h-6 text-primary" />
-                </div>
-                ROI Calculator
-              </CardTitle>
-            </CardHeader>
-
-            <CardContent className="space-y-6 px-0">
-              {/* Basic Inputs */}
-              <div className="space-y-4">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium flex items-center gap-2">
-                    <Home className="w-4 h-4 text-primary" />
-                    {t.purchasePrice}
-                  </label>
-                  <div className="relative">
-                    <Euro className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground z-10" />
-                    <Input
-                      type="text"
-                      placeholder="500,000"
-                      value={basicData.purchasePrice}
-                      onChange={(e) => setBasicData(prev => ({ ...prev, purchasePrice: e.target.value.replace(/[^0-9.]/g, '') }))}
-                      className="pl-10 h-12"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium flex items-center gap-2">
-                    <BarChart3 className="w-4 h-4 text-secondary" />
-                    {t.annualRental}
-                  </label>
-                  <div className="relative">
-                    <Euro className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground z-10" />
-                    <Input
-                      type="text"
-                      placeholder="30,000"
-                      value={basicData.annualRental}
-                      onChange={(e) => setBasicData(prev => ({ ...prev, annualRental: e.target.value.replace(/[^0-9.]/g, '') }))}
-                      className="pl-10 h-12"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium flex items-center gap-2">
-                    <Calculator className="w-4 h-4 text-orange-500" />
-                    {t.annualCosts}
-                  </label>
-                  <div className="relative">
-                    <Euro className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground z-10" />
-                    <Input
-                      type="text"
-                      placeholder="5,000"
-                      value={basicData.annualCosts}
-                      onChange={(e) => setBasicData(prev => ({ ...prev, annualCosts: e.target.value.replace(/[^0-9.]/g, '') }))}
-                      className="pl-10 h-12"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Advanced Options */}
-              <Collapsible open={showAdvanced} onOpenChange={setShowAdvanced}>
-                <CollapsibleTrigger asChild>
-                  <Button variant="outline" className="w-full justify-between">
-                    {t.advancedOptions}
-                    <ChevronDown className={cn("w-4 h-4 transition-transform", showAdvanced && "rotate-180")} />
-                  </Button>
-                </CollapsibleTrigger>
-                
-                <CollapsibleContent className="space-y-4 mt-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">{t.downPayment}</label>
-                      <Slider
-                        value={[advancedData.downPayment]}
-                        onValueChange={([value]) => setAdvancedData(prev => ({ ...prev, downPayment: value }))}
-                        max={50}
-                        min={10}
-                        step={5}
-                        className="w-full"
-                      />
-                      <span className="text-xs text-muted-foreground">{advancedData.downPayment}%</span>
+            <Select value={region} onValueChange={setRegion}>
+              <SelectTrigger className="w-40">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {regions.map((r) => (
+                  <SelectItem key={r.value} value={r.value}>
+                    <div className="flex items-center gap-2">
+                      <MapPin className="w-3 h-3" />
+                      {r.label}
                     </div>
-
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">{t.interestRate}</label>
-                      <Slider
-                        value={[advancedData.interestRate]}
-                        onValueChange={([value]) => setAdvancedData(prev => ({ ...prev, interestRate: value }))}
-                        max={8}
-                        min={1}
-                        step={0.1}
-                        className="w-full"
-                      />
-                      <span className="text-xs text-muted-foreground">{advancedData.interestRate}%</span>
-                    </div>
-
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">{t.occupancyRate}</label>
-                      <Slider
-                        value={[advancedData.occupancyRate]}
-                        onValueChange={([value]) => setAdvancedData(prev => ({ ...prev, occupancyRate: value }))}
-                        max={100}
-                        min={50}
-                        step={5}
-                        className="w-full"
-                      />
-                      <span className="text-xs text-muted-foreground">{advancedData.occupancyRate}%</span>
-                    </div>
-
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">{t.appreciationRate}</label>
-                      <Slider
-                        value={[advancedData.appreciationRate]}
-                        onValueChange={([value]) => setAdvancedData(prev => ({ ...prev, appreciationRate: value }))}
-                        max={10}
-                        min={0}
-                        step={0.5}
-                        className="w-full"
-                      />
-                      <span className="text-xs text-muted-foreground">{advancedData.appreciationRate}%</span>
-                    </div>
-                  </div>
-                </CollapsibleContent>
-              </Collapsible>
-
-              <Button
-                onClick={calculateAdvancedROI}
-                disabled={!basicData.purchasePrice || !basicData.annualRental || isCalculating}
-                className="w-full h-14 text-lg font-semibold"
-                variant="hero"
-              >
-                {isCalculating ? (
-                  <>
-                    <Calculator className="w-5 h-5 mr-2 animate-spin" />
-                    {t.calculating}
-                  </>
-                ) : (
-                  <>
-                    <TrendingUp className="w-5 h-5 mr-2" />
-                    {t.calculate}
-                  </>
-                )}
-              </Button>
-            </CardContent>
-          </InteractiveCard>
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
         </AnimatedElement>
 
-        {/* Results */}
-        <div className="space-y-6" ref={resultRef}>
-          {results.isVisible && (
-            <>
-              <AnimatedElement animation="fade-in-right" delay={300}>
-                <InteractiveCard variant="luxury" hover="glow" className="p-6 border-primary/20">
-                  <CardContent className="space-y-6 px-0">
-                    <div className="text-center">
-                      <div className="inline-flex items-center justify-center p-4 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 mb-4">
-                        <TrendingUp className="w-8 h-8 text-primary" />
-                      </div>
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
+          {/* Calculator Form */}
+          <AnimatedElement animation="fade-in-left" delay={200}>
+            <InteractiveCard variant="luxury" hover="lift" className="p-6 space-y-6">
+              <CardHeader className="text-center pb-6 px-0">
+                <CardTitle className="flex items-center justify-center gap-3 text-xl">
+                  <div className="p-3 rounded-full bg-primary/10">
+                    <TrendingUp className="w-6 h-6 text-primary" />
+                  </div>
+                  ROI Calculator
+                </CardTitle>
+              </CardHeader>
 
-                      <h3 className="text-2xl font-bold text-foreground mb-2">{t.basicROI}</h3>
-                      <div className="text-6xl font-bold font-display bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4">
-                        {animatedROI}
-                      </div>
-
-                      {currentRegion && (
-                        <p className="text-sm text-muted-foreground mb-4">
-                          {t.regionalComparison
-                            .replace('{comparison}', isAboveAverage ? t.aboveAverage : t.belowAverage)
-                            .replace('{region}', currentRegion.label)}
-                        </p>
-                      )}
+              <CardContent className="space-y-6 px-0">
+                {/* Basic Inputs */}
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium flex items-center gap-2">
+                      <Home className="w-4 h-4 text-primary" />
+                      {t.purchasePrice}
+                    </label>
+                    <div className="relative">
+                      <Euro className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground z-10" />
+                      <Input
+                        type="text"
+                        placeholder="500,000"
+                        value={basicData.purchasePrice}
+                        onChange={(e) => setBasicData(prev => ({ ...prev, purchasePrice: e.target.value.replace(/[^0-9.]/g, '') }))}
+                        className="pl-10 h-12"
+                      />
                     </div>
+                  </div>
 
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="text-center p-4 bg-muted/30 rounded-lg">
-                        <div className="text-2xl font-bold text-primary">{results.cashOnCashReturn.toFixed(1)}%</div>
-                        <div className="text-xs text-muted-foreground">{t.cashOnCash}</div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium flex items-center gap-2">
+                      <BarChart3 className="w-4 h-4 text-secondary" />
+                      {t.annualRental}
+                    </label>
+                    <div className="relative">
+                      <Euro className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground z-10" />
+                      <Input
+                        type="text"
+                        placeholder="30,000"
+                        value={basicData.annualRental}
+                        onChange={(e) => setBasicData(prev => ({ ...prev, annualRental: e.target.value.replace(/[^0-9.]/g, '') }))}
+                        className="pl-10 h-12"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium flex items-center gap-2">
+                      <Calculator className="w-4 h-4 text-orange-500" />
+                      {t.annualCosts}
+                    </label>
+                    <div className="relative">
+                      <Euro className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground z-10" />
+                      <Input
+                        type="text"
+                        placeholder="5,000"
+                        value={basicData.annualCosts}
+                        onChange={(e) => setBasicData(prev => ({ ...prev, annualCosts: e.target.value.replace(/[^0-9.]/g, '') }))}
+                        className="pl-10 h-12"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Advanced Options */}
+                <Collapsible open={showAdvanced} onOpenChange={setShowAdvanced}>
+                  <CollapsibleTrigger asChild>
+                    <Button variant="outline" className="w-full justify-between">
+                      {t.advancedOptions}
+                      <ChevronDown className={cn("w-4 h-4 transition-transform", showAdvanced && "rotate-180")} />
+                    </Button>
+                  </CollapsibleTrigger>
+                  
+                  <CollapsibleContent className="space-y-4 mt-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium">{t.downPayment}</label>
+                        <Slider
+                          value={[advancedData.downPayment]}
+                          onValueChange={([value]) => setAdvancedData(prev => ({ ...prev, downPayment: value }))}
+                          max={50}
+                          min={10}
+                          step={5}
+                          className="w-full"
+                        />
+                        <span className="text-xs text-muted-foreground">{advancedData.downPayment}%</span>
                       </div>
-                      <div className="text-center p-4 bg-muted/30 rounded-lg">
-                        <div className="text-2xl font-bold text-secondary">{results.capRate.toFixed(1)}%</div>
-                        <div className="text-xs text-muted-foreground">{t.capRate}</div>
+
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium">{t.interestRate}</label>
+                        <Slider
+                          value={[advancedData.interestRate]}
+                          onValueChange={([value]) => setAdvancedData(prev => ({ ...prev, interestRate: value }))}
+                          max={8}
+                          min={1}
+                          step={0.1}
+                          className="w-full"
+                        />
+                        <span className="text-xs text-muted-foreground">{advancedData.interestRate}%</span>
+                      </div>
+
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium">{t.occupancyRate}</label>
+                        <Slider
+                          value={[advancedData.occupancyRate]}
+                          onValueChange={([value]) => setAdvancedData(prev => ({ ...prev, occupancyRate: value }))}
+                          max={100}
+                          min={50}
+                          step={5}
+                          className="w-full"
+                        />
+                        <span className="text-xs text-muted-foreground">{advancedData.occupancyRate}%</span>
+                      </div>
+
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium">{t.appreciationRate}</label>
+                        <Slider
+                          value={[advancedData.appreciationRate]}
+                          onValueChange={([value]) => setAdvancedData(prev => ({ ...prev, appreciationRate: value }))}
+                          max={10}
+                          min={0}
+                          step={0.5}
+                          className="w-full"
+                        />
+                        <span className="text-xs text-muted-foreground">{advancedData.appreciationRate}%</span>
                       </div>
                     </div>
+                  </CollapsibleContent>
+                </Collapsible>
 
-                    <div className="space-y-3">
-                      <div className="flex justify-between text-sm">
-                        <span className="text-muted-foreground">{t.netIncome}:</span>
-                        <span className="font-semibold">{formatCurrency(results.netIncome)}</span>
-                      </div>
-                      <div className="flex justify-between text-sm">
-                        <span className="text-muted-foreground">{t.fiveYearEquity}:</span>
-                        <span className="font-semibold">{formatCurrency(results.fiveYearEquity)}</span>
-                      </div>
-                      <div className="flex justify-between text-sm">
-                        <span className="text-muted-foreground">{t.breakEvenYear}:</span>
-                        <span className="font-semibold">{results.breakEvenYear.toFixed(1)} years</span>
-                      </div>
-                    </div>
+                <Button
+                  onClick={calculateAdvancedROI}
+                  disabled={!basicData.purchasePrice || !basicData.annualRental || isCalculating}
+                  className="w-full h-14 text-lg font-semibold"
+                  variant="hero"
+                >
+                  {isCalculating ? (
+                    <>
+                      <Calculator className="w-5 h-5 mr-2 animate-spin" />
+                      {t.calculating}
+                    </>
+                  ) : (
+                    <>
+                      <TrendingUp className="w-5 h-5 mr-2" />
+                      {t.calculate}
+                    </>
+                  )}
+                </Button>
+              </CardContent>
+            </InteractiveCard>
+          </AnimatedElement>
 
-                    <div className="flex flex-wrap gap-2">
-                      <Button variant="outline" size="sm" className="flex-1">
-                        <Download className="w-4 h-4 mr-2" />
-                        {t.downloadReport}
-                      </Button>
-                      <Button variant="outline" size="sm" className="flex-1">
-                        <Share2 className="w-4 h-4 mr-2" />
-                        {t.shareResults}
-                      </Button>
-                    </div>
-                  </CardContent>
-                </InteractiveCard>
-              </AnimatedElement>
+          {/* Results */}
+          <div className="space-y-6" ref={resultRef}>
+            {results.isVisible && (
+              <>
+                <AnimatedElement animation="fade-in-right" delay={300}>
+                  <InteractiveCard variant="luxury" hover="glow" className="p-6 border-primary/20">
+                    <CardContent className="space-y-6 px-0">
+                      <div className="text-center">
+                        <div className="inline-flex items-center justify-center p-4 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 mb-4">
+                          <TrendingUp className="w-8 h-8 text-primary" />
+                        </div>
 
-              {/* Charts */}
-              <AnimatedElement animation="fade-in-up" delay={500}>
-                <InteractiveCard variant="luxury" className="p-6">
-                  <Tabs value={activeChart} onValueChange={(value: any) => setActiveChart(value)}>
-                    <TabsList className="grid w-full grid-cols-3">
-                      <TabsTrigger value="income">{t.chartIncome}</TabsTrigger>
-                      <TabsTrigger value="costs">{t.chartCosts}</TabsTrigger>
-                      <TabsTrigger value="growth">{t.chartGrowth}</TabsTrigger>
-                    </TabsList>
+                        <div className="flex items-center justify-center gap-2 mb-2">
+                          <h3 className="text-2xl font-bold text-foreground">{t.basicROI}</h3>
+                          <Tooltip>
+                            <TooltipTrigger>
+                              <Info className="w-4 h-4 text-muted-foreground" />
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p className="max-w-xs text-sm">{t.basicROITooltip}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </div>
 
-                    <TabsContent value="income" className="mt-6">
-                      <ChartContainer config={{ income: { label: "Income", color: "hsl(var(--primary))" } }}>
-                        <ResponsiveContainer width="100%" height={300}>
-                          <BarChart data={chartData.incomeVsExpenses}>
-                            <CartesianGrid strokeDasharray="3 3" />
-                            <XAxis dataKey="name" />
-                            <YAxis />
-                            <ChartTooltip content={<ChartTooltipContent />} />
-                            <Bar dataKey="value" fill="currentColor" />
-                          </BarChart>
-                        </ResponsiveContainer>
-                      </ChartContainer>
-                    </TabsContent>
+                        <div className="text-6xl font-bold font-display bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4">
+                          {animatedROI}
+                        </div>
 
-                    <TabsContent value="costs" className="mt-6">
-                      <ChartContainer config={{ costs: { label: "Costs", color: "hsl(var(--chart-1))" } }}>
-                        <ResponsiveContainer width="100%" height={300}>
-                          <PieChart>
-                            <Pie
-                              data={chartData.costBreakdown}
-                              cx="50%"
-                              cy="50%"
-                              outerRadius={100}
-                              dataKey="value"
-                            >
-                              {chartData.costBreakdown.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={entry.fill} />
-                              ))}
-                            </Pie>
-                            <ChartTooltip content={<ChartTooltipContent />} />
-                          </PieChart>
-                        </ResponsiveContainer>
-                      </ChartContainer>
-                    </TabsContent>
-
-                    <TabsContent value="growth" className="mt-6">
-                      <ChartContainer config={{ growth: { label: "Growth", color: "hsl(var(--primary))" } }}>
-                        <ResponsiveContainer width="100%" height={300}>
-                          <LineChart data={chartData.valueGrowth}>
-                            <CartesianGrid strokeDasharray="3 3" />
-                            <XAxis dataKey="year" />
-                            <YAxis />
-                            <ChartTooltip content={<ChartTooltipContent />} />
-                            <Line type="monotone" dataKey="value" stroke="hsl(var(--primary))" strokeWidth={2} />
-                          </LineChart>
-                        </ResponsiveContainer>
-                      </ChartContainer>
-                    </TabsContent>
-                  </Tabs>
-                </InteractiveCard>
-              </AnimatedElement>
-
-              {/* AI Assistant CTA */}
-              {showAIAssistant && (
-                <AnimatedElement animation="scale-in" delay={700}>
-                  <InteractiveCard variant="luxury" hover="lift" className="p-6 bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/30">
-                    <CardContent className="text-center space-y-4 px-0">
-                      <div className="inline-flex items-center justify-center p-4 rounded-full bg-primary/10">
-                        <Bot className="w-8 h-8 text-primary" />
+                        {currentRegion && (
+                          <p className="text-sm text-muted-foreground mb-4">
+                            {t.regionalComparison
+                              .replace('{comparison}', isAboveAverage ? t.aboveAverage : t.belowAverage)
+                              .replace('{region}', currentRegion.label)}
+                          </p>
+                        )}
                       </div>
 
-                      <div>
-                        <h3 className="text-xl font-bold text-foreground mb-2">{t.aiPrompt}</h3>
-                        <p className="text-sm text-muted-foreground">Get personalized property recommendations and deeper investment analysis</p>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="text-center p-4 bg-muted/30 rounded-lg">
+                          <div className="flex items-center justify-center gap-1 mb-1">
+                            <div className="text-2xl font-bold text-primary">{results.cashOnCashReturn.toFixed(1)}%</div>
+                            <Tooltip>
+                              <TooltipTrigger>
+                                <Info className="w-3 h-3 text-muted-foreground" />
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <p className="max-w-xs text-sm">{t.cashOnCashTooltip}</p>
+                              </TooltipContent>
+                            </Tooltip>
+                          </div>
+                          <div className="text-xs text-muted-foreground">{t.cashOnCash}</div>
+                        </div>
+                        <div className="text-center p-4 bg-muted/30 rounded-lg">
+                          <div className="text-2xl font-bold text-secondary">{results.capRate.toFixed(1)}%</div>
+                          <div className="text-xs text-muted-foreground">{t.capRate}</div>
+                        </div>
                       </div>
 
-                      <div className="flex flex-col sm:flex-row gap-3">
-                        <Button size="lg" variant="hero" className="flex-1">
-                          <Bot className="w-5 h-5 mr-2" />
-                          {t.askAI}
+                      <div className="space-y-3">
+                        <div className="flex justify-between text-sm">
+                          <span className="text-muted-foreground">{t.netIncome}:</span>
+                          <span className="font-semibold">{formatCurrency(results.netIncome)}</span>
+                        </div>
+                        <div className="flex justify-between text-sm">
+                          <span className="text-muted-foreground">{t.fiveYearEquity}:</span>
+                          <span className="font-semibold">{formatCurrency(results.fiveYearEquity)}</span>
+                        </div>
+                        <div className="flex justify-between text-sm">
+                          <span className="text-muted-foreground">{t.breakEvenYear}:</span>
+                          <span className="font-semibold">{results.breakEvenYear.toFixed(1)} years</span>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2">
+                        <Button variant="outline" size="sm" className="flex-1">
+                          <Download className="w-4 h-4 mr-2" />
+                          {t.downloadReport}
                         </Button>
-                        <Button size="lg" variant="outline" className="flex-1">
-                          <ArrowRight className="w-5 h-5 mr-2" />
-                          {t.scheduleViewing}
+                        <Button variant="outline" size="sm" className="flex-1">
+                          <Share2 className="w-4 h-4 mr-2" />
+                          {t.shareResults}
                         </Button>
                       </div>
                     </CardContent>
                   </InteractiveCard>
                 </AnimatedElement>
-              )}
-            </>
-          )}
+
+                {/* Charts */}
+                <AnimatedElement animation="fade-in-up" delay={500}>
+                  <InteractiveCard variant="luxury" className="p-6">
+                    <Tabs value={activeChart} onValueChange={(value: any) => setActiveChart(value)}>
+                      <TabsList className="grid w-full grid-cols-3">
+                        <TabsTrigger value="income">{t.chartIncome}</TabsTrigger>
+                        <TabsTrigger value="costs">{t.chartCosts}</TabsTrigger>
+                        <TabsTrigger value="growth">{t.chartGrowth}</TabsTrigger>
+                      </TabsList>
+
+                      <TabsContent value="income" className="mt-6">
+                        <ChartContainer config={{ income: { label: "Income", color: "hsl(var(--primary))" } }}>
+                          <ResponsiveContainer width="100%" height={300}>
+                            <BarChart data={chartData.incomeVsExpenses}>
+                              <CartesianGrid strokeDasharray="3 3" />
+                              <XAxis dataKey="name" />
+                              <YAxis />
+                              <ChartTooltip content={<ChartTooltipContent />} />
+                              <Bar dataKey="value" fill="currentColor" />
+                            </BarChart>
+                          </ResponsiveContainer>
+                        </ChartContainer>
+                      </TabsContent>
+
+                      <TabsContent value="costs" className="mt-6">
+                        <ChartContainer config={{ costs: { label: "Costs", color: "hsl(var(--chart-1))" } }}>
+                          <ResponsiveContainer width="100%" height={300}>
+                            <PieChart>
+                              <Pie
+                                data={chartData.costBreakdown}
+                                cx="50%"
+                                cy="50%"
+                                outerRadius={100}
+                                dataKey="value"
+                              >
+                                {chartData.costBreakdown.map((entry, index) => (
+                                  <Cell key={`cell-${index}`} fill={entry.fill} />
+                                ))}
+                              </Pie>
+                              <ChartTooltip content={<ChartTooltipContent />} />
+                            </PieChart>
+                          </ResponsiveContainer>
+                        </ChartContainer>
+                      </TabsContent>
+
+                      <TabsContent value="growth" className="mt-6">
+                        <ChartContainer config={{ growth: { label: "Growth", color: "hsl(var(--primary))" } }}>
+                          <ResponsiveContainer width="100%" height={300}>
+                            <LineChart data={chartData.valueGrowth}>
+                              <CartesianGrid strokeDasharray="3 3" />
+                              <XAxis dataKey="year" />
+                              <YAxis />
+                              <ChartTooltip content={<ChartTooltipContent />} />
+                              <Line type="monotone" dataKey="value" stroke="hsl(var(--primary))" strokeWidth={2} />
+                            </LineChart>
+                          </ResponsiveContainer>
+                        </ChartContainer>
+                      </TabsContent>
+                    </Tabs>
+                  </InteractiveCard>
+                </AnimatedElement>
+
+                {/* AI Assistant CTA */}
+                {showAIAssistant && (
+                  <AnimatedElement animation="scale-in" delay={700}>
+                    <InteractiveCard variant="luxury" hover="lift" className="p-6 bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/30">
+                      <CardContent className="text-center space-y-4 px-0">
+                        <div className="inline-flex items-center justify-center p-4 rounded-full bg-primary/10">
+                          <Bot className="w-8 h-8 text-primary" />
+                        </div>
+
+                        <div>
+                          <h3 className="text-xl font-bold text-foreground mb-2">{t.aiPrompt}</h3>
+                          <p className="text-sm text-muted-foreground">Get personalized property recommendations and deeper investment analysis</p>
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row gap-3">
+                          <Button size="lg" variant="hero" className="flex-1">
+                            <Bot className="w-5 h-5 mr-2" />
+                            {t.askAI}
+                          </Button>
+                          <Button size="lg" variant="outline" className="flex-1">
+                            <ArrowRight className="w-5 h-5 mr-2" />
+                            {t.scheduleViewing}
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </InteractiveCard>
+                  </AnimatedElement>
+                )}
+              </>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </TooltipProvider>
   );
 };
 
