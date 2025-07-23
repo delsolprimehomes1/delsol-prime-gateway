@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer, BarChart, Bar } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer, BarChart, Bar, Cell } from 'recharts';
 import { TrendingUp } from 'lucide-react';
 
 interface ROIProfitTimelineProps {
@@ -126,10 +126,14 @@ export const ROIProfitTimeline = ({ results, advancedData, basicData, formatCurr
                   content={<ChartTooltipContent />}
                   formatter={(value: number) => [formatCurrency(value), "Net Position"]}
                 />
-                <Bar 
-                  dataKey="value" 
-                  fill={(entry: any) => entry.isPositive ? "hsl(var(--chart-2))" : "hsl(var(--chart-4))"}
-                />
+                <Bar dataKey="value">
+                  {breakEvenData.map((entry, index) => (
+                    <Cell 
+                      key={`cell-${index}`} 
+                      fill={entry.isPositive ? "hsl(var(--chart-2))" : "hsl(var(--chart-4))"} 
+                    />
+                  ))}
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
           </ChartContainer>
