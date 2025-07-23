@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Calculator, TrendingUp, Euro, Home, BarChart3, ArrowRight, ChevronDown, Download, Share2, Bot, MapPin, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -111,16 +112,16 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
       downPayment: 'Down Payment %',
       interestRate: 'Interest Rate %',
       loanTerm: 'Loan Term (Years)',
-      propertyTax: 'Property Tax (€)',
+      propertyTax: 'Property Tax Rate %',
       maintenanceReserve: 'Maintenance Reserve %',
       managementFee: 'Property Management Fee %',
       appreciationRate: 'Expected Appreciation Rate %',
       occupancyRate: 'Occupancy Rate %',
       basicROI: 'Basic ROI',
-      basicROITooltip: 'Unleveraged return on investment without financing costs',
+      basicROITooltip: 'Unleveraged return on investment without financing costs - shows property performance before considering loan payments',
       netIncome: 'Annual Net Income',
       cashOnCash: 'Cash-on-Cash Return',
-      cashOnCashTooltip: 'Return on actual cash invested, accounting for financing',
+      cashOnCashTooltip: 'Leveraged return on actual cash invested - shows return after loan payments divided by down payment',
       capRate: 'Cap Rate',
       fiveYearEquity: '5-Year Equity Growth',
       totalProfit: 'Total Profit (5 Years)',
@@ -151,16 +152,16 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
       downPayment: 'Pago Inicial %',
       interestRate: 'Tasa de Interés %',
       loanTerm: 'Plazo del Préstamo (Años)',
-      propertyTax: 'Impuesto sobre Bienes (€)',
+      propertyTax: 'Tasa de Impuesto sobre Bienes %',
       maintenanceReserve: 'Reserva de Mantenimiento %',
       managementFee: 'Tarifa de Administración %',
       appreciationRate: 'Tasa de Apreciación Esperada %',
       occupancyRate: 'Tasa de Ocupación %',
       basicROI: 'ROI Básico',
-      basicROITooltip: 'Retorno de inversión sin apalancamiento, sin costos de financiamiento',
+      basicROITooltip: 'Retorno de inversión sin apalancamiento, sin costos de financiamiento - muestra el rendimiento de la propiedad antes de considerar los pagos del préstamo',
       netIncome: 'Ingresos Netos Anuales',
       cashOnCash: 'Retorno Efectivo',
-      cashOnCashTooltip: 'Retorno sobre el efectivo invertido, contabilizando el financiamiento',
+      cashOnCashTooltip: 'Retorno apalancado sobre el efectivo invertido - muestra el retorno después de los pagos del préstamo dividido por el pago inicial',
       capRate: 'Tasa de Capitalización',
       fiveYearEquity: 'Crecimiento del Patrimonio (5 Años)',
       totalProfit: 'Beneficio Total (5 Años)',
@@ -191,16 +192,16 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
       downPayment: 'Aanbetaling %',
       interestRate: 'Rente %',
       loanTerm: 'Looptijd Lening (Jaren)',
-      propertyTax: 'Onroerend Goed Belasting (€)',
+      propertyTax: 'Onroerend Goed Belasting %',
       maintenanceReserve: 'Onderhoudsreserve %',
       managementFee: 'Beheerkosten %',
       appreciationRate: 'Verwachte Waardestijging %',
       occupancyRate: 'Bezettingsgraad %',
       basicROI: 'Basis ROI',
-      basicROITooltip: 'Ongevinancierd rendement op investering zonder financieringskosten',
+      basicROITooltip: 'Ongevinancieerd rendement op investering zonder financieringskosten - toont prestatie van eigendom voor leningbetalingen',
       netIncome: 'Jaarlijks Netto Inkomen',
       cashOnCash: 'Cash-on-Cash Rendement',
-      cashOnCashTooltip: 'Rendement op werkelijk geïnvesteerde cash, rekening houdend met financiering',
+      cashOnCashTooltip: 'Gefinancierd rendement op werkelijk geïnvesteerde cash - toont rendement na leningbetalingen gedeeld door aanbetaling',
       capRate: 'Kapitalisatievoet',
       fiveYearEquity: 'Eigenkapitalgroei (5 Jaar)',
       totalProfit: 'Totale Winst (5 Jaar)',
@@ -234,47 +235,80 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
   const calculateAdvancedROI = () => {
     const purchasePrice = parseFloat(basicData.purchasePrice);
     const annualRental = parseFloat(basicData.annualRental);
-    const annualCosts = parseFloat(basicData.annualCosts);
+    const annualCosts = parseFloat(basicData.annualCosts) || 0;
 
-    if (!purchasePrice || !annualRental || purchasePrice <= 0) return;
+    console.log('Input values:', { purchasePrice, annualRental, annualCosts });
+
+    if (!purchasePrice || !annualRental || purchasePrice <= 0 || annualRental <= 0) return;
 
     setIsCalculating(true);
 
     setTimeout(() => {
+      // Calculate financing details
       const downPaymentAmount = (purchasePrice * advancedData.downPayment) / 100;
       const loanAmount = purchasePrice - downPaymentAmount;
       const monthlyInterestRate = advancedData.interestRate / 100 / 12;
       const numberOfPayments = advancedData.loanTerm * 12;
       
+      // Calculate monthly mortgage payment using amortization formula
       const monthlyPayment = loanAmount * 
         (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments)) /
         (Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
 
+      const annualDebtService = monthlyPayment * 12;
+
+      // Calculate adjusted rental income based on occupancy
       const adjustedRental = (annualRental * advancedData.occupancyRate) / 100;
-      const propertyTaxAmount = parseFloat(basicData.annualCosts) || (purchasePrice * 0.015);
+      
+      // Calculate individual cost components
+      const propertyTaxRate = parseFloat(advancedData.propertyTax) / 100;
+      const propertyTaxAmount = purchasePrice * propertyTaxRate;
       const maintenanceAmount = (purchasePrice * advancedData.maintenanceReserve) / 100;
       const managementAmount = (adjustedRental * advancedData.managementFee) / 100;
       
-      // Calculate unleveraged NOI (for Basic ROI and Cap Rate)
+      console.log('Cost breakdown:', {
+        propertyTaxAmount,
+        maintenanceAmount,
+        managementAmount,
+        annualCosts,
+        annualDebtService
+      });
+
+      // Calculate Net Operating Income (NOI) - before debt service
       const unleveragedNOI = adjustedRental - annualCosts - propertyTaxAmount - maintenanceAmount - managementAmount;
       
-      // Calculate leveraged net income (for Cash-on-Cash Return)
-      const leveragedNetIncome = unleveragedNOI - (monthlyPayment * 12);
+      // Calculate leveraged net income (after debt service)
+      const leveragedNetIncome = unleveragedNOI - annualDebtService;
       
-      // Basic ROI: Unleveraged return on total investment
+      console.log('NOI calculations:', {
+        adjustedRental,
+        unleveragedNOI,
+        leveragedNetIncome
+      });
+
+      // Basic ROI: Unleveraged return on total investment (Cap Rate)
       const basicROI = Math.max(0, (unleveragedNOI / purchasePrice) * 100);
       
       // Cash-on-Cash Return: Leveraged return on actual cash invested
       const cashOnCashReturn = Math.max(0, (leveragedNetIncome / downPaymentAmount) * 100);
       
-      // Cap Rate: Unleveraged NOI / Purchase Price
-      const capRate = Math.max(0, (unleveragedNOI / purchasePrice) * 100);
+      // Cap Rate: Same as Basic ROI in this context
+      const capRate = basicROI;
       
+      // Calculate 5-year projections
       const fiveYearValue = purchasePrice * Math.pow(1 + advancedData.appreciationRate / 100, 5);
       const fiveYearEquity = fiveYearValue - purchasePrice;
       const totalProfit = (leveragedNetIncome * 5) + fiveYearEquity;
       
-      const breakEvenYear = downPaymentAmount / Math.max(leveragedNetIncome, 1);
+      // Break-even calculation
+      const breakEvenYear = leveragedNetIncome > 0 ? downPaymentAmount / leveragedNetIncome : 50;
+
+      console.log('Final results:', {
+        basicROI,
+        cashOnCashReturn,
+        capRate,
+        leveragedNetIncome
+      });
 
       setResults({
         basicROI,
@@ -315,10 +349,15 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
       { name: 'Annual Costs', value: annualCosts, fill: 'hsl(var(--destructive))' }
     ];
 
+    const propertyTaxRate = parseFloat(advancedData.propertyTax) / 100;
+    const propertyTaxAmount = purchasePrice * propertyTaxRate;
+    const maintenanceAmount = (purchasePrice * advancedData.maintenanceReserve) / 100;
+    const managementAmount = (annualRental * advancedData.managementFee) / 100;
+
     const costBreakdown = [
-      { name: 'Maintenance', value: (purchasePrice * advancedData.maintenanceReserve) / 100, fill: 'hsl(var(--chart-1))' },
-      { name: 'Management', value: (annualRental * advancedData.managementFee) / 100, fill: 'hsl(var(--chart-2))' },
-      { name: 'Property Tax', value: purchasePrice * 0.015, fill: 'hsl(var(--chart-3))' },
+      { name: 'Maintenance', value: maintenanceAmount, fill: 'hsl(var(--chart-1))' },
+      { name: 'Management', value: managementAmount, fill: 'hsl(var(--chart-2))' },
+      { name: 'Property Tax', value: propertyTaxAmount, fill: 'hsl(var(--chart-3))' },
       { name: 'Other Costs', value: annualCosts, fill: 'hsl(var(--chart-4))' }
     ];
 
@@ -504,6 +543,19 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
                       </div>
 
                       <div className="space-y-2">
+                        <label className="text-sm font-medium">{t.propertyTax}</label>
+                        <Slider
+                          value={[parseFloat(advancedData.propertyTax)]}
+                          onValueChange={([value]) => setAdvancedData(prev => ({ ...prev, propertyTax: value.toString() }))}
+                          max={3}
+                          min={0.5}
+                          step={0.1}
+                          className="w-full"
+                        />
+                        <span className="text-xs text-muted-foreground">{advancedData.propertyTax}%</span>
+                      </div>
+
+                      <div className="space-y-2">
                         <label className="text-sm font-medium">{t.occupancyRate}</label>
                         <Slider
                           value={[advancedData.occupancyRate]}
@@ -527,6 +579,19 @@ const AdvancedROICalculator = ({ className }: AdvancedROICalculatorProps) => {
                           className="w-full"
                         />
                         <span className="text-xs text-muted-foreground">{advancedData.appreciationRate}%</span>
+                      </div>
+
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium">{t.managementFee}</label>
+                        <Slider
+                          value={[advancedData.managementFee]}
+                          onValueChange={([value]) => setAdvancedData(prev => ({ ...prev, managementFee: value }))}
+                          max={15}
+                          min={0}
+                          step={1}
+                          className="w-full"
+                        />
+                        <span className="text-xs text-muted-foreground">{advancedData.managementFee}%</span>
                       </div>
                     </div>
                   </CollapsibleContent>
