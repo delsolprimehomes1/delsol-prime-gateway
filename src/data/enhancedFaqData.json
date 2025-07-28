@@ -21,6 +21,11 @@
       "icon": "Home",
       "description": "Information about different property types, features, and what to expect"
     },
+    "newbuild": {
+      "name": "New Build Properties",
+      "icon": "Building",
+      "description": "Modern new construction properties with latest amenities and warranties"
+    },
     "services": {
       "name": "Our Services",
       "icon": "HelpCircle",
@@ -40,7 +45,11 @@
       "category": "legal",
       "keywords": ["NIE number", "foreign buyer", "documentation", "legal requirements", "Spanish property"],
       "relatedTopics": ["legal-02", "legal-03", "services-01"],
-      "voiceQueries": ["what documents do I need to buy property in Spain", "foreign buyer requirements Spain", "NIE number for property purchase"]
+      "voiceQueries": ["what documents do I need to buy property in Spain", "foreign buyer requirements Spain", "NIE number for property purchase"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["NIE number Spain", "foreign buyer documentation", "Spanish property requirements"],
+      "image": ""
     },
     {
       "id": "legal-02", 
@@ -184,7 +193,24 @@
       "category": "lifestyle",
       "keywords": ["cost of living", "living expenses", "utilities", "healthcare", "quality of life"],
       "relatedTopics": ["lifestyle-02", "lifestyle-03", "legal-05"],
-      "voiceQueries": ["cost of living Costa del Sol", "living expenses Spain", "how much to live in Marbella"]
+      "voiceQueries": ["cost of living Costa del Sol", "living expenses Spain", "how much to live in Marbella"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Townhouse"],
+      "seoKeywords": ["cost of living Costa del Sol", "living expenses Spain", "quality of life Marbella"],
+      "image": ""
+    },
+    {
+      "id": "newbuild-01",
+      "question": "What are the specific advantages of buying new-build property on the Costa del Sol for international buyers?",
+      "answer": "New-build properties on the Costa del Sol offer hassle-free quality, energy efficiency, and modern luxury – combined with a flexible payment schedule. It's a smart choice for international buyers seeking lifestyle, investment value, and peace of mind.\n\n✅ Modern construction standards & guarantees: All new developments meet strict European building regulations (EPC label A/B) and come with a 10-year structural warranty – meaning lower maintenance and fewer surprises compared to older homes.\n\n🌱 Energy-efficient and future-proof: Features like heat pumps, solar panels, and aerothermal systems can cut energy costs by up to 40% – a key advantage for sustainability-conscious buyers from across Europe and beyond.\n\n💰 Staged payment plan: Typically, you pay 20–30% during construction and the remaining 60% upon completion. This allows you to invest without needing the full capital upfront.\n\n📈 Higher rental & resale value: Smart-home features, fitness areas, co-working spaces, and concierge services attract premium tenants and future buyers – with rental yields often 15–20% higher than older properties.\n\n🏖️ Lifestyle benefits: Direct flights from most European cities to Málaga ✈️, 300+ days of sunshine, world-class golf, gastronomy, and international healthcare make it more than just a real estate investment – it's a lifestyle upgrade. CostaPrimeHomes offers VIP property tours and multilingual guidance from reservation to key handover.\n\n📊 Clear and transparent taxes: New-build homes are subject to 10% VAT (instead of the 7% transfer tax on resales), making it easier to plan ahead – especially for those buying through a company structure or managing cross-border assets.",
+      "category": "newbuild",
+      "keywords": ["new build Costa del Sol", "energy-efficient homes", "10-year warranty", "lifestyle investment", "international buyers", "staged payment plan", "modern construction", "smart home"],
+      "relatedTopics": ["properties-01", "finance-03", "legal-04", "locations-01"],
+      "voiceQueries": ["advantages of new build property Costa del Sol", "new construction benefits Spain", "why buy new build property Costa del Sol", "new build vs resale property Spain"],
+      "targetAreas": ["Marbella", "Estepona", "Mijas", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Penthouse", "Villa"],
+      "seoKeywords": ["new build Costa del Sol", "energy-efficient homes", "10-year warranty", "lifestyle investment", "international buyers", "CostaPrimeHomes"],
+      "image": ""
     }
   ]
 }

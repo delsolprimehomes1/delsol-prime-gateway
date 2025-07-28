@@ -1,6 +1,6 @@
 
 import { useMemo } from "react";
-import { ChevronDown, Search, HelpCircle, FileText, Home, DollarSign, MapPin, Filter, X } from "lucide-react";
+import { ChevronDown, Search, HelpCircle, FileText, Home, DollarSign, MapPin, Filter, X, Building } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -19,7 +19,8 @@ const categoryIcons = {
   locations: MapPin,
   properties: Home,
   services: HelpCircle,
-  lifestyle: MapPin
+  lifestyle: MapPin,
+  newbuild: Building
 };
 
 const FAQ = () => {
@@ -31,8 +32,17 @@ const FAQ = () => {
     setSearchTerm,
     selectedCategory,
     setSelectedCategory,
-    getCategoryCount
+    selectedTargetArea,
+    setSelectedTargetArea,
+    selectedPropertyType,
+    setSelectedPropertyType,
+    getCategoryCount,
+    getTargetAreas,
+    getPropertyTypes
   } = useFAQData();
+
+  const targetAreas = getTargetAreas();
+  const propertyTypes = getPropertyTypes();
 
   // Generate structured data for SEO with all FAQs
   const faqSchema = useMemo(() => {
@@ -101,7 +111,7 @@ const FAQ = () => {
                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
                 <Input
                   type="text"
-                  placeholder="Search questions, answers, or topics..."
+                  placeholder="Search questions, answers, locations, property types..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="pl-12 h-14 bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 focus:bg-white focus:shadow-xl text-base"
@@ -128,6 +138,38 @@ const FAQ = () => {
                 >
                   {Object.entries(categoryNames).map(([value, label]) => (
                     <option key={value} value={value}>{label}</option>
+                  ))}
+                </select>
+                <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5 pointer-events-none" />
+              </div>
+
+              {/* Target Area Filter */}
+              <div className="relative">
+                <MapPin className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
+                <select
+                  value={selectedTargetArea}
+                  onChange={(e) => setSelectedTargetArea(e.target.value)}
+                  className="pl-12 pr-8 h-14 bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 focus:bg-white focus:shadow-xl rounded-lg text-base min-w-[180px] appearance-none cursor-pointer"
+                >
+                  <option value="all">All Areas</option>
+                  {targetAreas.map((area) => (
+                    <option key={area} value={area}>{area}</option>
+                  ))}
+                </select>
+                <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5 pointer-events-none" />
+              </div>
+
+              {/* Property Type Filter */}
+              <div className="relative">
+                <Home className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
+                <select
+                  value={selectedPropertyType}
+                  onChange={(e) => setSelectedPropertyType(e.target.value)}
+                  className="pl-12 pr-8 h-14 bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 focus:bg-white focus:shadow-xl rounded-lg text-base min-w-[180px] appearance-none cursor-pointer"
+                >
+                  <option value="all">All Types</option>
+                  {propertyTypes.map((type) => (
+                    <option key={type} value={type}>{type}</option>
                   ))}
                 </select>
                 <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5 pointer-events-none" />
@@ -210,10 +252,20 @@ const FAQ = () => {
                         <IconComponent className="w-6 h-6 text-primary" aria-hidden="true" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="mb-2">
+                        <div className="mb-2 flex flex-wrap gap-2">
                           <Badge variant="outline" className="bg-white/80 text-xs font-medium">
                             {categoryNames[faq.category as keyof typeof categoryNames]}
                           </Badge>
+                          {faq.targetAreas && faq.targetAreas.length > 0 && (
+                            <Badge variant="secondary" className="bg-blue-100 text-blue-800 text-xs">
+                              {faq.targetAreas[0]}{faq.targetAreas.length > 1 && ` +${faq.targetAreas.length - 1}`}
+                            </Badge>
+                          )}
+                          {faq.propertyTypes && faq.propertyTypes.length > 0 && (
+                            <Badge variant="secondary" className="bg-green-100 text-green-800 text-xs">
+                              {faq.propertyTypes[0]}{faq.propertyTypes.length > 1 && ` +${faq.propertyTypes.length - 1}`}
+                            </Badge>
+                          )}
                         </div>
                         <h3 
                           id={`faq-${faq.id}-question`}
@@ -259,15 +311,17 @@ const FAQ = () => {
                 >
                   Clear Search
                 </Button>
-                <Button 
-                  onClick={() => {
-                    setSearchTerm("");
-                    setSelectedCategory("all");
-                  }}
-                  className="shadow-lg hover:shadow-xl"
-                >
-                  Show All FAQs
-                </Button>
+                  <Button 
+                    onClick={() => {
+                      setSearchTerm("");
+                      setSelectedCategory("all");
+                      setSelectedTargetArea("all");
+                      setSelectedPropertyType("all");
+                    }}
+                    className="shadow-lg hover:shadow-xl"
+                  >
+                    Show All FAQs
+                  </Button>
               </div>
             </div>
           )}

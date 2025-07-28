@@ -10,6 +10,10 @@ export interface FAQ {
   keywords: string[];
   relatedTopics: string[];
   voiceQueries?: string[];
+  targetAreas?: string[];
+  propertyTypes?: string[];
+  seoKeywords?: string[];
+  image?: string;
 }
 
 export interface FAQCategory {
@@ -21,11 +25,13 @@ export interface FAQCategory {
 export const useFAQData = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [selectedTargetArea, setSelectedTargetArea] = useState<string>("all");
+  const [selectedPropertyType, setSelectedPropertyType] = useState<string>("all");
 
   const categories = enhancedFaqData.categories as Record<string, FAQCategory>;
   const faqs = enhancedFaqData.faqs as FAQ[];
 
-  // Enhanced search with voice query optimization
+  // Enhanced search with voice query optimization and metadata filtering
   const filteredFAQs = useMemo(() => {
     let filtered = faqs;
     
@@ -34,7 +40,21 @@ export const useFAQData = () => {
       filtered = filtered.filter(faq => faq.category === selectedCategory);
     }
     
-    // Enhanced search with voice queries and keywords
+    // Filter by target area
+    if (selectedTargetArea !== "all") {
+      filtered = filtered.filter(faq => 
+        faq.targetAreas?.some(area => area.toLowerCase().includes(selectedTargetArea.toLowerCase()))
+      );
+    }
+    
+    // Filter by property type
+    if (selectedPropertyType !== "all") {
+      filtered = filtered.filter(faq => 
+        faq.propertyTypes?.some(type => type.toLowerCase().includes(selectedPropertyType.toLowerCase()))
+      );
+    }
+    
+    // Enhanced search with voice queries, keywords, and metadata
     if (searchTerm) {
       const searchLower = searchTerm.toLowerCase();
       const searchTerms = searchLower.split(' ').filter(term => term.length > 1);
@@ -45,6 +65,9 @@ export const useFAQData = () => {
           faq.answer,
           ...faq.keywords,
           ...(faq.voiceQueries || []),
+          ...(faq.targetAreas || []),
+          ...(faq.propertyTypes || []),
+          ...(faq.seoKeywords || []),
           faq.category
         ].join(' ').toLowerCase();
         
@@ -52,13 +75,15 @@ export const useFAQData = () => {
         return searchTerms.some(term => 
           searchableText.includes(term) || 
           faq.keywords.some(keyword => keyword.toLowerCase().includes(term)) ||
-          (faq.voiceQueries || []).some(query => query.toLowerCase().includes(term))
+          (faq.voiceQueries || []).some(query => query.toLowerCase().includes(term)) ||
+          (faq.targetAreas || []).some(area => area.toLowerCase().includes(term)) ||
+          (faq.propertyTypes || []).some(type => type.toLowerCase().includes(term))
         );
       });
     }
     
     return filtered;
-  }, [searchTerm, selectedCategory, faqs]);
+  }, [searchTerm, selectedCategory, selectedTargetArea, selectedPropertyType, faqs]);
 
   const categoryNames = {
     all: 'All Questions',
@@ -122,6 +147,38 @@ export const useFAQData = () => {
     );
   };
 
+  // Get unique target areas from all FAQs
+  const getTargetAreas = (): string[] => {
+    const areas = new Set<string>();
+    faqs.forEach(faq => {
+      faq.targetAreas?.forEach(area => areas.add(area));
+    });
+    return Array.from(areas).sort();
+  };
+
+  // Get unique property types from all FAQs
+  const getPropertyTypes = (): string[] => {
+    const types = new Set<string>();
+    faqs.forEach(faq => {
+      faq.propertyTypes?.forEach(type => types.add(type));
+    });
+    return Array.from(types).sort();
+  };
+
+  // Get FAQs by target area
+  const getFAQsByTargetArea = (area: string): FAQ[] => {
+    return faqs.filter(faq => 
+      faq.targetAreas?.some(a => a.toLowerCase().includes(area.toLowerCase()))
+    );
+  };
+
+  // Get FAQs by property type
+  const getFAQsByPropertyType = (type: string): FAQ[] => {
+    return faqs.filter(faq => 
+      faq.propertyTypes?.some(t => t.toLowerCase().includes(type.toLowerCase()))
+    );
+  };
+
   return {
     categories,
     faqs,
@@ -131,10 +188,18 @@ export const useFAQData = () => {
     setSearchTerm,
     selectedCategory,
     setSelectedCategory,
+    selectedTargetArea,
+    setSelectedTargetArea,
+    selectedPropertyType,
+    setSelectedPropertyType,
     getCategoryCount,
     getRelatedFAQs,
     getFeaturedFAQs,
     getVoiceSearchFAQs,
-    getFAQsByKeyword
+    getFAQsByKeyword,
+    getTargetAreas,
+    getPropertyTypes,
+    getFAQsByTargetArea,
+    getFAQsByPropertyType
   };
 };
