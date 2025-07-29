@@ -1,11 +1,10 @@
 
-import { useMemo, useState } from "react";
-import { ChevronDown, Search, HelpCircle, FileText, Home, DollarSign, MapPin, Filter, X, Building } from "lucide-react";
+import { useMemo } from "react";
+import { ChevronDown, Search, HelpCircle, FileText, Home, DollarSign, MapPin, X, Building } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Section from "@/components/layout/Section";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/seo/SEOHead";
@@ -25,8 +24,6 @@ const categoryIcons = {
 };
 
 const FAQ = () => {
-  const [activeTab, setActiveTab] = useState("all");
-  
   const {
     faqs,
     filteredFAQs,
@@ -46,42 +43,6 @@ const FAQ = () => {
 
   const targetAreas = getTargetAreas();
   const propertyTypes = getPropertyTypes();
-
-  // Tab definitions with categories
-  const tabCategories = {
-    all: { label: "All FAQs", categories: ["all"] },
-    legal_finance: { label: "Legal & Finance", categories: ["legal", "finance"] },
-    locations: { label: "Locations & Areas", categories: ["locations"] },
-    properties: { label: "Properties & Types", categories: ["properties", "newbuild"] },
-    services_lifestyle: { label: "Services & Lifestyle", categories: ["services", "lifestyle"] }
-  };
-
-  // Get FAQs for current tab
-  const getTabFAQs = (tabKey: string) => {
-    if (tabKey === "all") return filteredFAQs;
-    
-    const tabConfig = tabCategories[tabKey as keyof typeof tabCategories];
-    return filteredFAQs.filter(faq => tabConfig.categories.includes(faq.category));
-  };
-
-  // Get count for each tab
-  const getTabCount = (tabKey: string) => {
-    return getTabFAQs(tabKey).length;
-  };
-
-  // Handle tab change
-  const handleTabChange = (tabKey: string) => {
-    setActiveTab(tabKey);
-    // Reset category filter when changing tabs
-    if (tabKey !== "all") {
-      const tabConfig = tabCategories[tabKey as keyof typeof tabCategories];
-      if (tabConfig.categories.length === 1) {
-        setSelectedCategory(tabConfig.categories[0]);
-      } else {
-        setSelectedCategory("all");
-      }
-    }
-  };
 
   // Generate structured data for SEO with all FAQs
   const faqSchema = useMemo(() => {
@@ -167,20 +128,6 @@ const FAQ = () => {
                 )}
               </div>
               
-              {/* Category Filter */}
-              <div className="relative">
-                <Filter className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
-                <select
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="pl-12 pr-8 h-14 bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 focus:bg-white focus:shadow-xl rounded-lg text-base min-w-[200px] appearance-none cursor-pointer"
-                >
-                  {Object.entries(categoryNames).map(([value, label]) => (
-                    <option key={value} value={value}>{label}</option>
-                  ))}
-                </select>
-                <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5 pointer-events-none" />
-              </div>
 
               {/* Target Area Filter */}
               <div className="relative">
@@ -248,56 +195,31 @@ const FAQ = () => {
           </div>
         </div>
 
-        {/* FAQ Content with Tabs */}
+        {/* FAQ Content */}
         <div className="max-w-5xl mx-auto">
-          <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
-            {/* Tab Navigation */}
-            <div className="flex justify-center mb-8">
-              <TabsList className="bg-white/80 backdrop-blur-sm shadow-lg p-1 h-auto rounded-xl border-0">
-                {Object.entries(tabCategories).map(([key, config]) => (
-                  <TabsTrigger
-                    key={key}
-                    value={key}
-                    className="px-6 py-3 text-sm font-medium rounded-lg data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg transition-all duration-300 hover:bg-muted/50"
-                  >
-                    {config.label}
-                    <Badge variant="outline" className="ml-2 text-xs bg-white/60">
-                      {getTabCount(key)}
-                    </Badge>
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-            </div>
+          {/* Results Count */}
+          <div className="mb-8">
+            <p className="text-center text-muted-foreground">
+              {filteredFAQs.length === faqs.length 
+                ? `Showing all ${filteredFAQs.length} questions`
+                : `Showing ${filteredFAQs.length} of ${faqs.length} questions`
+              }
+              {selectedCategory !== "all" && (
+                <span className="ml-2">
+                  in <span className="font-medium text-primary">{categoryNames[selectedCategory as keyof typeof categoryNames]}</span>
+                </span>
+              )}
+            </p>
+          </div>
 
-            {/* Tab Content */}
-            {Object.keys(tabCategories).map((tabKey) => {
-              const tabFAQs = getTabFAQs(tabKey);
-              
-              return (
-                <TabsContent key={tabKey} value={tabKey} className="mt-0">
-                  {/* Results Count */}
-                  <div className="mb-8">
-                    <p className="text-center text-muted-foreground">
-                      {tabFAQs.length === faqs.length 
-                        ? `Showing all ${tabFAQs.length} questions`
-                        : `Showing ${tabFAQs.length} of ${faqs.length} questions`
-                      }
-                      {selectedCategory !== "all" && (
-                        <span className="ml-2">
-                          in <span className="font-medium text-primary">{categoryNames[selectedCategory as keyof typeof categoryNames]}</span>
-                        </span>
-                      )}
-                    </p>
-                  </div>
-
-                  {/* FAQ Accordion */}
-                  <Accordion 
-                    type="single" 
-                    collapsible 
-                    className="space-y-6"
-                    aria-label="Frequently Asked Questions"
-                  >
-                    {tabFAQs.map((faq, index) => {
+          {/* FAQ Accordion */}
+          <Accordion 
+            type="single" 
+            collapsible 
+            className="space-y-6"
+            aria-label="Frequently Asked Questions"
+          >
+            {filteredFAQs.map((faq, index) => {
                       const IconComponent = categoryIcons[faq.category as keyof typeof categoryIcons];
                       return (
                         <AccordionItem
@@ -357,8 +279,8 @@ const FAQ = () => {
                     })}
                   </Accordion>
 
-                  {/* No Results State */}
-                  {tabFAQs.length === 0 && (
+          {/* No Results State */}
+          {filteredFAQs.length === 0 && (
                     <div className="text-center py-16">
                       <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-muted/40 to-muted/20 flex items-center justify-center mx-auto mb-6 backdrop-blur-sm border border-muted/40">
                         <Search className="w-10 h-10 text-muted-foreground" />
@@ -389,10 +311,6 @@ const FAQ = () => {
                       </div>
                     </div>
                   )}
-                </TabsContent>
-              );
-            })}
-          </Tabs>
         </div>
 
         {/* CTA Section */}
