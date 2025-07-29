@@ -755,6 +755,396 @@
       "voiceQueries": ["Work permits Spain", "Business opportunities Costa del Sol"],
       "targetAreas": ["Costa del Sol"],
       "propertyTypes": ["all"]
+    },
+    {
+      "id": "weather-1",
+      "question": "What is the weather like in Costa del Sol throughout the year?",
+      "answer": "Costa del Sol enjoys 320+ days of sunshine annually. Summer temperatures range 25-35°C, winters 10-18°C. Spring and autumn are ideal with 20-25°C. Rainfall is minimal, mostly October-February.",
+      "category": "lifestyle",
+      "keywords": ["weather", "climate", "sunshine", "temperature", "seasons"],
+      "voiceQueries": ["Costa del Sol weather year round", "Climate in Marbella"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Fuengirola"],
+      "propertyTypes": ["all"]
+    },
+    {
+      "id": "weather-2",
+      "question": "How does the climate affect property maintenance costs?",
+      "answer": "The dry climate reduces humidity damage and mold issues. However, UV exposure requires more frequent exterior painting every 5-7 years. Pool maintenance is year-round. Overall maintenance costs are 20-30% lower than northern European climates.",
+      "category": "properties",
+      "keywords": ["maintenance", "climate", "costs", "UV", "painting"],
+      "voiceQueries": ["Property maintenance costs Costa del Sol", "Climate impact on houses"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["villa", "apartment", "townhouse"]
+    },
+    {
+      "id": "weather-3",
+      "question": "When is the best time to visit before buying property?",
+      "answer": "April-May and September-October offer perfect weather and lower tourist crowds. Summer shows the area at its busiest. Winter visits reveal the peaceful, local atmosphere. We recommend visiting different seasons before deciding.",
+      "category": "services",
+      "keywords": ["best time", "visit", "seasons", "crowds", "weather"],
+      "voiceQueries": ["Best time to visit Costa del Sol", "When to buy property Spain"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["all"]
+    },
+    {
+      "id": "investment-25",
+      "question": "What are the exact rental yields for different property types in Marbella?",
+      "answer": "Marbella rental yields: luxury apartments 4-6%, penthouses 3-5%, villas 4-7%, townhouses 5-8%. Beachfront properties typically 1-2% higher. Short-term rentals can achieve 8-12% but require active management.",
+      "category": "finance",
+      "keywords": ["rental yields", "Marbella", "ROI", "property types", "income"],
+      "voiceQueries": ["Marbella rental income", "Property investment returns Marbella"],
+      "targetAreas": ["Marbella"],
+      "propertyTypes": ["apartment", "penthouse", "villa", "townhouse"]
+    },
+    {
+      "id": "investment-26",
+      "question": "How much capital appreciation can I expect over 5-10 years?",
+      "answer": "Historical data shows 3-6% annual appreciation in prime areas. Beachfront properties average 5-8%. New developments often see 10-15% in first 2 years, then stabilize at 4-6%. Location and property type significantly impact returns.",
+      "category": "finance",
+      "keywords": ["capital appreciation", "growth", "investment", "returns", "5 years"],
+      "voiceQueries": ["Property value growth Costa del Sol", "Real estate appreciation Spain"],
+      "targetAreas": ["Costa del Sol", "Marbella"],
+      "propertyTypes": ["all"]
+    },
+    {
+      "id": "investment-27",
+      "question": "What is the break-even point for rental property investment?",
+      "answer": "Typically 12-18 years for purchase costs recovery through rental income. Prime locations with 6%+ yields break even in 12-15 years. Factor in maintenance (1-2% annually), taxes, and vacancy periods. Professional management reduces time to break-even.",
+      "category": "finance",
+      "keywords": ["break-even", "rental investment", "ROI", "recovery", "years"],
+      "voiceQueries": ["Property investment break even Spain", "Rental property returns"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["all"]
+    },
+    {
+      "id": "howto-1",
+      "question": "How do I set up utilities when buying a property?",
+      "answer": "Step 1: Obtain NIE number. Step 2: Visit electricity company (Endesa/Iberdrola) with deed and ID. Step 3: Water company connection with same documents. Step 4: Internet/cable providers require property deed. We provide a complete utilities checklist and assistance.",
+      "category": "lifestyle",
+      "keywords": ["utilities", "electricity", "water", "internet", "setup"],
+      "voiceQueries": ["How to connect utilities Spain", "Setting up electricity water Spain"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["all"]
+    },
+    {
+      "id": "howto-2",
+      "question": "How do I register for Spanish taxes as a property owner?",
+      "answer": "Register with Hacienda (tax office) within 30 days of purchase. Need NIE, property deed, and bank details. Submit Form 210 annually for non-residents. We recommend using a qualified Spanish accountant for ongoing compliance.",
+      "category": "legal",
+      "keywords": ["tax registration", "Hacienda", "Form 210", "NIE", "accountant"],
+      "voiceQueries": ["Spanish tax registration property", "How to register taxes Spain"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["all"]
+    },
+    {
+      "id": "howto-3",
+      "question": "How do I vet and hire reliable contractors for renovations?",
+      "answer": "Check business registration (Registro Mercantil), verify insurance coverage, request 3+ local references, get detailed written quotes, never pay full amount upfront. We maintain a verified contractor network with proven track records.",
+      "category": "services",
+      "keywords": ["contractors", "renovations", "vetting", "insurance", "references"],
+      "voiceQueries": ["Finding contractors Costa del Sol", "Reliable builders Spain"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["villa", "townhouse", "apartment"]
+    },
+    {
+      "id": "comparison-1",
+      "question": "How does Costa del Sol compare to other Spanish coastal regions?",
+      "answer": "Costa del Sol offers superior infrastructure, international airport access, year-round climate, and established expat communities. Costa Brava is cooler with seasonal tourism. Valencia offers urban amenities but less international feel. Canary Islands have year-round warmth but higher costs and limited mainland access.",
+      "category": "locations",
+      "keywords": ["comparison", "Costa Brava", "Valencia", "Canary Islands", "advantages"],
+      "voiceQueries": ["Costa del Sol vs Costa Brava", "Best Spanish coast for property"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["all"]
+    },
+    {
+      "id": "comparison-2",
+      "question": "Should I buy or rent long-term in Costa del Sol?",
+      "answer": "Buying advantages: equity building, no rental increases, modification freedom, potential appreciation. Renting advantages: lower upfront costs, flexibility, no maintenance responsibility. Break-even typically 7-10 years depending on area and property type.",
+      "category": "finance",
+      "keywords": ["buy vs rent", "decision", "equity", "flexibility", "break-even"],
+      "voiceQueries": ["Should I buy or rent in Spain", "Buying vs renting Costa del Sol"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["all"]
+    },
+    {
+      "id": "lifestyle-deep-1",
+      "question": "What are the costs and options for international schools?",
+      "answer": "International schools range €6,000-€20,000 annually. Top options: Aloha College (British), Svenska Skolan (Swedish), Deutsche Schule (German). Most offer IB programs. Early registration essential. We provide school district maps and application assistance.",
+      "category": "lifestyle",
+      "keywords": ["international schools", "costs", "IB program", "British", "fees"],
+      "voiceQueries": ["International schools Costa del Sol", "School fees Marbella"],
+      "targetAreas": ["Marbella", "Estepona", "Fuengirola"],
+      "propertyTypes": ["all"]
+    },
+    {
+      "id": "lifestyle-deep-2",
+      "question": "How does private healthcare work and what does it cost?",
+      "answer": "Private health insurance costs €50-€150 monthly per person depending on age and coverage. Top providers: Sanitas, Adeslas, DKV. No waiting periods for most treatments. English-speaking doctors available. EU citizens maintain reciprocal rights.",
+      "category": "lifestyle",
+      "keywords": ["healthcare", "insurance", "private", "costs", "English doctors"],
+      "voiceQueries": ["Private healthcare Costa del Sol", "Health insurance Spain costs"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["all"]
+    },
+    {
+      "id": "market-1",
+      "question": "What are the 5-year property market forecasts for Costa del Sol?",
+      "answer": "Market analysts predict 4-6% annual growth through 2029, driven by international demand, infrastructure improvements, and limited coastal supply. Brexit impact stabilizing with new buyer markets emerging from Nordic countries and North America.",
+      "category": "finance",
+      "keywords": ["market forecast", "5 year", "growth", "Brexit", "international demand"],
+      "voiceQueries": ["Property market forecast Costa del Sol", "Real estate predictions Spain"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["all"]
+    },
+    {
+      "id": "market-2",
+      "question": "How will new infrastructure projects affect property values?",
+      "answer": "Costa del Sol railway extension (completion 2027) expected to boost inland property values 10-15%. Málaga airport expansion increases accessibility. New golf courses and marinas in Estepona area driving 8-12% local appreciation.",
+      "category": "finance",
+      "keywords": ["infrastructure", "railway", "airport", "property values", "appreciation"],
+      "voiceQueries": ["Infrastructure projects Costa del Sol", "Property value increases"],
+      "targetAreas": ["Estepona", "Málaga", "Costa del Sol"],
+      "propertyTypes": ["all"]
+    },
+    {
+      "id": "problem-1",
+      "question": "What should I do if I have issues with property management companies?",
+      "answer": "Document all issues in writing, review your management contract terms, escalate to company directors if needed. If unresolved, contact local consumer protection (OMIC) or seek legal advice. We can recommend reliable alternative management companies.",
+      "category": "services",
+      "keywords": ["property management", "issues", "problems", "OMIC", "contract"],
+      "voiceQueries": ["Property management problems Spain", "Bad property manager Costa del Sol"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["all"]
+    },
+    {
+      "id": "problem-2",
+      "question": "How do I handle neighbor disputes in Spanish properties?",
+      "answer": "First attempt direct communication or mediation through community administrator. Document incidents with dates and photos. For serious issues, contact local police (Policía Local) or seek legal counsel. Community rules (estatutos) govern most apartment building disputes.",
+      "category": "legal",
+      "keywords": ["neighbor disputes", "community", "mediation", "legal", "estatutos"],
+      "voiceQueries": ["Neighbor problems Spain", "Community disputes Costa del Sol"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["apartment", "townhouse"]
+    },
+    {
+      "id": "specialized-1",
+      "question": "What eco-friendly property features are available and beneficial?",
+      "answer": "Solar panels reduce electricity costs 60-80%, smart home systems improve efficiency 20-30%, energy-efficient appliances lower bills 15-25%. Green buildings often qualify for tax incentives and have higher resale values.",
+      "category": "properties",
+      "keywords": ["eco-friendly", "solar panels", "smart home", "energy efficient", "green"],
+      "voiceQueries": ["Eco properties Costa del Sol", "Green homes sustainable Spain"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["villa", "newbuild", "apartment"]
+    },
+    {
+      "id": "specialized-2",
+      "question": "Are there properties suitable for remote work setups?",
+      "answer": "Many new developments include dedicated office spaces, fiber optic internet (100+ Mbps), and quiet work environments. Co-working spaces available in major towns. We can identify properties with optimal home office potential and internet infrastructure.",
+      "category": "properties",
+      "keywords": ["remote work", "home office", "fiber internet", "co-working", "workspace"],
+      "voiceQueries": ["Work from home properties Spain", "Remote work Costa del Sol"],
+      "targetAreas": ["Costa del Sol", "Marbella"],
+      "propertyTypes": ["villa", "apartment", "penthouse"]
+    },
+    {
+      "id": "specialized-3",
+      "question": "What accessibility features are available for elderly or disabled buyers?",
+      "answer": "New builds must comply with accessibility standards: ramps, wide doorways, accessible bathrooms. Elevators required in buildings 3+ floors. Many communities offer accessible pools and common areas. We maintain database of accessibility-compliant properties.",
+      "category": "properties",
+      "keywords": ["accessibility", "disabled", "elderly", "ramps", "elevators"],
+      "voiceQueries": ["Accessible properties Costa del Sol", "Disabled friendly homes Spain"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["apartment", "villa", "newbuild"]
+    },
+    {
+      "id": "specialized-4",
+      "question": "What are the pet ownership rules and pet-friendly properties?",
+      "answer": "Most properties allow pets with community approval. Some restrict size/breed. Pet deposit typically €200-€500. Beaches have designated pet areas. Vet services excellent. We identify pet-friendly communities and provide pet relocation assistance.",
+      "category": "lifestyle",
+      "keywords": ["pets", "pet-friendly", "rules", "deposit", "vet", "beaches"],
+      "voiceQueries": ["Pet friendly properties Costa del Sol", "Moving pets to Spain"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["villa", "townhouse", "apartment"]
+    },
+    {
+      "id": "finance-deep-1",
+      "question": "What are the specific tax advantages of Spanish property ownership?",
+      "answer": "Non-residents can deduct mortgage interest, property taxes, and maintenance costs against rental income. EU residents may qualify for reduced tax rates. Capital gains exemption possible if reinvesting in primary residence. Professional tax advice essential for optimization.",
+      "category": "finance",
+      "keywords": ["tax advantages", "deductions", "mortgage interest", "capital gains", "EU residents"],
+      "voiceQueries": ["Tax benefits property ownership Spain", "Spanish property tax advantages"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["all"]
+    },
+    {
+      "id": "finance-deep-2",
+      "question": "How do Spanish inheritance laws affect international property owners?",
+      "answer": "Spanish succession law applies to Spanish property regardless of owner's nationality. Forced heirship rules may override foreign wills. EU succession regulation provides some flexibility. Proper estate planning essential - consult international estate lawyer.",
+      "category": "legal",
+      "keywords": ["inheritance", "succession law", "forced heirship", "EU regulation", "estate planning"],
+      "voiceQueries": ["Spanish inheritance laws property", "Estate planning Spain international"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["all"]
+    },
+    {
+      "id": "finance-deep-3",
+      "question": "What financing options exist for commercial property investments?",
+      "answer": "Commercial mortgages available up to 70% LTV, typically 2-3% higher rates than residential. Alternative funding through investor groups, peer-to-peer lending, or developer financing. Returns often 8-12% for well-located commercial properties.",
+      "category": "finance",
+      "keywords": ["commercial property", "mortgages", "LTV", "investor groups", "returns"],
+      "voiceQueries": ["Commercial property investment Spain", "Business property financing Costa del Sol"],
+      "targetAreas": ["Costa del Sol", "Marbella"],
+      "propertyTypes": ["commercial"]
+    },
+    {
+      "id": "legal-deep-1",
+      "question": "What are the implications of Brexit for UK property buyers?",
+      "answer": "UK buyers now face 90-day Schengen limit without residency. Mortgage approval more complex but still possible. No restrictions on property ownership. Residency applications increased significantly. Golden Visa option for investments €500,000+.",
+      "category": "legal",
+      "keywords": ["Brexit", "UK buyers", "Schengen", "residency", "Golden Visa", "90 day"],
+      "voiceQueries": ["Brexit impact property buying Spain", "UK buyers post Brexit Spain"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["all"]
+    },
+    {
+      "id": "legal-deep-2",
+      "question": "How do I establish Spanish residency through property purchase?",
+      "answer": "Property purchase alone doesn't grant residency. Options: demonstrate 183+ days/year presence, prove economic ties, apply for non-lucrative visa with €25,000+ annual income proof, or Golden Visa for €500,000+ investment.",
+      "category": "legal",
+      "keywords": ["Spanish residency", "property purchase", "183 days", "non-lucrative visa", "Golden Visa"],
+      "voiceQueries": ["Spanish residency property", "How to get Spanish residency"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["all"]
+    },
+    {
+      "id": "maintenance-1",
+      "question": "What are typical annual maintenance costs for different property types?",
+      "answer": "Apartments: €800-€1,500 (community fees, basic maintenance). Townhouses: €1,200-€2,500 (garden, pool, exterior). Villas: €2,000-€5,000+ (pool, garden, larger systems). Coastal properties 20-30% higher due to salt air exposure.",
+      "category": "properties",
+      "keywords": ["maintenance costs", "annual", "apartments", "townhouses", "villas", "community fees"],
+      "voiceQueries": ["Property maintenance costs Spain", "Annual costs owning property Costa del Sol"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["apartment", "townhouse", "villa"]
+    },
+    {
+      "id": "maintenance-2",
+      "question": "How do I find reliable maintenance services and what should they cost?",
+      "answer": "Pool cleaning: €80-€120/month. Garden maintenance: €150-€300/month for villas. Cleaning services: €12-€18/hour. AC servicing: €80-€150 annually. We provide vetted service provider contacts and standard pricing guidelines.",
+      "category": "services",
+      "keywords": ["maintenance services", "pool cleaning", "garden", "cleaning", "AC servicing"],
+      "voiceQueries": ["Maintenance services Costa del Sol", "Property services Spain costs"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["villa", "townhouse", "apartment"]
+    },
+    {
+      "id": "technology-1",
+      "question": "What smart home technology options are available in Costa del Sol properties?",
+      "answer": "Modern properties offer: smart climate control, automated lighting, security systems with mobile apps, smart locks, integrated sound systems. Installation costs €3,000-€15,000 depending on scope. Many new builds include basic smart features.",
+      "category": "properties",
+      "keywords": ["smart home", "technology", "climate control", "security", "automation"],
+      "voiceQueries": ["Smart home Costa del Sol", "Home automation Spain"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["villa", "newbuild", "penthouse"]
+    },
+    {
+      "id": "technology-2",
+      "question": "What internet and connectivity options are available?",
+      "answer": "Fiber optic available in most areas: 100-1000 Mbps speeds, €30-€60/month. Movistar, Orange, Vodafone main providers. 5G coverage expanding. Satellite options for remote areas. Most properties pre-wired for high-speed internet.",
+      "category": "lifestyle",
+      "keywords": ["internet", "fiber optic", "5G", "connectivity", "providers", "speeds"],
+      "voiceQueries": ["Internet speed Costa del Sol", "Fiber internet Spain"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["all"]
+    },
+    {
+      "id": "community-1",
+      "question": "How do community fees work and what do they cover?",
+      "answer": "Community fees range €50-€300+ monthly depending on amenities. Cover: common area maintenance, security, pools, gardens, building insurance, administration. Luxury developments with spas/gyms cost €200-€500+ monthly. Fees set annually by community vote.",
+      "category": "properties",
+      "keywords": ["community fees", "amenities", "maintenance", "security", "pools", "luxury"],
+      "voiceQueries": ["Community fees Spain", "Apartment building costs Costa del Sol"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["apartment", "townhouse"]
+    },
+    {
+      "id": "community-2",
+      "question": "What rights and responsibilities do I have in Spanish property communities?",
+      "answer": "Rights: vote on community matters, access all common areas, review community accounts. Responsibilities: pay fees promptly, follow community rules, maintain your property appropriately. Annual general meetings (AGM) decide major issues and budgets.",
+      "category": "legal",
+      "keywords": ["community rights", "responsibilities", "voting", "AGM", "rules"],
+      "voiceQueries": ["Property community rights Spain", "Community responsibilities Costa del Sol"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["apartment", "townhouse"]
+    },
+    {
+      "id": "security-1",
+      "question": "What security features and crime rates should I know about?",
+      "answer": "Costa del Sol has low crime rates, especially in residential areas. Gated communities offer 24/7 security, CCTV, access control. Property crime rare but basic security recommended: alarms, quality locks, safe for valuables. We provide neighborhood safety assessments.",
+      "category": "lifestyle",
+      "keywords": ["security", "crime rates", "gated communities", "alarms", "safety"],
+      "voiceQueries": ["Safety Costa del Sol", "Crime rates Spain property"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["all"]
+    },
+    {
+      "id": "transportation-1",
+      "question": "What transportation options exist for getting around Costa del Sol?",
+      "answer": "Excellent public transport: coastal train connects major towns, buses frequent and affordable. Car recommended for full mobility - rental from €20/day, purchase from €8,000 used. Málaga airport 45 minutes from most locations. Uber/Cabify available.",
+      "category": "lifestyle",
+      "keywords": ["transportation", "train", "buses", "car rental", "airport", "mobility"],
+      "voiceQueries": ["Getting around Costa del Sol", "Transport options Spain"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["all"]
+    },
+    {
+      "id": "investment-advanced-1",
+      "question": "What are the opportunities for property development investments?",
+      "answer": "Land development requires significant capital (€1M+) and local expertise. Renovation projects offer 15-25% returns but need permits and contractors. Joint ventures with local developers reduce risk. We can introduce qualified development partners.",
+      "category": "finance",
+      "keywords": ["property development", "land", "renovation", "returns", "joint ventures"],
+      "voiceQueries": ["Property development Costa del Sol", "Development investment Spain"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["development"]
+    },
+    {
+      "id": "cultural-1",
+      "question": "How do I integrate into the local Spanish culture and community?",
+      "answer": "Learn basic Spanish - even minimal effort appreciated. Participate in local festivals, join expat groups, try local restaurants off tourist areas. Afternoon siesta (2-5 PM) respected. Evening dining late (9-11 PM). Friendly, relaxed approach to time.",
+      "category": "lifestyle",
+      "keywords": ["Spanish culture", "integration", "language", "festivals", "siesta", "dining"],
+      "voiceQueries": ["Spanish culture Costa del Sol", "Living like locals Spain"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["all"]
+    },
+    {
+      "id": "seasonal-1",
+      "question": "How does seasonal demand affect rental and resale markets?",
+      "answer": "Peak season (June-September): rental rates 40-60% higher, property viewings increase 200%. Shoulder seasons (April-May, September-October) ideal for buying - better negotiation, more inventory. Winter (December-February) sees 30-40% price reductions in rentals.",
+      "category": "finance",
+      "keywords": ["seasonal demand", "rental rates", "peak season", "winter prices", "negotiation"],
+      "voiceQueries": ["Seasonal property market Costa del Sol", "Best time to buy Spain"],
+      "targetAreas": ["Costa del Sol"],
+      "propertyTypes": ["all"]
+    },
+    {
+      "id": "golf-1",
+      "question": "What golf course communities and properties are available?",
+      "answer": "Over 40 golf courses in Costa del Sol. Premium golf communities: La Zagaleta, Villa Padierna, Finca Cortesin. Golf properties command 10-20% premium, excellent rental demand. Green fees range €50-€200. Many courses offer property owner privileges.",
+      "category": "properties",
+      "keywords": ["golf courses", "golf communities", "La Zagaleta", "premium", "green fees"],
+      "voiceQueries": ["Golf properties Costa del Sol", "Golf course homes Marbella"],
+      "targetAreas": ["Marbella", "Estepona", "Benahavís"],
+      "propertyTypes": ["villa", "apartment", "penthouse"]
+    },
+    {
+      "id": "beach-1",
+      "question": "What beachfront and sea view property options exist?",
+      "answer": "Beachfront properties rare and premium-priced (€8,000-€20,000/m²). Sea view apartments more accessible (€3,000-€8,000/m²). First line beach highly regulated - few new developments. Second line offers good value with partial sea views.",
+      "category": "properties",
+      "keywords": ["beachfront", "sea view", "first line", "second line", "premium", "regulated"],
+      "voiceQueries": ["Beachfront properties Costa del Sol", "Sea view homes Spain"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona"],
+      "propertyTypes": ["apartment", "penthouse", "villa"]
     }
   ]
 }
