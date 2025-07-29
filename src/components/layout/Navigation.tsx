@@ -57,6 +57,7 @@ export default function Navigation({ className }: NavigationProps) {
       hasDropdown: true
     },
     { label: t('nav.about'), href: "/about" },
+    { label: "FAQ", href: "/faq" },
     { label: t('nav.blog'), href: "/blog" },
     { label: t('nav.contact'), href: "/contact" },
   ];
