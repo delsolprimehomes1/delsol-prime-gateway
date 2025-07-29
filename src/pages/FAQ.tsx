@@ -1,10 +1,11 @@
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { ChevronDown, Search, HelpCircle, FileText, Home, DollarSign, MapPin, Filter, X, Building } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Section from "@/components/layout/Section";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/seo/SEOHead";
@@ -24,6 +25,8 @@ const categoryIcons = {
 };
 
 const FAQ = () => {
+  const [activeTab, setActiveTab] = useState("all");
+  
   const {
     faqs,
     filteredFAQs,
@@ -43,6 +46,42 @@ const FAQ = () => {
 
   const targetAreas = getTargetAreas();
   const propertyTypes = getPropertyTypes();
+
+  // Tab definitions with categories
+  const tabCategories = {
+    all: { label: "All FAQs", categories: ["all"] },
+    legal_finance: { label: "Legal & Finance", categories: ["legal", "finance"] },
+    locations: { label: "Locations & Areas", categories: ["locations"] },
+    properties: { label: "Properties & Types", categories: ["properties", "newbuild"] },
+    services_lifestyle: { label: "Services & Lifestyle", categories: ["services", "lifestyle"] }
+  };
+
+  // Get FAQs for current tab
+  const getTabFAQs = (tabKey: string) => {
+    if (tabKey === "all") return filteredFAQs;
+    
+    const tabConfig = tabCategories[tabKey as keyof typeof tabCategories];
+    return filteredFAQs.filter(faq => tabConfig.categories.includes(faq.category));
+  };
+
+  // Get count for each tab
+  const getTabCount = (tabKey: string) => {
+    return getTabFAQs(tabKey).length;
+  };
+
+  // Handle tab change
+  const handleTabChange = (tabKey: string) => {
+    setActiveTab(tabKey);
+    // Reset category filter when changing tabs
+    if (tabKey !== "all") {
+      const tabConfig = tabCategories[tabKey as keyof typeof tabCategories];
+      if (tabConfig.categories.length === 1) {
+        setSelectedCategory(tabConfig.categories[0]);
+      } else {
+        setSelectedCategory("all");
+      }
+    }
+  };
 
   // Generate structured data for SEO with all FAQs
   const faqSchema = useMemo(() => {
@@ -209,122 +248,151 @@ const FAQ = () => {
           </div>
         </div>
 
-        {/* FAQ Content */}
+        {/* FAQ Content with Tabs */}
         <div className="max-w-5xl mx-auto">
-          {/* Results Count */}
-          <div className="mb-8">
-            <p className="text-center text-muted-foreground">
-              {filteredFAQs.length === faqs.length 
-                ? `Showing all ${filteredFAQs.length} questions`
-                : `Showing ${filteredFAQs.length} of ${faqs.length} questions`
-              }
-              {selectedCategory !== "all" && (
-                <span className="ml-2">
-                  in <span className="font-medium text-primary">{categoryNames[selectedCategory as keyof typeof categoryNames]}</span>
-                </span>
-              )}
-            </p>
-          </div>
+          <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
+            {/* Tab Navigation */}
+            <div className="flex justify-center mb-8">
+              <TabsList className="bg-white/80 backdrop-blur-sm shadow-lg p-1 h-auto rounded-xl border-0">
+                {Object.entries(tabCategories).map(([key, config]) => (
+                  <TabsTrigger
+                    key={key}
+                    value={key}
+                    className="px-6 py-3 text-sm font-medium rounded-lg data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg transition-all duration-300 hover:bg-muted/50"
+                  >
+                    {config.label}
+                    <Badge variant="outline" className="ml-2 text-xs bg-white/60">
+                      {getTabCount(key)}
+                    </Badge>
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </div>
 
-          {/* FAQ Accordion */}
-          <Accordion 
-            type="single" 
-            collapsible 
-            className="space-y-6"
-            aria-label="Frequently Asked Questions"
-          >
-            {filteredFAQs.map((faq, index) => {
-              const IconComponent = categoryIcons[faq.category as keyof typeof categoryIcons];
+            {/* Tab Content */}
+            {Object.keys(tabCategories).map((tabKey) => {
+              const tabFAQs = getTabFAQs(tabKey);
+              
               return (
-                <AccordionItem
-                  key={faq.id}
-                  value={faq.id}
-                  className="border-0 rounded-2xl bg-white/60 backdrop-blur-sm hover:bg-white/80 transition-all duration-500 hover:shadow-xl shadow-lg overflow-hidden group"
-                  aria-labelledby={`faq-${faq.id}-question`}
-                >
-                  <AccordionTrigger 
-                    className="px-8 py-6 hover:no-underline"
-                    aria-expanded="false"
-                    aria-controls={`faq-${faq.id}-content`}
+                <TabsContent key={tabKey} value={tabKey} className="mt-0">
+                  {/* Results Count */}
+                  <div className="mb-8">
+                    <p className="text-center text-muted-foreground">
+                      {tabFAQs.length === faqs.length 
+                        ? `Showing all ${tabFAQs.length} questions`
+                        : `Showing ${tabFAQs.length} of ${faqs.length} questions`
+                      }
+                      {selectedCategory !== "all" && (
+                        <span className="ml-2">
+                          in <span className="font-medium text-primary">{categoryNames[selectedCategory as keyof typeof categoryNames]}</span>
+                        </span>
+                      )}
+                    </p>
+                  </div>
+
+                  {/* FAQ Accordion */}
+                  <Accordion 
+                    type="single" 
+                    collapsible 
+                    className="space-y-6"
+                    aria-label="Frequently Asked Questions"
                   >
-                    <div className="flex items-start gap-6 text-left w-full">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300 border border-primary/20">
-                        <IconComponent className="w-6 h-6 text-primary" aria-hidden="true" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="mb-2 flex flex-wrap gap-2">
-                          <Badge variant="outline" className="bg-white/80 text-xs font-medium">
-                            {categoryNames[faq.category as keyof typeof categoryNames]}
-                          </Badge>
-                          {faq.targetAreas && faq.targetAreas.length > 0 && (
-                            <Badge variant="secondary" className="bg-blue-100 text-blue-800 text-xs">
-                              {faq.targetAreas[0]}{faq.targetAreas.length > 1 && ` +${faq.targetAreas.length - 1}`}
-                            </Badge>
-                          )}
-                          {faq.propertyTypes && faq.propertyTypes.length > 0 && (
-                            <Badge variant="secondary" className="bg-green-100 text-green-800 text-xs">
-                              {faq.propertyTypes[0]}{faq.propertyTypes.length > 1 && ` +${faq.propertyTypes.length - 1}`}
-                            </Badge>
-                          )}
-                        </div>
-                        <h3 
-                          id={`faq-${faq.id}-question`}
-                          className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300 leading-relaxed"
+                    {tabFAQs.map((faq, index) => {
+                      const IconComponent = categoryIcons[faq.category as keyof typeof categoryIcons];
+                      return (
+                        <AccordionItem
+                          key={faq.id}
+                          value={faq.id}
+                          className="border-0 rounded-2xl bg-white/60 backdrop-blur-sm hover:bg-white/80 transition-all duration-500 hover:shadow-xl shadow-lg overflow-hidden group"
+                          aria-labelledby={`faq-${faq.id}-question`}
                         >
-                          {faq.question}
-                        </h3>
+                          <AccordionTrigger 
+                            className="px-8 py-6 hover:no-underline"
+                            aria-expanded="false"
+                            aria-controls={`faq-${faq.id}-content`}
+                          >
+                            <div className="flex items-start gap-6 text-left w-full">
+                              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300 border border-primary/20">
+                                <IconComponent className="w-6 h-6 text-primary" aria-hidden="true" />
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <div className="mb-2 flex flex-wrap gap-2">
+                                  <Badge variant="outline" className="bg-white/80 text-xs font-medium">
+                                    {categoryNames[faq.category as keyof typeof categoryNames]}
+                                  </Badge>
+                                  {faq.targetAreas && faq.targetAreas.length > 0 && (
+                                    <Badge variant="secondary" className="bg-blue-100 text-blue-800 text-xs">
+                                      {faq.targetAreas[0]}{faq.targetAreas.length > 1 && ` +${faq.targetAreas.length - 1}`}
+                                    </Badge>
+                                  )}
+                                  {faq.propertyTypes && faq.propertyTypes.length > 0 && (
+                                    <Badge variant="secondary" className="bg-green-100 text-green-800 text-xs">
+                                      {faq.propertyTypes[0]}{faq.propertyTypes.length > 1 && ` +${faq.propertyTypes.length - 1}`}
+                                    </Badge>
+                                  )}
+                                </div>
+                                <h3 
+                                  id={`faq-${faq.id}-question`}
+                                  className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300 leading-relaxed"
+                                >
+                                  {faq.question}
+                                </h3>
+                              </div>
+                            </div>
+                          </AccordionTrigger>
+                          <AccordionContent 
+                            className="px-8 pb-8"
+                            id={`faq-${faq.id}-content`}
+                            role="region"
+                            aria-labelledby={`faq-${faq.id}-question`}
+                          >
+                            <div className="ml-18 bg-gradient-to-br from-muted/30 to-muted/20 rounded-xl p-6 border border-muted/40">
+                              <p className="text-muted-foreground leading-relaxed text-base">
+                                {faq.answer}
+                              </p>
+                            </div>
+                          </AccordionContent>
+                        </AccordionItem>
+                      );
+                    })}
+                  </Accordion>
+
+                  {/* No Results State */}
+                  {tabFAQs.length === 0 && (
+                    <div className="text-center py-16">
+                      <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-muted/40 to-muted/20 flex items-center justify-center mx-auto mb-6 backdrop-blur-sm border border-muted/40">
+                        <Search className="w-10 h-10 text-muted-foreground" />
+                      </div>
+                      <h3 className="text-2xl font-semibold text-foreground mb-3">No Results Found</h3>
+                      <p className="text-muted-foreground mb-6">
+                        We couldn't find any FAQs matching your search criteria. Try adjusting your search terms or browse all categories.
+                      </p>
+                      <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                        <Button 
+                          variant="outline" 
+                          onClick={() => setSearchTerm("")}
+                          className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl"
+                        >
+                          Clear Search
+                        </Button>
+                        <Button 
+                          onClick={() => {
+                            setSearchTerm("");
+                            setSelectedCategory("all");
+                            setSelectedTargetArea("all");
+                            setSelectedPropertyType("all");
+                          }}
+                          className="shadow-lg hover:shadow-xl"
+                        >
+                          Show All FAQs
+                        </Button>
                       </div>
                     </div>
-                  </AccordionTrigger>
-                  <AccordionContent 
-                    className="px-8 pb-8"
-                    id={`faq-${faq.id}-content`}
-                    role="region"
-                    aria-labelledby={`faq-${faq.id}-question`}
-                  >
-                    <div className="ml-18 bg-gradient-to-br from-muted/30 to-muted/20 rounded-xl p-6 border border-muted/40">
-                      <p className="text-muted-foreground leading-relaxed text-base">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
+                  )}
+                </TabsContent>
               );
             })}
-          </Accordion>
-
-          {/* No Results State */}
-          {filteredFAQs.length === 0 && (
-            <div className="text-center py-16">
-              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-muted/40 to-muted/20 flex items-center justify-center mx-auto mb-6 backdrop-blur-sm border border-muted/40">
-                <Search className="w-10 h-10 text-muted-foreground" />
-              </div>
-              <h3 className="text-2xl font-semibold text-foreground mb-3">No Results Found</h3>
-              <p className="text-muted-foreground mb-6">
-                We couldn't find any FAQs matching your search criteria. Try adjusting your search terms or browse all categories.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button 
-                  variant="outline" 
-                  onClick={() => setSearchTerm("")}
-                  className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl"
-                >
-                  Clear Search
-                </Button>
-                  <Button 
-                    onClick={() => {
-                      setSearchTerm("");
-                      setSelectedCategory("all");
-                      setSelectedTargetArea("all");
-                      setSelectedPropertyType("all");
-                    }}
-                    className="shadow-lg hover:shadow-xl"
-                  >
-                    Show All FAQs
-                  </Button>
-              </div>
-            </div>
-          )}
+          </Tabs>
         </div>
 
         {/* CTA Section */}
