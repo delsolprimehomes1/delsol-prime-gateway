@@ -58,7 +58,10 @@
       "category": "legal",
       "keywords": ["buying process", "timeline", "property purchase", "completion", "Spain"],
       "relatedTopics": ["legal-01", "legal-03", "finance-01"],
-      "voiceQueries": ["how long to buy property in Spain", "Spanish property purchase timeline", "property buying process duration"]
+      "voiceQueries": ["how long to buy property in Spain", "Spanish property purchase timeline", "property buying process duration"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["Spanish property timeline", "buying process duration", "property completion time"]
     },
     {
       "id": "legal-03",
@@ -67,7 +70,10 @@
       "category": "legal", 
       "keywords": ["Spanish lawyer", "legal representation", "property law", "notary", "due diligence"],
       "relatedTopics": ["legal-01", "legal-04", "services-02"],
-      "voiceQueries": ["do I need lawyer buying property Spain", "Spanish property lawyer required", "legal representation property purchase"]
+      "voiceQueries": ["do I need lawyer buying property Spain", "Spanish property lawyer required", "legal representation property purchase"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["Spanish property lawyer", "legal representation", "notary requirements"]
     },
     {
       "id": "legal-04",
@@ -76,7 +82,10 @@
       "category": "legal",
       "keywords": ["property taxes", "transfer tax", "IBI tax", "notary fees", "ongoing costs"],
       "relatedTopics": ["legal-05", "finance-02", "properties-01"],
-      "voiceQueries": ["Spanish property taxes costs", "property transfer tax Spain", "ongoing property costs Spain"]
+      "voiceQueries": ["Spanish property taxes costs", "property transfer tax Spain", "ongoing property costs Spain"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["Spanish property taxes", "transfer tax rates", "IBI tax Spain"]
     },
     {
       "id": "legal-05",
@@ -85,7 +94,130 @@
       "category": "legal",
       "keywords": ["Spanish residency", "Golden Visa", "property investment", "immigration", "EU citizens"],
       "relatedTopics": ["legal-01", "finance-03", "lifestyle-01"],
-      "voiceQueries": ["Spanish residency buying property", "Golden Visa property investment", "residency rights Spain property"]
+      "voiceQueries": ["Spanish residency buying property", "Golden Visa property investment", "residency rights Spain property"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Villa", "Penthouse", "Luxury Apartment"],
+      "seoKeywords": ["Golden Visa Spain", "Spanish residency", "property investment visa"]
+    },
+    {
+      "id": "legal-06",
+      "question": "What is the difference between a private contract and public deed in Spain?",
+      "answer": "A private contract (contrato privado) is the initial purchase agreement between buyer and seller, typically with 10% deposit. The public deed (escritura pública) is the final notarized document that legally transfers ownership. Both are essential steps in the Spanish property buying process.",
+      "category": "legal",
+      "keywords": ["private contract", "public deed", "escritura pública", "notary", "property transfer"],
+      "relatedTopics": ["legal-03", "legal-07", "legal-08"],
+      "voiceQueries": ["difference private contract public deed Spain", "escritura pública explained", "Spanish property contracts"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["Spanish property contracts", "escritura pública", "notary deed Spain"]
+    },
+    {
+      "id": "legal-07",
+      "question": "What happens if the seller has outstanding debts on the property?",
+      "answer": "Properties with outstanding debts (mortgages, community fees, taxes) can still be purchased, but debts must be cleared at completion. Your lawyer will ensure all debts are identified and deducted from the purchase price or paid by the seller. Never complete without full debt clearance verification.",
+      "category": "legal",
+      "keywords": ["property debts", "outstanding mortgage", "community fees debt", "debt clearance", "legal protection"],
+      "relatedTopics": ["legal-03", "legal-08", "legal-09"],
+      "voiceQueries": ["property with debts Spain", "outstanding mortgage on Spanish property", "buying property with debt Spain"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["property debt clearance", "outstanding mortgage Spain", "community fees debt"]
+    },
+    {
+      "id": "legal-08",
+      "question": "How do I verify a property's legal status before buying?",
+      "answer": "Essential checks include: Property Registry search (Registro de la Propiedad), Town Hall verification of building licenses, community fees status, urban planning compliance, and outstanding debt search. Our legal partners conduct comprehensive due diligence on every property.",
+      "category": "legal",
+      "keywords": ["property verification", "due diligence", "property registry", "building licenses", "legal status"],
+      "relatedTopics": ["legal-03", "legal-07", "legal-09"],
+      "voiceQueries": ["how to verify property legal status Spain", "property registry search Spain", "due diligence Spanish property"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["property registry Spain", "due diligence property", "legal status verification"]
+    },
+    {
+      "id": "legal-09",
+      "question": "What insurance do I need for my Spanish property?",
+      "answer": "Essential insurances include: Buildings insurance (required by law for mortgaged properties), contents insurance, third-party liability (often included in buildings cover), and legal protection insurance. Annual costs typically €300-800 depending on property value and coverage.",
+      "category": "legal",
+      "keywords": ["property insurance", "buildings insurance", "contents insurance", "liability insurance", "legal protection"],
+      "relatedTopics": ["legal-04", "properties-08", "lifestyle-05"],
+      "voiceQueries": ["property insurance Spain requirements", "buildings insurance Spanish property", "insurance costs Spain property"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["Spanish property insurance", "buildings insurance requirements", "property liability insurance"]
+    },
+    {
+      "id": "legal-10",
+      "question": "Can I buy Spanish property through a company structure?",
+      "answer": "Yes, purchasing through a Spanish SL (limited company) offers potential tax advantages and inheritance benefits, especially for high-value properties. However, it involves additional compliance costs and annual filing requirements. We recommend specialist legal and tax advice for company purchases.",
+      "category": "legal",
+      "keywords": ["company purchase", "Spanish SL", "corporate structure", "tax advantages", "inheritance planning"],
+      "relatedTopics": ["legal-05", "finance-07", "finance-08"],
+      "voiceQueries": ["buying property through company Spain", "Spanish SL property purchase", "corporate property ownership Spain"],
+      "targetAreas": ["Marbella", "Estepona", "Mijas", "Sotogrande"],
+      "propertyTypes": ["Villa", "Penthouse", "Luxury Apartment"],
+      "seoKeywords": ["Spanish SL property", "corporate property ownership", "company structure Spain"]
+    },
+    {
+      "id": "legal-11",
+      "question": "What rights do I have as a non-resident property owner in Spain?",
+      "answer": "Non-residents have identical property ownership rights to residents, including the right to buy, sell, rent, and inherit property. However, tax obligations differ, and certain banking services may be limited. EU citizens enjoy additional protections under European law.",
+      "category": "legal",
+      "keywords": ["non-resident rights", "property ownership rights", "tax obligations", "EU protections", "foreign ownership"],
+      "relatedTopics": ["legal-05", "finance-04", "lifestyle-01"],
+      "voiceQueries": ["non-resident property rights Spain", "foreign property ownership rights", "EU citizen property rights Spain"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["non-resident property rights", "foreign ownership Spain", "EU property rights"]
+    },
+    {
+      "id": "legal-12",
+      "question": "How does inheritance law work for foreign property owners in Spain?",
+      "answer": "Spanish inheritance law allows EU residents to choose their home country's inheritance law. Non-EU citizens follow Spanish succession law unless they establish domicile elsewhere. Inheritance tax varies by region, with Andalusia offering significant reductions for family members.",
+      "category": "legal",
+      "keywords": ["inheritance law", "succession planning", "inheritance tax", "EU inheritance rights", "Andalusia tax benefits"],
+      "relatedTopics": ["legal-10", "legal-13", "finance-08"],
+      "voiceQueries": ["Spanish inheritance law foreign owners", "inheritance tax Spain property", "EU inheritance rights Spain"],
+      "targetAreas": ["Costa del Sol", "Andalusia", "Marbella", "Estepona"],
+      "propertyTypes": ["Villa", "Penthouse", "Luxury Apartment"],
+      "seoKeywords": ["Spanish inheritance law", "inheritance tax Andalusia", "EU inheritance rights"]
+    },
+    {
+      "id": "legal-13",
+      "question": "What are the legal requirements for property rentals in Spain?",
+      "answer": "Rental properties must be registered for tourist or long-term rental licenses. Tourist rentals require specific permits varying by municipality. Long-term rentals need habitability certificates. All rentals must comply with safety regulations, insurance requirements, and tax obligations.",
+      "category": "legal",
+      "keywords": ["rental licenses", "tourist rental permits", "habitability certificate", "rental regulations", "safety compliance"],
+      "relatedTopics": ["finance-04", "properties-09", "lifestyle-06"],
+      "voiceQueries": ["rental license requirements Spain", "tourist rental permits Costa del Sol", "legal requirements rental property Spain"],
+      "targetAreas": ["Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["rental license Spain", "tourist rental permits", "rental property legal requirements"]
+    },
+    {
+      "id": "legal-14",
+      "question": "What is the process for obtaining an NIE number?",
+      "answer": "NIE (Número de Identificación de Extranjero) can be obtained at Spanish consulates abroad or directly in Spain at National Police stations. Required documents include passport, EX-15 form, and €10.71 fee. Processing takes 1-2 weeks. We can arrange assistance through trusted partners.",
+      "category": "legal",
+      "keywords": ["NIE number", "tax identification", "EX-15 form", "Spanish consulate", "police station"],
+      "relatedTopics": ["legal-01", "legal-15", "services-01"],
+      "voiceQueries": ["how to get NIE number Spain", "NIE application process", "where to apply NIE number"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["NIE number application", "tax identification Spain", "NIE process foreign buyers"]
+    },
+    {
+      "id": "legal-15",
+      "question": "Do I need to register as a resident for tax purposes?",
+      "answer": "You become a Spanish tax resident if you spend more than 183 days per year in Spain or have your main economic interests here. Tax residents pay global income tax in Spain. Non-residents only pay tax on Spanish-sourced income. Professional tax advice is essential for optimization.",
+      "category": "legal",
+      "keywords": ["tax residency", "183-day rule", "global income tax", "Spanish tax obligations", "tax optimization"],
+      "relatedTopics": ["legal-11", "finance-04", "lifestyle-01"],
+      "voiceQueries": ["Spanish tax residency rules", "183 day rule Spain", "tax obligations Spanish property"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["Spanish tax residency", "183 day rule", "tax obligations Spain"]
     },
     {
       "id": "finance-01",
@@ -94,7 +226,10 @@
       "category": "finance",
       "keywords": ["Spanish mortgages", "foreign buyers", "non-resident", "mortgage rates", "financing"],
       "relatedTopics": ["finance-02", "legal-02", "services-03"],
-      "voiceQueries": ["can foreigners get mortgages in Spain", "Spanish mortgage foreign buyer", "property financing Spain non-resident"]
+      "voiceQueries": ["can foreigners get mortgages in Spain", "Spanish mortgage foreign buyer", "property financing Spain non-resident"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["Spanish mortgages foreign buyers", "non-resident mortgage Spain", "international property financing"]
     },
     {
       "id": "finance-02",
@@ -103,7 +238,10 @@
       "category": "finance",
       "keywords": ["mortgage rates", "interest rates", "mortgage terms", "financing options", "Spanish banks"],
       "relatedTopics": ["finance-01", "finance-03", "legal-04"],
-      "voiceQueries": ["Spanish mortgage rates 2024", "property loan rates Spain", "current mortgage interest rates Spain"]
+      "voiceQueries": ["Spanish mortgage rates 2024", "property loan rates Spain", "current mortgage interest rates Spain"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["Spanish mortgage rates 2024", "property loan rates", "mortgage terms Spain"]
     },
     {
       "id": "finance-03",
@@ -112,7 +250,10 @@
       "category": "finance",
       "keywords": ["property investment", "rental yields", "capital appreciation", "Costa del Sol market", "ROI"],
       "relatedTopics": ["locations-01", "properties-02", "finance-04"],
-      "voiceQueries": ["Costa del Sol property investment returns", "rental yields Marbella", "property investment Spain returns"]
+      "voiceQueries": ["Costa del Sol property investment returns", "rental yields Marbella", "property investment Spain returns"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["Costa del Sol investment", "rental yields Spain", "property investment returns"]
     },
     {
       "id": "finance-04",
@@ -121,7 +262,142 @@
       "category": "finance",
       "keywords": ["rental income tax", "non-resident tax", "tax deductions", "property tax Spain", "tax optimization"],
       "relatedTopics": ["finance-03", "legal-04", "lifestyle-02"],
-      "voiceQueries": ["rental income tax Spain", "property tax non-resident Spain", "tax on rental income Spanish property"]
+      "voiceQueries": ["rental income tax Spain", "property tax non-resident Spain", "tax on rental income Spanish property"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["rental income tax Spain", "non-resident tax rates", "property tax deductions"]
+    },
+    {
+      "id": "finance-05",
+      "question": "What deposit do I need for a Spanish mortgage?",
+      "answer": "Non-residents typically need 30-40% deposit (60-70% LTV), while EU residents may get mortgages with 20-30% deposit (70-80% LTV). Additional costs include valuation fees (€300-600), mortgage arrangement fees (0.5-1%), and legal costs (€1,000-2,000).",
+      "category": "finance",
+      "keywords": ["mortgage deposit", "LTV ratio", "valuation fees", "arrangement fees", "mortgage costs"],
+      "relatedTopics": ["finance-01", "finance-02", "legal-04"],
+      "voiceQueries": ["Spanish mortgage deposit requirements", "how much deposit Spanish mortgage", "LTV ratios Spain mortgages"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["Spanish mortgage deposit", "LTV ratios Spain", "mortgage requirements foreign buyers"]
+    },
+    {
+      "id": "finance-06",
+      "question": "How do Spanish banks assess mortgage applications from foreign buyers?",
+      "answer": "Banks evaluate: debt-to-income ratios (maximum 35-40%), proof of stable income (2-3 years), credit history from home country, employment stability, and existing assets. Self-employed applicants need additional documentation. Age limits typically extend to 70-75 years at mortgage end.",
+      "category": "finance",
+      "keywords": ["mortgage assessment", "debt-to-income ratio", "credit history", "income verification", "self-employed mortgages"],
+      "relatedTopics": ["finance-01", "finance-05", "finance-07"],
+      "voiceQueries": ["Spanish mortgage application requirements", "how banks assess foreign buyers", "mortgage approval criteria Spain"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["mortgage assessment Spain", "foreign buyer mortgage approval", "Spanish bank lending criteria"]
+    },
+    {
+      "id": "finance-07",
+      "question": "What are the tax advantages of property investment in Spain?",
+      "answer": "Key advantages include: mortgage interest deduction (up to €15,000 annually for residents), depreciation allowances (3% annually), expense deductions (management, repairs, insurance), and potential capital gains deferrals through reinvestment. Non-residents have more limited benefits.",
+      "category": "finance",
+      "keywords": ["tax advantages", "mortgage interest deduction", "depreciation", "capital gains", "tax optimization"],
+      "relatedTopics": ["finance-04", "legal-15", "finance-08"],
+      "voiceQueries": ["tax benefits property investment Spain", "mortgage interest deduction Spain", "property tax advantages Spain"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["Spanish property tax benefits", "mortgage interest deduction", "investment tax advantages"]
+    },
+    {
+      "id": "finance-08",
+      "question": "How does capital gains tax work on Spanish property sales?",
+      "answer": "Capital gains tax rates: 19% (first €6,000), 21% (€6,001-€50,000), 23% (€50,001-€200,000), 26% (above €200,000) for residents. Non-residents pay 19% flat rate. Exemptions available for reinvestment in main residence and age-related reliefs for residents over 65.",
+      "category": "finance",
+      "keywords": ["capital gains tax", "property sale tax", "tax rates", "exemptions", "reinvestment relief"],
+      "relatedTopics": ["finance-07", "legal-12", "finance-09"],
+      "voiceQueries": ["capital gains tax Spanish property", "property sale tax rates Spain", "capital gains exemptions Spain"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["capital gains tax Spain", "property sale tax", "capital gains exemptions"]
+    },
+    {
+      "id": "finance-09",
+      "question": "What financing options exist for off-plan property purchases?",
+      "answer": "Off-plan financing includes: stage payment plans (typically 20% deposit, 10-30% during construction, 50-70% on completion), bank guarantees protecting deposits, and specialized construction mortgages. Some developers offer in-house financing with competitive terms.",
+      "category": "finance",
+      "keywords": ["off-plan financing", "stage payments", "bank guarantees", "construction mortgages", "developer financing"],
+      "relatedTopics": ["newbuild-01", "newbuild-02", "finance-05"],
+      "voiceQueries": ["off-plan property financing Spain", "stage payment plans Spain", "new build financing options"],
+      "targetAreas": ["Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse"],
+      "seoKeywords": ["off-plan financing", "new build payment plans", "construction mortgages Spain"]
+    },
+    {
+      "id": "finance-10",
+      "question": "How do I calculate the total cost of buying property in Spain?",
+      "answer": "Total costs typically add 10-15% to purchase price: Transfer tax (6-10% resale) or VAT (10% new build), notary fees (€600-1,200), registry fees (€400-800), legal fees (€1,000-2,500), survey costs (€300-600), and mortgage arrangement fees if applicable.",
+      "category": "finance",
+      "keywords": ["total buying costs", "purchase expenses", "transfer tax", "VAT", "professional fees"],
+      "relatedTopics": ["legal-04", "finance-05", "newbuild-03"],
+      "voiceQueries": ["total cost buying property Spain", "property purchase expenses Spain", "additional costs Spanish property"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["Spanish property buying costs", "total purchase expenses", "property transaction costs"]
+    },
+    {
+      "id": "finance-11",
+      "question": "What are the ongoing costs of owning property in Spain?",
+      "answer": "Annual costs include: IBI tax (€500-2,000), community fees (€1,200-6,000 for apartments), insurance (€300-800), utilities (€800-1,500), maintenance (1-2% of property value), and property management fees (8-12% of rental income if letting).",
+      "category": "finance",
+      "keywords": ["ongoing costs", "annual expenses", "IBI tax", "community fees", "maintenance costs"],
+      "relatedTopics": ["legal-04", "properties-08", "finance-04"],
+      "voiceQueries": ["annual costs owning property Spain", "ongoing expenses Spanish property", "yearly property costs Spain"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["ongoing property costs Spain", "annual property expenses", "Spanish property ownership costs"]
+    },
+    {
+      "id": "finance-12",
+      "question": "How do I transfer money to Spain for property purchase?",
+      "answer": "Best methods include: specialist foreign exchange brokers (better rates than banks), SWIFT bank transfers, or online transfer services. Avoid cash transactions over €2,500 (legal limit). Consider currency hedging for large purchases. Transfer times typically 1-3 business days.",
+      "category": "finance",
+      "keywords": ["money transfer", "foreign exchange", "currency exchange", "SWIFT transfer", "currency hedging"],
+      "relatedTopics": ["finance-10", "legal-16", "services-04"],
+      "voiceQueries": ["how to transfer money Spain property", "best way send money Spanish property", "currency exchange property purchase"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["money transfer Spain property", "foreign exchange property", "currency transfer Spain"]
+    },
+    {
+      "id": "finance-13",
+      "question": "What rental yields can I expect in different areas of Costa del Sol?",
+      "answer": "Typical rental yields: Marbella center 4-5%, Marbella Golden Mile 3-4%, Estepona 5-6%, Mijas 4-5%, Fuengirola 5-6%, Benalmádena 4-5%. Tourist rentals can achieve 8-12% but require more management. Location, property type, and management quality significantly impact returns.",
+      "category": "finance",
+      "keywords": ["rental yields", "investment returns", "tourist rentals", "location comparison", "rental income"],
+      "relatedTopics": ["finance-03", "locations-01", "properties-09"],
+      "voiceQueries": ["rental yields Costa del Sol", "property investment returns Spain", "best rental yields Marbella"],
+      "targetAreas": ["Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["rental yields Costa del Sol", "property investment returns", "Spanish rental income"]
+    },
+    {
+      "id": "finance-14",
+      "question": "How do currency fluctuations affect Spanish property investment?",
+      "answer": "Currency movements can significantly impact returns for foreign investors. GBP/EUR fluctuations of 10-15% are common, affecting both purchase costs and ongoing rental income. Consider currency hedging strategies, fix exchange rates early, or maintain natural hedges through Euro-denominated income.",
+      "category": "finance",
+      "keywords": ["currency fluctuations", "exchange rate risk", "currency hedging", "GBP EUR", "investment risk"],
+      "relatedTopics": ["finance-12", "finance-15", "finance-03"],
+      "voiceQueries": ["currency risk Spanish property", "exchange rate impact property investment", "hedging currency risk Spain"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["currency risk property investment", "exchange rate impact Spain", "currency hedging property"]
+    },
+    {
+      "id": "finance-15",
+      "question": "What are the best property investment strategies for Costa del Sol?",
+      "answer": "Successful strategies include: buy-to-let in high-demand tourist areas, luxury vacation rentals in Marbella, family apartments in Fuengirola/Benalmádena, off-plan investments for capital growth, and diversified portfolios across different areas and property types. Professional management is crucial for success.",
+      "category": "finance",
+      "keywords": ["investment strategies", "buy-to-let", "vacation rentals", "off-plan investment", "portfolio diversification"],
+      "relatedTopics": ["finance-03", "finance-13", "newbuild-01"],
+      "voiceQueries": ["best property investment strategies Spain", "buy-to-let Costa del Sol", "property investment advice Spain"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["property investment strategies", "buy-to-let Spain", "vacation rental investment"]
     },
     {
       "id": "locations-01",
@@ -130,7 +406,10 @@
       "category": "locations",
       "keywords": ["Marbella", "luxury properties", "Golden Mile", "Puerto Banús", "investment location"],
       "relatedTopics": ["locations-02", "properties-01", "finance-03"],
-      "voiceQueries": ["why invest in Marbella property", "Marbella property investment benefits", "best areas Marbella property"]
+      "voiceQueries": ["why invest in Marbella property", "Marbella property investment benefits", "best areas Marbella property"],
+      "targetAreas": ["Marbella", "Golden Mile", "Puerto Banús", "Nueva Andalucía"],
+      "propertyTypes": ["Villa", "Penthouse", "Luxury Apartment"],
+      "seoKeywords": ["Marbella property investment", "Golden Mile properties", "Puerto Banús real estate"]
     },
     {
       "id": "locations-02",
@@ -139,7 +418,10 @@
       "category": "locations", 
       "keywords": ["Estepona", "Marbella comparison", "property value", "Spanish charm", "first-time buyers"],
       "relatedTopics": ["locations-01", "locations-03", "properties-03"],
-      "voiceQueries": ["Estepona vs Marbella property", "Estepona property investment", "best value Costa del Sol property"]
+      "voiceQueries": ["Estepona vs Marbella property", "Estepona property investment", "best value Costa del Sol property"],
+      "targetAreas": ["Estepona", "Marbella"],
+      "propertyTypes": ["Apartment", "Villa", "Townhouse"],
+      "seoKeywords": ["Estepona vs Marbella", "Estepona property value", "Costa del Sol best value"]
     },
     {
       "id": "locations-03",
@@ -148,7 +430,94 @@
       "category": "locations",
       "keywords": ["family-friendly", "schools", "Mijas", "Fuengirola", "Benalmádena", "family properties"],
       "relatedTopics": ["lifestyle-03", "properties-04", "locations-04"],
-      "voiceQueries": ["best family areas Costa del Sol", "family-friendly locations Spain", "good schools Costa del Sol"]
+      "voiceQueries": ["best family areas Costa del Sol", "family-friendly locations Spain", "good schools Costa del Sol"],
+      "targetAreas": ["Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Townhouse", "Villa"],
+      "seoKeywords": ["family-friendly Costa del Sol", "best schools Spain", "family areas Marbella"]
+    },
+    {
+      "id": "locations-04",
+      "question": "Which areas of Costa del Sol have the best beaches?",
+      "answer": "Top beach locations include: Marbella (Playa de la Fontanilla, Nikki Beach), Estepona (Playa del Cristo, La Rada), Fuengirola (Playa de los Boliches), Benalmádena (Playa de Malapesquera), and Mijas (La Cala de Mijas). All offer Blue Flag status and excellent facilities.",
+      "category": "locations",
+      "keywords": ["best beaches", "Blue Flag beaches", "coastal properties", "beachfront", "seaside living"],
+      "relatedTopics": ["locations-01", "locations-02", "properties-06"],
+      "voiceQueries": ["best beaches Costa del Sol", "Blue Flag beaches Spain", "beachfront properties Costa del Sol"],
+      "targetAreas": ["Marbella", "Estepona", "Fuengirola", "Benalmádena", "Mijas"],
+      "propertyTypes": ["Beachfront Apartment", "Villa", "Penthouse"],
+      "seoKeywords": ["best beaches Costa del Sol", "Blue Flag beaches", "beachfront properties Spain"]
+    },
+    {
+      "id": "locations-05",
+      "question": "What are the transport links like across Costa del Sol?",
+      "answer": "Excellent connectivity includes: Málaga Airport (30-60 minutes to all areas), AP-7 motorway connecting all towns, regular bus services, train line from Málaga to Fuengirola, and taxi services. Most areas are well-connected, with Marbella having the best infrastructure.",
+      "category": "locations",
+      "keywords": ["transport links", "Málaga Airport", "connectivity", "infrastructure", "public transport"],
+      "relatedTopics": ["locations-06", "lifestyle-04", "properties-07"],
+      "voiceQueries": ["transport links Costa del Sol", "getting around Costa del Sol", "public transport Spain"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["Costa del Sol transport", "Málaga Airport access", "public transport Spain"]
+    },
+    {
+      "id": "locations-06",
+      "question": "What healthcare facilities are available in Costa del Sol?",
+      "answer": "World-class healthcare includes: Hospital Costa del Sol (Marbella), HC Marbella International Hospital, Quirónsalud hospitals in multiple locations, numerous private clinics, and comprehensive public healthcare. Many doctors speak English, and emergency services are excellent.",
+      "category": "locations",
+      "keywords": ["healthcare", "hospitals", "medical facilities", "international hospitals", "English-speaking doctors"],
+      "relatedTopics": ["lifestyle-07", "locations-05", "lifestyle-08"],
+      "voiceQueries": ["healthcare Costa del Sol", "hospitals Marbella", "English speaking doctors Spain"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["healthcare Costa del Sol", "international hospitals Spain", "medical facilities Marbella"]
+    },
+    {
+      "id": "locations-07",
+      "question": "Which areas offer the best golf courses and facilities?",
+      "answer": "Premier golf destinations include: Marbella (Los Naranjos, Aloha Golf Club), Nueva Andalucía Golf Valley (multiple championship courses), Estepona (Villa Padierna, Azata Golf), and Mijas (multiple courses including Mijas Golf). Over 50 courses within 30 minutes drive.",
+      "category": "locations",
+      "keywords": ["golf courses", "golf properties", "championship courses", "Golf Valley", "golf lifestyle"],
+      "relatedTopics": ["properties-05", "lifestyle-09", "locations-01"],
+      "voiceQueries": ["best golf courses Costa del Sol", "golf properties Marbella", "golf lifestyle Spain"],
+      "targetAreas": ["Marbella", "Nueva Andalucía", "Estepona", "Mijas", "Sotogrande"],
+      "propertyTypes": ["Golf Villa", "Golf Apartment", "Luxury Villa"],
+      "seoKeywords": ["golf courses Costa del Sol", "golf properties Spain", "golf lifestyle Marbella"]
+    },
+    {
+      "id": "locations-08",
+      "question": "What shopping and dining options are available in each area?",
+      "answer": "Luxury shopping: Marbella (Avenida Ricardo Soriano, Puerto Banús), La Cañada shopping center. Fine dining: Michelin-starred restaurants in Marbella, beach clubs, international cuisine. Each town has traditional tapas bars, local markets, and modern shopping centers.",
+      "category": "locations",
+      "keywords": ["shopping", "dining", "restaurants", "Puerto Banús", "lifestyle amenities"],
+      "relatedTopics": ["lifestyle-10", "locations-01", "lifestyle-11"],
+      "voiceQueries": ["shopping Costa del Sol", "restaurants Marbella", "dining options Spain"],
+      "targetAreas": ["Marbella", "Puerto Banús", "Estepona", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["shopping Costa del Sol", "restaurants Marbella", "dining lifestyle Spain"]
+    },
+    {
+      "id": "locations-09",
+      "question": "How do property prices compare across different areas of Costa del Sol?",
+      "answer": "Price ranges per m²: Marbella Golden Mile €8,000-15,000+, Marbella center €4,000-8,000, Puerto Banús €6,000-12,000, Estepona €2,500-5,000, Mijas €2,000-4,000, Fuengirola €2,500-4,500, Benalmádena €2,200-4,200. Beachfront and golf properties command premiums.",
+      "category": "locations",
+      "keywords": ["property prices", "price comparison", "cost per square meter", "market values", "area comparison"],
+      "relatedTopics": ["finance-03", "locations-01", "locations-02"],
+      "voiceQueries": ["property prices Costa del Sol", "cost per square meter Spain", "price comparison Marbella Estepona"],
+      "targetAreas": ["Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena", "Puerto Banús"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["property prices Costa del Sol", "real estate prices Spain", "cost per square meter"]
+    },
+    {
+      "id": "locations-10",
+      "question": "What are the upcoming development plans for Costa del Sol?",
+      "answer": "Major developments include: Estepona marina expansion, Marbella urban renewal projects, new golf resorts in Mijas, improved transport infrastructure, and sustainable tourism initiatives. These developments are expected to boost property values and improve quality of life.",
+      "category": "locations",
+      "keywords": ["development plans", "infrastructure projects", "urban renewal", "future growth", "property appreciation"],
+      "relatedTopics": ["finance-03", "newbuild-01", "locations-11"],
+      "voiceQueries": ["future developments Costa del Sol", "upcoming projects Marbella", "infrastructure improvements Spain"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["Costa del Sol developments", "future infrastructure Spain", "property appreciation areas"]
     },
     {
       "id": "properties-01",
@@ -157,7 +526,10 @@
       "category": "properties",
       "keywords": ["property types", "villas", "apartments", "penthouses", "townhouses", "luxury properties"],
       "relatedTopics": ["properties-02", "locations-01", "finance-01"],
-      "voiceQueries": ["types of properties Costa del Sol", "luxury villas Marbella", "apartments for sale Spain"]
+      "voiceQueries": ["types of properties Costa del Sol", "luxury villas Marbella", "apartments for sale Spain"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Villa", "Apartment", "Penthouse", "Townhouse"],
+      "seoKeywords": ["property types Costa del Sol", "luxury villas Spain", "apartments for sale"]
     },
     {
       "id": "properties-02",
@@ -166,7 +538,179 @@
       "category": "properties",
       "keywords": ["property viewing", "due diligence", "property inspection", "building quality", "location analysis"],
       "relatedTopics": ["legal-03", "services-01", "properties-03"],
-      "voiceQueries": ["what to check when viewing Spanish property", "property inspection checklist Spain", "viewing properties Costa del Sol"]
+      "voiceQueries": ["what to check when viewing Spanish property", "property inspection checklist Spain", "viewing properties Costa del Sol"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["property viewing checklist", "Spanish property inspection", "property due diligence"]
+    },
+    {
+      "id": "properties-03",
+      "question": "What are the key features to look for in a luxury villa?",
+      "answer": "Premium features include: private pools and gardens, sea or golf views, high-end finishes, smart home technology, security systems, garage space, outdoor entertaining areas, and energy efficiency. Location, privacy, and build quality are paramount.",
+      "category": "properties",
+      "keywords": ["luxury villas", "premium features", "private pools", "sea views", "smart home technology"],
+      "relatedTopics": ["properties-01", "properties-04", "locations-07"],
+      "voiceQueries": ["luxury villa features Costa del Sol", "what to look for luxury villa", "premium villa amenities Spain"],
+      "targetAreas": ["Marbella", "Estepona", "Mijas", "Sotogrande"],
+      "propertyTypes": ["Villa", "Luxury Villa"],
+      "seoKeywords": ["luxury villa features", "premium villa amenities", "villa with pool Spain"]
+    },
+    {
+      "id": "properties-04",
+      "question": "What are the benefits of penthouse properties?",
+      "answer": "Penthouses offer: panoramic views, large terraces, privacy, prestige, better resale values, and often exclusive amenities like private pools or roof gardens. They typically appreciate faster than other apartment types and command premium rental rates.",
+      "category": "properties",
+      "keywords": ["penthouse properties", "panoramic views", "terraces", "prestige", "investment value"],
+      "relatedTopics": ["properties-01", "finance-13", "properties-05"],
+      "voiceQueries": ["penthouse benefits Costa del Sol", "penthouse investment value", "luxury penthouse features"],
+      "targetAreas": ["Marbella", "Estepona", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Penthouse", "Luxury Penthouse"],
+      "seoKeywords": ["penthouse properties Spain", "luxury penthouse Costa del Sol", "penthouse investment"]
+    },
+    {
+      "id": "properties-05",
+      "question": "What should I know about golf properties?",
+      "answer": "Golf properties offer: course access, resort amenities, strong rental demand, premium locations, and lifestyle benefits. Consider maintenance fees, club membership costs, and seasonal rental patterns. Properties on championship courses hold value best.",
+      "category": "properties",
+      "keywords": ["golf properties", "golf courses", "resort amenities", "club membership", "golf lifestyle"],
+      "relatedTopics": ["locations-07", "properties-03", "lifestyle-09"],
+      "voiceQueries": ["golf properties Costa del Sol", "golf course properties Spain", "golf resort investment"],
+      "targetAreas": ["Marbella", "Nueva Andalucía", "Estepona", "Mijas", "Sotogrande"],
+      "propertyTypes": ["Golf Villa", "Golf Apartment", "Golf Townhouse"],
+      "seoKeywords": ["golf properties Spain", "golf course real estate", "golf resort properties"]
+    },
+    {
+      "id": "properties-06",
+      "question": "Are beachfront properties a good investment?",
+      "answer": "Beachfront properties offer: premium rental yields (often 20-30% higher), strong capital appreciation, limited supply, and lifestyle appeal. However, they require higher maintenance due to salt exposure and may have seasonal rental patterns.",
+      "category": "properties",
+      "keywords": ["beachfront properties", "coastal investment", "premium rental yields", "limited supply", "maintenance considerations"],
+      "relatedTopics": ["locations-04", "finance-13", "properties-07"],
+      "voiceQueries": ["beachfront property investment Costa del Sol", "coastal property returns", "beachfront villa benefits"],
+      "targetAreas": ["Marbella", "Estepona", "Fuengirola", "Benalmádena", "Mijas"],
+      "propertyTypes": ["Beachfront Villa", "Beachfront Apartment", "Coastal Penthouse"],
+      "seoKeywords": ["beachfront properties Spain", "coastal investment Costa del Sol", "seaside property investment"]
+    },
+    {
+      "id": "properties-07",
+      "question": "What are the pros and cons of apartment living vs villa ownership?",
+      "answer": "Apartments: lower maintenance, community amenities, security, urban convenience, but community fees and less privacy. Villas: privacy, gardens, pools, space, but higher maintenance, security considerations, and typically higher costs.",
+      "category": "properties",
+      "keywords": ["apartments vs villas", "community living", "privacy", "maintenance", "lifestyle choice"],
+      "relatedTopics": ["properties-01", "properties-08", "lifestyle-12"],
+      "voiceQueries": ["apartment vs villa Costa del Sol", "pros cons apartment living Spain", "villa vs apartment investment"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Townhouse"],
+      "seoKeywords": ["apartment vs villa Spain", "property type comparison", "lifestyle choice Spain"]
+    },
+    {
+      "id": "properties-08",
+      "question": "How do community fees work in Spanish apartment complexes?",
+      "answer": "Community fees cover: building maintenance, shared facilities (pools, gardens, security), elevators, cleaning, and administration. Costs range €100-500+ monthly depending on amenities and location. Fees are mandatory and shared based on property size percentage.",
+      "category": "properties",
+      "keywords": ["community fees", "apartment complexes", "shared facilities", "maintenance costs", "mandatory fees"],
+      "relatedTopics": ["legal-04", "finance-11", "properties-09"],
+      "voiceQueries": ["community fees Spanish apartments", "apartment maintenance costs Spain", "shared facility costs Costa del Sol"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Penthouse"],
+      "seoKeywords": ["community fees Spain", "apartment maintenance costs", "shared facility fees"]
+    },
+    {
+      "id": "properties-09",
+      "question": "What facilities should I expect in modern apartment complexes?",
+      "answer": "Modern complexes typically include: swimming pools, landscaped gardens, 24/7 security, underground parking, gym facilities, spa areas, concierge services, and sometimes tennis courts or paddle courts. Luxury developments may offer beach clubs and golf course access.",
+      "category": "properties",
+      "keywords": ["apartment facilities", "modern complexes", "swimming pools", "security", "luxury amenities"],
+      "relatedTopics": ["properties-08", "newbuild-01", "properties-10"],
+      "voiceQueries": ["apartment complex facilities Costa del Sol", "luxury apartment amenities Spain", "modern apartment features"],
+      "targetAreas": ["Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Penthouse"],
+      "seoKeywords": ["luxury apartment amenities", "modern apartment facilities", "apartment complex features"]
+    },
+    {
+      "id": "properties-10",
+      "question": "How do I assess the build quality of a property?",
+      "answer": "Key indicators include: construction materials (quality tiles, fittings), insulation standards, window quality, structural integrity, plumbing and electrical systems, and finishing details. Professional surveys, architect reports, and building certificates provide comprehensive assessments.",
+      "category": "properties",
+      "keywords": ["build quality", "construction standards", "professional survey", "structural integrity", "property assessment"],
+      "relatedTopics": ["properties-02", "legal-08", "services-05"],
+      "voiceQueries": ["how to assess property build quality", "construction quality Spain", "property survey importance"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["property build quality", "construction standards Spain", "property survey assessment"]
+    },
+    {
+      "id": "newbuild-01",
+      "question": "What are the specific advantages of buying new-build property on the Costa del Sol for international buyers?",
+      "answer": "New-build properties on the Costa del Sol offer hassle-free quality, energy efficiency, and modern luxury – combined with a flexible payment schedule. It's a smart choice for international buyers seeking lifestyle, investment value, and peace of mind.\n\n✅ Modern construction standards & guarantees: All new developments meet strict European building regulations (EPC label A/B) and come with a 10-year structural warranty – meaning lower maintenance and fewer surprises compared to older homes.\n\n🌱 Energy-efficient and future-proof: Features like heat pumps, solar panels, and aerothermal systems can cut energy costs by up to 40% – a key advantage for sustainability-conscious buyers from across Europe and beyond.\n\n💰 Staged payment plan: Typically, you pay 20–30% during construction and the remaining 60% upon completion. This allows you to invest without needing the full capital upfront.\n\n📈 Higher rental & resale value: Smart-home features, fitness areas, co-working spaces, and concierge services attract premium tenants and future buyers – with rental yields often 15–20% higher than older properties.\n\n🏖️ Lifestyle benefits: Direct flights from most European cities to Málaga ✈️, 300+ days of sunshine, world-class golf, gastronomy, and international healthcare make it more than just a real estate investment – it's a lifestyle upgrade. CostaPrimeHomes offers VIP property tours and multilingual guidance from reservation to key handover.\n\n📊 Clear and transparent taxes: New-build homes are subject to 10% VAT (instead of the 7% transfer tax on resales), making it easier to plan ahead – especially for those buying through a company structure or managing cross-border assets.",
+      "category": "newbuild",
+      "keywords": ["new build Costa del Sol", "energy-efficient homes", "10-year warranty", "lifestyle investment", "international buyers", "staged payment plan", "modern construction", "smart home"],
+      "relatedTopics": ["properties-01", "finance-03", "legal-04", "locations-01"],
+      "voiceQueries": ["advantages of new build property Costa del Sol", "new construction benefits Spain", "why buy new build property Costa del Sol", "new build vs resale property Spain"],
+      "targetAreas": ["Marbella", "Estepona", "Mijas", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Penthouse", "Villa"],
+      "seoKeywords": ["new build Costa del Sol", "energy-efficient homes", "10-year warranty", "lifestyle investment", "international buyers", "CostaPrimeHomes"],
+      "image": ""
+    },
+    {
+      "id": "newbuild-02",
+      "question": "What are the risks of buying off-plan property in Spain?",
+      "answer": "Main risks include: developer delays, construction quality issues, changes to specifications, developer insolvency, and market fluctuations during construction. Mitigation strategies include bank guarantees, insurance policies, reputable developers, and legal due diligence.",
+      "category": "newbuild",
+      "keywords": ["off-plan risks", "developer delays", "construction quality", "bank guarantees", "risk mitigation"],
+      "relatedTopics": ["newbuild-01", "newbuild-03", "legal-08"],
+      "voiceQueries": ["risks buying off-plan Spain", "off-plan property dangers", "how to reduce off-plan risks"],
+      "targetAreas": ["Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse"],
+      "seoKeywords": ["off-plan property risks", "developer insolvency protection", "new build guarantees"]
+    },
+    {
+      "id": "newbuild-03",
+      "question": "How do payment schedules work for new-build properties?",
+      "answer": "Typical payment structure: 10-20% reservation fee, 10-30% during construction phases, 70-80% on completion. Bank guarantees protect stage payments. Some developers offer extended payment plans or financing options. Always ensure payments align with construction milestones.",
+      "category": "newbuild",
+      "keywords": ["payment schedules", "stage payments", "bank guarantees", "construction milestones", "developer financing"],
+      "relatedTopics": ["newbuild-02", "finance-09", "legal-16"],
+      "voiceQueries": ["new build payment schedule Spain", "off-plan payment plan", "stage payment protection"],
+      "targetAreas": ["Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse"],
+      "seoKeywords": ["new build payment schedule", "off-plan payments", "construction payment plan"]
+    },
+    {
+      "id": "newbuild-04",
+      "question": "What energy efficiency features should I expect in new builds?",
+      "answer": "Modern new builds include: A-rated energy certificates, solar panels, aerothermal heating/cooling, double/triple glazing, LED lighting, smart home systems, and superior insulation. These features reduce energy costs by 40-60% compared to older properties.",
+      "category": "newbuild",
+      "keywords": ["energy efficiency", "A-rated certificate", "solar panels", "aerothermal", "smart home", "insulation"],
+      "relatedTopics": ["newbuild-01", "properties-10", "lifestyle-13"],
+      "voiceQueries": ["energy efficient features new build Spain", "A-rated energy certificate", "solar panels new build"],
+      "targetAreas": ["Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse"],
+      "seoKeywords": ["energy efficient new builds", "A-rated properties Spain", "solar panel properties"]
+    },
+    {
+      "id": "newbuild-05",
+      "question": "How long does it typically take to complete a new-build project?",
+      "answer": "Construction timelines vary: apartments 18-24 months, villas 12-18 months, large developments 2-3 years. Factors affecting timeline include project size, weather, permits, and developer resources. Reputable developers provide realistic timelines with regular updates.",
+      "category": "newbuild",
+      "keywords": ["construction timeline", "project completion", "development schedule", "building phases", "developer reliability"],
+      "relatedTopics": ["newbuild-02", "newbuild-06", "services-06"],
+      "voiceQueries": ["how long new build construction Spain", "development timeline Costa del Sol", "when will my property be ready"],
+      "targetAreas": ["Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse"],
+      "seoKeywords": ["new build construction time", "development timeline Spain", "property completion schedule"]
+    },
+    {
+      "id": "newbuild-06",
+      "question": "What warranties come with new-build properties?",
+      "answer": "Standard warranties include: 10-year structural warranty, 3-year defects warranty, 1-year minor finishes warranty, and appliance manufacturer warranties. Developers must provide insurance-backed warranties and defect rectification services during warranty periods.",
+      "category": "newbuild",
+      "keywords": ["property warranties", "structural warranty", "defects warranty", "insurance-backed warranty", "builder guarantees"],
+      "relatedTopics": ["newbuild-01", "newbuild-05", "legal-17"],
+      "voiceQueries": ["new build property warranties Spain", "10-year structural warranty", "builder guarantees new build"],
+      "targetAreas": ["Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse"],
+      "seoKeywords": ["new build warranties", "structural warranty Spain", "property guarantees"]
     },
     {
       "id": "services-01",
@@ -175,7 +719,10 @@
       "category": "services",
       "keywords": ["DelSolPrimeHomes services", "property search", "viewing trips", "legal assistance", "property management"],
       "relatedTopics": ["services-02", "services-03", "legal-01"],
-      "voiceQueries": ["DelSolPrimeHomes services", "what services property agent Spain", "property buying assistance Costa del Sol"]
+      "voiceQueries": ["DelSolPrimeHomes services", "what services property agent Spain", "property buying assistance Costa del Sol"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["DelSolPrimeHomes services", "property buying assistance", "Spanish property agents"]
     },
     {
       "id": "services-02",
@@ -184,7 +731,58 @@
       "category": "services",
       "keywords": ["viewing trips", "property tours", "accommodation", "airport transfers", "area orientation"],
       "relatedTopics": ["services-01", "properties-02", "locations-01"],
-      "voiceQueries": ["property viewing trips Spain", "organized property tours Costa del Sol", "viewing trip arrangements"]
+      "voiceQueries": ["property viewing trips Spain", "organized property tours Costa del Sol", "viewing trip arrangements"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["property viewing trips", "property tours Spain", "viewing arrangements Costa del Sol"]
+    },
+    {
+      "id": "services-03",
+      "question": "How do you help with mortgage applications?",
+      "answer": "We partner with specialist international mortgage brokers who understand foreign buyer requirements. Services include pre-approval assessments, document preparation, lender comparison, application submission, and completion support. Success rate exceeds 90% for qualified applicants.",
+      "category": "services",
+      "keywords": ["mortgage assistance", "international brokers", "pre-approval", "lender comparison", "application support"],
+      "relatedTopics": ["finance-01", "finance-02", "services-04"],
+      "voiceQueries": ["mortgage help Costa del Sol", "international mortgage brokers", "Spanish mortgage assistance"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["mortgage assistance Spain", "international mortgage brokers", "Spanish mortgage help"]
+    },
+    {
+      "id": "services-04",
+      "question": "What ongoing support do you provide after purchase?",
+      "answer": "Post-purchase services include: property management, rental management, maintenance coordination, utility setup, residence documentation assistance, tax compliance support, and local service recommendations. We maintain long-term relationships with all clients.",
+      "category": "services",
+      "keywords": ["post-purchase support", "property management", "rental management", "utility setup", "ongoing assistance"],
+      "relatedTopics": ["services-01", "services-05", "lifestyle-14"],
+      "voiceQueries": ["post-purchase support Spain", "property management Costa del Sol", "ongoing assistance after buying"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["property management Spain", "post-purchase support", "ongoing assistance Costa del Sol"]
+    },
+    {
+      "id": "services-05",
+      "question": "Do you provide property management services for rental properties?",
+      "answer": "Yes, comprehensive rental management includes: tenant sourcing, contract management, rent collection, maintenance coordination, cleaning services, marketing optimization, and financial reporting. Management fees typically 10-15% of rental income with transparent pricing.",
+      "category": "services",
+      "keywords": ["rental management", "tenant sourcing", "rent collection", "maintenance coordination", "property marketing"],
+      "relatedTopics": ["services-04", "finance-13", "properties-09"],
+      "voiceQueries": ["rental property management Costa del Sol", "tenant management services", "property management fees Spain"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["rental property management", "tenant management Spain", "property management services"]
+    },
+    {
+      "id": "services-06",
+      "question": "How do you help with new-build property purchases?",
+      "answer": "New-build services include: developer vetting, project analysis, construction monitoring, stage payment coordination, snagging inspections, warranty management, and completion assistance. We ensure quality standards and protect your investment throughout the process.",
+      "category": "services",
+      "keywords": ["new-build services", "developer vetting", "construction monitoring", "snagging inspections", "completion assistance"],
+      "relatedTopics": ["newbuild-01", "newbuild-05", "services-01"],
+      "voiceQueries": ["new build property services", "construction monitoring Spain", "off-plan purchase help"],
+      "targetAreas": ["Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse"],
+      "seoKeywords": ["new build property services", "construction monitoring", "off-plan purchase assistance"]
     },
     {
       "id": "lifestyle-01",
@@ -200,17 +798,173 @@
       "image": ""
     },
     {
-      "id": "newbuild-01",
-      "question": "What are the specific advantages of buying new-build property on the Costa del Sol for international buyers?",
-      "answer": "New-build properties on the Costa del Sol offer hassle-free quality, energy efficiency, and modern luxury – combined with a flexible payment schedule. It's a smart choice for international buyers seeking lifestyle, investment value, and peace of mind.\n\n✅ Modern construction standards & guarantees: All new developments meet strict European building regulations (EPC label A/B) and come with a 10-year structural warranty – meaning lower maintenance and fewer surprises compared to older homes.\n\n🌱 Energy-efficient and future-proof: Features like heat pumps, solar panels, and aerothermal systems can cut energy costs by up to 40% – a key advantage for sustainability-conscious buyers from across Europe and beyond.\n\n💰 Staged payment plan: Typically, you pay 20–30% during construction and the remaining 60% upon completion. This allows you to invest without needing the full capital upfront.\n\n📈 Higher rental & resale value: Smart-home features, fitness areas, co-working spaces, and concierge services attract premium tenants and future buyers – with rental yields often 15–20% higher than older properties.\n\n🏖️ Lifestyle benefits: Direct flights from most European cities to Málaga ✈️, 300+ days of sunshine, world-class golf, gastronomy, and international healthcare make it more than just a real estate investment – it's a lifestyle upgrade. CostaPrimeHomes offers VIP property tours and multilingual guidance from reservation to key handover.\n\n📊 Clear and transparent taxes: New-build homes are subject to 10% VAT (instead of the 7% transfer tax on resales), making it easier to plan ahead – especially for those buying through a company structure or managing cross-border assets.",
-      "category": "newbuild",
-      "keywords": ["new build Costa del Sol", "energy-efficient homes", "10-year warranty", "lifestyle investment", "international buyers", "staged payment plan", "modern construction", "smart home"],
-      "relatedTopics": ["properties-01", "finance-03", "legal-04", "locations-01"],
-      "voiceQueries": ["advantages of new build property Costa del Sol", "new construction benefits Spain", "why buy new build property Costa del Sol", "new build vs resale property Spain"],
-      "targetAreas": ["Marbella", "Estepona", "Mijas", "Benalmádena"],
-      "propertyTypes": ["Apartment", "Penthouse", "Villa"],
-      "seoKeywords": ["new build Costa del Sol", "energy-efficient homes", "10-year warranty", "lifestyle investment", "international buyers", "CostaPrimeHomes"],
-      "image": ""
+      "id": "lifestyle-02",
+      "question": "How do I set up utilities and services for my Spanish property?",
+      "answer": "Essential setups include: electricity (Endesa/Iberdrola), water (local municipality), internet/TV (Movistar/Orange/Vodafone), gas (if applicable), and insurance. Most require NIE number and property ownership documents. We can arrange all utilities through trusted partners.",
+      "category": "lifestyle",
+      "keywords": ["utilities setup", "electricity", "water", "internet", "insurance setup"],
+      "relatedTopics": ["legal-14", "services-04", "lifestyle-03"],
+      "voiceQueries": ["how to set up utilities Spain", "electricity water internet setup", "utility connections Costa del Sol"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["utilities setup Spain", "electricity water internet", "property services setup"]
+    },
+    {
+      "id": "lifestyle-03",
+      "question": "What are the schooling options for families moving to Costa del Sol?",
+      "answer": "Education options include: international schools (British, American, German curricula), Spanish state schools, and private Spanish schools. Notable institutions include Aloha College, The British School of Marbella, and Swans International School. Most international schools teach in English.",
+      "category": "lifestyle",
+      "keywords": ["international schools", "education", "British schools", "family relocation", "school options"],
+      "relatedTopics": ["locations-03", "lifestyle-04", "lifestyle-15"],
+      "voiceQueries": ["international schools Costa del Sol", "British schools Marbella", "education options Spain"],
+      "targetAreas": ["Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Family Villa", "Townhouse", "Family Apartment"],
+      "seoKeywords": ["international schools Costa del Sol", "British schools Spain", "education family relocation"]
+    },
+    {
+      "id": "lifestyle-04",
+      "question": "How do I get around Costa del Sol without a car?",
+      "answer": "Public transport options include: regular bus services connecting all major towns, train from Málaga to Fuengirola, taxis and ride-sharing, bicycle rentals, and walking in town centers. Many expats find cars convenient but not essential in central areas.",
+      "category": "lifestyle",
+      "keywords": ["public transport", "bus services", "train", "taxis", "mobility"],
+      "relatedTopics": ["locations-05", "lifestyle-05", "lifestyle-16"],
+      "voiceQueries": ["public transport Costa del Sol", "getting around without car Spain", "bus train services"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["public transport Costa del Sol", "getting around Spain", "transport links"]
+    },
+    {
+      "id": "lifestyle-05",
+      "question": "What is the weather like year-round in Costa del Sol?",
+      "answer": "Costa del Sol enjoys 320+ sunny days annually with mild winters (15-20°C) and warm summers (25-30°C). Rainfall mainly October-March. Summer temperatures rarely exceed 35°C due to sea breezes. Ideal climate for outdoor living and sports year-round.",
+      "category": "lifestyle",
+      "keywords": ["weather", "climate", "sunny days", "temperature", "outdoor living"],
+      "relatedTopics": ["lifestyle-06", "properties-06", "lifestyle-09"],
+      "voiceQueries": ["weather Costa del Sol year round", "climate Spain temperature", "how hot summer Costa del Sol"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["Costa del Sol weather", "Spain climate year round", "sunny weather Spain"]
+    },
+    {
+      "id": "lifestyle-06",
+      "question": "What healthcare options are available for expats?",
+      "answer": "Healthcare includes: public system (for residents/EU citizens), private health insurance, international hospitals with English-speaking staff, and emergency services. Popular insurers include Sanitas, Asisa, and DKV. Quality is excellent with costs 50-70% lower than UK/US.",
+      "category": "lifestyle",
+      "keywords": ["healthcare", "health insurance", "hospitals", "medical care", "expat health"],
+      "relatedTopics": ["locations-06", "lifestyle-07", "legal-15"],
+      "voiceQueries": ["healthcare expats Spain", "health insurance Costa del Sol", "medical care English speaking"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["healthcare expats Spain", "health insurance Costa del Sol", "medical care"]
+    },
+    {
+      "id": "lifestyle-07",
+      "question": "How do I find English-speaking professionals (doctors, dentists, lawyers)?",
+      "answer": "Most areas have established English-speaking professional networks. Resources include expat communities, online directories, British/international chambers of commerce, and referrals from other expatriates. Many professionals cater specifically to international clients.",
+      "category": "lifestyle",
+      "keywords": ["English-speaking professionals", "doctors", "dentists", "lawyers", "expat services"],
+      "relatedTopics": ["lifestyle-06", "legal-03", "lifestyle-17"],
+      "voiceQueries": ["English speaking doctors Costa del Sol", "English lawyers Spain", "expat professionals"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["English speaking professionals", "expat services Spain", "international professionals"]
+    },
+    {
+      "id": "lifestyle-08",
+      "question": "What social activities and clubs are available for expats?",
+      "answer": "Vibrant expat community with: golf clubs, tennis clubs, hiking groups, book clubs, charity organizations, business networks, cultural societies, and social clubs. Popular groups include Marbella International Club, Costa Women, and various nationality-specific associations.",
+      "category": "lifestyle",
+      "keywords": ["expat community", "social clubs", "activities", "golf clubs", "international groups"],
+      "relatedTopics": ["lifestyle-09", "locations-07", "lifestyle-18"],
+      "voiceQueries": ["expat social activities Costa del Sol", "international clubs Marbella", "expat community Spain"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["expat community Costa del Sol", "international social clubs", "expat activities"]
+    },
+    {
+      "id": "lifestyle-09",
+      "question": "What sports and recreational facilities are available?",
+      "answer": "Extensive facilities include: 50+ golf courses, tennis clubs, paddle tennis courts, sailing clubs, gyms and fitness centers, hiking trails, cycling routes, water sports, and beach activities. Many residential complexes have private sports facilities.",
+      "category": "lifestyle",
+      "keywords": ["sports facilities", "golf", "tennis", "water sports", "fitness", "recreation"],
+      "relatedTopics": ["locations-07", "properties-05", "lifestyle-05"],
+      "voiceQueries": ["sports facilities Costa del Sol", "golf tennis clubs Spain", "recreational activities"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["sports facilities Costa del Sol", "golf tennis Spain", "recreational activities"]
+    },
+    {
+      "id": "lifestyle-10",
+      "question": "What is the shopping scene like in Costa del Sol?",
+      "answer": "Shopping ranges from luxury boutiques in Puerto Banús to local markets and modern shopping centers. Options include La Cañada (major mall), El Corte Inglés (department store), weekly markets in each town, and designer stores along the coast.",
+      "category": "lifestyle",
+      "keywords": ["shopping", "luxury boutiques", "markets", "shopping centers", "retail"],
+      "relatedTopics": ["locations-08", "lifestyle-11", "lifestyle-19"],
+      "voiceQueries": ["shopping Costa del Sol", "luxury shopping Marbella", "markets and malls Spain"],
+      "targetAreas": ["Marbella", "Puerto Banús", "Estepona", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["shopping Costa del Sol", "luxury shopping Spain", "markets malls"]
+    },
+    {
+      "id": "lifestyle-11",
+      "question": "What dining and culinary experiences are available?",
+      "answer": "Diverse dining includes: traditional tapas bars, Michelin-starred restaurants, international cuisine, beachfront chiringuitos, local markets with fresh produce, cooking classes, and wine tours. Food scene caters to all tastes and budgets.",
+      "category": "lifestyle",
+      "keywords": ["dining", "restaurants", "tapas", "cuisine", "food scene"],
+      "relatedTopics": ["locations-08", "lifestyle-10", "lifestyle-20"],
+      "voiceQueries": ["restaurants Costa del Sol", "dining options Marbella", "food scene Spain"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["restaurants Costa del Sol", "dining Spain", "food scene Marbella"]
+    },
+    {
+      "id": "lifestyle-12",
+      "question": "How safe is it to live in Costa del Sol?",
+      "answer": "Costa del Sol is very safe with low crime rates. Petty theft and tourist-targeted crimes occur but violent crime is rare. Most areas have good security, well-lit streets, and active police presence. Gated communities provide additional security for those seeking it.",
+      "category": "lifestyle",
+      "keywords": ["safety", "crime rates", "security", "police presence", "safe living"],
+      "relatedTopics": ["properties-07", "lifestyle-13", "locations-03"],
+      "voiceQueries": ["is Costa del Sol safe", "crime rates Spain", "safety living Marbella"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["Costa del Sol safety", "crime rates Spain", "safe living"]
+    },
+    {
+      "id": "lifestyle-13",
+      "question": "What about internet connectivity and working remotely?",
+      "answer": "Excellent internet infrastructure with fiber optic connections widely available (100Mbps-1Gbps). Many co-working spaces in major towns, cafes with reliable WiFi, and modern apartments equipped for remote work. Digital nomad community is growing rapidly.",
+      "category": "lifestyle",
+      "keywords": ["internet connectivity", "remote work", "fiber optic", "co-working spaces", "digital nomads"],
+      "relatedTopics": ["lifestyle-02", "newbuild-04", "lifestyle-21"],
+      "voiceQueries": ["internet speed Costa del Sol", "remote work Spain", "digital nomad Costa del Sol"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["internet connectivity Spain", "remote work Costa del Sol", "digital nomad"]
+    },
+    {
+      "id": "lifestyle-14",
+      "question": "How do I handle banking and finances as a non-resident?",
+      "answer": "Major Spanish banks offer non-resident accounts: Santander, BBVA, CaixaBank, Sabadell. Required documents include NIE number, passport, and proof of income. Online banking is available in English. Consider maintaining accounts in both countries for convenience.",
+      "category": "lifestyle",
+      "keywords": ["banking", "non-resident accounts", "Spanish banks", "online banking", "financial services"],
+      "relatedTopics": ["legal-14", "finance-12", "lifestyle-22"],
+      "voiceQueries": ["banking Spain non-resident", "Spanish bank accounts", "online banking Spain"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["banking Spain non-resident", "Spanish bank accounts", "financial services"]
+    },
+    {
+      "id": "lifestyle-15",
+      "question": "What cultural events and festivals happen throughout the year?",
+      "answer": "Rich cultural calendar includes: Semana Santa (Easter), Feria de Málaga (August), local patron saint festivals, Starlite Festival (music), flamenco shows, art exhibitions, international film festivals, and Christmas markets. Each town has unique celebrations.",
+      "category": "lifestyle",
+      "keywords": ["cultural events", "festivals", "Semana Santa", "Feria", "Starlite", "celebrations"],
+      "relatedTopics": ["lifestyle-11", "lifestyle-16", "locations-08"],
+      "voiceQueries": ["festivals Costa del Sol", "cultural events Spain", "celebrations Marbella"],
+      "targetAreas": ["Costa del Sol", "Marbella", "Estepona", "Mijas", "Fuengirola", "Benalmádena"],
+      "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
+      "seoKeywords": ["festivals Costa del Sol", "cultural events Spain", "Spanish celebrations"]
     }
+  ]
   ]
 }
