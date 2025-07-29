@@ -965,8 +965,6 @@
       "propertyTypes": ["Apartment", "Villa", "Penthouse", "Townhouse"],
       "seoKeywords": ["festivals Costa del Sol", "cultural events Spain", "Spanish celebrations"]
     },
-    
-    // ========== PHASE 1: Weather & Climate Intelligence (15 FAQs) ==========
     {
       "id": "weather-01",
       "question": "What are the exact monthly temperatures and rainfall patterns in Costa del Sol?",
