@@ -34,7 +34,28 @@ serve(async (req) => {
       throw new Error('Invalid authentication');
     }
 
-    const { dataType, domain, keywords } = await req.json();
+    // Parse and validate request body
+    const body = await req.json();
+    const { dataType, domain, keywords } = body;
+
+    // Input validation
+    if (!dataType || typeof dataType !== 'string') {
+      throw new Error('Invalid or missing dataType parameter');
+    }
+
+    if (!['keywords', 'backlinks', 'analytics'].includes(dataType)) {
+      throw new Error('Invalid dataType. Must be one of: keywords, backlinks, analytics');
+    }
+
+    // Validate domain if provided
+    if (domain && (typeof domain !== 'string' || domain.length > 253)) {
+      throw new Error('Invalid domain parameter');
+    }
+
+    // Validate keywords if provided
+    if (keywords && (!Array.isArray(keywords) || keywords.some(k => typeof k !== 'string' || k.length > 100))) {
+      throw new Error('Invalid keywords parameter');
+    }
 
     if (!dataForSeoApiKey) {
       throw new Error('Data For SEO API key not configured');
