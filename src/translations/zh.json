@@ -26,6 +26,74 @@
       "clientSatisfaction": "客户满意度"
     }
   },
+  "services": {
+    "title": "我们的服务",
+    "subtitle": "为您的需求量身定制的全面房产服务",
+    "propertySearch": {
+      "title": "房产搜索与收购",
+      "description": "专业指导，帮助您找到并保障您在太阳海岸的完美房产"
+    },
+    "legalFinancial": {
+      "title": "法律和财务咨询",
+      "description": "为您的房产投资提供全面的法律支持和财务规划"
+    },
+    "lifestyleIntegration": {
+      "title": "生活方式融合",
+      "description": "无缝融入太阳海岸的生活方式和社区"
+    }
+  },
+  "propertySearch": {
+    "title": "找到您的完美房产",
+    "subtitle": "在太阳海岸最受欢迎的位置发现豪华房产",
+    "filters": {
+      "location": "位置",
+      "propertyType": "房产类型",
+      "priceRange": "价格范围",
+      "bedrooms": "卧室"
+    },
+    "propertyTypes": {
+      "villa": "别墅",
+      "apartment": "公寓",
+      "penthouse": "顶层公寓",
+      "townhouse": "联排别墅"
+    },
+    "locations": {
+      "marbella": "马贝拉",
+      "estepona": "埃斯特波纳",
+      "benalmadena": "贝纳尔马德纳",
+      "fuengirola": "富恩希罗拉",
+      "mijas": "米哈斯"
+    }
+  },
+  "footer": {
+    "company": {
+      "title": "太阳海岸房产",
+      "description": "您在太阳海岸豪华房地产的可信赖合作伙伴"
+    },
+    "quickLinks": {
+      "title": "快速链接",
+      "properties": "房产",
+      "locations": "位置",
+      "about": "关于我们",
+      "contact": "联系"
+    },
+    "services": {
+      "title": "服务",
+      "buying": "房产购买",
+      "selling": "房产销售",
+      "legal": "法律咨询",
+      "management": "房产管理"
+    },
+    "contact": {
+      "title": "联系信息",
+      "address": "西班牙太阳海岸马贝拉",
+      "phone": "+34 123 456 789",
+      "email": "info@costadelsolproperties.com"
+    },
+    "rights": "版权所有",
+    "privacy": "隐私政策",
+    "terms": "服务条款"
+  },
   "languages": {
     "en": "English",
     "es": "Español",
@@ -40,6 +108,11 @@
     "search": "搜索",
     "notifications": "通知",
     "signOut": "退出",
-    "signIn": "登录"
+    "signIn": "登录",
+    "loading": "加载中...",
+    "viewMore": "查看更多",
+    "learnMore": "了解更多",
+    "getStarted": "开始",
+    "contactUs": "联系我们"
   }
 }

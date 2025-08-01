@@ -26,6 +26,74 @@
       "clientSatisfaction": "رضا العملاء"
     }
   },
+  "services": {
+    "title": "خدماتنا",
+    "subtitle": "خدمات عقارية شاملة مصممة خصيصاً لتلبية احتياجاتك",
+    "propertySearch": {
+      "title": "البحث عن العقارات والاستحواذ",
+      "description": "إرشاد خبير في العثور على عقارك المثالي في كوستا ديل سول وتأمينه"
+    },
+    "legalFinancial": {
+      "title": "الاستشارات القانونية والمالية",
+      "description": "دعم قانوني كامل وتخطيط مالي لاستثمارك العقاري"
+    },
+    "lifestyleIntegration": {
+      "title": "تكامل نمط الحياة",
+      "description": "اندماج سلس في نمط الحياة ومجتمع كوستا ديل سول"
+    }
+  },
+  "propertySearch": {
+    "title": "اعثر على عقارك المثالي",
+    "subtitle": "اكتشف العقارات الفاخرة في أكثر المواقع المرغوبة في كوستا ديل سول",
+    "filters": {
+      "location": "الموقع",
+      "propertyType": "نوع العقار",
+      "priceRange": "نطاق السعر",
+      "bedrooms": "غرف النوم"
+    },
+    "propertyTypes": {
+      "villa": "فيلا",
+      "apartment": "شقة",
+      "penthouse": "بنتهاوس",
+      "townhouse": "منزل مدرج"
+    },
+    "locations": {
+      "marbella": "مربيا",
+      "estepona": "إستيبونا",
+      "benalmadena": "بينالمادينا",
+      "fuengirola": "فوينخيرولا",
+      "mijas": "ميخاس"
+    }
+  },
+  "footer": {
+    "company": {
+      "title": "كوستا ديل سول العقارية",
+      "description": "شريكك الموثوق للعقارات الفاخرة في كوستا ديل سول"
+    },
+    "quickLinks": {
+      "title": "روابط سريعة",
+      "properties": "العقارات",
+      "locations": "المواقع",
+      "about": "حولنا",
+      "contact": "اتصل بنا"
+    },
+    "services": {
+      "title": "الخدمات",
+      "buying": "شراء العقارات",
+      "selling": "بيع العقارات",
+      "legal": "الاستشارة القانونية",
+      "management": "إدارة العقارات"
+    },
+    "contact": {
+      "title": "معلومات الاتصال",
+      "address": "مربيا، كوستا ديل سول، إسبانيا",
+      "phone": "+34 123 456 789",
+      "email": "info@costadelsolproperties.com"
+    },
+    "rights": "جميع الحقوق محفوظة",
+    "privacy": "سياسة الخصوصية",
+    "terms": "شروط الخدمة"
+  },
   "languages": {
     "en": "English",
     "es": "Español",
@@ -40,6 +108,11 @@
     "search": "بحث",
     "notifications": "الإشعارات",
     "signOut": "تسجيل الخروج",
-    "signIn": "تسجيل الدخول"
+    "signIn": "تسجيل الدخول",
+    "loading": "جاري التحميل...",
+    "viewMore": "عرض المزيد",
+    "learnMore": "اعرف المزيد",
+    "getStarted": "ابدأ",
+    "contactUs": "تواصل معنا"
   }
 }
