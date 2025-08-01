@@ -26,74 +26,6 @@
       "clientSatisfaction": "Satisfacción del Cliente"
     }
   },
-  "services": {
-    "title": "Nuestros Servicios",
-    "subtitle": "Servicios inmobiliarios integrales adaptados a sus necesidades",
-    "propertySearch": {
-      "title": "Búsqueda y Adquisición de Propiedades",
-      "description": "Asesoramiento experto para encontrar y asegurar su propiedad perfecta en la Costa del Sol"
-    },
-    "legalFinancial": {
-      "title": "Asesoría Legal y Financiera",
-      "description": "Soporte legal completo y planificación financiera para su inversión inmobiliaria"
-    },
-    "lifestyleIntegration": {
-      "title": "Integración de Estilo de Vida",
-      "description": "Integración perfecta en el estilo de vida y comunidad de la Costa del Sol"
-    }
-  },
-  "propertySearch": {
-    "title": "Encuentra Tu Propiedad Perfecta",
-    "subtitle": "Descubre propiedades de lujo en las ubicaciones más codiciadas de la Costa del Sol",
-    "filters": {
-      "location": "Ubicación",
-      "propertyType": "Tipo de Propiedad",
-      "priceRange": "Rango de Precio",
-      "bedrooms": "Dormitorios"
-    },
-    "propertyTypes": {
-      "villa": "Villa",
-      "apartment": "Apartamento",
-      "penthouse": "Ático",
-      "townhouse": "Casa Adosada"
-    },
-    "locations": {
-      "marbella": "Marbella",
-      "estepona": "Estepona",
-      "benalmadena": "Benalmádena",
-      "fuengirola": "Fuengirola",
-      "mijas": "Mijas"
-    }
-  },
-  "footer": {
-    "company": {
-      "title": "Propiedades Costa del Sol",
-      "description": "Su socio de confianza para bienes raíces de lujo en la Costa del Sol"
-    },
-    "quickLinks": {
-      "title": "Enlaces Rápidos",
-      "properties": "Propiedades",
-      "locations": "Ubicaciones",
-      "about": "Acerca de",
-      "contact": "Contacto"
-    },
-    "services": {
-      "title": "Servicios",
-      "buying": "Compra de Propiedades",
-      "selling": "Venta de Propiedades",
-      "legal": "Asesoría Legal",
-      "management": "Gestión de Propiedades"
-    },
-    "contact": {
-      "title": "Información de Contacto",
-      "address": "Marbella, Costa del Sol, España",
-      "phone": "+34 123 456 789",
-      "email": "info@propiedadescostadelsol.com"
-    },
-    "rights": "Todos los derechos reservados.",
-    "privacy": "Política de Privacidad",
-    "terms": "Términos de Servicio"
-  },
   "languages": {
     "en": "English",
     "es": "Español",
@@ -108,11 +40,6 @@
     "search": "Buscar",
     "notifications": "Notificaciones",
     "signOut": "Cerrar Sesión",
-    "signIn": "Iniciar Sesión",
-    "loading": "Cargando...",
-    "viewMore": "Ver Más",
-    "learnMore": "Saber Más",
-    "getStarted": "Comenzar",
-    "contactUs": "Contáctanos"
+    "signIn": "Iniciar Sesión"
   }
 }
