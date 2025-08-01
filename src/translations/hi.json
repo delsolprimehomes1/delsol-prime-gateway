@@ -26,74 +26,6 @@
       "clientSatisfaction": "ग्राहक संतुष्टि"
     }
   },
-  "services": {
-    "title": "हमारी सेवाएं",
-    "subtitle": "आपकी आवश्यकताओं के अनुरूप व्यापक संपत्ति सेवाएं",
-    "propertySearch": {
-      "title": "संपत्ति खोज और अधिग्रहण",
-      "description": "कोस्टा डेल सोल में अपनी परफेक्ट संपत्ति ढूंढने और सुरक्षित करने में विशेषज्ञ मार्गदर्शन"
-    },
-    "legalFinancial": {
-      "title": "कानूनी और वित्तीय सलाह",
-      "description": "आपके संपत्ति निवेश के लिए पूर्ण कानूनी सहायता और वित्तीय योजना"
-    },
-    "lifestyleIntegration": {
-      "title": "जीवनशैली एकीकरण",
-      "description": "कोस्टा डेल सोल जीवनशैली और समुदाय में निर्बाध एकीकरण"
-    }
-  },
-  "propertySearch": {
-    "title": "अपनी परफेक्ट संपत्ति खोजें",
-    "subtitle": "कोस्टा डेल सोल के सबसे वांछित स्थानों में लक्जरी संपत्तियों की खोज करें",
-    "filters": {
-      "location": "स्थान",
-      "propertyType": "संपत्ति प्रकार",
-      "priceRange": "मूल्य सीमा",
-      "bedrooms": "शयनकक्ष"
-    },
-    "propertyTypes": {
-      "villa": "विला",
-      "apartment": "अपार्टमेंट",
-      "penthouse": "पेंटहाउस",
-      "townhouse": "टाउनहाउस"
-    },
-    "locations": {
-      "marbella": "मार्बेला",
-      "estepona": "एस्टेपोना",
-      "benalmadena": "बेनालमादेना",
-      "fuengirola": "फुएंगिरोला",
-      "mijas": "मिजास"
-    }
-  },
-  "footer": {
-    "company": {
-      "title": "कोस्टा डेल सोल प्रॉपर्टीज",
-      "description": "कोस्टा डेल सोल पर लक्जरी रियल एस्टेट के लिए आपका विश्वसनीय साझेदार"
-    },
-    "quickLinks": {
-      "title": "त्वरित लिंक",
-      "properties": "संपत्तियां",
-      "locations": "स्थान",
-      "about": "हमारे बारे में",
-      "contact": "संपर्क"
-    },
-    "services": {
-      "title": "सेवाएं",
-      "buying": "संपत्ति खरीदना",
-      "selling": "संपत्ति बेचना",
-      "legal": "कानूनी सलाह",
-      "management": "संपत्ति प्रबंधन"
-    },
-    "contact": {
-      "title": "संपर्क जानकारी",
-      "address": "मार्बेला, कोस्टा डेल सोल, स्पेन",
-      "phone": "+34 123 456 789",
-      "email": "info@costadelsolproperties.com"
-    },
-    "rights": "सभी अधिकार सुरक्षित।",
-    "privacy": "गोपनीयता नीति",
-    "terms": "सेवा की शर्तें"
-  },
   "languages": {
     "en": "English",
     "es": "Español",
@@ -108,11 +40,6 @@
     "search": "खोज",
     "notifications": "सूचनाएं",
     "signOut": "साइन आउट",
-    "signIn": "साइन इन",
-    "loading": "लोड हो रहा है...",
-    "viewMore": "और देखें",
-    "learnMore": "और जानें",
-    "getStarted": "शुरू करें",
-    "contactUs": "संपर्क करें"
+    "signIn": "साइन इन"
   }
 }

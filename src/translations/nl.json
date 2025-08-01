@@ -26,74 +26,6 @@
       "clientSatisfaction": "Klanttevredenheid"
     }
   },
-  "services": {
-    "title": "Onze Diensten",
-    "subtitle": "Uitgebreide vastgoeddiensten op maat voor uw behoeften",
-    "propertySearch": {
-      "title": "Vastgoed Zoeken & Aankoop",
-      "description": "Deskundige begeleiding bij het vinden en veiligstellen van uw perfecte Costa del Sol eigendom"
-    },
-    "legalFinancial": {
-      "title": "Juridische & Financiële Advisering",
-      "description": "Volledige juridische ondersteuning en financiële planning voor uw vastgoedinvestering"
-    },
-    "lifestyleIntegration": {
-      "title": "Lifestyle Integratie",
-      "description": "Naadloze integratie in de Costa del Sol levensstijl en gemeenschap"
-    }
-  },
-  "propertySearch": {
-    "title": "Vind Uw Perfecte Eigendom",
-    "subtitle": "Ontdek luxe eigendommen op de meest gewilde locaties aan de Costa del Sol",
-    "filters": {
-      "location": "Locatie",
-      "propertyType": "Type Eigendom",
-      "priceRange": "Prijsklasse",
-      "bedrooms": "Slaapkamers"
-    },
-    "propertyTypes": {
-      "villa": "Villa",
-      "apartment": "Appartement",
-      "penthouse": "Penthouse",
-      "townhouse": "Herenhuis"
-    },
-    "locations": {
-      "marbella": "Marbella",
-      "estepona": "Estepona",
-      "benalmadena": "Benalmádena",
-      "fuengirola": "Fuengirola",
-      "mijas": "Mijas"
-    }
-  },
-  "footer": {
-    "company": {
-      "title": "Costa del Sol Eigendommen",
-      "description": "Uw betrouwbare partner voor luxe vastgoed aan de Costa del Sol"
-    },
-    "quickLinks": {
-      "title": "Snelle Links",
-      "properties": "Eigendommen",
-      "locations": "Locaties",
-      "about": "Over Ons",
-      "contact": "Contact"
-    },
-    "services": {
-      "title": "Diensten",
-      "buying": "Eigendom Kopen",
-      "selling": "Eigendom Verkopen",
-      "legal": "Juridisch Advies",
-      "management": "Vastgoedbeheer"
-    },
-    "contact": {
-      "title": "Contactgegevens",
-      "address": "Marbella, Costa del Sol, Spanje",
-      "phone": "+34 123 456 789",
-      "email": "info@costadelsolproperties.com"
-    },
-    "rights": "Alle rechten voorbehouden.",
-    "privacy": "Privacybeleid",
-    "terms": "Servicevoorwaarden"
-  },
   "languages": {
     "en": "English",
     "es": "Español",
@@ -108,11 +40,6 @@
     "search": "Zoeken",
     "notifications": "Meldingen",
     "signOut": "Uitloggen",
-    "signIn": "Inloggen",
-    "loading": "Laden...",
-    "viewMore": "Bekijk Meer",
-    "learnMore": "Meer Informatie",
-    "getStarted": "Aan de Slag",
-    "contactUs": "Neem Contact Op"
+    "signIn": "Inloggen"
   }
 }

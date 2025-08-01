@@ -6,10 +6,8 @@ import { Button } from "@/components/ui/button";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
 import { InteractiveCard } from "@/components/ui/InteractiveCard";
 import { MagneticButton } from "@/components/ui/MagneticButton";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 const ServicesSection = () => {
-  const { t } = useLanguage();
   const services = [
     {
       icon: Search,
@@ -62,12 +60,19 @@ const ServicesSection = () => {
           </div>
           
           <h2 className="text-5xl lg:text-7xl font-bold font-display mb-8 leading-[0.9] tracking-tight" itemProp="name">
-            {t('services.title')}
+            <span className="text-foreground">Why Choose</span>
+            <br />
+            <span className="bg-gradient-premium bg-clip-text text-transparent">
+              DelSolPrimeHomes Services?
+            </span>
           </h2>
           
           <div className="max-w-3xl mx-auto space-y-6" itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
             <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed font-light" itemProp="text">
-              {t('services.subtitle')}
+              Experience comprehensive real estate solutions designed to make your Costa del Sol property journey seamless, secure, and successful from start to finish.
+            </p>
+            <p className="text-lg text-muted-foreground/80 leading-relaxed">
+              Our expert team provides end-to-end support for property acquisition, legal processes, and lifestyle integration in Spain's most prestigious coastal region.
             </p>
           </div>
         </AnimatedElement>
