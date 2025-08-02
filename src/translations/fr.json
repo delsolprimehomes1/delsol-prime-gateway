@@ -11,19 +11,153 @@
     "contactUs": "Nous Contacter"
   },
   "hero": {
-    "badge": "PROPRIÉTÉS PREMIUM COSTA DEL SOL",
-    "title": "Vie de Luxe",
-    "titleHighlight": "Redéfinie",
-    "subtitle": "Découvrez des propriétés exceptionnelles où l'élégance méditerranéenne rencontre la sophistication moderne",
-    "locations": "MARBELLA • ESTEPONA • PUERTO BANÚS",
-    "scheduleViewing": "Programmer Visite Privée",
-    "virtualTour": "Voir la Visite Virtuelle",
+    "badge": "Experts Immobiliers Costa del Sol",
+    "title": "Quels Sont les Meilleurs Endroits pour Acheter",
+    "titleHighlight": "une Propriété à Costa del Sol en 2025?",
+    "subtitle": "Découvrez des maisons de luxe avec DelSolPrimeHomes - vos spécialistes de confiance à Costa del Sol.",
+    "locations": "Marbella • Estepona • Mijas • Fuengirola • Benalmádena",
+    "scheduleViewing": "Programmer Visite de Propriété",
+    "virtualTour": "Prendre la Visite Virtuelle de Propriété",
     "seoDashboard": "Tableau de Bord SEO",
-    "explore": "Explorer",
+    "explore": "Explorer les Propriétés",
+    "scrollToExplore": "Explorer les Propriétés",
     "stats": {
-      "averageValue": "Valeur Moyenne",
+      "averageProperty": "Valeur Moyenne de Propriété",
       "yearsExcellence": "Années d'Excellence",
-      "clientSatisfaction": "Satisfaction Client"
+      "clientSatisfaction": "Taux de Satisfaction Client"
+    }
+  },
+  "propertySearch": {
+    "badge": "RECHERCHE DE PROPRIÉTÉS",
+    "title": "Trouvez Votre Parfaite",
+    "titleHighlight": "Maison Costa del Sol",
+    "subtitle": "Utilisez notre recherche avancée pour découvrir des propriétés qui correspondent exactement à vos exigences.",
+    "location": "Emplacement",
+    "selectLocation": "Sélectionner l'emplacement",
+    "propertyType": "Type de Propriété",
+    "selectType": "Sélectionner le type",
+    "bedrooms": "Chambres",
+    "bathrooms": "Salles de bain",
+    "priceRange": "Gamme de Prix",
+    "specialFeatures": "Caractéristiques Spéciales",
+    "searchProperties": "Rechercher Propriétés",
+    "saveSearch": "Sauvegarder Recherche",
+    "locations": {
+      "allLocations": "Tous les Emplacements",
+      "marbella": "Marbella",
+      "estepona": "Estepona",
+      "mijas": "Mijas",
+      "fuengirola": "Fuengirola",
+      "benalmadena": "Benalmádena",
+      "nerja": "Nerja",
+      "torrox": "Torrox"
+    },
+    "propertyTypes": {
+      "allTypes": "Tous les Types",
+      "apartment": "Appartement",
+      "villa": "Villa",
+      "penthouse": "Penthouse",
+      "townhouse": "Maison de Ville",
+      "plot": "Terrain",
+      "commercial": "Commercial"
+    },
+    "rooms": {
+      "any": "Tous",
+      "onePlus": "1+",
+      "twoPlus": "2+",
+      "threePlus": "3+",
+      "fourPlus": "4+",
+      "fivePlus": "5+"
+    },
+    "features": {
+      "pool": "Piscine",
+      "seaview": "Vue sur Mer",
+      "garden": "Jardin Privé",
+      "garage": "Garage",
+      "terrace": "Terrasse",
+      "aircon": "Climatisation"
+    },
+    "stats": {
+      "propertiesAvailable": "Propriétés Disponibles",
+      "locationsCovered": "Emplacements Couverts",
+      "clientSatisfaction": "Satisfaction Client",
+      "expertSupport": "Support Expert"
+    }
+  },
+  "services": {
+    "badge": "QUELS SERVICES OFFRONS-NOUS?",
+    "title": "Pourquoi Choisir",
+    "titleHighlight": "les Services DelSolPrimeHomes?",
+    "subtitle": "Découvrez des solutions immobilières complètes conçues pour rendre votre parcours de propriété à Costa del Sol fluide, sécurisé et réussi du début à la fin.",
+    "description": "Notre équipe d'experts fournit un soutien de bout en bout pour l'acquisition de propriétés, les processus juridiques et l'intégration de style de vie dans la région côtière la plus prestigieuse d'Espagne.",
+    "propertySearch": {
+      "question": "Comment Vous Aidons-nous à Trouver la Propriété Parfaite?",
+      "answer": "Notre service expert de correspondance de propriétés combine la connaissance du marché local avec une consultation personnalisée pour identifier les propriétés qui répondent à vos exigences exactes et objectifs d'investissement.",
+      "features": [
+        "Correspondance personnalisée de propriétés",
+        "Expertise du marché local",
+        "Analyse d'investissement",
+        "Examen du portefeuille de propriétés"
+      ]
+    },
+    "legal": {
+      "question": "Quel Soutien Juridique et Financier Fournissons-nous?",
+      "answer": "Nous offrons des conseils juridiques complets, une assistance de financement et une gestion transparente des transactions pour assurer que votre achat de propriété à Costa del Sol soit sécurisé et direct.",
+      "features": [
+        "Assistance de documentation juridique",
+        "Soutien hypothécaire et de financement",
+        "Conseils d'optimisation fiscale",
+        "Gestion des transactions"
+      ]
+    },
+    "lifestyle": {
+      "question": "Comment Soutenons-nous Votre Intégration de Style de Vie?",
+      "answer": "Nos services complets d'intégration de style de vie incluent l'introduction à la communauté, la connexion aux services locaux et un soutien continu pour rendre votre transition à Costa del Sol fluide.",
+      "features": [
+        "Soutien d'intégration communautaire",
+        "Réseau de services locaux",
+        "Assistance continue de style de vie",
+        "Conseils d'adaptation culturelle"
+      ]
+    },
+    "learnMore": "En savoir plus sur ce service",
+    "faqTitle": "Questions Fréquemment Posées Sur Nos Services",
+    "faq": {
+      "processDuration": {
+        "question": "Combien de temps prend le processus d'achat de propriété à Costa del Sol?",
+        "answer": "Typiquement 60-90 jours de l'acceptation de l'offre à la finalisation, avec nos conseils d'experts assurant que toutes les exigences juridiques et financières sont satisfaites efficacement."
+      },
+      "costs": {
+        "question": "Quels sont les coûts impliqués dans l'achat de propriété en Espagne?",
+        "answer": "Les coûts totaux varient typiquement de 10-15% de la valeur de la propriété, incluant les taxes, les frais juridiques et les coûts d'enregistrement. Nous fournissons des répartitions détaillées des coûts à l'avance."
+      }
+    },
+    "scheduleConsultation": "Programmer Consultation Expert",
+    "viewAllServices": "Voir Tous les Services"
+  },
+  "footer": {
+    "companyDescription": "Votre partenaire de confiance pour l'immobilier de luxe à Costa del Sol. Spécialisé dans les propriétés premium à Marbella, Puerto Banús et les emplacements les plus recherchés.",
+    "quickLinks": "Liens Rapides",
+    "services": "Services",
+    "featuredLocations": "Emplacements en Vedette",
+    "followUs": "Suivez-nous:",
+    "newsletter": "Restez à jour avec notre newsletter",
+    "subscribe": "S'abonner",
+    "copyright": "DelSolPrimeHomes. Tous droits réservés.",
+    "privacyPolicy": "Politique de Confidentialité",
+    "termsOfService": "Conditions de Service",
+    "cookiePolicy": "Politique de Cookies",
+    "servicesLinks": {
+      "propertySearch": "Recherche de Propriétés",
+      "legalServices": "Services Juridiques",
+      "investmentAdvice": "Conseils d'Investissement",
+      "propertyManagement": "Gestion de Propriétés"
+    },
+    "featuredLocationsLinks": {
+      "marbella": "Marbella",
+      "puertoBAnus": "Puerto Banús",
+      "estepona": "Estepona",
+      "benahavis": "Benahavís"
     }
   },
   "languages": {
@@ -34,12 +168,32 @@
     "hi": "हिन्दी",
     "ar": "العربية",
     "pt": "Português",
-    "fr": "Français"
+    "fr": "Français",
+    "de": "Deutsch",
+    "pl": "Polski",
+    "se": "Svenska",
+    "dk": "Dansk"
   },
   "common": {
     "search": "Rechercher",
     "notifications": "Notifications",
     "signOut": "Se Déconnecter",
-    "signIn": "Se Connecter"
+    "signIn": "Se Connecter",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "close": "Fermer",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "save": "Sauvegarder",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "view": "Voir",
+    "download": "Télécharger",
+    "upload": "Téléverser",
+    "share": "Partager"
   }
 }

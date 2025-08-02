@@ -6,8 +6,10 @@ import { Button } from "@/components/ui/button";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
 import { InteractiveCard } from "@/components/ui/InteractiveCard";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ServicesSection = () => {
+  const { t } = useLanguage();
   const services = [
     {
       icon: Search,
@@ -56,7 +58,7 @@ const ServicesSection = () => {
         {/* AEO-Optimized Header */}
         <AnimatedElement animation="fade-in-up" className="text-center max-w-5xl mx-auto mb-20">
           <div className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold tracking-wider mb-8 backdrop-blur-sm">
-            WHAT SERVICES DO WE OFFER?
+            {t('services.badge')}
           </div>
           
           <h2 className="text-5xl lg:text-7xl font-bold font-display mb-8 leading-[0.9] tracking-tight" itemProp="name">

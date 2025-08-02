@@ -36,10 +36,36 @@
     "pt": "Português",
     "fr": "Français"
   },
+  "footer": {
+    "companyDescription": "Seu parceiro confiável para imóveis de luxo na Costa del Sol. Especializado em propriedades premium em Marbella, Puerto Banús e as localizações mais procuradas.",
+    "quickLinks": "Links Rápidos",
+    "services": "Serviços",
+    "featuredLocations": "Localizações em Destaque",
+    "followUs": "Siga-nos:",
+    "newsletter": "Mantenha-se atualizado com nossa newsletter",
+    "subscribe": "Inscrever-se",
+    "copyright": "DelSolPrimeHomes. Todos os direitos reservados."
+  },
   "common": {
     "search": "Pesquisar",
     "notifications": "Notificações",
     "signOut": "Sair",
-    "signIn": "Entrar"
+    "signIn": "Entrar",
+    "loading": "Carregando...",
+    "error": "Erro",
+    "success": "Sucesso",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "close": "Fechar",
+    "back": "Voltar",
+    "next": "Próximo",
+    "previous": "Anterior",
+    "save": "Salvar",
+    "edit": "Editar",
+    "delete": "Excluir",
+    "view": "Ver",
+    "download": "Baixar",
+    "upload": "Enviar",
+    "share": "Compartilhar"
   }
 }

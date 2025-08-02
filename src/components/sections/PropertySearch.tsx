@@ -9,8 +9,10 @@ import { Slider } from "@/components/ui/slider";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const PropertySearch = () => {
+  const { t } = useLanguage();
   const [priceRange, setPriceRange] = useState([500000]);
   const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
 
@@ -55,17 +57,17 @@ const PropertySearch = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
-            PROPERTY SEARCH
+            {t('propertySearch.badge')}
           </div>
           
           <h2 className="text-4xl lg:text-5xl font-bold font-display mb-6 text-white">
-            Find Your Perfect
+            {t('propertySearch.title')}
             <br />
-            <span className="text-white/90">Costa del Sol Home</span>
+            <span className="text-white/90">{t('propertySearch.titleHighlight')}</span>
           </h2>
           
           <p className="text-lg text-white/80">
-            Use our advanced search to discover properties that match your exact requirements.
+            {t('propertySearch.subtitle')}
           </p>
         </div>
 

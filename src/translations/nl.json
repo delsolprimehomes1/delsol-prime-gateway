@@ -11,19 +11,153 @@
     "contactUs": "Neem Contact Op"
   },
   "hero": {
-    "badge": "PREMIUM COSTA DEL SOL EIGENDOMMEN",
-    "title": "Luxe Leven",
-    "titleHighlight": "Herdefinieerd",
-    "subtitle": "Ontdek uitzonderlijke eigendommen waar mediterrane elegantie moderne verfijning ontmoet",
-    "locations": "MARBELLA • ESTEPONA • PUERTO BANÚS",
-    "scheduleViewing": "Plan Privé Bezichtiging",
-    "virtualTour": "Bekijk Virtuele Tour",
+    "badge": "Costa del Sol Vastgoed Experts",
+    "title": "Wat Zijn de Beste Plaatsen om",
+    "titleHighlight": "Eigendom te Kopen in Costa del Sol in 2025?",
+    "subtitle": "Ontdek luxe woningen met DelSolPrimeHomes - uw vertrouwde Costa del Sol specialisten.",
+    "locations": "Marbella • Estepona • Mijas • Fuengirola • Benalmádena",
+    "scheduleViewing": "Plan Eigendom Bezichtiging",
+    "virtualTour": "Neem Virtuele Eigendom Tour",
     "seoDashboard": "SEO Dashboard",
-    "explore": "Verkennen",
+    "explore": "Verken Eigendommen",
+    "scrollToExplore": "Verken Eigendommen",
     "stats": {
-      "averageValue": "Gemiddelde Waarde",
-      "yearsExcellence": "Jaren Excellentie",
-      "clientSatisfaction": "Klanttevredenheid"
+      "averageProperty": "Gemiddelde Eigendom Waarde",
+      "yearsExcellence": "Jaren van Excellentie",
+      "clientSatisfaction": "Klanttevredenheidspercentage"
+    }
+  },
+  "propertySearch": {
+    "badge": "EIGENDOM ZOEKEN",
+    "title": "Vind Uw Perfecte",
+    "titleHighlight": "Costa del Sol Huis",
+    "subtitle": "Gebruik onze geavanceerde zoekopdracht om eigendommen te ontdekken die voldoen aan uw exacte vereisten.",
+    "location": "Locatie",
+    "selectLocation": "Selecteer locatie",
+    "propertyType": "Eigendom Type",
+    "selectType": "Selecteer type",
+    "bedrooms": "Slaapkamers",
+    "bathrooms": "Badkamers",
+    "priceRange": "Prijsklasse",
+    "specialFeatures": "Speciale Kenmerken",
+    "searchProperties": "Zoek Eigendommen",
+    "saveSearch": "Zoekopdracht Opslaan",
+    "locations": {
+      "allLocations": "Alle Locaties",
+      "marbella": "Marbella",
+      "estepona": "Estepona",
+      "mijas": "Mijas",
+      "fuengirola": "Fuengirola",
+      "benalmadena": "Benalmádena",
+      "nerja": "Nerja",
+      "torrox": "Torrox"
+    },
+    "propertyTypes": {
+      "allTypes": "Alle Types",
+      "apartment": "Appartement",
+      "villa": "Villa",
+      "penthouse": "Penthouse",
+      "townhouse": "Rijtjeshuis",
+      "plot": "Perceel",
+      "commercial": "Commercieel"
+    },
+    "rooms": {
+      "any": "Alle",
+      "onePlus": "1+",
+      "twoPlus": "2+",
+      "threePlus": "3+",
+      "fourPlus": "4+",
+      "fivePlus": "5+"
+    },
+    "features": {
+      "pool": "Zwembad",
+      "seaview": "Zeezicht",
+      "garden": "Privé Tuin",
+      "garage": "Garage",
+      "terrace": "Terras",
+      "aircon": "Airconditioning"
+    },
+    "stats": {
+      "propertiesAvailable": "Beschikbare Eigendommen",
+      "locationsCovered": "Gedekte Locaties",
+      "clientSatisfaction": "Klanttevredenheid",
+      "expertSupport": "Expert Ondersteuning"
+    }
+  },
+  "services": {
+    "badge": "WELKE DIENSTEN BIEDEN WIJ?",
+    "title": "Waarom Kiezen voor",
+    "titleHighlight": "DelSolPrimeHomes Diensten?",
+    "subtitle": "Ervaar uitgebreide vastgoedoplossingen ontworpen om uw Costa del Sol eigendomsreis naadloos, veilig en succesvol te maken van begin tot eind.",
+    "description": "Ons expertteam biedt end-to-end ondersteuning voor eigendomsverwerving, juridische processen en lifestyle-integratie in Spanje's meest prestigieuze kustgebied.",
+    "propertySearch": {
+      "question": "Hoe Helpen Wij U De Perfecte Eigendom Te Vinden?",
+      "answer": "Onze expert eigendom-matching service combineert lokale marktkennis met gepersonaliseerde consultatie om eigendommen te identificeren die voldoen aan uw exacte vereisten en investeringsdoelen.",
+      "features": [
+        "Gepersonaliseerde eigendom matching",
+        "Lokale marktexpertise",
+        "Investeringsanalyse",
+        "Eigendomsportfolio beoordeling"
+      ]
+    },
+    "legal": {
+      "question": "Welke Juridische en Financiële Ondersteuning Bieden Wij?",
+      "answer": "Wij bieden uitgebreide juridische begeleiding, financieringsondersteuning en transparant transactiebeheer om ervoor te zorgen dat uw Costa del Sol eigendomsaankoop veilig en eenvoudig is.",
+      "features": [
+        "Juridische documentatie ondersteuning",
+        "Hypotheek en financiering ondersteuning",
+        "Belastingoptimalisatie begeleiding",
+        "Transactiebeheer"
+      ]
+    },
+    "lifestyle": {
+      "question": "Hoe Ondersteunen Wij Uw Lifestyle Integratie?",
+      "answer": "Onze uitgebreide lifestyle integratiediensten omvatten gemeenschapsintroductie, lokale diensten verbinding en voortdurende ondersteuning om uw Costa del Sol overgang naadloos te maken.",
+      "features": [
+        "Gemeenschapsintegratie ondersteuning",
+        "Lokaal dienstennetwerk",
+        "Voortdurende lifestyle ondersteuning",
+        "Culturele aanpassingsbegeleiding"
+      ]
+    },
+    "learnMore": "Meer informatie over deze service",
+    "faqTitle": "Veelgestelde Vragen Over Onze Diensten",
+    "faq": {
+      "processDuration": {
+        "question": "Hoe lang duurt het eigendomsaankoopproces in Costa del Sol?",
+        "answer": "Meestal 60-90 dagen van aanvaarding van aanbod tot voltooiing, met onze expertbegeleiding die ervoor zorgt dat alle juridische en financiële vereisten efficiënt worden voldaan."
+      },
+      "costs": {
+        "question": "Wat zijn de kosten bij het kopen van eigendom in Spanje?",
+        "answer": "Totale kosten variëren meestal van 10-15% van de eigendomswaarde, inclusief belastingen, juridische kosten en registratiekosten. Wij bieden gedetailleerde kostenspecificaties vooraf."
+      }
+    },
+    "scheduleConsultation": "Plan Expert Consultatie",
+    "viewAllServices": "Bekijk Alle Diensten"
+  },
+  "footer": {
+    "companyDescription": "Uw vertrouwde partner voor luxe vastgoed in Costa del Sol. Gespecialiseerd in premium eigendommen in Marbella, Puerto Banús en de meest gewilde locaties.",
+    "quickLinks": "Snelle Links",
+    "services": "Diensten",
+    "featuredLocations": "Uitgelichte Locaties",
+    "followUs": "Volg ons:",
+    "newsletter": "Blijf op de hoogte met onze nieuwsbrief",
+    "subscribe": "Abonneren",
+    "copyright": "DelSolPrimeHomes. Alle rechten voorbehouden.",
+    "privacyPolicy": "Privacybeleid",
+    "termsOfService": "Servicevoorwaarden",
+    "cookiePolicy": "Cookiebeleid",
+    "servicesLinks": {
+      "propertySearch": "Eigendom Zoeken",
+      "legalServices": "Juridische Diensten",
+      "investmentAdvice": "Investeringsadvies",
+      "propertyManagement": "Eigendomsbeheer"
+    },
+    "featuredLocationsLinks": {
+      "marbella": "Marbella",
+      "puertoBAnus": "Puerto Banús",
+      "estepona": "Estepona",
+      "benahavis": "Benahavís"
     }
   },
   "languages": {
@@ -34,12 +168,32 @@
     "hi": "हिन्दी",
     "ar": "العربية",
     "pt": "Português",
-    "fr": "Français"
+    "fr": "Français",
+    "de": "Deutsch",
+    "pl": "Polski",
+    "se": "Svenska",
+    "dk": "Dansk"
   },
   "common": {
     "search": "Zoeken",
     "notifications": "Meldingen",
     "signOut": "Uitloggen",
-    "signIn": "Inloggen"
+    "signIn": "Inloggen",
+    "loading": "Laden...",
+    "error": "Fout",
+    "success": "Succes",
+    "cancel": "Annuleren",
+    "confirm": "Bevestigen",
+    "close": "Sluiten",
+    "back": "Terug",
+    "next": "Volgende",
+    "previous": "Vorige",
+    "save": "Opslaan",
+    "edit": "Bewerken",
+    "delete": "Verwijderen",
+    "view": "Bekijken",
+    "download": "Downloaden",
+    "upload": "Uploaden",
+    "share": "Delen"
   }
 }

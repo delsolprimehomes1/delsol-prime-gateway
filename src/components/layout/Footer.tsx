@@ -1,8 +1,10 @@
 
 import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
@@ -38,9 +40,7 @@ export default function Footer() {
               DelSolPrimeHomes
             </div>
             <p className="text-slate-300 text-sm leading-relaxed">
-              Your trusted partner for luxury real estate in Costa del Sol. 
-              Specializing in premium properties across Marbella, Puerto Banús, 
-              and the most sought-after locations.
+              {t('footer.companyDescription')}
             </p>
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-sm text-slate-300">
@@ -60,7 +60,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Quick Links</h3>
+            <h3 className="text-lg font-semibold">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.label}>
