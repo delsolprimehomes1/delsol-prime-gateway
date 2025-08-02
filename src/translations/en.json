@@ -11,10 +11,10 @@
     "contactUs": "Contact Us"
   },
   "hero": {
-    "badge": "Costa del Sol Real Estate Experts",
+    "badge": "Costa Del Sol Real Estate Experts",
     "title": "What Are the Best Places to Buy",
-    "titleHighlight": "Property in Costa del Sol in 2025?",
-    "subtitle": "Discover luxury homes with DelSolPrimeHomes - your trusted Costa del Sol specialists.",
+    "titleHighlight": "Property in Costa Del Sol in 2025?",
+    "subtitle": "Discover luxury homes with DelSolPrimeHomes - your trusted Costa Del Sol specialists.",
     "locations": "Marbella • Estepona • Mijas • Fuengirola • Benalmádena",
     "scheduleViewing": "Schedule Property Viewing",
     "virtualTour": "Take Virtual Property Tour",
@@ -30,7 +30,7 @@
   "propertySearch": {
     "badge": "PROPERTY SEARCH",
     "title": "Find Your Perfect",
-    "titleHighlight": "Costa del Sol Home",
+    "titleHighlight": "Costa Del Sol Home",
     "subtitle": "Use our advanced search to discover properties that match your exact requirements.",
     "location": "Location",
     "selectLocation": "Select location",
@@ -87,7 +87,7 @@
   "services": {
     "badge": "WHAT SERVICES DO WE OFFER?",
     "title": "Why Choose DelSolPrimeHomes Services?",
-    "subtitle": "Experience comprehensive real estate solutions designed to make your Costa del Sol property journey seamless, secure, and successful from start to finish.",
+    "subtitle": "Experience comprehensive real estate solutions designed to make your Costa Del Sol property journey seamless, secure, and successful from start to finish.",
     "description": "Our expert team provides end-to-end support for property acquisition, legal processes, and lifestyle integration in Spain's most prestigious coastal region.",
     "propertySearch": {
       "question": "How Do We Help You Find the Perfect Property?",
@@ -101,7 +101,7 @@
     },
     "legalFinancial": {
       "question": "What Legal and Financial Support Do We Provide?",
-      "answer": "We offer comprehensive legal guidance, financing assistance, and transparent transaction management to ensure your Costa del Sol property purchase is secure and straightforward.",
+      "answer": "We offer comprehensive legal guidance, financing assistance, and transparent transaction management to ensure your Costa Del Sol property purchase is secure and straightforward.",
       "features": [
         "Legal documentation assistance",
         "Mortgage and financing support",
@@ -111,7 +111,7 @@
     },
     "lifestyle": {
       "question": "How Do We Support Your Lifestyle Integration?",
-      "answer": "Our comprehensive lifestyle integration services include community introduction, local services connection, and ongoing support to make your Costa del Sol transition seamless.",
+      "answer": "Our comprehensive lifestyle integration services include community introduction, local services connection, and ongoing support to make your Costa Del Sol transition seamless.",
       "features": [
         "Community integration support",
         "Local services network",
@@ -122,7 +122,7 @@
     "learnMore": "Learn more about this service",
     "faq": {
       "title": "Frequently Asked Questions About Our Services",
-      "question1": "How long does the property buying process take in Costa del Sol?",
+      "question1": "How long does the property buying process take in Costa Del Sol?",
       "answer1": "Typically 60-90 days from offer acceptance to completion, with our expert guidance ensuring all legal and financial requirements are met efficiently.",
       "question2": "What are the costs involved in buying property in Spain?",
       "answer2": "Total costs typically range from 10-15% of property value, including taxes, legal fees, and registration costs. We provide detailed cost breakdowns upfront."
@@ -131,7 +131,7 @@
     "viewAllServices": "View All Services"
   },
   "footer": {
-    "companyDescription": "Your trusted partner for luxury real estate in Costa del Sol. Specializing in premium properties across Marbella, Puerto Banús, and the most sought-after locations.",
+    "companyDescription": "Your trusted partner for luxury real estate in Costa Del Sol. Specializing in premium properties across Marbella, Puerto Banús, and the most sought-after locations.",
     "quickLinks": "Quick Links",
     "services": "Services",
     "featuredLocations": "Featured Locations",
@@ -171,7 +171,7 @@
   },
   "about": {
     "title": "About DelSolPrimeHomes",
-    "description": "Your trusted partner for luxury real estate in Costa del Sol. With over 15 years of expertise, we've helped hundreds of international clients discover their perfect property in Spain's most prestigious region.",
+    "description": "Your trusted partner for luxury real estate in Costa Del Sol. With over 15 years of expertise, we've helped hundreds of international clients discover their perfect property in Spain's most prestigious region.",
     "stats": {
       "yearsExperience": "Years Experience",
       "propertiesSold": "Properties Sold",
@@ -180,8 +180,8 @@
     }
   },
   "blog": {
-    "title": "What's New in Costa del Sol Real Estate?",
-    "subtitle": "Stay informed with expert analysis, market trends, and insider knowledge from Costa del Sol's premier real estate professionals.",
+    "title": "What's New in Costa Del Sol Real Estate?",
+    "subtitle": "Stay informed with expert analysis, market trends, and insider knowledge from Costa Del Sol's premier real estate professionals.",
     "viewAllPosts": "View All Posts"
   },
   "common": {
