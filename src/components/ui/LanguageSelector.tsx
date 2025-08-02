@@ -18,13 +18,13 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
   const { currentLanguage, setLanguage, t } = useLanguage();
 
   const languages: { code: Language; name: string; flag: string }[] = [
-    { code: 'en', name: t('languages.en'), flag: '🇺🇸' },
-    { code: 'nl', name: t('languages.nl'), flag: '🇳🇱' },
-    { code: 'fr', name: t('languages.fr'), flag: '🇫🇷' },
-    { code: 'de', name: t('languages.de'), flag: '🇩🇪' },
-    { code: 'pl', name: t('languages.pl'), flag: '🇵🇱' },
-    { code: 'se', name: t('languages.se'), flag: '🇸🇪' },
-    { code: 'dk', name: t('languages.dk'), flag: '🇩🇰' },
+    { code: 'en', name: 'English', flag: '🇺🇸' },
+    { code: 'nl', name: 'Nederlands', flag: '🇳🇱' },
+    { code: 'fr', name: 'Français', flag: '🇫🇷' },
+    { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+    { code: 'pl', name: 'Polski', flag: '🇵🇱' },
+    { code: 'se', name: 'Svenska', flag: '🇸🇪' },
+    { code: 'dk', name: 'Dansk', flag: '🇩🇰' },
   ];
 
   const currentLang = languages.find(lang => lang.code === currentLanguage);
@@ -53,7 +53,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
       </DropdownMenuTrigger>
       <DropdownMenuContent 
         align="end" 
-        className="bg-background/95 backdrop-blur-md border border-border/50 min-w-[160px]"
+        className="bg-background backdrop-blur-md border border-border min-w-[160px] z-50"
       >
         {languages.map((language) => (
           <DropdownMenuItem
