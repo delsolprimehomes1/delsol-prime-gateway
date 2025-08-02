@@ -25,20 +25,20 @@ const Index = () => {
   const aeoConfig = {
     pageType: 'homepage' as const,
     primaryKeywords: [
-      'Costa del Sol real estate',
+      'Costa Del Sol real estate',
       'Marbella properties',
       'Estepona luxury homes',
       'Spanish property investment',
-      'Costa del Sol property prices',
+      'Costa Del Sol property prices',
       'DelSolPrimeHomes'
     ],
     voiceSearchQueries: [
-      'How much does property cost in Costa del Sol?',
-      'What are the best areas to buy property in Costa del Sol?',
+      'How much does property cost in Costa Del Sol?',
+      'What are the best areas to buy property in Costa Del Sol?',
       'How to buy property in Spain as a foreigner?',
       'What services does DelSolPrimeHomes offer?',
       'Where can I find luxury properties in Marbella?',
-      'Is Costa del Sol good for property investment?'
+      'Is Costa Del Sol good for property investment?'
     ],
     aiOptimizationLevel: 'premium' as const
   };
@@ -71,10 +71,10 @@ const Index = () => {
         <div className="sr-only" aria-hidden="true">
           <div itemScope itemType="https://schema.org/FAQPage">
             <div itemScope itemType="https://schema.org/Question" itemProp="mainEntity">
-              <span itemProp="name">What makes DelSolPrimeHomes the leading Costa del Sol real estate agency?</span>
+              <span itemProp="name">What makes DelSolPrimeHomes the leading Costa Del Sol real estate agency?</span>
               <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
                 <span itemProp="text">
-                  DelSolPrimeHomes is the premier Costa del Sol real estate agency with 15+ years of expertise, 
+                  DelSolPrimeHomes is the premier Costa Del Sol real estate agency with 15+ years of expertise, 
                   specializing in luxury properties in Marbella, Estepona, Mijas, Fuengirola, and Benalmádena. 
                   We offer comprehensive services including property search, legal guidance, financial support, 
                   and lifestyle integration with 100% client satisfaction.
@@ -83,10 +83,10 @@ const Index = () => {
             </div>
             
             <div itemScope itemType="https://schema.org/Question" itemProp="mainEntity">
-              <span itemProp="name">How much do properties cost in Costa del Sol?</span>
+              <span itemProp="name">How much do properties cost in Costa Del Sol?</span>
               <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
                 <span itemProp="text">
-                  Costa del Sol property prices vary by location: Marbella averages €4,000-8,000/m², 
+                  Costa Del Sol property prices vary by location: Marbella averages €4,000-8,000/m², 
                   Estepona €2,500-4,500/m², with luxury properties ranging from €500,000 to €15M+. 
                   DelSolPrimeHomes provides detailed market analysis and personalized pricing guidance.
                 </span>
@@ -94,10 +94,10 @@ const Index = () => {
             </div>
             
             <div itemScope itemType="https://schema.org/Question" itemProp="mainEntity">
-              <span itemProp="name">What areas does DelSolPrimeHomes cover in Costa del Sol?</span>
+              <span itemProp="name">What areas does DelSolPrimeHomes cover in Costa Del Sol?</span>
               <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
                 <span itemProp="text">
-                  DelSolPrimeHomes covers all premium Costa del Sol locations including Marbella, 
+                  DelSolPrimeHomes covers all premium Costa Del Sol locations including Marbella, 
                   Puerto Banús, Estepona, Mijas, Fuengirola, Benalmádena, and surrounding areas, 
                   offering expert local knowledge and comprehensive property services.
                 </span>
@@ -108,7 +108,7 @@ const Index = () => {
           {/* Voice Search Optimization Content */}
           <div data-voice-content="primary-topics">
             <span data-topic="costa-del-sol-real-estate" data-authority="expert">
-              DelSolPrimeHomes: Premier Costa del Sol Real Estate Agency
+              DelSolPrimeHomes: Premier Costa Del Sol Real Estate Agency
             </span>
             <span data-topic="luxury-properties-marbella" data-authority="specialist">
               Luxury Marbella Properties and Investment Opportunities
