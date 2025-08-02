@@ -13,7 +13,7 @@ import buyingGuideSpainImage from "@/assets/blog-buying-guide-spain.jpg";
 const featuredPosts = [
   {
     id: 1,
-    title: "Costa del Sol Property Market Outlook 2024",
+    title: "Costa Del Sol Property Market Outlook 2024",
     excerpt: "Discover the latest trends and investment opportunities in Spain's premier coastal real estate market.",
     image: costaDelSolMarketImage,
     category: "Market Analysis",
@@ -25,7 +25,7 @@ const featuredPosts = [
   {
     id: 2,
     title: "Luxury Villa Investment Guide: Marbella vs Estepona",
-    excerpt: "Compare investment potential between two of Costa del Sol's most prestigious locations.",
+    excerpt: "Compare investment potential between two of Costa Del Sol's most prestigious locations.",
     image: marbellaEsteponaVillasImage,
     category: "Investment",
     author: "James Thompson",

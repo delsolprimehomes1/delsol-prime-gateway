@@ -45,7 +45,7 @@ export default function Footer() {
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-sm text-slate-300">
                 <MapPin className="w-4 h-4 text-primary" />
-                <span>Costa del Sol, Spain</span>
+                <span>Costa Del Sol, Spain</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-slate-300">
                 <Phone className="w-4 h-4 text-primary" />
