@@ -86,8 +86,7 @@
   },
   "services": {
     "badge": "WHAT SERVICES DO WE OFFER?",
-    "title": "Why Choose",
-    "titleHighlight": "DelSolPrimeHomes Services?",
+    "title": "Why Choose DelSolPrimeHomes Services?",
     "subtitle": "Experience comprehensive real estate solutions designed to make your Costa del Sol property journey seamless, secure, and successful from start to finish.",
     "description": "Our expert team provides end-to-end support for property acquisition, legal processes, and lifestyle integration in Spain's most prestigious coastal region.",
     "propertySearch": {
@@ -100,7 +99,7 @@
         "Property portfolio review"
       ]
     },
-    "legal": {
+    "legalFinancial": {
       "question": "What Legal and Financial Support Do We Provide?",
       "answer": "We offer comprehensive legal guidance, financing assistance, and transparent transaction management to ensure your Costa del Sol property purchase is secure and straightforward.",
       "features": [
@@ -121,16 +120,12 @@
       ]
     },
     "learnMore": "Learn more about this service",
-    "faqTitle": "Frequently Asked Questions About Our Services",
     "faq": {
-      "processDuration": {
-        "question": "How long does the property buying process take in Costa del Sol?",
-        "answer": "Typically 60-90 days from offer acceptance to completion, with our expert guidance ensuring all legal and financial requirements are met efficiently."
-      },
-      "costs": {
-        "question": "What are the costs involved in buying property in Spain?",
-        "answer": "Total costs typically range from 10-15% of property value, including taxes, legal fees, and registration costs. We provide detailed cost breakdowns upfront."
-      }
+      "title": "Frequently Asked Questions About Our Services",
+      "question1": "How long does the property buying process take in Costa del Sol?",
+      "answer1": "Typically 60-90 days from offer acceptance to completion, with our expert guidance ensuring all legal and financial requirements are met efficiently.",
+      "question2": "What are the costs involved in buying property in Spain?",
+      "answer2": "Total costs typically range from 10-15% of property value, including taxes, legal fees, and registration costs. We provide detailed cost breakdowns upfront."
     },
     "scheduleConsultation": "Schedule Expert Consultation",
     "viewAllServices": "View All Services"
@@ -173,6 +168,21 @@
     "pl": "Polski",
     "se": "Svenska",
     "dk": "Dansk"
+  },
+  "about": {
+    "title": "About DelSolPrimeHomes",
+    "description": "Your trusted partner for luxury real estate in Costa del Sol. With over 15 years of expertise, we've helped hundreds of international clients discover their perfect property in Spain's most prestigious region.",
+    "stats": {
+      "yearsExperience": "Years Experience",
+      "propertiesSold": "Properties Sold",
+      "nationalities": "Nationalities",
+      "salesVolume": "Sales Volume"
+    }
+  },
+  "blog": {
+    "title": "What's New in Costa del Sol Real Estate?",
+    "subtitle": "Stay informed with expert analysis, market trends, and insider knowledge from Costa del Sol's premier real estate professionals.",
+    "viewAllPosts": "View All Posts"
   },
   "common": {
     "search": "Search",

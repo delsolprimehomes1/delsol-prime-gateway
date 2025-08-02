@@ -22,8 +22,10 @@ import {
 } from "lucide-react";
 import { enhancedOrganizationSchema } from "@/utils/seo/enhancedStructuredData";
 import { generateTitle, META_DESCRIPTIONS } from "@/utils/seo/metaUtils";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const About = () => {
+  const { t } = useLanguage();
   const founderSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -152,11 +154,10 @@ const About = () => {
             <Users className="w-10 h-10 text-primary" />
           </div>
           <h1 className="text-6xl font-bold bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent mb-6">
-            About DelSolPrimeHomes
+            {t('about.title')}
           </h1>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Your trusted partner for luxury real estate in Costa del Sol. With over 15 years of expertise, 
-            we've helped hundreds of international clients discover their perfect property in Spain's most prestigious region.
+            {t('about.description')}
           </p>
         </div>
 
@@ -164,19 +165,19 @@ const About = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
           <div className="text-center">
             <div className="text-4xl font-bold text-primary mb-2">15+</div>
-            <div className="text-sm text-muted-foreground">Years Experience</div>
+            <div className="text-sm text-muted-foreground">{t('about.stats.yearsExperience')}</div>
           </div>
           <div className="text-center">
             <div className="text-4xl font-bold text-primary mb-2">500+</div>
-            <div className="text-sm text-muted-foreground">Properties Sold</div>
+            <div className="text-sm text-muted-foreground">{t('about.stats.propertiesSold')}</div>
           </div>
           <div className="text-center">
             <div className="text-4xl font-bold text-primary mb-2">40+</div>
-            <div className="text-sm text-muted-foreground">Nationalities</div>
+            <div className="text-sm text-muted-foreground">{t('about.stats.nationalities')}</div>
           </div>
           <div className="text-center">
             <div className="text-4xl font-bold text-primary mb-2">€250M+</div>
-            <div className="text-sm text-muted-foreground">Sales Volume</div>
+            <div className="text-sm text-muted-foreground">{t('about.stats.salesVolume')}</div>
           </div>
         </div>
       </Section>

@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Section from "@/components/layout/Section";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 import costaDelSolMarketImage from "@/assets/blog-costa-del-sol-market.jpg";
 import marbellaEsteponaVillasImage from "@/assets/blog-marbella-estepona-villas.jpg";
 import buyingGuideSpainImage from "@/assets/blog-buying-guide-spain.jpg";
@@ -55,6 +56,8 @@ const categories = [
 ];
 
 export default function BlogSection() {
+  const { t } = useLanguage();
+  
   return (
     <Section 
       id="blog" 
@@ -66,11 +69,10 @@ export default function BlogSection() {
         {/* Header */}
         <div className="text-center space-y-4">
           <h2 className="text-4xl lg:text-5xl font-bold tracking-tight">
-            What's New in <span className="text-primary">Costa del Sol Real Estate?</span>
+            {t('blog.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Stay informed with expert analysis, market trends, and insider knowledge 
-            from Costa del Sol's premier real estate professionals.
+            {t('blog.subtitle')}
           </p>
         </div>
 
@@ -159,7 +161,7 @@ export default function BlogSection() {
         <div className="text-center">
           <Link to="/blog">
             <Button size="lg" className="rounded-full px-8">
-              View All Posts
+              {t('blog.viewAllPosts')}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>

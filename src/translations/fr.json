@@ -86,8 +86,7 @@
   },
   "services": {
     "badge": "QUELS SERVICES OFFRONS-NOUS?",
-    "title": "Pourquoi Choisir",
-    "titleHighlight": "les Services DelSolPrimeHomes?",
+    "title": "Pourquoi Choisir les Services DelSolPrimeHomes?",
     "subtitle": "Découvrez des solutions immobilières complètes conçues pour rendre votre parcours de propriété à Costa del Sol fluide, sécurisé et réussi du début à la fin.",
     "description": "Notre équipe d'experts fournit un soutien de bout en bout pour l'acquisition de propriétés, les processus juridiques et l'intégration de style de vie dans la région côtière la plus prestigieuse d'Espagne.",
     "propertySearch": {
@@ -100,7 +99,7 @@
         "Examen du portefeuille de propriétés"
       ]
     },
-    "legal": {
+    "legalFinancial": {
       "question": "Quel Soutien Juridique et Financier Fournissons-nous?",
       "answer": "Nous offrons des conseils juridiques complets, une assistance de financement et une gestion transparente des transactions pour assurer que votre achat de propriété à Costa del Sol soit sécurisé et direct.",
       "features": [
@@ -121,19 +120,30 @@
       ]
     },
     "learnMore": "En savoir plus sur ce service",
-    "faqTitle": "Questions Fréquemment Posées Sur Nos Services",
     "faq": {
-      "processDuration": {
-        "question": "Combien de temps prend le processus d'achat de propriété à Costa del Sol?",
-        "answer": "Typiquement 60-90 jours de l'acceptation de l'offre à la finalisation, avec nos conseils d'experts assurant que toutes les exigences juridiques et financières sont satisfaites efficacement."
-      },
-      "costs": {
-        "question": "Quels sont les coûts impliqués dans l'achat de propriété en Espagne?",
-        "answer": "Les coûts totaux varient typiquement de 10-15% de la valeur de la propriété, incluant les taxes, les frais juridiques et les coûts d'enregistrement. Nous fournissons des répartitions détaillées des coûts à l'avance."
-      }
+      "title": "Questions Fréquemment Posées Sur Nos Services",
+      "question1": "Combien de temps prend le processus d'achat de propriété à Costa del Sol?",
+      "answer1": "Typiquement 60-90 jours de l'acceptation de l'offre à la finalisation, avec nos conseils d'experts assurant que toutes les exigences juridiques et financières sont satisfaites efficacement.",
+      "question2": "Quels sont les coûts impliqués dans l'achat de propriété en Espagne?",
+      "answer2": "Les coûts totaux varient typiquement de 10-15% de la valeur de la propriété, incluant les taxes, les frais juridiques et les coûts d'enregistrement. Nous fournissons des répartitions détaillées des coûts à l'avance."
     },
     "scheduleConsultation": "Programmer Consultation Expert",
     "viewAllServices": "Voir Tous les Services"
+  },
+  "about": {
+    "title": "À Propos de DelSolPrimeHomes",
+    "description": "Votre partenaire de confiance pour l'immobilier de luxe en Costa del Sol. Avec plus de 15 ans d'expertise, nous avons aidé des centaines de clients internationaux à découvrir leur propriété parfaite dans la région la plus prestigieuse d'Espagne.",
+    "stats": {
+      "yearsExperience": "Années d'Expérience",
+      "propertiesSold": "Propriétés Vendues",
+      "nationalities": "Nationalités",
+      "salesVolume": "Volume des Ventes"
+    }
+  },
+  "blog": {
+    "title": "Quoi de Neuf dans l'Immobilier Costa del Sol?",
+    "subtitle": "Restez informé avec l'analyse d'experts, les tendances du marché et les connaissances privilégiées des professionnels de l'immobilier de premier plan de Costa del Sol.",
+    "viewAllPosts": "Voir Tous les Articles"
   },
   "footer": {
     "companyDescription": "Votre partenaire de confiance pour l'immobilier de luxe à Costa del Sol. Spécialisé dans les propriétés premium à Marbella, Puerto Banús et les emplacements les plus recherchés.",

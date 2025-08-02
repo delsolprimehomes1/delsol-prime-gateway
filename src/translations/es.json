@@ -86,8 +86,7 @@
   },
   "services": {
     "badge": "¿QUÉ SERVICIOS OFRECEMOS?",
-    "title": "¿Por Qué Elegir",
-    "titleHighlight": "Servicios DelSolPrimeHomes?",
+    "title": "¿Por Qué Elegir Servicios DelSolPrimeHomes?",
     "subtitle": "Experimenta soluciones inmobiliarias integrales diseñadas para hacer que tu viaje de propiedades en Costa del Sol sea fluido, seguro y exitoso de principio a fin.",
     "description": "Nuestro equipo experto brinda soporte integral para adquisición de propiedades, procesos legales e integración de estilo de vida en la región costera más prestigiosa de España.",
     "propertySearch": {
@@ -100,7 +99,7 @@
         "Revisión de cartera de propiedades"
       ]
     },
-    "legal": {
+    "legalFinancial": {
       "question": "¿Qué Soporte Legal y Financiero Proporcionamos?",
       "answer": "Ofrecemos orientación legal integral, asistencia de financiamiento y gestión transparente de transacciones para asegurar que tu compra de propiedad en Costa del Sol sea segura y directa.",
       "features": [
@@ -121,16 +120,12 @@
       ]
     },
     "learnMore": "Aprende más sobre este servicio",
-    "faqTitle": "Preguntas Frecuentes Sobre Nuestros Servicios",
     "faq": {
-      "processDuration": {
-        "question": "¿Cuánto tiempo toma el proceso de compra de propiedades en Costa del Sol?",
-        "answer": "Típicamente 60-90 días desde la aceptación de la oferta hasta la finalización, con nuestra orientación experta asegurando que todos los requisitos legales y financieros se cumplan eficientemente."
-      },
-      "costs": {
-        "question": "¿Cuáles son los costos involucrados en comprar propiedades en España?",
-        "answer": "Los costos totales típicamente varían del 10-15% del valor de la propiedad, incluyendo impuestos, honorarios legales y costos de registro. Proporcionamos desgloses detallados de costos por adelantado."
-      }
+      "title": "Preguntas Frecuentes Sobre Nuestros Servicios",
+      "question1": "¿Cuánto tiempo toma el proceso de compra de propiedades en Costa del Sol?",
+      "answer1": "Típicamente 60-90 días desde la aceptación de la oferta hasta la finalización, con nuestra orientación experta asegurando que todos los requisitos legales y financieros se cumplan eficientemente.",
+      "question2": "¿Cuáles son los costos involucrados en comprar propiedades en España?",
+      "answer2": "Los costos totales típicamente varían del 10-15% del valor de la propiedad, incluyendo impuestos, honorarios legales y costos de registro. Proporcionamos desgloses detallados de costos por adelantado."
     },
     "scheduleConsultation": "Programar Consulta Experta",
     "viewAllServices": "Ver Todos los Servicios"
@@ -173,6 +168,21 @@
     "pl": "Polski",
     "se": "Svenska",
     "dk": "Dansk"
+  },
+  "about": {
+    "title": "Acerca de DelSolPrimeHomes",
+    "description": "Su socio de confianza para inmuebles de lujo en Costa del Sol. Con más de 15 años de experiencia, hemos ayudado a cientos de clientes internacionales a descubrir su propiedad perfecta en la región más prestigiosa de España.",
+    "stats": {
+      "yearsExperience": "Años de Experiencia",
+      "propertiesSold": "Propiedades Vendidas",
+      "nationalities": "Nacionalidades",
+      "salesVolume": "Volumen de Ventas"
+    }
+  },
+  "blog": {
+    "title": "¿Qué Hay de Nuevo en Inmobiliaria Costa del Sol?",
+    "subtitle": "Manténgase informado con análisis de expertos, tendencias del mercado y conocimiento interno de los profesionales inmobiliarios más destacados de Costa del Sol.",
+    "viewAllPosts": "Ver Todas las Publicaciones"
   },
   "common": {
     "search": "Buscar",

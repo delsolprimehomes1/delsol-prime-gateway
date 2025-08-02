@@ -13,39 +13,39 @@ const ServicesSection = () => {
   const services = [
     {
       icon: Search,
-      question: "How Do We Help You Find the Perfect Property?",
-      answer: "Our expert property matching service combines local market knowledge with personalized consultation to identify properties that meet your exact requirements and investment goals.",
+      question: t('services.propertySearch.question'),
+      answer: t('services.propertySearch.answer'),
       features: [
-        "Personalized property matching",
-        "Local market expertise",
-        "Investment analysis",
-        "Property portfolio review"
+        t('services.propertySearch.features.0'),
+        t('services.propertySearch.features.1'),
+        t('services.propertySearch.features.2'),
+        t('services.propertySearch.features.3')
       ],
       borderColor: "border-l-emerald-500",
       bgColor: "group-hover:bg-emerald-50/50 dark:group-hover:bg-emerald-950/10"
     },
     {
       icon: Scale,
-      question: "What Legal and Financial Support Do We Provide?", 
-      answer: "We offer comprehensive legal guidance, financing assistance, and transparent transaction management to ensure your Costa del Sol property purchase is secure and straightforward.",
+      question: t('services.legalFinancial.question'), 
+      answer: t('services.legalFinancial.answer'),
       features: [
-        "Legal documentation assistance",
-        "Mortgage and financing support",
-        "Tax optimization guidance",
-        "Transaction management"
+        t('services.legalFinancial.features.0'),
+        t('services.legalFinancial.features.1'),
+        t('services.legalFinancial.features.2'),
+        t('services.legalFinancial.features.3')
       ],
       borderColor: "border-l-rose-500",
       bgColor: "group-hover:bg-rose-50/50 dark:group-hover:bg-rose-950/10"
     },
     {
       icon: Users,
-      question: "How Do We Support Your Lifestyle Integration?",
-      answer: "Our comprehensive lifestyle integration services include community introduction, local services connection, and ongoing support to make your Costa del Sol transition seamless.",
+      question: t('services.lifestyle.question'),
+      answer: t('services.lifestyle.answer'),
       features: [
-        "Community integration support",
-        "Local services network",
-        "Ongoing lifestyle assistance",
-        "Cultural adaptation guidance"
+        t('services.lifestyle.features.0'),
+        t('services.lifestyle.features.1'),
+        t('services.lifestyle.features.2'),
+        t('services.lifestyle.features.3')
       ],
       borderColor: "border-l-blue-500",
       bgColor: "group-hover:bg-blue-50/50 dark:group-hover:bg-blue-950/10"
@@ -62,19 +62,15 @@ const ServicesSection = () => {
           </div>
           
           <h2 className="text-5xl lg:text-7xl font-bold font-display mb-8 leading-[0.9] tracking-tight" itemProp="name">
-            <span className="text-foreground">Why Choose</span>
-            <br />
-            <span className="bg-gradient-premium bg-clip-text text-transparent">
-              DelSolPrimeHomes Services?
-            </span>
+            {t('services.title')}
           </h2>
           
           <div className="max-w-3xl mx-auto space-y-6" itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
             <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed font-light" itemProp="text">
-              Experience comprehensive real estate solutions designed to make your Costa del Sol property journey seamless, secure, and successful from start to finish.
+              {t('services.subtitle')}
             </p>
             <p className="text-lg text-muted-foreground/80 leading-relaxed">
-              Our expert team provides end-to-end support for property acquisition, legal processes, and lifestyle integration in Spain's most prestigious coastal region.
+              {t('services.description')}
             </p>
           </div>
         </AnimatedElement>
@@ -126,7 +122,7 @@ const ServicesSection = () => {
                   {/* Voice search optimization */}
                   <div className="mt-6 pt-4 border-t border-border/20">
                     <button className="text-sm font-medium text-primary/70 hover:text-primary flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
-                      Learn more about this service
+                      {t('services.learnMore')}
                       <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200">→</span>
                     </button>
                   </div>
@@ -143,21 +139,21 @@ const ServicesSection = () => {
         <AnimatedElement animation="fade-in-up" delay={400} className="mb-12">
           <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 border border-primary/10">
             <div className="max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold mb-6 text-center">Frequently Asked Questions About Our Services</h3>
+              <h3 className="text-2xl font-bold mb-6 text-center">{t('services.faq.title')}</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div itemScope itemType="https://schema.org/Question" itemProp="mainEntity">
-                  <h4 className="font-semibold mb-2" itemProp="name">How long does the property buying process take in Costa del Sol?</h4>
+                  <h4 className="font-semibold mb-2" itemProp="name">{t('services.faq.question1')}</h4>
                   <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
                     <p className="text-sm text-muted-foreground" itemProp="text">
-                      Typically 60-90 days from offer acceptance to completion, with our expert guidance ensuring all legal and financial requirements are met efficiently.
+                      {t('services.faq.answer1')}
                     </p>
                   </div>
                 </div>
                 <div itemScope itemType="https://schema.org/Question" itemProp="mainEntity">
-                  <h4 className="font-semibold mb-2" itemProp="name">What are the costs involved in buying property in Spain?</h4>
+                  <h4 className="font-semibold mb-2" itemProp="name">{t('services.faq.question2')}</h4>
                   <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
                     <p className="text-sm text-muted-foreground" itemProp="text">
-                      Total costs typically range from 10-15% of property value, including taxes, legal fees, and registration costs. We provide detailed cost breakdowns upfront.
+                      {t('services.faq.answer2')}
                     </p>
                   </div>
                 </div>
@@ -170,10 +166,10 @@ const ServicesSection = () => {
         <AnimatedElement animation="fade-in-up" delay={600} className="text-center">
           <div className="inline-flex flex-col sm:flex-row gap-4">
             <MagneticButton size="xl" className="font-semibold" data-voice-action="schedule consultation">
-              Schedule Expert Consultation
+              {t('services.scheduleConsultation')}
             </MagneticButton>
             <MagneticButton variant="outline" size="xl" className="font-medium" data-voice-action="view all services">
-              View All Services
+              {t('services.viewAllServices')}
             </MagneticButton>
           </div>
         </AnimatedElement>
