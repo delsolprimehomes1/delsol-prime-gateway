@@ -10,19 +10,153 @@
     "contactUs": "Kontakta oss"
   },
   "hero": {
-    "badge": "PREMIUM COSTA DEL SOL FASTIGHETER",
-    "title": "Lyxigt boende",
-    "titleHighlight": "Omdefinierat",
-    "subtitle": "Upptäck exceptionella fastigheter där medelhavs elegans möter modern sofistikering",
-    "locations": "MARBELLA • ESTEPONA • PUERTO BANÚS",
-    "scheduleViewing": "Boka privat visning",
-    "virtualTour": "Se virtuell rundtur",
+    "badge": "Costa del Sol Fastighetsexperter",
+    "title": "Vilka Är de Bästa Platserna att Köpa",
+    "titleHighlight": "Fastigheter på Costa del Sol 2025?",
+    "subtitle": "Upptäck lyxiga hem med DelSolPrimeHomes - dina pålitliga Costa del Sol specialister.",
+    "locations": "Marbella • Estepona • Mijas • Fuengirola • Benalmádena",
+    "scheduleViewing": "Boka Fastighetsvisning",
+    "virtualTour": "Ta Virtuell Fastighetstur",
     "seoDashboard": "SEO Dashboard",
-    "explore": "Utforska",
+    "explore": "Utforska Fastigheter",
+    "scrollToExplore": "Utforska Fastigheter",
     "stats": {
-      "averageValue": "Genomsnittligt värde",
-      "yearsExcellence": "År av excellens",
-      "clientSatisfaction": "Kundnöjdhet"
+      "averageProperty": "Genomsnittligt Fastighetsvärde",
+      "yearsExcellence": "År av Excellens",
+      "clientSatisfaction": "Kundnöjdhetsgrad"
+    }
+  },
+  "propertySearch": {
+    "badge": "FASTIGHETSSÖKNING",
+    "title": "Hitta Ditt Perfekta",
+    "titleHighlight": "Costa del Sol Hem",
+    "subtitle": "Använd vår avancerade sökning för att upptäcka fastigheter som matchar dina exakta krav.",
+    "location": "Plats",
+    "selectLocation": "Välj plats",
+    "propertyType": "Fastighetstyp",
+    "selectType": "Välj typ",
+    "bedrooms": "Sovrum",
+    "bathrooms": "Badrum",
+    "priceRange": "Prisintervall",
+    "specialFeatures": "Speciella Funktioner",
+    "searchProperties": "Sök Fastigheter",
+    "saveSearch": "Spara Sökning",
+    "locations": {
+      "allLocations": "Alla Platser",
+      "marbella": "Marbella",
+      "estepona": "Estepona",
+      "mijas": "Mijas",
+      "fuengirola": "Fuengirola",
+      "benalmadena": "Benalmádena",
+      "nerja": "Nerja",
+      "torrox": "Torrox"
+    },
+    "propertyTypes": {
+      "allTypes": "Alla Typer",
+      "apartment": "Lägenhet",
+      "villa": "Villa",
+      "penthouse": "Penthouse",
+      "townhouse": "Radhus",
+      "plot": "Tomt",
+      "commercial": "Kommersiell"
+    },
+    "rooms": {
+      "any": "Alla",
+      "onePlus": "1+",
+      "twoPlus": "2+",
+      "threePlus": "3+",
+      "fourPlus": "4+",
+      "fivePlus": "5+"
+    },
+    "features": {
+      "pool": "Pool",
+      "seaview": "Havsutsikt",
+      "garden": "Privat Trädgård",
+      "garage": "Garage",
+      "terrace": "Terrass",
+      "aircon": "Luftkonditionering"
+    },
+    "stats": {
+      "propertiesAvailable": "Tillgängliga Fastigheter",
+      "locationsCovered": "Täckta Platser",
+      "clientSatisfaction": "Kundnöjdhet",
+      "expertSupport": "Expertstöd"
+    }
+  },
+  "services": {
+    "badge": "VILKA TJÄNSTER ERBJUDER VI?",
+    "title": "Varför Välja",
+    "titleHighlight": "DelSolPrimeHomes Tjänster?",
+    "subtitle": "Upplev omfattande fastighetslösningar designade för att göra din Costa del Sol fastighetsresa smidig, säker och framgångsrik från start till mål.",
+    "description": "Vårt expertteam tillhandahåller end-to-end stöd för fastighetsförvärv, juridiska processer och livsstilsintegration i Spaniens mest prestigefyllda kustregion.",
+    "propertySearch": {
+      "question": "Hur Hjälper Vi Dig Hitta den Perfekta Fastigheten?",
+      "answer": "Vår expert fastighetsmatchningstjänst kombinerar lokal marknadskunskap med personlig konsultation för att identifiera fastigheter som uppfyller dina exakta krav och investeringsmål.",
+      "features": [
+        "Personlig fastighetsmatchning",
+        "Lokal marknadsexpertis",
+        "Investeringsanalys",
+        "Fastighetsportföljgranskning"
+      ]
+    },
+    "legal": {
+      "question": "Vilket Juridiskt och Finansiellt Stöd Tillhandahåller Vi?",
+      "answer": "Vi erbjuder omfattande juridisk vägledning, finansieringshjälp och transparent transaktionshantering för att säkerställa att ditt Costa del Sol fastighetsköp är säkert och enkelt.",
+      "features": [
+        "Juridisk dokumentationshjälp",
+        "Hypoteks- och finansieringsstöd",
+        "Skatteoptimeringsvägledning",
+        "Transaktionshantering"
+      ]
+    },
+    "lifestyle": {
+      "question": "Hur Stödjer Vi Din Livsstilsintegration?",
+      "answer": "Våra omfattande livsstilsintegrationstjänster inkluderar gemenskapsintroduktion, lokal tjänstanslutning och kontinuerligt stöd för att göra din Costa del Sol övergång smidig.",
+      "features": [
+        "Gemenskapsintegrationsstöd",
+        "Lokalt tjänstnätverk",
+        "Kontinuerlig livsstilshjälp",
+        "Kulturell anpassningsvägledning"
+      ]
+    },
+    "learnMore": "Lär dig mer om denna tjänst",
+    "faqTitle": "Vanliga Frågor Om Våra Tjänster",
+    "faq": {
+      "processDuration": {
+        "question": "Hur lång tid tar fastighetsköpsprocessen på Costa del Sol?",
+        "answer": "Vanligtvis 60-90 dagar från erbjudandeacceptans till slutförande, med vår expertvägledning som säkerställer att alla juridiska och finansiella krav uppfylls effektivt."
+      },
+      "costs": {
+        "question": "Vilka kostnader är involverade i att köpa fastighet i Spanien?",
+        "answer": "Totala kostnader varierar vanligtvis från 10-15% av fastighetsvärdet, inklusive skatter, juridiska avgifter och registreringskostnader. Vi tillhandahåller detaljerade kostnadsuppdelningar i förväg."
+      }
+    },
+    "scheduleConsultation": "Boka Expertkonsultation",
+    "viewAllServices": "Se Alla Tjänster"
+  },
+  "footer": {
+    "companyDescription": "Din pålitliga partner för lyxfastigheter på Costa del Sol. Specialiserad på premium fastigheter i Marbella, Puerto Banús och de mest eftertraktade platserna.",
+    "quickLinks": "Snabblänkar",
+    "services": "Tjänster",
+    "featuredLocations": "Utvalda Platser",
+    "followUs": "Följ oss:",
+    "newsletter": "Håll dig uppdaterad med vårt nyhetsbrev",
+    "subscribe": "Prenumerera",
+    "copyright": "DelSolPrimeHomes. Alla rättigheter förbehållna.",
+    "privacyPolicy": "Integritetspolicy",
+    "termsOfService": "Användarvillkor",
+    "cookiePolicy": "Cookie-policy",
+    "servicesLinks": {
+      "propertySearch": "Fastighetssökning",
+      "legalServices": "Juridiska Tjänster",
+      "investmentAdvice": "Investeringsrådgivning",
+      "propertyManagement": "Fastighetsförvaltning"
+    },
+    "featuredLocationsLinks": {
+      "marbella": "Marbella",
+      "puertoBAnus": "Puerto Banús",
+      "estepona": "Estepona",
+      "benahavis": "Benahavís"
     }
   },
   "languages": {
@@ -43,6 +177,22 @@
     "search": "Sök",
     "notifications": "Notifieringar",
     "signOut": "Logga ut",
-    "signIn": "Logga in"
+    "signIn": "Logga in",
+    "loading": "Laddar...",
+    "error": "Fel",
+    "success": "Framgång",
+    "cancel": "Avbryt",
+    "confirm": "Bekräfta",
+    "close": "Stäng",
+    "back": "Tillbaka",
+    "next": "Nästa",
+    "previous": "Föregående",
+    "save": "Spara",
+    "edit": "Redigera",
+    "delete": "Radera",
+    "view": "Visa",
+    "download": "Ladda ner",
+    "upload": "Ladda upp",
+    "share": "Dela"
   }
 }

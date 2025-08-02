@@ -10,19 +10,153 @@
     "contactUs": "Skontaktuj się z nami"
   },
   "hero": {
-    "badge": "PREMIUM NIERUCHOMOŚCI COSTA DEL SOL",
-    "title": "Luksusowe życie",
-    "titleHighlight": "Na nowo zdefiniowane",
-    "subtitle": "Odkryj wyjątkowe nieruchomości, gdzie śródziemnomorska elegancja spotyka się z nowoczesnym wyrafinowaniem",
-    "locations": "MARBELLA • ESTEPONA • PUERTO BANÚS",
-    "scheduleViewing": "Zaplanuj prywatne oglądanie",
-    "virtualTour": "Zobacz wirtualną wycieczkę",
+    "badge": "Eksperci Nieruchomości Costa del Sol",
+    "title": "Jakie Są Najlepsze Miejsca do Kupna",
+    "titleHighlight": "Nieruchomości na Costa del Sol w 2025?",
+    "subtitle": "Odkryj luksusowe domy z DelSolPrimeHomes - Twoimi zaufanymi specjalistami Costa del Sol.",
+    "locations": "Marbella • Estepona • Mijas • Fuengirola • Benalmádena",
+    "scheduleViewing": "Zaplanuj Oglądanie Nieruchomości",
+    "virtualTour": "Weź Wirtualną Wycieczkę po Nieruchomości",
     "seoDashboard": "Panel SEO",
-    "explore": "Odkrywaj",
+    "explore": "Przeglądaj Nieruchomości",
+    "scrollToExplore": "Przeglądaj Nieruchomości",
     "stats": {
-      "averageValue": "Średnia wartość",
-      "yearsExcellence": "Lata doskonałości",
-      "clientSatisfaction": "Zadowolenie klientów"
+      "averageProperty": "Średnia Wartość Nieruchomości",
+      "yearsExcellence": "Lata Doskonałości",
+      "clientSatisfaction": "Wskaźnik Zadowolenia Klientów"
+    }
+  },
+  "propertySearch": {
+    "badge": "WYSZUKIWANIE NIERUCHOMOŚCI",
+    "title": "Znajdź Swój Idealny",
+    "titleHighlight": "Dom na Costa del Sol",
+    "subtitle": "Użyj naszego zaawansowanego wyszukiwania, aby odkryć nieruchomości które odpowiadają Twoim dokładnym wymaganiom.",
+    "location": "Lokalizacja",
+    "selectLocation": "Wybierz lokalizację",
+    "propertyType": "Typ Nieruchomości",
+    "selectType": "Wybierz typ",
+    "bedrooms": "Sypialnie",
+    "bathrooms": "Łazienki",
+    "priceRange": "Zakres Cen",
+    "specialFeatures": "Specjalne Funkcje",
+    "searchProperties": "Szukaj Nieruchomości",
+    "saveSearch": "Zapisz Wyszukiwanie",
+    "locations": {
+      "allLocations": "Wszystkie Lokalizacje",
+      "marbella": "Marbella",
+      "estepona": "Estepona",
+      "mijas": "Mijas",
+      "fuengirola": "Fuengirola",
+      "benalmadena": "Benalmádena",
+      "nerja": "Nerja",
+      "torrox": "Torrox"
+    },
+    "propertyTypes": {
+      "allTypes": "Wszystkie Typy",
+      "apartment": "Mieszkanie",
+      "villa": "Willa",
+      "penthouse": "Penthouse",
+      "townhouse": "Szeregowiec",
+      "plot": "Działka",
+      "commercial": "Komercyjne"
+    },
+    "rooms": {
+      "any": "Dowolne",
+      "onePlus": "1+",
+      "twoPlus": "2+",
+      "threePlus": "3+",
+      "fourPlus": "4+",
+      "fivePlus": "5+"
+    },
+    "features": {
+      "pool": "Basen",
+      "seaview": "Widok na Morze",
+      "garden": "Prywatny Ogród",
+      "garage": "Garaż",
+      "terrace": "Taras",
+      "aircon": "Klimatyzacja"
+    },
+    "stats": {
+      "propertiesAvailable": "Dostępne Nieruchomości",
+      "locationsCovered": "Objęte Lokalizacje",
+      "clientSatisfaction": "Zadowolenie Klientów",
+      "expertSupport": "Wsparcie Ekspertów"
+    }
+  },
+  "services": {
+    "badge": "JAKIE USŁUGI OFERUJEMY?",
+    "title": "Dlaczego Wybrać",
+    "titleHighlight": "Usługi DelSolPrimeHomes?",
+    "subtitle": "Doświadcz kompleksowych rozwiązań nieruchomościowych zaprojektowanych, aby uczynić Twoją podróż nieruchomościową na Costa del Sol płynną, bezpieczną i udaną od początku do końca.",
+    "description": "Nasz zespół ekspertów zapewnia kompleksowe wsparcie w nabywaniu nieruchomości, procesach prawnych i integracji stylu życia w najbardziej prestiżowym regionie wybrzeża Hiszpanii.",
+    "propertySearch": {
+      "question": "Jak Pomagamy Ci Znaleźć Idealną Nieruchomość?",
+      "answer": "Nasza ekspercka usługa dopasowywania nieruchomości łączy lokalną wiedzę rynkową z personalizowaną konsultacją, aby zidentyfikować nieruchomości które spełniają Twoje dokładne wymagania i cele inwestycyjne.",
+      "features": [
+        "Spersonalizowane dopasowywanie nieruchomości",
+        "Lokalna ekspertyza rynkowa",
+        "Analiza inwestycyjna",
+        "Przegląd portfela nieruchomości"
+      ]
+    },
+    "legal": {
+      "question": "Jakie Wsparcie Prawne i Finansowe Zapewniamy?",
+      "answer": "Oferujemy kompleksowe doradztwo prawne, pomoc w finansowaniu i przejrzyste zarządzanie transakcjami, aby zapewnić, że Twój zakup nieruchomości na Costa del Sol będzie bezpieczny i prosty.",
+      "features": [
+        "Pomoc w dokumentacji prawnej",
+        "Wsparcie hipoteczne i finansowe",
+        "Doradztwo optymalizacji podatkowej",
+        "Zarządzanie transakcjami"
+      ]
+    },
+    "lifestyle": {
+      "question": "Jak Wspieramy Twoją Integrację Stylu Życia?",
+      "answer": "Nasze kompleksowe usługi integracji stylu życia obejmują wprowadzenie do społeczności, połączenie z lokalnymi usługami i ciągłe wsparcie, aby uczynić Twoje przejście na Costa del Sol płynnym.",
+      "features": [
+        "Wsparcie integracji społecznej",
+        "Sieć lokalnych usług",
+        "Ciągła pomoc stylu życia",
+        "Doradztwo adaptacji kulturowej"
+      ]
+    },
+    "learnMore": "Dowiedz się więcej o tej usłudze",
+    "faqTitle": "Często Zadawane Pytania O Nasze Usługi",
+    "faq": {
+      "processDuration": {
+        "question": "Ile czasu zajmuje proces kupna nieruchomości na Costa del Sol?",
+        "answer": "Zazwyczaj 60-90 dni od przyjęcia oferty do zakończenia, z naszym eksperckim przewodnictwem zapewniającym, że wszystkie wymagania prawne i finansowe są efektywnie spełnione."
+      },
+      "costs": {
+        "question": "Jakie są koszty związane z kupnem nieruchomości w Hiszpanii?",
+        "answer": "Całkowite koszty zazwyczaj wynoszą 10-15% wartości nieruchomości, włączając podatki, opłaty prawne i koszty rejestracji. Zapewniamy szczegółowe zestawienia kosztów z góry."
+      }
+    },
+    "scheduleConsultation": "Zaplanuj Konsultację Ekspercką",
+    "viewAllServices": "Zobacz Wszystkie Usługi"
+  },
+  "footer": {
+    "companyDescription": "Twój zaufany partner dla luksusowych nieruchomości na Costa del Sol. Specjalizujemy się w premium nieruchomościach w Marbelli, Puerto Banús i najbardziej poszukiwanych lokalizacjach.",
+    "quickLinks": "Szybkie Linki",
+    "services": "Usługi",
+    "featuredLocations": "Wyróżnione Lokalizacje",
+    "followUs": "Obserwuj nas:",
+    "newsletter": "Bądź na bieżąco z naszym newsletterem",
+    "subscribe": "Subskrybuj",
+    "copyright": "DelSolPrimeHomes. Wszelkie prawa zastrzeżone.",
+    "privacyPolicy": "Polityka Prywatności",
+    "termsOfService": "Warunki Usługi",
+    "cookiePolicy": "Polityka Cookies",
+    "servicesLinks": {
+      "propertySearch": "Wyszukiwanie Nieruchomości",
+      "legalServices": "Usługi Prawne",
+      "investmentAdvice": "Doradztwo Inwestycyjne",
+      "propertyManagement": "Zarządzanie Nieruchomościami"
+    },
+    "featuredLocationsLinks": {
+      "marbella": "Marbella",
+      "puertoBAnus": "Puerto Banús",
+      "estepona": "Estepona",
+      "benahavis": "Benahavís"
     }
   },
   "languages": {
@@ -43,6 +177,22 @@
     "search": "Szukaj",
     "notifications": "Powiadomienia",
     "signOut": "Wyloguj",
-    "signIn": "Zaloguj"
+    "signIn": "Zaloguj",
+    "loading": "Ładowanie...",
+    "error": "Błąd",
+    "success": "Sukces",
+    "cancel": "Anuluj",
+    "confirm": "Potwierdź",
+    "close": "Zamknij",
+    "back": "Wstecz",
+    "next": "Następny",
+    "previous": "Poprzedni",
+    "save": "Zapisz",
+    "edit": "Edytuj",
+    "delete": "Usuń",
+    "view": "Zobacz",
+    "download": "Pobierz",
+    "upload": "Prześlij",
+    "share": "Udostępnij"
   }
 }
