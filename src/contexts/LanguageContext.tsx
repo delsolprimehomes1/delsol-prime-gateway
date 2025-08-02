@@ -1,7 +1,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-export type Language = 'en' | 'nl' | 'fr';
+export type Language = 'en' | 'nl' | 'fr' | 'de' | 'pl' | 'se' | 'dk';
 
 export interface LanguageContextType {
   currentLanguage: Language;
@@ -30,7 +30,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   useEffect(() => {
     // Load saved language from localStorage
     const savedLanguage = localStorage.getItem('preferred-language') as Language;
-    if (savedLanguage && ['en', 'nl', 'fr'].includes(savedLanguage)) {
+    if (savedLanguage && ['en', 'nl', 'fr', 'de', 'pl', 'se', 'dk'].includes(savedLanguage)) {
       setCurrentLanguage(savedLanguage);
     }
   }, []);
