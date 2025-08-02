@@ -12,7 +12,7 @@ export const enhancedOrganizationSchema = {
     "width": 200,
     "height": 80
   },
-  "description": "Premier luxury real estate agency specializing in Costa del Sol properties. Expert guidance for international property investment in Spain's most prestigious region.",
+  "description": "Premier luxury real estate agency specializing in Costa Del Sol properties. Expert guidance for international property investment in Spain's most prestigious region.",
   "foundingDate": "2010",
   "founder": {
     "@type": "Person",

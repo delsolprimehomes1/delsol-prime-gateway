@@ -36,17 +36,17 @@
     {
       "id": "what-is-delsolprimehomes",
       "question": "What is DelSolPrimeHomes?",
-      "answer": "DelSolPrimeHomes is a premier real estate agency specializing in luxury properties along the Costa del Sol, Spain. We offer a curated selection of villas, apartments, and penthouses, along with comprehensive services for buying, selling, and property management.",
+      "answer": "DelSolPrimeHomes is a premier real estate agency specializing in luxury properties along the Costa Del Sol, Spain. We offer a curated selection of villas, apartments, and penthouses, along with comprehensive services for buying, selling, and property management.",
       "category": "services",
-      "keywords": ["DelSolPrimeHomes", "real estate agency", "luxury properties", "Costa del Sol"],
+      "keywords": ["DelSolPrimeHomes", "real estate agency", "luxury properties", "Costa Del Sol"],
       "relatedTopics": ["areas-coverage", "property-types-specialization", "after-sales-services"]
     },
     {
       "id": "areas-coverage",
-      "question": "What areas do you cover in Costa del Sol?",
-      "answer": "We cover the entire Costa del Sol region, including popular locations like Marbella, Estepona, Benahavís, Mijas, Sotogrande, and other exclusive coastal and inland areas.",
+      "question": "What areas do you cover in Costa Del Sol?",
+      "answer": "We cover the entire Costa Del Sol region, including popular locations like Marbella, Estepona, Benahavís, Mijas, Sotogrande, and other exclusive coastal and inland areas.",
       "category": "locations",
-      "keywords": ["Costa del Sol", "Marbella", "Estepona", "Benahavís", "Mijas", "Sotogrande"],
+      "keywords": ["Costa Del Sol", "Marbella", "Estepona", "Benahavís", "Mijas", "Sotogrande"],
       "relatedTopics": ["best-areas-marbella", "upcoming-developments-estepona", "transport-connections"]
     },
     {
@@ -83,7 +83,7 @@
     },
     {
       "id": "property-purchase-process",
-      "question": "What is the complete property purchase process in Costa del Sol?",
+      "question": "What is the complete property purchase process in Costa Del Sol?",
       "answer": "Our comprehensive purchase process includes: 1) Property selection with virtual tours and market analysis, 2) Legal due diligence including property history and planning permissions, 3) Preliminary contract (10-20% deposit), 4) Mortgage arrangement (if required), 5) Final deed signing at notary (escritura), 6) Property registration and key handover. We guide you through each step with dedicated support in English and Spanish.",
       "category": "legal",
       "keywords": ["property purchase", "buying process", "costa del sol", "legal process", "notary"],

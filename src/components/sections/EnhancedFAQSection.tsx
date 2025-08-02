@@ -41,7 +41,7 @@ export default function EnhancedFAQSection() {
           </h2>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Get instant answers to your Costa del Sol property questions. Optimized for voice search, 
+            Get instant answers to your Costa Del Sol property questions. Optimized for voice search, 
             AI assistants, and traditional search engines.
           </p>
         </AnimatedElement>
@@ -154,7 +154,7 @@ export default function EnhancedFAQSection() {
             </div>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
               Our content is optimized for voice assistants, AI search engines, and chatbots. 
-              Try asking questions naturally about Costa del Sol properties.
+              Try asking questions naturally about Costa Del Sol properties.
             </p>
             <MagneticButton size="lg">
               <MessageCircle className="w-5 h-5 mr-2" />

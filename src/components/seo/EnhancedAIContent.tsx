@@ -40,7 +40,7 @@ export function EnhancedAIContent({
   return (
     <AIOptimizedContent
       entityType={getEntityType() as any}
-      keywords={[primaryTopic, 'Costa del Sol', 'real estate', 'property']}
+      keywords={[primaryTopic, 'Costa Del Sol', 'real estate', 'property']}
       context={getOptimizationContext()}
       className={className}
     >
@@ -127,25 +127,25 @@ export function PropertyAIContent({
     {
       name: propertyName,
       type: 'Product',
-      description: `${propertyType} in ${location}, Costa del Sol`,
+      description: `${propertyType} in ${location}, Costa Del Sol`,
       url: window.location.href
     },
     {
       name: location,
       type: 'Place',
-      description: `Premium location in Costa del Sol, Spain`
+      description: `Premium location in Costa Del Sol, Spain`
     },
     {
       name: 'DelSolPrimeHomes',
       type: 'Organization',
-      description: 'Premier luxury real estate agency in Costa del Sol'
+      description: 'Premier luxury real estate agency in Costa Del Sol'
     }
   ];
 
   const voiceQueries = [
     `How much does a ${propertyType} cost in ${location}?`,
     `What are the best ${propertyType} properties in ${location}?`,
-    `Properties for sale in ${location} Costa del Sol`,
+    `Properties for sale in ${location} Costa Del Sol`,
     `${propertyType} features in ${location}`
   ];
 
@@ -164,7 +164,7 @@ export function PropertyAIContent({
           'Location': location,
           'Property Type': propertyType,
           'Price Range': priceRange,
-          'Region': 'Costa del Sol, Spain',
+          'Region': 'Costa Del Sol, Spain',
           'Agency': 'DelSolPrimeHomes'
         }}
       >
@@ -194,11 +194,11 @@ export function LocationAIContent({
     {
       name: locationName,
       type: 'Place',
-      description: `Premium location in Costa del Sol, Spain with ${propertyCount}+ properties available`,
+      description: `Premium location in Costa Del Sol, Spain with ${propertyCount}+ properties available`,
       url: window.location.href
     },
     {
-      name: 'Costa del Sol',
+      name: 'Costa Del Sol',
       type: 'Place',
       description: 'Premier Mediterranean coastal region in southern Spain'
     }
@@ -206,7 +206,7 @@ export function LocationAIContent({
 
   const voiceQueries = [
     `What is ${locationName} like for property investment?`,
-    `Properties for sale in ${locationName} Costa del Sol`,
+    `Properties for sale in ${locationName} Costa Del Sol`,
     `Cost of living in ${locationName} Spain`,
     `Best areas to buy property in ${locationName}`,
     `${locationName} real estate market prices`
@@ -220,11 +220,11 @@ export function LocationAIContent({
       voiceQueries={voiceQueries}
     >
       <StructuredContent
-        title={`${locationName} - Premium Costa del Sol Location`}
-        summary={`Discover ${locationName}, one of Costa del Sol's most desirable locations with ${propertyCount}+ premium properties available. Average price: ${averagePrice}.`}
+        title={`${locationName} - Premium Costa Del Sol Location`}
+        summary={`Discover ${locationName}, one of Costa Del Sol's most desirable locations with ${propertyCount}+ premium properties available. Average price: ${averagePrice}.`}
         mainPoints={highlights}
         keyFacts={{
-          'Location': `${locationName}, Costa del Sol`,
+          'Location': `${locationName}, Costa Del Sol`,
           'Available Properties': `${propertyCount}+`,
           'Average Price': averagePrice,
           'Region': 'Andalusia, Spain',

@@ -6,7 +6,7 @@ export const organizationSchema = {
   "name": "DelSolPrimeHomes",
   "url": "https://delsolprimehomes.com",
   "logo": "https://delsolprimehomes.com/logo.png",
-  "description": "Premier luxury real estate agency specializing in Costa del Sol properties including Marbella, Estepona, and surrounding areas.",
+  "description": "Premier luxury real estate agency specializing in Costa Del Sol properties including Marbella, Estepona, and surrounding areas.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Marbella",
@@ -87,8 +87,8 @@ export const websiteSchema = {
   },
   "mainEntity": {
     "@type": "ItemList",
-    "name": "Costa del Sol Properties",
-    "description": "Premium real estate listings in Costa del Sol region"
+    "name": "Costa Del Sol Properties",
+    "description": "Premium real estate listings in Costa Del Sol region"
   }
 };
 

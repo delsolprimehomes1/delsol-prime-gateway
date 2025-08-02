@@ -86,7 +86,7 @@ const testimonials: Testimonial[] = [
     propertyType: "Investment Portfolio",
     purchaseLocation: "Multiple Locations",
     rating: 5,
-    review: "Hans helped us build a diversified property investment portfolio across Costa del Sol. His market insights and strategic approach resulted in excellent returns. The professional relationship has grown into a trusted partnership for all our Spanish real estate needs.",
+    review: "Hans helped us build a diversified property investment portfolio across Costa Del Sol. His market insights and strategic approach resulted in excellent returns. The professional relationship has grown into a trusted partnership for all our Spanish real estate needs.",
     purchaseDate: "Ongoing since 2022",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
     propertyValue: "€4.2M Portfolio",
@@ -167,7 +167,7 @@ export default function TestimonialsSection() {
           Client Success Stories
         </h2>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-          Discover why international clients trust DelSolPrimeHomes for their Costa del Sol property investments
+          Discover why international clients trust DelSolPrimeHomes for their Costa Del Sol property investments
         </p>
         
         {/* Rating Summary */}
@@ -347,7 +347,7 @@ export default function TestimonialsSection() {
           </h3>
           <p className="text-white/90 mb-6 max-w-2xl mx-auto">
             Experience the same exceptional service that has made our clients' property dreams come true. 
-            Start your Costa del Sol journey today.
+            Start your Costa Del Sol journey today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 

@@ -72,13 +72,13 @@ const LocationShowcase = () => {
           </div>
           
           <h2 className="text-4xl lg:text-5xl font-bold font-display mb-6">
-            Which Costa del Sol Location
+            Which Costa Del Sol Location
             <span className="text-primary"> Should You Choose?</span>
           </h2>
           
           <p className="text-lg text-muted-foreground">
             Explore our premium properties across the most sought-after locations 
-            along the stunning Costa del Sol coastline.
+            along the stunning Costa Del Sol coastline.
           </p>
         </AnimatedElement>
 

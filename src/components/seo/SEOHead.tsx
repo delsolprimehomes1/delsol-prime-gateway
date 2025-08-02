@@ -19,8 +19,8 @@ interface SEOHeadProps {
 }
 
 export default function SEOHead({
-  title = "DelSolPrimeHomes - Luxury Costa del Sol Real Estate",
-  description = "Discover luxury properties on the Costa del Sol with DelSolPrimeHomes' expert guidance. From Marbella to Estepona, find your dream home in Spain.",
+  title = "DelSolPrimeHomes - Luxury Costa Del Sol Real Estate",
+  description = "Discover luxury properties on the Costa Del Sol with DelSolPrimeHomes' expert guidance. From Marbella to Estepona, find your dream home in Spain.",
   canonical,
   ogImage = "https://lovable.dev/opengraph-image-p98pqg.png",
   ogType = "website",

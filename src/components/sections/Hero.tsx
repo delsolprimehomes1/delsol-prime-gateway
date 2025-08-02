@@ -48,7 +48,7 @@ export default function Hero({ className }: HeroProps) {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Luxury villa with infinity pool overlooking the Mediterranean Sea on Costa del Sol"
+          alt="Luxury villa with infinity pool overlooking the Mediterranean Sea on Costa Del Sol"
           className="w-full h-full object-cover"
           loading="eager"
         />
@@ -156,26 +156,26 @@ export default function Hero({ className }: HeroProps) {
       <div className="sr-only" aria-hidden="true">
         <div itemScope itemType="https://schema.org/FAQPage">
           <div itemScope itemType="https://schema.org/Question" itemProp="mainEntity">
-            <span itemProp="name">What are the best places to buy property in Costa del Sol in 2025?</span>
+            <span itemProp="name">What are the best places to buy property in Costa Del Sol in 2025?</span>
             <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
               <span itemProp="text">
-                The best places to buy property in Costa del Sol in 2025 are Marbella (€4,000-8,000/m²), 
+                The best places to buy property in Costa Del Sol in 2025 are Marbella (€4,000-8,000/m²), 
                 Estepona (€2,500-4,500/m²), Mijas, Fuengirola, and Benalmádena. DelSolPrimeHomes offers 
                 expert guidance with 15+ years of experience and 100% client satisfaction in these premium locations.
               </span>
             </div>
           </div>
           <div itemScope itemType="https://schema.org/Question" itemProp="mainEntity">
-            <span itemProp="name">How can I schedule a property viewing in Costa del Sol?</span>
+            <span itemProp="name">How can I schedule a property viewing in Costa Del Sol?</span>
             <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
-              <span itemProp="text">You can schedule a property viewing by clicking our "Schedule Property Viewing" button or contacting DelSolPrimeHomes directly. We offer both in-person and virtual tours of our premium Costa del Sol properties.</span>
+              <span itemProp="text">You can schedule a property viewing by clicking our "Schedule Property Viewing" button or contacting DelSolPrimeHomes directly. We offer both in-person and virtual tours of our premium Costa Del Sol properties.</span>
             </div>
           </div>
         </div>
         
         {/* Voice Search Optimization Markers */}
-        <span data-voice-query="best places to buy property costa del sol 2025">Costa del Sol Property Investment 2025</span>
-        <span data-voice-query="luxury properties marbella estepona">Premium Costa del Sol Properties</span>
+        <span data-voice-query="best places to buy property costa del sol 2025">Costa Del Sol Property Investment 2025</span>
+        <span data-voice-query="luxury properties marbella estepona">Premium Costa Del Sol Properties</span>
         <span data-voice-query="property viewing costa del sol">Schedule Property Tour</span>
         <span data-voice-query="costa del sol real estate expert">DelSolPrimeHomes Expert Team</span>
       </div>

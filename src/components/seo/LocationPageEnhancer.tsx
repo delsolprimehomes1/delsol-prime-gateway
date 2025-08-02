@@ -28,7 +28,7 @@ export function LocationPageEnhancer({
     propertyCount,
     averagePrice,
     highlights,
-    region: 'Costa del Sol',
+    region: 'Costa Del Sol',
     country: 'Spain'
   };
 
@@ -45,7 +45,7 @@ export function LocationPageEnhancer({
 
   const voiceSearchQueries = [
     `Properties in ${locationName}`,
-    `Real estate ${locationName} Costa del Sol`,
+    `Real estate ${locationName} Costa Del Sol`,
     `Property prices ${locationName} Spain`,
     `Living in ${locationName}`,
     `Investment opportunities ${locationName}`
@@ -76,7 +76,7 @@ export function LocationPageEnhancer({
               <h3>{query}?</h3>
               <p>
                 {locationName} offers {propertyCount}+ premium properties with an average price of {averagePrice}. 
-                Key features include {highlights.slice(0, 3).join(', ')}. Located in the prestigious Costa del Sol region 
+                Key features include {highlights.slice(0, 3).join(', ')}. Located in the prestigious Costa Del Sol region 
                 of Spain, {locationName} provides excellent investment opportunities and lifestyle benefits.
               </p>
             </div>
@@ -87,7 +87,7 @@ export function LocationPageEnhancer({
               <span itemProp="name">What makes {locationName} a good investment location?</span>
               <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
                 <span itemProp="text">
-                  {locationName} in Costa del Sol offers {highlights.join(', ')}, making it an excellent 
+                  {locationName} in Costa Del Sol offers {highlights.join(', ')}, making it an excellent 
                   investment choice with {propertyCount}+ available properties and strong rental potential.
                 </span>
               </div>

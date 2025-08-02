@@ -52,7 +52,7 @@ export const META_DESCRIPTIONS = {
 
 // Keywords for different page types
 export const PAGE_KEYWORDS = {
-  primary: ["Costa del Sol properties", "Marbella real estate", "luxury homes Spain", "property investment Spain"],
+  primary: ["Costa Del Sol properties", "Marbella real estate", "luxury homes Spain", "property investment Spain"],
   secondary: ["Spanish property investment", "Estepona properties", "Mijas real estate", "international property buyers"],
-  longTail: ["buy property Marbella as foreigner", "luxury villa Costa del Sol", "Spanish property legal process", "Costa del Sol property prices"]
+  longTail: ["buy property Marbella as foreigner", "luxury villa Costa Del Sol", "Spanish property legal process", "Costa Del Sol property prices"]
 };

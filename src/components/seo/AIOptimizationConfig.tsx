@@ -116,7 +116,7 @@ export function AIOptimizationConfig({
         
         <div data-ai-content="expertise-signals">
           <span data-expertise="real-estate" data-location="costa-del-sol" data-authority="high">
-            DelSolPrimeHomes - Premier real estate expertise in Costa del Sol, Spain
+            DelSolPrimeHomes - Premier real estate expertise in Costa Del Sol, Spain
           </span>
         </div>
       </div>

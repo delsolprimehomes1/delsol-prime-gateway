@@ -149,7 +149,7 @@ const SEODashboard = () => {
         body: { 
           dataType: 'keywords', 
           domain: 'delsolprimehomes.com',
-          keywords: ['costa del sol properties', 'marbella apartments']
+          keywords: ['Costa Del Sol properties', 'marbella apartments']
         },
         headers: { authorization: `Bearer ${session.access_token}` }
       });

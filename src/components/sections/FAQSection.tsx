@@ -43,11 +43,11 @@ export default function FAQSection() {
           <MessageCircle className="w-8 h-8 text-primary" />
         </div>
         <h2 className="text-4xl font-bold text-foreground mb-4" itemProp="name">
-          What Do You Need to Know About Costa del Sol Property Investment?
+          What Do You Need to Know About Costa Del Sol Property Investment?
         </h2>
         <div className="max-w-2xl mx-auto mb-8" itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
           <p className="text-xl text-muted-foreground" itemProp="text">
-            Get instant answers from our comprehensive database of 100+ expert responses about property investment, legal processes, and living in Costa del Sol.
+            Get instant answers from our comprehensive database of 100+ expert responses about property investment, legal processes, and living in Costa Del Sol.
           </p>
         </div>
         
@@ -56,7 +56,7 @@ export default function FAQSection() {
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
           <Input
             type="text"
-            placeholder="Ask any question about Costa del Sol properties..."
+            placeholder="Ask any question about Costa Del Sol properties..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="pl-10 h-12 bg-background/80 backdrop-blur-sm border-border/50 focus:border-primary transition-all duration-300"
@@ -137,10 +137,10 @@ export default function FAQSection() {
       <div className="text-center">
         <div className="bg-gradient-premium rounded-2xl p-8 text-white">
           <h3 className="text-2xl font-bold mb-4">
-            Still Have Questions About Costa del Sol Properties?
+            Still Have Questions About Costa Del Sol Properties?
           </h3>
           <p className="text-white/90 mb-6 max-w-2xl mx-auto">
-            Explore our comprehensive FAQ database with 100+ expert answers covering everything from property prices to legal requirements, or get personalized guidance from our Costa del Sol specialists.
+            Explore our comprehensive FAQ database with 100+ expert answers covering everything from property prices to legal requirements, or get personalized guidance from our Costa Del Sol specialists.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -161,7 +161,7 @@ export default function FAQSection() {
               className="bg-white text-primary hover:bg-white/90"
               data-voice-action="contact expert"
             >
-              Ask Our Costa del Sol Expert
+              Ask Our Costa Del Sol Expert
             </Button>
           </div>
         </div>
@@ -170,9 +170,9 @@ export default function FAQSection() {
       {/* Hidden AEO Content */}
       <div className="sr-only" aria-hidden="true">
         <div itemScope itemType="https://schema.org/Question" itemProp="mainEntity">
-          <span itemProp="name">How much does property cost in Costa del Sol?</span>
+          <span itemProp="name">How much does property cost in Costa Del Sol?</span>
           <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
-            <span itemProp="text">Costa del Sol property prices vary by location, with Marbella averaging €4,000-8,000/m², Estepona €2,500-4,500/m², and other areas offering excellent value. DelSolPrimeHomes provides detailed market analysis and pricing guidance.</span>
+            <span itemProp="text">Costa Del Sol property prices vary by location, with Marbella averaging €4,000-8,000/m², Estepona €2,500-4,500/m², and other areas offering excellent value. DelSolPrimeHomes provides detailed market analysis and pricing guidance.</span>
           </div>
         </div>
         
