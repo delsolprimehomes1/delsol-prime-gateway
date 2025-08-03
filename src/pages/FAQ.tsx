@@ -855,7 +855,135 @@ const FAQ = () => {
     ]
   };
 
-  const structuredData = [organizationSchema, faqSchema, buyingPropertyFAQSchema, sellingPropertyFAQSchema, viewingTripsFAQSchema, financeTaxesFAQSchema, legalProcessFAQSchema, residencyVisasFAQSchema];
+  // Local Culture & Lifestyle FAQ Schema for AEO/SEO
+  const localCultureLifestyleFAQSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What should I know about local culture & lifestyle in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about local culture & lifestyle in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about local culture & lifestyle in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about local culture & lifestyle in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about local culture & lifestyle in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about local culture & lifestyle in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about local culture & lifestyle in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about local culture & lifestyle in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about local culture & lifestyle in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about local culture & lifestyle in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about local culture & lifestyle in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about local culture & lifestyle in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about local culture & lifestyle in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about local culture & lifestyle in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about local culture & lifestyle in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about local culture & lifestyle in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about local culture & lifestyle in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about local culture & lifestyle in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about local culture & lifestyle in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about local culture & lifestyle in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about local culture & lifestyle in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about local culture & lifestyle in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about local culture & lifestyle in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about local culture & lifestyle in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about local culture & lifestyle in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about local culture & lifestyle in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about local culture & lifestyle in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about local culture & lifestyle in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about local culture & lifestyle in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about local culture & lifestyle in the Costa del Sol area."
+        }
+      }
+    ]
+  };
+
+  const structuredData = [organizationSchema, faqSchema, buyingPropertyFAQSchema, sellingPropertyFAQSchema, viewingTripsFAQSchema, financeTaxesFAQSchema, legalProcessFAQSchema, residencyVisasFAQSchema, localCultureLifestyleFAQSchema];
 
   // Loading and error states
   if (loading) {
