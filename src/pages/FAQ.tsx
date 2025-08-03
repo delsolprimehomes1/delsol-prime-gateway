@@ -471,7 +471,135 @@ const FAQ = () => {
     ]
   };
 
-  const structuredData = [organizationSchema, faqSchema, buyingPropertyFAQSchema, sellingPropertyFAQSchema, viewingTripsFAQSchema];
+  // Finance & Taxes FAQ Schema for AEO/SEO
+  const financeTaxesFAQSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What should I know about finance & taxes in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about finance & taxes in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about finance & taxes in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about finance & taxes in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about finance & taxes in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about finance & taxes in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about finance & taxes in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about finance & taxes in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about finance & taxes in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about finance & taxes in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about finance & taxes in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about finance & taxes in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about finance & taxes in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about finance & taxes in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about finance & taxes in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about finance & taxes in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about finance & taxes in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about finance & taxes in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about finance & taxes in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about finance & taxes in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about finance & taxes in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about finance & taxes in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about finance & taxes in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about finance & taxes in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about finance & taxes in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about finance & taxes in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about finance & taxes in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about finance & taxes in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about finance & taxes in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about finance & taxes in the Costa del Sol area."
+        }
+      }
+    ]
+  };
+
+  const structuredData = [organizationSchema, faqSchema, buyingPropertyFAQSchema, sellingPropertyFAQSchema, viewingTripsFAQSchema, financeTaxesFAQSchema];
 
   // Loading and error states
   if (loading) {
