@@ -6,6 +6,7 @@
     "locations": "Locations",
     "about": "About",
     "blog": "Blog",
+    "faq": "FAQ",
     "seo": "SEO",
     "contact": "Contact",
     "contactUs": "Contact Us"
@@ -226,17 +227,25 @@
     "beachfront": "Beachfront"
   },
   "faq": {
-    "title": "Frequently Asked Questions",
-    "subtitle": "Get answers to common questions about buying property in Costa Del Sol",
+    "title": "FAQ Questions",
+    "subtitle": "Your most common Costa Del Sol questions, answered.",
     "searchPlaceholder": "Search questions...",
-    "noResults": "No results found",
-    "noResultsDescription": "Try adjusting your search terms or browse by category",
+    "totalQuestions": "Total Questions",
+    "categories": "Categories",
+    "locations": "Locations",
+    "filterByCategory": "By Category",
+    "filterByLocation": "By Location",
+    "filterByPropertyType": "By Property Type",
+    "searchResults": "Search Results",
+    "detailedAnswer": "Answer",
+    "noResults": "No Results Found",
+    "noResultsDescription": "Try adjusting your search terms or filters to find what you're looking for.",
     "clearSearch": "Clear Search",
     "showAllFAQs": "Show All FAQs",
     "stillHaveQuestions": "Still Have Questions?",
-    "stillHaveQuestionsDescription": "Our expert team is here to help with personalized guidance for your Costa Del Sol property journey.",
-    "viewAllFAQs": "View All FAQs",
-    "contactExpert": "Contact an Expert",
+    "contactDescription": "Our Costa Del Sol property experts are here to help with personalized guidance and answers to your specific questions.",
+    "viewAllFAQs": "View All Expert Answers",
+    "contactExpert": "Ask Our Costa Del Sol Expert",
     "categories": {
       "buying_property": "Buying Property",
       "viewing_trip": "Viewing Trip",
@@ -255,12 +264,11 @@
     "subtitle": "Real experiences from satisfied property owners"
   },
   "common": {
+    "all": "All",
     "search": "Search",
-    "notifications": "Notifications",
-    "signOut": "Sign Out",
-    "signIn": "Sign In",
     "loading": "Loading...",
     "error": "Error",
+    "retry": "Retry",
     "success": "Success",
     "cancel": "Cancel",
     "confirm": "Confirm",
@@ -274,6 +282,8 @@
     "view": "View",
     "download": "Download",
     "upload": "Upload",
-    "share": "Share"
+    "share": "Share",
+    "clearFilters": "Clear All Filters",
+    "contactUs": "Contact Our Experts"
   }
 }

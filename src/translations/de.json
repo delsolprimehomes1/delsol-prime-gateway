@@ -202,7 +202,23 @@
     }
   },
   "faq": {
-    "title": "Häufig Gestellte Fragen",
+    "title": "FAQ Fragen",
+    "subtitle": "Ihre häufigsten Costa Del Sol Fragen, beantwortet.",
+    "searchPlaceholder": "Fragen suchen...",
+    "totalQuestions": "Gesamtfragen",
+    "categories": "Kategorien",
+    "locations": "Standorte",
+    "filterByCategory": "Nach Kategorie",
+    "filterByLocation": "Nach Standort",
+    "filterByPropertyType": "Nach Immobilientyp",
+    "searchResults": "Suchergebnisse",
+    "detailedAnswer": "Antwort",
+    "noResults": "Keine Ergebnisse Gefunden",
+    "noResultsDescription": "Versuchen Sie, Ihre Suchbegriffe oder Filter anzupassen, um zu finden, was Sie suchen.",
+    "stillHaveQuestions": "Haben Sie Noch Fragen?",
+    "contactDescription": "Unsere Costa Del Sol Immobilienexperten helfen Ihnen gerne mit persönlicher Beratung und Antworten auf Ihre spezifischen Fragen.",
+    "viewAllFAQs": "Alle Expertenantworten Anzeigen",
+    "contactExpert": "Fragen Sie Unseren Costa Del Sol Experten",
     "subtitle": "Erhalten Sie Antworten auf häufige Fragen zum Immobilienkauf an der Costa Del Sol",
     "searchPlaceholder": "Fragen suchen...",
     "noResults": "Keine Ergebnisse gefunden",
@@ -259,12 +275,11 @@
     "cookiePolicy": "Cookie-Richtlinie"
   },
   "common": {
+    "all": "Alle",
     "search": "Suchen",
-    "notifications": "Benachrichtigungen",
-    "signOut": "Abmelden",
-    "signIn": "Anmelden",
     "loading": "Laden...",
     "error": "Fehler",
+    "retry": "Wiederholen",
     "success": "Erfolg",
     "cancel": "Abbrechen",
     "confirm": "Bestätigen",
@@ -278,6 +293,8 @@
     "view": "Ansehen",
     "download": "Herunterladen",
     "upload": "Hochladen",
-    "share": "Teilen"
+    "share": "Teilen",
+    "clearFilters": "Alle Filter Löschen",
+    "contactUs": "Kontaktieren Sie Unsere Experten"
   }
 }

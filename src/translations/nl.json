@@ -218,7 +218,23 @@
     }
   },
   "faq": {
-    "title": "Veelgestelde Vragen",
+    "title": "FAQ Vragen",
+    "subtitle": "Uw meest voorkomende Costa Del Sol vragen, beantwoord.",
+    "searchPlaceholder": "Zoek vragen...",
+    "totalQuestions": "Totaal Vragen",
+    "categories": "Categorieën",
+    "locations": "Locaties",
+    "filterByCategory": "Op Categorie",
+    "filterByLocation": "Op Locatie",
+    "filterByPropertyType": "Op Eigendomstype",
+    "searchResults": "Zoekresultaten",
+    "detailedAnswer": "Antwoord",
+    "noResults": "Geen Resultaten Gevonden",
+    "noResultsDescription": "Probeer uw zoektermen of filters aan te passen om te vinden wat u zoekt.",
+    "stillHaveQuestions": "Heeft U Nog Vragen?",
+    "contactDescription": "Onze Costa Del Sol vastgoedexperts zijn er om te helpen met persoonlijke begeleiding en antwoorden op uw specifieke vragen.",
+    "viewAllFAQs": "Bekijk Alle Expertantwoorden",
+    "contactExpert": "Vraag Onze Costa Del Sol Expert",
     "subtitle": "Krijg antwoorden op veelgestelde vragen over het kopen van onroerend goed in Costa Del Sol",
     "searchPlaceholder": "Zoek vragen...",
     "noResults": "Geen resultaten gevonden",
@@ -275,12 +291,11 @@
     "cookiePolicy": "Cookiebeleid"
   },
   "common": {
+    "all": "Alle",
     "search": "Zoeken",
-    "notifications": "Meldingen",
-    "signOut": "Uitloggen",
-    "signIn": "Inloggen",
     "loading": "Laden...",
     "error": "Fout",
+    "retry": "Opnieuw proberen",
     "success": "Succes",
     "cancel": "Annuleren",
     "confirm": "Bevestigen",
@@ -294,6 +309,8 @@
     "view": "Bekijken",
     "download": "Downloaden",
     "upload": "Uploaden",
-    "share": "Delen"
+    "share": "Delen",
+    "clearFilters": "Alle Filters Wissen",
+    "contactUs": "Neem Contact Op Met Onze Experts"
   }
 }

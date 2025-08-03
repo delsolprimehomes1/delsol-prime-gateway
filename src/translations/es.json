@@ -211,17 +211,25 @@
     }
   },
   "faq": {
-    "title": "Preguntas Frecuentes",
-    "subtitle": "Obtenga respuestas a preguntas comunes sobre comprar propiedades en Costa Del Sol",
+    "title": "Preguntas FAQ",
+    "subtitle": "Tus preguntas más comunes sobre Costa Del Sol, respondidas.",
     "searchPlaceholder": "Buscar preguntas...",
-    "noResults": "No se encontraron resultados",
-    "noResultsDescription": "Intente ajustar sus términos de búsqueda o navegar por categoría",
+    "totalQuestions": "Total de Preguntas",
+    "categories": "Categorías",
+    "locations": "Ubicaciones",
+    "filterByCategory": "Por Categoría",
+    "filterByLocation": "Por Ubicación",
+    "filterByPropertyType": "Por Tipo de Propiedad",
+    "searchResults": "Resultados de Búsqueda",
+    "detailedAnswer": "Respuesta",
+    "noResults": "No Se Encontraron Resultados",
+    "noResultsDescription": "Intente ajustar sus términos de búsqueda o filtros para encontrar lo que busca.",
     "clearSearch": "Limpiar Búsqueda",
     "showAllFAQs": "Mostrar Todas las FAQ",
     "stillHaveQuestions": "¿Aún Tienes Preguntas?",
-    "stillHaveQuestionsDescription": "Nuestro equipo de expertos está aquí para ayudar con orientación personalizada para tu viaje de propiedades en Costa Del Sol.",
-    "viewAllFAQs": "Ver Todas las FAQ",
-    "contactExpert": "Contactar un Experto",
+    "contactDescription": "Nuestros expertos en propiedades de Costa Del Sol están aquí para ayudar con orientación personalizada y respuestas a sus preguntas específicas.",
+    "viewAllFAQs": "Ver Todas las Respuestas de Expertos",
+    "contactExpert": "Pregunta a Nuestro Experto de Costa Del Sol",
     "categories": {
       "buying_property": "Comprar Propiedad",
       "viewing_trip": "Viaje de Visita",
@@ -251,12 +259,11 @@
     "beachfront": "Primera Línea de Playa"
   },
   "common": {
+    "all": "Todos",
     "search": "Buscar",
-    "notifications": "Notificaciones",
-    "signOut": "Cerrar Sesión",
-    "signIn": "Iniciar Sesión",
     "loading": "Cargando...",
     "error": "Error",
+    "retry": "Reintentar",
     "success": "Éxito",
     "cancel": "Cancelar",
     "confirm": "Confirmar",
@@ -270,6 +277,8 @@
     "view": "Ver",
     "download": "Descargar",
     "upload": "Subir",
-    "share": "Compartir"
+    "share": "Compartir",
+    "clearFilters": "Limpiar Todos los Filtros",
+    "contactUs": "Contactar Nuestros Expertos"
   }
 }
