@@ -95,6 +95,147 @@ export type Database = {
         }
         Relationships: []
       }
+      faq_categories: {
+        Row: {
+          created_at: string | null
+          description: string | null
+          icon: string | null
+          id: string
+          key: string
+          language: string
+          name: string
+          sort_order: number | null
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          description?: string | null
+          icon?: string | null
+          id?: string
+          key: string
+          language: string
+          name: string
+          sort_order?: number | null
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          description?: string | null
+          icon?: string | null
+          id?: string
+          key?: string
+          language?: string
+          name?: string
+          sort_order?: number | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      faq_relations: {
+        Row: {
+          created_at: string | null
+          faq_id: string | null
+          id: string
+          related_faq_id: string | null
+          relation_type: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          faq_id?: string | null
+          id?: string
+          related_faq_id?: string | null
+          relation_type?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          faq_id?: string | null
+          id?: string
+          related_faq_id?: string | null
+          relation_type?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "faq_relations_faq_id_fkey"
+            columns: ["faq_id"]
+            isOneToOne: false
+            referencedRelation: "faqs"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "faq_relations_related_faq_id_fkey"
+            columns: ["related_faq_id"]
+            isOneToOne: false
+            referencedRelation: "faqs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      faqs: {
+        Row: {
+          answer_long: string | null
+          answer_short: string
+          category: string
+          created_at: string | null
+          id: string
+          is_featured: boolean | null
+          keywords: string[] | null
+          language: string
+          location: string | null
+          meta_description: string | null
+          meta_title: string | null
+          property_types: string[] | null
+          question: string
+          slug: string
+          sort_order: number | null
+          tags: string[] | null
+          target_areas: string[] | null
+          updated_at: string | null
+          voice_queries: string[] | null
+        }
+        Insert: {
+          answer_long?: string | null
+          answer_short: string
+          category: string
+          created_at?: string | null
+          id?: string
+          is_featured?: boolean | null
+          keywords?: string[] | null
+          language: string
+          location?: string | null
+          meta_description?: string | null
+          meta_title?: string | null
+          property_types?: string[] | null
+          question: string
+          slug: string
+          sort_order?: number | null
+          tags?: string[] | null
+          target_areas?: string[] | null
+          updated_at?: string | null
+          voice_queries?: string[] | null
+        }
+        Update: {
+          answer_long?: string | null
+          answer_short?: string
+          category?: string
+          created_at?: string | null
+          id?: string
+          is_featured?: boolean | null
+          keywords?: string[] | null
+          language?: string
+          location?: string | null
+          meta_description?: string | null
+          meta_title?: string | null
+          property_types?: string[] | null
+          question?: string
+          slug?: string
+          sort_order?: number | null
+          tags?: string[] | null
+          target_areas?: string[] | null
+          updated_at?: string | null
+          voice_queries?: string[] | null
+        }
+        Relationships: []
+      }
       keyword_rankings: {
         Row: {
           clicks: number | null

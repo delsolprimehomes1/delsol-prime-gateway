@@ -11,8 +11,10 @@ import SEOHead from "@/components/seo/SEOHead";
 import BreadcrumbNavigation from "@/components/seo/BreadcrumbNavigation";
 import { generateFAQSchema, organizationSchema } from "@/utils/seo/structuredData";
 import { generateTitle } from "@/utils/seo/metaUtils";
-import { useFAQData } from "@/hooks/useFAQData";
+import { useSupabaseFAQ } from "@/hooks/useSupabaseFAQ";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { migrateLegacyFAQData } from "@/utils/faqDataMigration";
+import { useEffect } from "react";
 
 const categoryIcons = {
   legal: FileText,
@@ -40,8 +42,23 @@ const FAQ = () => {
     setSelectedPropertyType,
     getCategoryCount,
     getTargetAreas,
-    getPropertyTypes
-  } = useFAQData();
+    getPropertyTypes,
+    loading,
+    error
+  } = useSupabaseFAQ();
+
+  // Initialize FAQ data migration on first load
+  useEffect(() => {
+    const initializeFAQData = async () => {
+      try {
+        await migrateLegacyFAQData();
+      } catch (error) {
+        console.error('Failed to initialize FAQ data:', error);
+      }
+    };
+
+    initializeFAQData();
+  }, []);
 
   const targetAreas = getTargetAreas();
   const propertyTypes = getPropertyTypes();
@@ -51,12 +68,40 @@ const FAQ = () => {
     return generateFAQSchema(
       faqs.map(faq => ({
         question: faq.question,
-        answer: faq.answer
+        answer: faq.answer_short
       }))
     );
   }, [faqs]);
 
   const structuredData = [organizationSchema, faqSchema];
+
+  // Loading and error states
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-muted-foreground">Loading FAQs...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5 flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-destructive mb-4">Error loading FAQs: {error}</p>
+          <button 
+            onClick={() => window.location.reload()} 
+            className="px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90"
+          >
+            Retry
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30">
@@ -244,16 +289,16 @@ const FAQ = () => {
                                   <Badge variant="outline" className="bg-white/80 text-xs font-medium">
                                     {categoryNames[faq.category as keyof typeof categoryNames]}
                                   </Badge>
-                                  {faq.targetAreas && faq.targetAreas.length > 0 && (
-                                    <Badge variant="secondary" className="bg-blue-100 text-blue-800 text-xs">
-                                      {faq.targetAreas[0]}{faq.targetAreas.length > 1 && ` +${faq.targetAreas.length - 1}`}
-                                    </Badge>
-                                  )}
-                                  {faq.propertyTypes && faq.propertyTypes.length > 0 && (
-                                    <Badge variant="secondary" className="bg-green-100 text-green-800 text-xs">
-                                      {faq.propertyTypes[0]}{faq.propertyTypes.length > 1 && ` +${faq.propertyTypes.length - 1}`}
-                                    </Badge>
-                                  )}
+                                   {faq.target_areas && faq.target_areas.length > 0 && (
+                                     <Badge variant="secondary" className="bg-blue-100 text-blue-800 text-xs">
+                                       {faq.target_areas[0]}{faq.target_areas.length > 1 && ` +${faq.target_areas.length - 1}`}
+                                     </Badge>
+                                   )}
+                                   {faq.property_types && faq.property_types.length > 0 && (
+                                     <Badge variant="secondary" className="bg-green-100 text-green-800 text-xs">
+                                       {faq.property_types[0]}{faq.property_types.length > 1 && ` +${faq.property_types.length - 1}`}
+                                     </Badge>
+                                   )}
                                 </div>
                                 <h3 
                                   id={`faq-${faq.id}-question`}
@@ -270,11 +315,11 @@ const FAQ = () => {
                             role="region"
                             aria-labelledby={`faq-${faq.id}-question`}
                           >
-                            <div className="ml-18 bg-gradient-to-br from-muted/30 to-muted/20 rounded-xl p-6 border border-muted/40">
-                              <p className="text-muted-foreground leading-relaxed text-base">
-                                {faq.answer}
-                              </p>
-                            </div>
+                             <div className="ml-18 bg-gradient-to-br from-muted/30 to-muted/20 rounded-xl p-6 border border-muted/40">
+                               <p className="text-muted-foreground leading-relaxed text-base">
+                                 {faq.answer_short}
+                               </p>
+                             </div>
                           </AccordionContent>
                         </AccordionItem>
                       );
