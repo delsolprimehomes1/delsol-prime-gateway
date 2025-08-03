@@ -1239,7 +1239,135 @@ const FAQ = () => {
     ]
   };
 
-  const structuredData = [organizationSchema, faqSchema, buyingPropertyFAQSchema, sellingPropertyFAQSchema, viewingTripsFAQSchema, financeTaxesFAQSchema, legalProcessFAQSchema, residencyVisasFAQSchema, localCultureLifestyleFAQSchema, propertyTypesFAQSchema, timelineProcessFAQSchema];
+  // AI Assistant & Technology FAQ Schema for AEO/SEO
+  const aiAssistantTechnologyFAQSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What should I know about ai assistant & technology in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about ai assistant & technology in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about ai assistant & technology in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about ai assistant & technology in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about ai assistant & technology in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about ai assistant & technology in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about ai assistant & technology in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about ai assistant & technology in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about ai assistant & technology in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about ai assistant & technology in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about ai assistant & technology in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about ai assistant & technology in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about ai assistant & technology in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about ai assistant & technology in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about ai assistant & technology in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about ai assistant & technology in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about ai assistant & technology in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about ai assistant & technology in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about ai assistant & technology in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about ai assistant & technology in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about ai assistant & technology in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about ai assistant & technology in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about ai assistant & technology in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about ai assistant & technology in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about ai assistant & technology in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about ai assistant & technology in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about ai assistant & technology in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about ai assistant & technology in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about ai assistant & technology in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about ai assistant & technology in the Costa del Sol area."
+        }
+      }
+    ]
+  };
+
+  const structuredData = [organizationSchema, faqSchema, buyingPropertyFAQSchema, sellingPropertyFAQSchema, viewingTripsFAQSchema, financeTaxesFAQSchema, legalProcessFAQSchema, residencyVisasFAQSchema, localCultureLifestyleFAQSchema, propertyTypesFAQSchema, timelineProcessFAQSchema, aiAssistantTechnologyFAQSchema];
 
   // Loading and error states
   if (loading) {
