@@ -6,7 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Section from "@/components/layout/Section";
 import { Link } from "react-router-dom";
-import { useFAQData } from "@/hooks/useFAQData";
+import { useSupabaseFAQ } from "@/hooks/useSupabaseFAQ";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const categoryIcons = {
   legal: "FileText",
@@ -18,16 +19,36 @@ const categoryIcons = {
 };
 
 export default function FAQSection() {
-  const { getFeaturedFAQs, categories } = useFAQData();
-  const [searchTerm, setSearchTerm] = useState("");
+  const { currentLanguage, t } = useLanguage();
+  const { 
+    getFeaturedFAQs, 
+    categoryNames,
+    searchTerm, 
+    setSearchTerm,
+    filteredFAQs,
+    loading 
+  } = useSupabaseFAQ();
   
   // Get featured FAQs for the homepage
   const featuredFAQs = getFeaturedFAQs(6);
   
-  const filteredFAQs = featuredFAQs.filter(faq =>
-    faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // Filter featured FAQs based on search term
+  const displayFAQs = searchTerm 
+    ? filteredFAQs.filter(faq => featuredFAQs.some(f => f.id === faq.id))
+    : featuredFAQs;
+  
+  if (loading) {
+    return (
+      <Section id="faq" padding="xl" background="muted" containerSize="lg">
+        <div className="text-center">
+          <div className="animate-pulse">
+            <div className="h-8 bg-muted-foreground/20 rounded w-1/2 mx-auto mb-4"></div>
+            <div className="h-4 bg-muted-foreground/20 rounded w-3/4 mx-auto"></div>
+          </div>
+        </div>
+      </Section>
+    );
+  }
 
   return (
     <Section
@@ -43,11 +64,11 @@ export default function FAQSection() {
           <MessageCircle className="w-8 h-8 text-primary" />
         </div>
         <h2 className="text-4xl font-bold text-foreground mb-4" itemProp="name">
-          What Do You Need to Know About Costa Del Sol Property Investment?
+          {t("faq.title")}
         </h2>
         <div className="max-w-2xl mx-auto mb-8" itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
           <p className="text-xl text-muted-foreground" itemProp="text">
-            Get instant answers from our comprehensive database of 100+ expert responses about property investment, legal processes, and living in Costa Del Sol.
+            {t("faq.subtitle")}
           </p>
         </div>
         
@@ -56,7 +77,7 @@ export default function FAQSection() {
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
           <Input
             type="text"
-            placeholder="Ask any question about Costa Del Sol properties..."
+            placeholder={t("faq.searchPlaceholder")}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="pl-10 h-12 bg-background/80 backdrop-blur-sm border-border/50 focus:border-primary transition-all duration-300"
@@ -68,8 +89,8 @@ export default function FAQSection() {
       {/* Enhanced FAQ Accordion with Voice Optimization */}
       <div className="max-w-4xl mx-auto mb-12">
         <Accordion type="single" collapsible className="space-y-4">
-          {filteredFAQs.map((faq, index) => {
-            const category = categories[faq.category as keyof typeof categories];
+          {displayFAQs.map((faq, index) => {
+            const categoryName = categoryNames[faq.category] || faq.category;
             return (
               <AccordionItem
                 key={faq.id}
@@ -87,7 +108,7 @@ export default function FAQSection() {
                     <div className="flex-1 min-w-0">
                       <div className="mb-1">
                         <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">
-                          {category?.name || faq.category}
+                          {categoryName}
                         </span>
                       </div>
                       <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors duration-300" itemProp="name">
@@ -99,18 +120,20 @@ export default function FAQSection() {
                 <AccordionContent className="px-6 pb-6">
                   <div className="ml-14" itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
                     <p className="text-muted-foreground leading-relaxed mb-4" itemProp="text">
-                      {faq.answer}
+                      {faq.answer_short}
                     </p>
                     
                     {/* Related questions for enhanced AEO */}
-                    {faq.relatedTopics && faq.relatedTopics.length > 0 && (
+                    {faq.tags && faq.tags.length > 0 && (
                       <div className="mt-4 p-3 bg-muted/30 rounded-lg">
-                        <p className="text-sm font-medium mb-2">Related Questions:</p>
-                        <ul className="text-sm text-muted-foreground space-y-1">
-                          {faq.relatedTopics.slice(0, 3).map((topic, i) => (
-                            <li key={i}>• {topic}</li>
+                        <p className="text-sm font-medium mb-2">Topics:</p>
+                        <div className="flex flex-wrap gap-2">
+                          {faq.tags.slice(0, 4).map((tag, i) => (
+                            <span key={i} className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full">
+                              {tag}
+                            </span>
                           ))}
-                        </ul>
+                        </div>
                       </div>
                     )}
                   </div>
@@ -120,7 +143,7 @@ export default function FAQSection() {
           })}
         </Accordion>
 
-        {filteredFAQs.length === 0 && searchTerm && (
+        {displayFAQs.length === 0 && searchTerm && (
           <div className="text-center py-12">
             <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center mx-auto mb-4">
               <Search className="w-8 h-8 text-muted-foreground" />
