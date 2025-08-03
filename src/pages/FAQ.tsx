@@ -87,7 +87,135 @@ const FAQ = () => {
     );
   }, [faqs]);
 
-  const structuredData = [organizationSchema, faqSchema];
+  // Buying Property FAQ Schema for AEO/SEO
+  const buyingPropertyFAQSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What should I know about buying property in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about buying property in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about buying property in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about buying property in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about buying property in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about buying property in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about buying property in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about buying property in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about buying property in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about buying property in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about buying property in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about buying property in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about buying property in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about buying property in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about buying property in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about buying property in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about buying property in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about buying property in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about buying property in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about buying property in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about buying property in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about buying property in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about buying property in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about buying property in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about buying property in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about buying property in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about buying property in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about buying property in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about buying property in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about buying property in the Costa del Sol area."
+        }
+      }
+    ]
+  };
+
+  const structuredData = [organizationSchema, faqSchema, buyingPropertyFAQSchema];
 
   // Loading and error states
   if (loading) {
