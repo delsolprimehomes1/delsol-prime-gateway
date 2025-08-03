@@ -29,7 +29,7 @@
   "propertySearch": {
     "badge": "IMMOBILIENSUCHE",
     "title": "Finden Sie Ihr Perfektes",
-    "titleHighlight": "Costa del Sol Zuhause",
+    "titleHighlight": "Costa Del Sol Zuhause",
     "subtitle": "Nutzen Sie unsere erweiterte Suche, um Immobilien zu entdecken, die Ihren exakten Anforderungen entsprechen.",
     "location": "Standort",
     "selectLocation": "Standort auswählen",
@@ -123,7 +123,7 @@
     "faqTitle": "Häufig Gestellte Fragen Zu Unseren Dienstleistungen",
     "faq": {
       "processDuration": {
-        "question": "Wie lange dauert der Immobilienkaufprozess an der Costa del Sol?",
+        "question": "Wie lange dauert der Immobilienkaufprozess an der Costa Del Sol?",
         "answer": "Typischerweise 60-90 Tage von der Angebotsannahme bis zum Abschluss, mit unserer Expertenberatung, die sicherstellt, dass alle rechtlichen und finanziellen Anforderungen effizient erfüllt werden."
       },
       "costs": {
