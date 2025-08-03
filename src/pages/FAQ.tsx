@@ -43,9 +43,23 @@ const FAQ = () => {
     getCategoryCount,
     getTargetAreas,
     getPropertyTypes,
+    getTranslatedCategoryName,
     loading,
     error
   } = useSupabaseFAQ();
+
+  // Create translated category names
+  const translatedCategoryNames = useMemo(() => {
+    const translated = { all: t('common.all') || 'All Questions' };
+    
+    Object.keys(categoryNames).forEach(key => {
+      if (key !== 'all') {
+        translated[key] = getTranslatedCategoryName(key, t);
+      }
+    });
+    
+    return translated;
+  }, [categoryNames, getTranslatedCategoryName, t]);
 
   // Initialize FAQ data migration on first load
   useEffect(() => {
@@ -211,7 +225,7 @@ const FAQ = () => {
 
             {/* Category Badges */}
             <div className="flex flex-wrap justify-center gap-2 mb-12">
-              {Object.entries(categoryNames).map(([category, name]) => {
+              {Object.entries(translatedCategoryNames).map(([category, name]) => {
                 const count = getCategoryCount(category);
                 const isActive = selectedCategory === category;
                 return (
@@ -253,7 +267,7 @@ const FAQ = () => {
               }
               {selectedCategory !== "all" && (
                 <span className="ml-2">
-                  in <span className="font-medium text-primary">{categoryNames[selectedCategory as keyof typeof categoryNames]}</span>
+                  in <span className="font-medium text-primary">{translatedCategoryNames[selectedCategory]}</span>
                 </span>
               )}
             </p>
@@ -287,7 +301,7 @@ const FAQ = () => {
                               <div className="flex-1 min-w-0">
                                 <div className="mb-2 flex flex-wrap gap-2">
                                   <Badge variant="outline" className="bg-white/80 text-xs font-medium">
-                                    {categoryNames[faq.category as keyof typeof categoryNames]}
+                                    {translatedCategoryNames[faq.category] || faq.category}
                                   </Badge>
                                    {faq.target_areas && faq.target_areas.length > 0 && (
                                      <Badge variant="secondary" className="bg-blue-100 text-blue-800 text-xs">

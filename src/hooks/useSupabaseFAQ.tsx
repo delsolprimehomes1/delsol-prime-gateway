@@ -177,19 +177,37 @@ export const useSupabaseFAQ = () => {
     return filtered;
   }, [searchTerm, selectedCategory, selectedTargetArea, selectedPropertyType, faqs]);
 
-  // Create category names mapping with better fallback handling
+  // Create category names mapping with translation support
   const categoryNames = useMemo(() => {
     const baseCategories = {
       all: 'All Questions'
     };
     
-    // Add categories from current data
+    // Add categories from current data  
     categories.forEach(category => {
       baseCategories[category.key] = category.name;
     });
     
     return baseCategories;
   }, [categories]);
+
+  // Helper function to get translated category name
+  const getTranslatedCategoryName = (categoryKey: string, t: (key: string) => string): string => {
+    if (categoryKey === 'all') {
+      return t('faq.categories.all') || 'All Questions';
+    }
+    
+    const translationKey = `faq.categories.${categoryKey}`;
+    const translated = t(translationKey);
+    
+    // If translation exists and is different from the key, use it
+    if (translated && translated !== translationKey) {
+      return translated;
+    }
+    
+    // Fallback to database category name
+    return categoryNames[categoryKey] || categoryKey;
+  };
 
   // Get category count with memoization for performance
   const getCategoryCount = useMemo(() => {
@@ -322,6 +340,9 @@ export const useSupabaseFAQ = () => {
     getPropertyTypes,
     getFAQsByTargetArea,
     getFAQsByPropertyType,
+    
+    // Translation helper
+    getTranslatedCategoryName,
     
     // Language info
     getCurrentLanguageInfo,

@@ -258,13 +258,28 @@
   },
   "faq": {
     "title": "Costa Del Sol Ejendoms FAQ",
-    "searchPlaceholder": "Søg spørgsmål, svar, lokationer, ejendomstyper...",
+    "subtitle": "Få svar på almindelige spørgsmål om køb af ejendom på Costa Del Sol",
+    "searchPlaceholder": "Søg spørgsmål...",
     "noResults": "Ingen Resultater Fundet",
-    "noResultsDescription": "Vi kunne ikke finde nogen FAQs, der matcher dine søgekriterier. Prøv at justere dine søgetermer eller gennemse alle kategorier.",
+    "noResultsDescription": "Prøv at justere dine søgetermer eller gennemse efter kategori",
     "clearSearch": "Ryd Søgning",
     "showAllFAQs": "Vis Alle FAQs",
     "stillHaveQuestions": "Har Du Stadig Spørgsmål?",
-    "stillHaveQuestionsDescription": "Vores ekspertteam er klar til at give personlig vejledning til din Costa Del Sol ejendomsrejse. Kontakt os for skræddersyet rådgivning og eksklusive markedsindsigter."
+    "stillHaveQuestionsDescription": "Vores ekspertteam er her for at hjælpe med personlig vejledning til din Costa Del Sol ejendomsrejse.",
+    "viewAllFAQs": "Se Alle FAQs",
+    "contactExpert": "Kontakt en Ekspert",
+    "categories": {
+      "buying_property": "Køb af Ejendom",
+      "viewing_trip": "Besigtigelsestur",
+      "taxes": "Skatter & Gebyrer",
+      "legal": "Juridisk Proces",
+      "residency": "Opholdstilladelse",
+      "culture": "Kultur & Livsstil",
+      "timeline": "Tidsplan",
+      "property_types": "Ejendomstyper",
+      "technology": "Teknologi & Innovation",
+      "selling_property": "Salg af Ejendom"
+    }
   },
   "common": {
     "search": "Søg",

@@ -202,7 +202,29 @@
     }
   },
   "faq": {
-    "title": "Häufig Gestellte Fragen"
+    "title": "Häufig Gestellte Fragen",
+    "subtitle": "Erhalten Sie Antworten auf häufige Fragen zum Immobilienkauf an der Costa Del Sol",
+    "searchPlaceholder": "Fragen suchen...",
+    "noResults": "Keine Ergebnisse gefunden",
+    "noResultsDescription": "Versuchen Sie, Ihre Suchbegriffe anzupassen oder nach Kategorie zu durchsuchen",
+    "clearSearch": "Suche Löschen",
+    "showAllFAQs": "Alle FAQs Anzeigen",
+    "stillHaveQuestions": "Haben Sie Noch Fragen?",
+    "stillHaveQuestionsDescription": "Unser Expertenteam ist da, um mit persönlicher Beratung für Ihre Costa Del Sol Immobilienreise zu helfen.",
+    "viewAllFAQs": "Alle FAQs Anzeigen",
+    "contactExpert": "Experten Kontaktieren",
+    "categories": {
+      "buying_property": "Immobilie Kaufen",
+      "viewing_trip": "Besichtigungsreise",
+      "taxes": "Steuern & Gebühren",
+      "legal": "Rechtlicher Prozess",
+      "residency": "Aufenthaltserlaubnis",
+      "culture": "Kultur & Lebensstil",
+      "timeline": "Zeitplan",
+      "property_types": "Immobilientypen",
+      "technology": "Technologie & Innovation",
+      "selling_property": "Immobilie Verkaufen"
+    }
   },
   "footer": {
     "servicesLinks": {

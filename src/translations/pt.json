@@ -131,13 +131,28 @@
   },
   "faq": {
     "title": "Perguntas Frequentes sobre Propriedades da Costa Del Sol",
-    "searchPlaceholder": "Pesquisar perguntas, respostas, localizações, tipos de propriedade...",
+    "subtitle": "Obtenha respostas para perguntas comuns sobre comprar propriedades na Costa Del Sol",
+    "searchPlaceholder": "Pesquisar perguntas...",
     "noResults": "Nenhum Resultado Encontrado",
-    "noResultsDescription": "Não conseguimos encontrar FAQs que correspondam aos seus critérios de pesquisa. Tente ajustar seus termos de pesquisa ou navegar por todas as categorias.",
+    "noResultsDescription": "Tente ajustar seus termos de pesquisa ou navegar por categoria",
     "clearSearch": "Limpar Pesquisa",
     "showAllFAQs": "Mostrar Todas as FAQs",
     "stillHaveQuestions": "Ainda Tem Perguntas?",
-    "stillHaveQuestionsDescription": "Nossa equipe de especialistas está pronta para fornecer orientação personalizada para sua jornada imobiliária na Costa Del Sol. Entre em contato para aconselhamento personalizado e insights exclusivos do mercado."
+    "stillHaveQuestionsDescription": "Nossa equipe de especialistas está pronta para fornecer orientação personalizada para sua jornada imobiliária na Costa Del Sol.",
+    "viewAllFAQs": "Ver Todas as FAQ",
+    "contactExpert": "Contatar um Especialista",
+    "categories": {
+      "buying_property": "Comprar Propriedade",
+      "viewing_trip": "Viagem de Visitação",
+      "taxes": "Impostos e Taxas",
+      "legal": "Processo Legal",
+      "residency": "Residência",
+      "culture": "Cultura e Estilo de Vida",
+      "timeline": "Cronograma",
+      "property_types": "Tipos de Propriedade",
+      "technology": "Tecnologia e Inovação",
+      "selling_property": "Vender Propriedade"
+    }
   },
   "common": {
     "search": "Pesquisar",

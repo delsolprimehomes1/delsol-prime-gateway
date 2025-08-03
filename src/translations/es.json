@@ -211,7 +211,29 @@
     }
   },
   "faq": {
-    "title": "Preguntas Frecuentes"
+    "title": "Preguntas Frecuentes",
+    "subtitle": "Obtenga respuestas a preguntas comunes sobre comprar propiedades en Costa Del Sol",
+    "searchPlaceholder": "Buscar preguntas...",
+    "noResults": "No se encontraron resultados",
+    "noResultsDescription": "Intente ajustar sus términos de búsqueda o navegar por categoría",
+    "clearSearch": "Limpiar Búsqueda",
+    "showAllFAQs": "Mostrar Todas las FAQ",
+    "stillHaveQuestions": "¿Aún Tienes Preguntas?",
+    "stillHaveQuestionsDescription": "Nuestro equipo de expertos está aquí para ayudar con orientación personalizada para tu viaje de propiedades en Costa Del Sol.",
+    "viewAllFAQs": "Ver Todas las FAQ",
+    "contactExpert": "Contactar un Experto",
+    "categories": {
+      "buying_property": "Comprar Propiedad",
+      "viewing_trip": "Viaje de Visita",
+      "taxes": "Impuestos y Tasas",
+      "legal": "Proceso Legal",
+      "residency": "Residencia",
+      "culture": "Cultura y Estilo de Vida",
+      "timeline": "Cronograma",
+      "property_types": "Tipos de Propiedad",
+      "technology": "Tecnología e Innovación",
+      "selling_property": "Vender Propiedad"
+    }
   },
   "common": {
     "search": "Buscar",

@@ -218,7 +218,29 @@
     }
   },
   "faq": {
-    "title": "Veelgestelde Vragen"
+    "title": "Veelgestelde Vragen",
+    "subtitle": "Krijg antwoorden op veelgestelde vragen over het kopen van onroerend goed in Costa Del Sol",
+    "searchPlaceholder": "Zoek vragen...",
+    "noResults": "Geen resultaten gevonden",
+    "noResultsDescription": "Probeer uw zoektermen aan te passen of bladeren per categorie",
+    "clearSearch": "Zoekopdracht Wissen",
+    "showAllFAQs": "Toon Alle FAQ's",
+    "stillHaveQuestions": "Nog Steeds Vragen?",
+    "stillHaveQuestionsDescription": "Ons expertteam is er om te helpen met gepersonaliseerde begeleiding voor uw Costa Del Sol eigendomsreis.",
+    "viewAllFAQs": "Bekijk Alle FAQ's",
+    "contactExpert": "Neem Contact Op Met Een Expert",
+    "categories": {
+      "buying_property": "Eigendom Kopen",
+      "viewing_trip": "Bezichtigingsreis",
+      "taxes": "Belastingen & Kosten",
+      "legal": "Juridisch Proces",
+      "residency": "Verblijfsvergunning",
+      "culture": "Cultuur & Levensstijl",
+      "timeline": "Tijdlijn",
+      "property_types": "Eigendomstypes",
+      "technology": "Technologie & Innovatie",
+      "selling_property": "Eigendom Verkopen"
+    }
   },
   "footer": {
     "servicesLinks": {
