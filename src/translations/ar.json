@@ -36,10 +36,119 @@
     "pt": "Português",
     "fr": "Français"
   },
+  "locationShowcase": {
+    "badge": "الوجهات الشعبية",
+    "title": "استكشف أفضل",
+    "titleHighlight": "مواقع كوستا ديل سول",
+    "subtitle": "اكتشف العقارات الاستثنائية في أكثر مواقع كوستا ديل سول المرغوبة",
+    "marbella": {
+      "title": "مربيا",
+      "description": "الفخامة والأناقة في قلب كوستا ديل سول",
+      "propertiesCount": "150+ عقار متاح"
+    },
+    "estepona": {
+      "title": "إستيبونا",
+      "description": "حديقة كوستا ديل سول مع شواطئ خلابة",
+      "propertiesCount": "85+ عقار متاح"
+    },
+    "benalmadena": {
+      "title": "بينالمادينا",
+      "description": "حياة ساحلية نابضة بالحياة مع ترفيه عائلي",
+      "propertiesCount": "65+ عقار متاح"
+    },
+    "fuengirola": {
+      "title": "فوينخيرولا",
+      "description": "الثقافة الإسبانية الأصيلة تلتقي بالمرافق الحديثة",
+      "propertiesCount": "70+ عقار متاح"
+    },
+    "mijas": {
+      "title": "ميخاس",
+      "description": "السحر الأندلسي التقليدي مع إطلالات بانورامية",
+      "propertiesCount": "45+ عقار متاح"
+    },
+    "exploreProperties": "استكشاف العقارات"
+  },
+  "blog": {
+    "badge": "مدونة العقارات",
+    "title": "آخر الأخبار و",
+    "titleHighlight": "رؤى السوق",
+    "subtitle": "ابقَ على اطلاع بأحدث مقالاتنا حول سوق العقارات في كوستا ديل سول",
+    "readMore": "اقرأ المزيد",
+    "viewAllPosts": "عرض جميع المنشورات",
+    "categories": {
+      "marketTrends": "اتجاهات السوق",
+      "buyingGuides": "أدلة الشراء",
+      "locationSpotlights": "تسليط الضوء على المواقع",
+      "legalAdvice": "المشورة القانونية",
+      "investmentTips": "نصائح الاستثمار",
+      "lifestyleFeatures": "ميزات نمط الحياة"
+    }
+  },
+  "about": {
+    "title": "حول DelSolPrimeHomes",
+    "description": "مع أكثر من 15 عامًا من الخبرة في العقارات الدولية، DelSolPrimeHomes هو شريكك الموثوق للعثور على العقارات الاستثنائية في كوستا ديل سول.",
+    "stats": {
+      "yearsExperience": "سنوات الخبرة",
+      "propertiesSold": "العقارات المباعة",
+      "nationalities": "الجنسيات المخدومة",
+      "salesVolume": "حجم المبيعات"
+    }
+  },
+  "testimonials": {
+    "title": "قصص نجاح العملاء",
+    "subtitle": "اكتشف لماذا يثق العملاء الدوليون في DelSolPrimeHomes لاستثماراتهم العقارية في كوستا ديل سول"
+  },
+  "contact": {
+    "formTitle": "اتصل بخبراء العقارات لدينا",
+    "name": "اسمك",
+    "email": "عنوان البريد الإلكتروني",
+    "phone": "رقم الهاتف",
+    "propertyType": "نوع العقار",
+    "budgetRange": "نطاق الميزانية",
+    "message": "أخبرنا عن متطلبات العقار الخاص بك...",
+    "sendMessage": "إرسال رسالة",
+    "sendingMessage": "جاري الإرسال...",
+    "messageSentTitle": "تم إرسال الرسالة بنجاح!",
+    "messageSentDescription": "شكرًا لاستفسارك. سنعاود الاتصال بك خلال 24 ساعة.",
+    "submissionFailedTitle": "فشل الإرسال",
+    "submissionFailedDescription": "حدث خطأ في إرسال رسالتك. حاول مرة أخرى."
+  },
+  "errors": {
+    "title": "عذرًا! حدث خطأ ما",
+    "description": "نعتذر عن الإزعاج. تم إشعار فريقنا وهو يعمل على إصلاح المشكلة.",
+    "tryAgain": "حاول مرة أخرى",
+    "goToHomepage": "الذهاب إلى الصفحة الرئيسية"
+  },
+  "faq": {
+    "title": "الأسئلة الشائعة حول عقارات كوستا ديل سول",
+    "searchPlaceholder": "البحث في الأسئلة والإجابات والمواقع وأنواع العقارات...",
+    "noResults": "لم يتم العثور على نتائج",
+    "noResultsDescription": "لم نتمكن من العثور على أسئلة شائعة تطابق معايير البحث الخاصة بك. حاول تعديل مصطلحات البحث أو تصفح جميع الفئات.",
+    "clearSearch": "مسح البحث",
+    "showAllFAQs": "إظهار جميع الأسئلة الشائعة",
+    "stillHaveQuestions": "ما زالت لديك أسئلة؟",
+    "stillHaveQuestionsDescription": "فريق الخبراء لدينا مستعد لتقديم إرشادات شخصية لرحلة العقارات الخاصة بك في كوستا ديل سول. تواصل معنا للحصول على نصائح مخصصة ورؤى حصرية للسوق."
+  },
   "common": {
     "search": "بحث",
     "notifications": "الإشعارات",
     "signOut": "تسجيل الخروج",
-    "signIn": "تسجيل الدخول"
+    "signIn": "تسجيل الدخول",
+    "loading": "جاري التحميل...",
+    "error": "خطأ",
+    "success": "نجح",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "close": "إغلاق",
+    "back": "رجوع",
+    "next": "التالي",
+    "previous": "السابق",
+    "save": "حفظ",
+    "edit": "تحرير",
+    "delete": "حذف",
+    "view": "عرض",
+    "download": "تحميل",
+    "upload": "رفع",
+    "share": "مشاركة"
   }
 }

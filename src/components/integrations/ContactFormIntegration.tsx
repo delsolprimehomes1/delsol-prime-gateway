@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { analytics } from './AnalyticsProvider';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { Send, Loader2 } from 'lucide-react';
 
 interface ContactFormData {
@@ -17,6 +18,7 @@ interface ContactFormData {
 }
 
 export function ContactFormIntegration() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
@@ -54,8 +56,8 @@ export function ContactFormIntegration() {
       analytics.trackConversion('contact_form_submission');
 
       toast({
-        title: "Message Sent Successfully!",
-        description: "Thank you for your inquiry. We'll get back to you within 24 hours.",
+        title: t('contact.messageSentTitle'),
+        description: t('contact.messageSentDescription'),
       });
 
       // Reset form
@@ -78,8 +80,8 @@ export function ContactFormIntegration() {
       });
 
       toast({
-        title: "Submission Failed",
-        description: "There was an error sending your message. Please try again.",
+        title: t('contact.submissionFailedTitle'),
+        description: t('contact.submissionFailedDescription'),
         variant: "destructive",
       });
     } finally {
@@ -93,18 +95,18 @@ export function ContactFormIntegration() {
 
   return (
     <div className="bg-card p-6 rounded-lg border">
-      <h3 className="text-xl font-semibold mb-4">Contact Our Property Experts</h3>
+      <h3 className="text-xl font-semibold mb-4">{t('contact.formTitle')}</h3>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <Input
-            placeholder="Your Name"
+            placeholder={t('contact.name')}
             value={formData.name}
             onChange={(e) => handleInputChange('name', e.target.value)}
             required
           />
           <Input
             type="email"
-            placeholder="Email Address"
+            placeholder={t('contact.email')}
             value={formData.email}
             onChange={(e) => handleInputChange('email', e.target.value)}
             required
@@ -114,7 +116,7 @@ export function ContactFormIntegration() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <Input
             type="tel"
-            placeholder="Phone Number"
+            placeholder={t('contact.phone')}
             value={formData.phone}
             onChange={(e) => handleInputChange('phone', e.target.value)}
           />
@@ -123,7 +125,7 @@ export function ContactFormIntegration() {
             value={formData.propertyType}
             onChange={(e) => handleInputChange('propertyType', e.target.value)}
           >
-            <option value="">Property Type</option>
+            <option value="">{t('contact.propertyType')}</option>
             <option value="villa">Villa</option>
             <option value="apartment">Apartment</option>
             <option value="penthouse">Penthouse</option>
@@ -137,7 +139,7 @@ export function ContactFormIntegration() {
           value={formData.budget}
           onChange={(e) => handleInputChange('budget', e.target.value)}
         >
-          <option value="">Budget Range</option>
+          <option value="">{t('contact.budgetRange')}</option>
           <option value="200k-500k">€200,000 - €500,000</option>
           <option value="500k-1m">€500,000 - €1,000,000</option>
           <option value="1m-2m">€1,000,000 - €2,000,000</option>
@@ -146,7 +148,7 @@ export function ContactFormIntegration() {
         </select>
 
         <Textarea
-          placeholder="Tell us about your property requirements..."
+          placeholder={t('contact.message')}
           value={formData.message}
           onChange={(e) => handleInputChange('message', e.target.value)}
           rows={4}
@@ -161,12 +163,12 @@ export function ContactFormIntegration() {
           {isSubmitting ? (
             <>
               <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-              Sending Message...
+              {t('contact.sendingMessage')}
             </>
           ) : (
             <>
               <Send className="w-4 h-4 mr-2" />
-              Send Message
+              {t('contact.sendMessage')}
             </>
           )}
         </Button>

@@ -173,6 +173,99 @@
     "se": "Svenska",
     "dk": "Dansk"
   },
+  "locationShowcase": {
+    "badge": "POPULÆRE DESTINATIONER",
+    "title": "Udforsk de Bedste",
+    "titleHighlight": "Costa Del Sol Lokationer",
+    "subtitle": "Opdag exceptionelle ejendomme på Costa Del Sols mest eftertragtede lokationer",
+    "marbella": {
+      "title": "Marbella",
+      "description": "Luksus og elegance i hjertet af Costa Del Sol",
+      "propertiesCount": "150+ Tilgængelige Ejendomme"
+    },
+    "estepona": {
+      "title": "Estepona",
+      "description": "Costa Del Sols have med fantastiske strande",
+      "propertiesCount": "85+ Tilgængelige Ejendomme"
+    },
+    "benalmadena": {
+      "title": "Benalmádena",
+      "description": "Livligt kystliv med familieunderholdning",
+      "propertiesCount": "65+ Tilgængelige Ejendomme"
+    },
+    "fuengirola": {
+      "title": "Fuengirola",
+      "description": "Autentisk spansk kultur møder moderne faciliteter",
+      "propertiesCount": "70+ Tilgængelige Ejendomme"
+    },
+    "mijas": {
+      "title": "Mijas",
+      "description": "Traditionel andalusisk charme med panoramaudsigt",
+      "propertiesCount": "45+ Tilgængelige Ejendomme"
+    },
+    "exploreProperties": "Udforsk Ejendomme"
+  },
+  "blog": {
+    "badge": "EJENDOMSBLOG",
+    "title": "Seneste Nyheder og",
+    "titleHighlight": "Markedsindsigt",
+    "subtitle": "Hold dig opdateret med vores seneste artikler om Costa Del Sol ejendomsmarkedet",
+    "readMore": "Læs Mere",
+    "viewAllPosts": "Se Alle Indlæg",
+    "categories": {
+      "marketTrends": "Markedstendenser",
+      "buyingGuides": "Købsguider",
+      "locationSpotlights": "Lokationsspot",
+      "legalAdvice": "Juridisk Rådgivning",
+      "investmentTips": "Investeringstips",
+      "lifestyleFeatures": "Livsstilsfunktioner"
+    }
+  },
+  "about": {
+    "title": "Om DelSolPrimeHomes",
+    "description": "Med over 15 års erfaring inden for internationale ejendomme er DelSolPrimeHomes din pålidelige partner til at finde exceptionelle ejendomme på Costa Del Sol.",
+    "stats": {
+      "yearsExperience": "Års Erfaring",
+      "propertiesSold": "Solgte Ejendomme",
+      "nationalities": "Betjente Nationaliteter",
+      "salesVolume": "Salgsvolumen"
+    }
+  },
+  "testimonials": {
+    "title": "Kundens Succeshistorier",
+    "subtitle": "Opdag hvorfor internationale kunder stoler på DelSolPrimeHomes for deres Costa Del Sol ejendomsinvesteringer"
+  },
+  "contact": {
+    "formTitle": "Kontakt Vores Ejendomseksperter",
+    "name": "Dit Navn",
+    "email": "E-mailadresse",
+    "phone": "Telefonnummer",
+    "propertyType": "Ejendomstype",
+    "budgetRange": "Budgetområde",
+    "message": "Fortæl os om dine ejendomskrav...",
+    "sendMessage": "Send Besked",
+    "sendingMessage": "Sender Besked...",
+    "messageSentTitle": "Besked Sendt Succesfuldt!",
+    "messageSentDescription": "Tak for din forespørgsel. Vi vender tilbage inden for 24 timer.",
+    "submissionFailedTitle": "Indsendelse Mislykkedes",
+    "submissionFailedDescription": "Der opstod en fejl ved afsendelse af din besked. Prøv igen."
+  },
+  "errors": {
+    "title": "Ups! Noget gik galt",
+    "description": "Vi undskylder for ulejligheden. Vores team er blevet informeret og arbejder på en løsning.",
+    "tryAgain": "Prøv Igen",
+    "goToHomepage": "Gå til Hjemmesiden"
+  },
+  "faq": {
+    "title": "Costa Del Sol Ejendoms FAQ",
+    "searchPlaceholder": "Søg spørgsmål, svar, lokationer, ejendomstyper...",
+    "noResults": "Ingen Resultater Fundet",
+    "noResultsDescription": "Vi kunne ikke finde nogen FAQs, der matcher dine søgekriterier. Prøv at justere dine søgetermer eller gennemse alle kategorier.",
+    "clearSearch": "Ryd Søgning",
+    "showAllFAQs": "Vis Alle FAQs",
+    "stillHaveQuestions": "Har Du Stadig Spørgsmål?",
+    "stillHaveQuestionsDescription": "Vores ekspertteam er klar til at give personlig vejledning til din Costa Del Sol ejendomsrejse. Kontakt os for skræddersyet rådgivning og eksklusive markedsindsigter."
+  },
   "common": {
     "search": "Søg",
     "notifications": "Notifikationer",

@@ -46,6 +46,99 @@
     "subscribe": "Inscrever-se",
     "copyright": "DelSolPrimeHomes. Todos os direitos reservados."
   },
+  "locationShowcase": {
+    "badge": "DESTINOS POPULARES",
+    "title": "Explore as Melhores",
+    "titleHighlight": "Localizações da Costa Del Sol",
+    "subtitle": "Descubra propriedades excepcionais nas localizações mais procuradas da Costa Del Sol",
+    "marbella": {
+      "title": "Marbella",
+      "description": "Luxo e elegância no coração da Costa Del Sol",
+      "propertiesCount": "150+ Propriedades Disponíveis"
+    },
+    "estepona": {
+      "title": "Estepona",
+      "description": "O Jardim da Costa Del Sol com praias deslumbrantes",
+      "propertiesCount": "85+ Propriedades Disponíveis"
+    },
+    "benalmadena": {
+      "title": "Benalmádena",
+      "description": "Vida costeira vibrante com entretenimento familiar",
+      "propertiesCount": "65+ Propriedades Disponíveis"
+    },
+    "fuengirola": {
+      "title": "Fuengirola",
+      "description": "Autêntica cultura espanhola encontra amenidades modernas",
+      "propertiesCount": "70+ Propriedades Disponíveis"
+    },
+    "mijas": {
+      "title": "Mijas",
+      "description": "Charme tradicional andaluz com vistas panorâmicas",
+      "propertiesCount": "45+ Propriedades Disponíveis"
+    },
+    "exploreProperties": "Explorar Propriedades"
+  },
+  "blog": {
+    "badge": "BLOG IMOBILIÁRIO",
+    "title": "Últimas Novidades e",
+    "titleHighlight": "Insights do Mercado",
+    "subtitle": "Mantenha-se informado com nossos últimos artigos sobre o mercado imobiliário da Costa Del Sol",
+    "readMore": "Ler Mais",
+    "viewAllPosts": "Ver Todos os Posts",
+    "categories": {
+      "marketTrends": "Tendências do Mercado",
+      "buyingGuides": "Guias de Compra",
+      "locationSpotlights": "Destaques de Localização",
+      "legalAdvice": "Aconselhamento Jurídico",
+      "investmentTips": "Dicas de Investimento",
+      "lifestyleFeatures": "Características de Estilo de Vida"
+    }
+  },
+  "about": {
+    "title": "Sobre a DelSolPrimeHomes",
+    "description": "Com mais de 15 anos de experiência em imóveis internacionais, a DelSolPrimeHomes é sua parceira confiável para encontrar propriedades excepcionais na Costa Del Sol.",
+    "stats": {
+      "yearsExperience": "Anos de Experiência",
+      "propertiesSold": "Propriedades Vendidas",
+      "nationalities": "Nacionalidades Atendidas",
+      "salesVolume": "Volume de Vendas"
+    }
+  },
+  "testimonials": {
+    "title": "Histórias de Sucesso dos Clientes",
+    "subtitle": "Descubra por que clientes internacionais confiam na DelSolPrimeHomes para seus investimentos imobiliários na Costa Del Sol"
+  },
+  "contact": {
+    "formTitle": "Entre em Contato com Nossos Especialistas",
+    "name": "Seu Nome",
+    "email": "Endereço de Email",
+    "phone": "Número de Telefone",
+    "propertyType": "Tipo de Propriedade",
+    "budgetRange": "Faixa de Orçamento",
+    "message": "Conte-nos sobre seus requisitos de propriedade...",
+    "sendMessage": "Enviar Mensagem",
+    "sendingMessage": "Enviando Mensagem...",
+    "messageSentTitle": "Mensagem Enviada com Sucesso!",
+    "messageSentDescription": "Obrigado por sua consulta. Entraremos em contato em até 24 horas.",
+    "submissionFailedTitle": "Envio Falhou",
+    "submissionFailedDescription": "Houve um erro ao enviar sua mensagem. Tente novamente."
+  },
+  "errors": {
+    "title": "Ops! Algo deu errado",
+    "description": "Pedimos desculpas pelo inconveniente. Nossa equipe foi notificada e está trabalhando em uma correção.",
+    "tryAgain": "Tente Novamente",
+    "goToHomepage": "Ir para a Página Inicial"
+  },
+  "faq": {
+    "title": "Perguntas Frequentes sobre Propriedades da Costa Del Sol",
+    "searchPlaceholder": "Pesquisar perguntas, respostas, localizações, tipos de propriedade...",
+    "noResults": "Nenhum Resultado Encontrado",
+    "noResultsDescription": "Não conseguimos encontrar FAQs que correspondam aos seus critérios de pesquisa. Tente ajustar seus termos de pesquisa ou navegar por todas as categorias.",
+    "clearSearch": "Limpar Pesquisa",
+    "showAllFAQs": "Mostrar Todas as FAQs",
+    "stillHaveQuestions": "Ainda Tem Perguntas?",
+    "stillHaveQuestionsDescription": "Nossa equipe de especialistas está pronta para fornecer orientação personalizada para sua jornada imobiliária na Costa Del Sol. Entre em contato para aconselhamento personalizado e insights exclusivos do mercado."
+  },
   "common": {
     "search": "Pesquisar",
     "notifications": "Notificações",

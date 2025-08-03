@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Section from "@/components/layout/Section";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface Testimonial {
   id: string;
@@ -95,6 +96,7 @@ const testimonials: Testimonial[] = [
 ];
 
 export default function TestimonialsSection() {
+  const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
@@ -164,10 +166,10 @@ export default function TestimonialsSection() {
           <Quote className="w-8 h-8 text-primary" />
         </div>
         <h2 className="text-4xl font-bold text-foreground mb-4">
-          Client Success Stories
+          {t('testimonials.title')}
         </h2>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-          Discover why international clients trust DelSolPrimeHomes for their Costa Del Sol property investments
+          {t('testimonials.subtitle')}
         </p>
         
         {/* Rating Summary */}

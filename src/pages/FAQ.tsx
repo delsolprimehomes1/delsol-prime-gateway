@@ -12,6 +12,7 @@ import BreadcrumbNavigation from "@/components/seo/BreadcrumbNavigation";
 import { generateFAQSchema, organizationSchema } from "@/utils/seo/structuredData";
 import { generateTitle } from "@/utils/seo/metaUtils";
 import { useFAQData } from "@/hooks/useFAQData";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const categoryIcons = {
   legal: FileText,
@@ -24,6 +25,7 @@ const categoryIcons = {
 };
 
 const FAQ = () => {
+  const { t } = useLanguage();
   const {
     faqs,
     filteredFAQs,
@@ -82,7 +84,7 @@ const FAQ = () => {
             <HelpCircle className="w-10 h-10 text-primary" />
           </div>
           <h1 className="text-6xl font-bold bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent mb-6">
-            Costa del Sol Property FAQ
+            {t('faq.title')}
           </h1>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-4 leading-relaxed">
             Expert answers to 100+ Costa del Sol real estate questions. From legal processes to luxury lifestyle, 
@@ -111,7 +113,7 @@ const FAQ = () => {
                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
                 <Input
                   type="text"
-                  placeholder="Search questions, answers, locations, property types..."
+                  placeholder={t('faq.searchPlaceholder')}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="pl-12 h-14 bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 focus:bg-white focus:shadow-xl text-base"
@@ -285,9 +287,9 @@ const FAQ = () => {
                       <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-muted/40 to-muted/20 flex items-center justify-center mx-auto mb-6 backdrop-blur-sm border border-muted/40">
                         <Search className="w-10 h-10 text-muted-foreground" />
                       </div>
-                      <h3 className="text-2xl font-semibold text-foreground mb-3">No Results Found</h3>
+                      <h3 className="text-2xl font-semibold text-foreground mb-3">{t('faq.noResults')}</h3>
                       <p className="text-muted-foreground mb-6">
-                        We couldn't find any FAQs matching your search criteria. Try adjusting your search terms or browse all categories.
+                        {t('faq.noResultsDescription')}
                       </p>
                       <div className="flex flex-col sm:flex-row gap-3 justify-center">
                         <Button 
@@ -295,7 +297,7 @@ const FAQ = () => {
                           onClick={() => setSearchTerm("")}
                           className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl"
                         >
-                          Clear Search
+                          {t('faq.clearSearch')}
                         </Button>
                         <Button 
                           onClick={() => {
@@ -306,7 +308,7 @@ const FAQ = () => {
                           }}
                           className="shadow-lg hover:shadow-xl"
                         >
-                          Show All FAQs
+                          {t('faq.showAllFAQs')}
                         </Button>
                       </div>
                     </div>
@@ -323,11 +325,10 @@ const FAQ = () => {
             
             <div className="relative z-10">
               <h3 className="text-4xl font-bold mb-6">
-                Still Have Questions?
+                {t('faq.stillHaveQuestions')}
               </h3>
               <p className="text-white/90 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
-                Our expert team is ready to provide personalized guidance for your Costa del Sol property journey. 
-                Get in touch for tailored advice and exclusive market insights.
+                {t('faq.stillHaveQuestionsDescription')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 

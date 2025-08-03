@@ -173,6 +173,99 @@
     "se": "Svenska",
     "dk": "Dansk"
   },
+  "locationShowcase": {
+    "badge": "POPULÄRA DESTINATIONER",
+    "title": "Utforska de Bästa",
+    "titleHighlight": "Costa Del Sol Platserna",
+    "subtitle": "Upptäck exceptionella fastigheter på Costa Del Sols mest önskvärda platser",
+    "marbella": {
+      "title": "Marbella",
+      "description": "Lyx och elegans i hjärtat av Costa Del Sol",
+      "propertiesCount": "150+ Tillgängliga Fastigheter"
+    },
+    "estepona": {
+      "title": "Estepona",
+      "description": "Costa Del Sols trädgård med fantastiska stränder",
+      "propertiesCount": "85+ Tillgängliga Fastigheter"
+    },
+    "benalmadena": {
+      "title": "Benalmádena",
+      "description": "Livligt kustliv med familjeunderhållning",
+      "propertiesCount": "65+ Tillgängliga Fastigheter"
+    },
+    "fuengirola": {
+      "title": "Fuengirola",
+      "description": "Autentisk spansk kultur möter moderna bekvämligheter",
+      "propertiesCount": "70+ Tillgängliga Fastigheter"
+    },
+    "mijas": {
+      "title": "Mijas",
+      "description": "Traditionell andalusisk charm med panoramautsikt",
+      "propertiesCount": "45+ Tillgängliga Fastigheter"
+    },
+    "exploreProperties": "Utforska Fastigheter"
+  },
+  "blog": {
+    "badge": "FASTIGHETSBLOGG",
+    "title": "Senaste Nyheterna och",
+    "titleHighlight": "Marknadsinsikter",
+    "subtitle": "Håll dig informerad med våra senaste artiklar om Costa Del Sol fastighetsmarknaden",
+    "readMore": "Läs Mer",
+    "viewAllPosts": "Visa Alla Inlägg",
+    "categories": {
+      "marketTrends": "Marknadstrender",
+      "buyingGuides": "Köpguider",
+      "locationSpotlights": "Platsbelysning",
+      "legalAdvice": "Juridisk Rådgivning",
+      "investmentTips": "Investeringstips",
+      "lifestyleFeatures": "Livsstilsfunktioner"
+    }
+  },
+  "about": {
+    "title": "Om DelSolPrimeHomes",
+    "description": "Med över 15 års erfarenhet av internationella fastigheter är DelSolPrimeHomes din pålitliga partner för att hitta exceptionella fastigheter på Costa Del Sol.",
+    "stats": {
+      "yearsExperience": "Års Erfarenhet",
+      "propertiesSold": "Sålda Fastigheter",
+      "nationalities": "Betjänade Nationaliteter",
+      "salesVolume": "Försäljningsvolym"
+    }
+  },
+  "testimonials": {
+    "title": "Kundens Framgångshistorier",
+    "subtitle": "Upptäck varför internationella kunder litar på DelSolPrimeHomes för sina Costa Del Sol fastighetsinvesteringar"
+  },
+  "contact": {
+    "formTitle": "Kontakta Våra Fastighetsexperter",
+    "name": "Ditt Namn",
+    "email": "E-postadress",
+    "phone": "Telefonnummer",
+    "propertyType": "Fastighetstyp",
+    "budgetRange": "Budgetintervall",
+    "message": "Berätta om dina fastighetskrav...",
+    "sendMessage": "Skicka Meddelande",
+    "sendingMessage": "Skickar Meddelande...",
+    "messageSentTitle": "Meddelande Skickat Framgångsrikt!",
+    "messageSentDescription": "Tack för din förfrågan. Vi återkommer inom 24 timmar.",
+    "submissionFailedTitle": "Inskickning Misslyckades",
+    "submissionFailedDescription": "Det uppstod ett fel när ditt meddelande skickades. Försök igen."
+  },
+  "errors": {
+    "title": "Hoppsan! Något gick fel",
+    "description": "Vi ber om ursäkt för besväret. Vårt team har informerats och arbetar på en lösning.",
+    "tryAgain": "Försök Igen",
+    "goToHomepage": "Gå till Startsidan"
+  },
+  "faq": {
+    "title": "Costa Del Sol Fastighets-FAQ",
+    "searchPlaceholder": "Sök frågor, svar, platser, fastighetstyper...",
+    "noResults": "Inga Resultat Hittades",
+    "noResultsDescription": "Vi kunde inte hitta några FAQs som matchar dina sökkriterier. Försök justera dina söktermer eller bläddra bland alla kategorier.",
+    "clearSearch": "Rensa Sökning",
+    "showAllFAQs": "Visa Alla FAQs",
+    "stillHaveQuestions": "Har Du Fortfarande Frågor?",
+    "stillHaveQuestionsDescription": "Vårt expertteam är redo att ge personlig vägledning för din Costa Del Sol fastighetsresa. Kontakta oss för skräddarsydda råd och exklusiva marknadsinsikter."
+  },
   "common": {
     "search": "Sök",
     "notifications": "Notifieringar",
