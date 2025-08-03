@@ -1553,105 +1553,194 @@ const FAQ = () => {
             </p>
           </div>
 
-          {/* FAQ Accordion */}
-          <Accordion 
-            type="single" 
-            collapsible 
-            className="space-y-6"
-            aria-label="Frequently Asked Questions"
-          >
-            {filteredFAQs.map((faq, index) => {
-                      const IconComponent = categoryIcons[faq.category as keyof typeof categoryIcons];
-                      return (
-                        <AccordionItem
-                          key={faq.id}
-                          value={faq.id}
-                          className="border-0 rounded-2xl bg-white/60 backdrop-blur-sm hover:bg-white/80 transition-all duration-500 hover:shadow-xl shadow-lg overflow-hidden group"
-                          aria-labelledby={`faq-${faq.id}-question`}
-                        >
-                          <AccordionTrigger 
-                            className="px-8 py-6 hover:no-underline"
-                            aria-expanded="false"
-                            aria-controls={`faq-${faq.id}-content`}
-                          >
-                            <div className="flex items-start gap-6 text-left w-full">
-                              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300 border border-primary/20">
-                                <IconComponent className="w-6 h-6 text-primary" aria-hidden="true" />
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <div className="mb-2 flex flex-wrap gap-2">
-                                  <Badge variant="outline" className="bg-white/80 text-xs font-medium">
-                                    {translatedCategoryNames[faq.category] || faq.category}
-                                  </Badge>
-                                   {faq.target_areas && faq.target_areas.length > 0 && (
-                                     <Badge variant="secondary" className="bg-blue-100 text-blue-800 text-xs">
-                                       {faq.target_areas[0]}{faq.target_areas.length > 1 && ` +${faq.target_areas.length - 1}`}
-                                     </Badge>
-                                   )}
-                                   {faq.property_types && faq.property_types.length > 0 && (
-                                     <Badge variant="secondary" className="bg-green-100 text-green-800 text-xs">
-                                       {faq.property_types[0]}{faq.property_types.length > 1 && ` +${faq.property_types.length - 1}`}
-                                     </Badge>
-                                   )}
-                                </div>
-                                <h3 
-                                  id={`faq-${faq.id}-question`}
-                                  className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300 leading-relaxed"
-                                >
-                                  {faq.question}
-                                </h3>
+          {/* Enhanced FAQ Accordion by Category */}
+          {Object.entries(translatedCategoryNames).map(([categoryKey, categoryName], categoryIndex) => {
+            if (categoryKey === "all") return null;
+            
+            const categoryFAQs = filteredFAQs.filter(faq => faq.category === categoryKey);
+            if (categoryFAQs.length === 0) return null;
+
+            const IconComponent = categoryIcons[categoryKey as keyof typeof categoryIcons] || HelpCircle;
+            const isEvenCategory = categoryIndex % 2 === 0;
+
+            return (
+              <div key={categoryKey} className={`mb-12 ${isEvenCategory ? 'lg:pr-6' : 'lg:pl-6'}`}>
+                {/* Category Header */}
+                <div className={`mb-6 p-6 rounded-2xl border-l-4 border-primary ${
+                  isEvenCategory 
+                    ? 'bg-gradient-to-r from-primary/5 to-primary/10' 
+                    : 'bg-gradient-to-l from-secondary/5 to-secondary/10'
+                }`}>
+                  <div className="flex items-center gap-4">
+                    <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center border border-primary/20">
+                      <IconComponent className="w-7 h-7 text-primary" />
+                    </div>
+                    <div>
+                      <h2 className="text-2xl font-bold text-foreground mb-2">
+                        {categoryName}
+                      </h2>
+                      <p className="text-muted-foreground">
+                        {categoryFAQs.length} question{categoryFAQs.length !== 1 ? 's' : ''} available
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Category FAQs Accordion */}
+                <Accordion 
+                  type="single" 
+                  collapsible 
+                  className="space-y-4"
+                  aria-label={`${categoryName} Questions`}
+                >
+                  {categoryFAQs.map((faq, index) => (
+                    <AccordionItem
+                      key={faq.id}
+                      value={faq.id}
+                      className={`border-0 rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 overflow-hidden group ${
+                        isEvenCategory 
+                          ? 'bg-gradient-to-r from-white via-white to-primary/5' 
+                          : 'bg-gradient-to-l from-white via-white to-secondary/5'
+                      }`}
+                      aria-labelledby={`faq-${faq.id}-question`}
+                    >
+                      <AccordionTrigger 
+                        className="px-8 py-6 hover:no-underline group-hover:bg-white/60 transition-all duration-300"
+                        aria-expanded="false"
+                        aria-controls={`faq-${faq.id}-content`}
+                        onClick={() => {
+                          // Auto-scroll to expanded item with smooth animation
+                          setTimeout(() => {
+                            const element = document.getElementById(`faq-${faq.id}-question`);
+                            if (element) {
+                              element.scrollIntoView({ 
+                                behavior: 'smooth', 
+                                block: 'start',
+                                inline: 'nearest'
+                              });
+                            }
+                          }, 150);
+                        }}
+                      >
+                        <div className="flex items-start gap-6 text-left w-full">
+                          <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center group-hover:from-primary/25 group-hover:to-primary/15 transition-all duration-300 border border-primary/10">
+                            <span className="text-primary font-bold text-lg">
+                              {(index + 1).toString().padStart(2, '0')}
+                            </span>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="mb-3 flex flex-wrap gap-2">
+                              {faq.target_areas && faq.target_areas.length > 0 && (
+                                <Badge variant="secondary" className="bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1">
+                                  <MapPin className="w-3 h-3 mr-1" />
+                                  {faq.target_areas[0]}{faq.target_areas.length > 1 && ` +${faq.target_areas.length - 1}`}
+                                </Badge>
+                              )}
+                              {faq.property_types && faq.property_types.length > 0 && (
+                                <Badge variant="secondary" className="bg-green-100 text-green-800 text-xs font-medium px-3 py-1">
+                                  <Home className="w-3 h-3 mr-1" />
+                                  {faq.property_types[0]}{faq.property_types.length > 1 && ` +${faq.property_types.length - 1}`}
+                                </Badge>
+                              )}
+                            </div>
+                            <h3 
+                              id={`faq-${faq.id}-question`}
+                              className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300 leading-relaxed"
+                            >
+                              {faq.question}
+                            </h3>
+                          </div>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent 
+                        className="px-8 pb-8 animate-accordion-down"
+                        id={`faq-${faq.id}-content`}
+                        role="region"
+                        aria-labelledby={`faq-${faq.id}-question`}
+                      >
+                        <div className="ml-18 bg-gradient-to-br from-muted/20 to-muted/5 rounded-xl p-6 border border-muted/20 backdrop-blur-sm">
+                          <p className="text-muted-foreground leading-relaxed text-base mb-4">
+                            {faq.answer_short}
+                          </p>
+                          {faq.answer_long && (
+                            <div className="mt-4 pt-4 border-t border-muted/20">
+                              <p className="text-sm text-muted-foreground/80 leading-relaxed">
+                                {faq.answer_long}
+                              </p>
+                            </div>
+                          )}
+                          {/* Tags if available */}
+                          {faq.tags && faq.tags.length > 0 && (
+                            <div className="mt-4 pt-4 border-t border-muted/20">
+                              <div className="flex flex-wrap gap-2">
+                                {faq.tags.map((tag, tagIndex) => (
+                                  <span 
+                                    key={tagIndex}
+                                    className="inline-flex items-center px-2 py-1 rounded-md bg-primary/10 text-primary text-xs font-medium"
+                                  >
+                                    #{tag}
+                                  </span>
+                                ))}
                               </div>
                             </div>
-                          </AccordionTrigger>
-                          <AccordionContent 
-                            className="px-8 pb-8"
-                            id={`faq-${faq.id}-content`}
-                            role="region"
-                            aria-labelledby={`faq-${faq.id}-question`}
-                          >
-                             <div className="ml-18 bg-gradient-to-br from-muted/30 to-muted/20 rounded-xl p-6 border border-muted/40">
-                               <p className="text-muted-foreground leading-relaxed text-base">
-                                 {faq.answer_short}
-                               </p>
-                             </div>
-                          </AccordionContent>
-                        </AccordionItem>
-                      );
-                    })}
-                  </Accordion>
+                          )}
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
+            );
+          })}
 
           {/* No Results State */}
           {filteredFAQs.length === 0 && (
-                    <div className="text-center py-16">
-                      <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-muted/40 to-muted/20 flex items-center justify-center mx-auto mb-6 backdrop-blur-sm border border-muted/40">
-                        <Search className="w-10 h-10 text-muted-foreground" />
-                      </div>
-                      <h3 className="text-2xl font-semibold text-foreground mb-3">{t('faq.noResults')}</h3>
-                      <p className="text-muted-foreground mb-6">
-                        {t('faq.noResultsDescription')}
-                      </p>
-                      <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                        <Button 
-                          variant="outline" 
-                          onClick={() => setSearchTerm("")}
-                          className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl"
-                        >
-                          {t('faq.clearSearch')}
-                        </Button>
-                        <Button 
-                          onClick={() => {
-                            setSearchTerm("");
-                            setSelectedCategory("all");
-                            setSelectedTargetArea("all");
-                            setSelectedPropertyType("all");
-                          }}
-                          className="shadow-lg hover:shadow-xl"
-                        >
-                          {t('faq.showAllFAQs')}
-                        </Button>
-                      </div>
-                    </div>
-                  )}
+            <div className="text-center py-16">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-muted/40 to-muted/20 flex items-center justify-center mx-auto mb-6 backdrop-blur-sm border border-muted/40">
+                <Search className="w-10 h-10 text-muted-foreground" />
+              </div>
+              <h3 className="text-2xl font-semibold text-foreground mb-3">{t('faq.noResults')}</h3>
+              <p className="text-muted-foreground mb-6">
+                {t('faq.noResultsDescription')}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Button 
+                  variant="outline" 
+                  onClick={() => setSearchTerm("")}
+                  className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl"
+                >
+                  {t('faq.clearSearch')}
+                </Button>
+                <Button 
+                  onClick={() => {
+                    setSearchTerm("");
+                    setSelectedCategory("all");
+                    setSelectedTargetArea("all");
+                    setSelectedPropertyType("all");
+                  }}
+                  className="shadow-lg hover:shadow-xl"
+                >
+                  {t('faq.showAllFAQs')}
+                </Button>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Floating Ask Question Button */}
+        <div className="fixed bottom-6 right-6 z-50">
+          <Button
+            size="lg"
+            className="rounded-full shadow-2xl hover:shadow-3xl bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white border-0 px-6 py-3 transition-all duration-300 hover:scale-105 group"
+            onClick={() => {
+              // You can integrate this with your chatbot/voice concierge
+              console.log("Opening chat with Isabelle...");
+              // Example: window.chatbot?.open() or similar
+            }}
+          >
+            <HelpCircle className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" />
+            <span className="font-medium">Ask Isabelle</span>
+          </Button>
         </div>
 
         {/* CTA Section */}
