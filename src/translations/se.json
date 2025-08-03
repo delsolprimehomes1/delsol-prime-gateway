@@ -287,5 +287,21 @@
     "download": "Ladda ner",
     "upload": "Ladda upp",
     "share": "Dela"
-  }
+    }
+  },
+  "filterLocations": {
+    "marbella": "Marbella",
+    "mijas": "Mijas",
+    "estepona": "Estepona",
+    "benalmadena": "Benalmádena",
+    "fuengirola": "Fuengirola"
+  },
+  "filterPropertyTypes": {
+    "apartment": "Lägenhet",
+    "villa": "Villa",
+    "penthouse": "Penthouse",
+    "townhouse": "Radhus", 
+    "new_build": "Nybygge",
+    "beachfront": "Vid Stranden"
+  },
 }

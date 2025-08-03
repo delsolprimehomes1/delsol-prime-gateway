@@ -154,6 +154,22 @@
       "selling_property": "Vender Propriedade"
     }
   },
+  "filterLocations": {
+    "marbella": "Marbella",
+    "mijas": "Mijas",
+    "estepona": "Estepona", 
+    "benalmadena": "Benalmádena",
+    "fuengirola": "Fuengirola"
+  },
+  "filterPropertyTypes": {
+    "apartment": "Apartamento",
+    "villa": "Villa",
+    "penthouse": "Penthouse",
+    "townhouse": "Casa Geminada",
+    "new_build": "Construção Nova",
+    "beachfront": "Frente ao Mar"
+  },
+  },
   "common": {
     "search": "Pesquisar",
     "notifications": "Notificações",

@@ -226,6 +226,22 @@
       "selling_property": "Sprzedaż Nieruchomości"
     }
   },
+  "filterLocations": {
+    "marbella": "Marbella",
+    "mijas": "Mijas",
+    "estepona": "Estepona",
+    "benalmadena": "Benalmádena",
+    "fuengirola": "Fuengirola"
+  },
+  "filterPropertyTypes": {
+    "apartment": "Mieszkanie",
+    "villa": "Willa", 
+    "penthouse": "Penthouse",
+    "townhouse": "Szeregowiec",
+    "new_build": "Nowa Budowa",
+    "beachfront": "Przy Plaży"
+  },
+  },
   "footer": {
     "servicesLinks": {
       "propertySearch": "Wyszukiwanie Nieruchomości",

@@ -235,6 +235,22 @@
       "selling_property": "Vender Propiedad"
     }
   },
+  "filterLocations": {
+    "marbella": "Marbella",
+    "mijas": "Mijas",
+    "estepona": "Estepona",
+    "benalmadena": "Benalmádena",
+    "fuengirola": "Fuengirola"
+  },
+  "filterPropertyTypes": {
+    "apartment": "Apartamento",
+    "villa": "Villa",
+    "penthouse": "Ático",
+    "townhouse": "Casa Adosada",
+    "new_build": "Obra Nueva",
+    "beachfront": "Primera Línea de Playa"
+  },
+  },
   "common": {
     "search": "Buscar",
     "notifications": "Notificaciones",

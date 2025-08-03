@@ -281,6 +281,22 @@
       "selling_property": "Salg af Ejendom"
     }
   },
+  "filterLocations": {
+    "marbella": "Marbella", 
+    "mijas": "Mijas",
+    "estepona": "Estepona",
+    "benalmadena": "Benalmádena",
+    "fuengirola": "Fuengirola"
+  },
+  "filterPropertyTypes": {
+    "apartment": "Lejlighed",
+    "villa": "Villa",
+    "penthouse": "Penthouse",
+    "townhouse": "Rækkehus",
+    "new_build": "Nybyggeri",
+    "beachfront": "Ved Stranden"
+  },
+  },
   "common": {
     "search": "Søg",
     "notifications": "Notifikationer",

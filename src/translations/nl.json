@@ -242,6 +242,22 @@
       "selling_property": "Eigendom Verkopen"
     }
   },
+  "filterLocations": {
+    "marbella": "Marbella",
+    "mijas": "Mijas",
+    "estepona": "Estepona", 
+    "benalmadena": "Benalmádena",
+    "fuengirola": "Fuengirola"
+  },
+  "filterPropertyTypes": {
+    "apartment": "Appartement",
+    "villa": "Villa",
+    "penthouse": "Penthouse",
+    "townhouse": "Rijtjeshuis",
+    "new_build": "Nieuwbouw",
+    "beachfront": "Aan het Strand"
+  },
+  },
   "footer": {
     "servicesLinks": {
       "propertySearch": "Eigendom Zoeken",
