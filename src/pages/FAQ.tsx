@@ -24,7 +24,7 @@ const categoryIcons = {
   properties: Home,
   services: HelpCircle,
   lifestyle: MapPin,
-  newbuild: Building
+  "lifestyle-integration": MapPin
 };
 
 const FAQ = () => {
@@ -110,7 +110,7 @@ const FAQ = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30">
       <SEOHead
-        title={generateTitle(t('faq.title') || "Costa del Sol Real Estate FAQ - 100+ Expert Property Answers")}
+        title={generateTitle(t('faq.title') || "Costa del Sol Real Estate FAQ - 150+ Expert Property Answers")}
         description={t('faq.subtitle') || "Get instant answers to all your Costa del Sol property questions. Expert advice on buying, selling, legal requirements, taxes, and more from DelSolPrimeHomes."}
         structuredData={structuredData}
       />
