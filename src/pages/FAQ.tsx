@@ -60,8 +60,8 @@ const FAQ = () => {
     initializeFAQData();
   }, []);
 
-  const targetAreas = getTargetAreas();
-  const propertyTypes = getPropertyTypes();
+  const targetAreas = getTargetAreas;
+  const propertyTypes = getPropertyTypes;
 
   // Generate structured data for SEO with all FAQs
   const faqSchema = useMemo(() => {

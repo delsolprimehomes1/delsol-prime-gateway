@@ -52,38 +52,65 @@ export const useSupabaseFAQ = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Fetch FAQs and categories from Supabase
+  // Fetch FAQs and categories from Supabase with language-based filtering
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
         setError(null);
 
-        // Fetch FAQs for current language with fallback to English
-        const { data: faqsData, error: faqsError } = await supabase
+        // First, try to fetch FAQs for the current language only
+        let { data: faqsData, error: faqsError } = await supabase
           .from('faqs')
           .select('*')
-          .or(`language.eq.${currentLanguage},language.eq.en`)
+          .eq('language', currentLanguage)
           .order('sort_order', { ascending: true })
           .order('created_at', { ascending: false });
 
         if (faqsError) throw faqsError;
 
+        // If no FAQs found for current language and it's not English, fallback to English
+        if ((!faqsData || faqsData.length === 0) && currentLanguage !== 'en') {
+          console.log(`No FAQs found for language: ${currentLanguage}, falling back to English`);
+          
+          const { data: englishFaqsData, error: englishFaqsError } = await supabase
+            .from('faqs')
+            .select('*')
+            .eq('language', 'en')
+            .order('sort_order', { ascending: true })
+            .order('created_at', { ascending: false });
+
+          if (englishFaqsError) throw englishFaqsError;
+          faqsData = englishFaqsData;
+        }
+
         // Fetch categories for current language with fallback to English
-        const { data: categoriesData, error: categoriesError } = await supabase
+        let { data: categoriesData, error: categoriesError } = await supabase
           .from('faq_categories')
           .select('*')
-          .or(`language.eq.${currentLanguage},language.eq.en`)
+          .eq('language', currentLanguage)
           .order('sort_order', { ascending: true });
 
         if (categoriesError) throw categoriesError;
 
-        // Prioritize current language, fallback to English
-        const processedFaqs = processFaqsWithFallback(faqsData || [], currentLanguage);
-        const processedCategories = processCategoriesWithFallback(categoriesData || [], currentLanguage);
+        // If no categories found for current language and it's not English, fallback to English
+        if ((!categoriesData || categoriesData.length === 0) && currentLanguage !== 'en') {
+          console.log(`No categories found for language: ${currentLanguage}, falling back to English`);
+          
+          const { data: englishCategoriesData, error: englishCategoriesError } = await supabase
+            .from('faq_categories')
+            .select('*')
+            .eq('language', 'en')
+            .order('sort_order', { ascending: true });
 
-        setFaqs(processedFaqs);
-        setCategories(processedCategories);
+          if (englishCategoriesError) throw englishCategoriesError;
+          categoriesData = englishCategoriesData;
+        }
+
+        setFaqs(faqsData || []);
+        setCategories(categoriesData || []);
+        
+        console.log(`Loaded ${faqsData?.length || 0} FAQs and ${categoriesData?.length || 0} categories for language: ${currentLanguage}`);
       } catch (err) {
         console.error('Error fetching FAQ data:', err);
         setError(err instanceof Error ? err.message : 'Failed to fetch FAQ data');
@@ -93,37 +120,7 @@ export const useSupabaseFAQ = () => {
     };
 
     fetchData();
-  }, [currentLanguage]);
-
-  // Process FAQs with language fallback
-  const processFaqsWithFallback = (data: FAQ[], preferredLanguage: string): FAQ[] => {
-    const faqMap = new Map<string, FAQ>();
-
-    // Group by slug and prioritize preferred language
-    data.forEach(faq => {
-      const existing = faqMap.get(faq.slug);
-      if (!existing || faq.language === preferredLanguage) {
-        faqMap.set(faq.slug, faq);
-      }
-    });
-
-    return Array.from(faqMap.values());
-  };
-
-  // Process categories with language fallback
-  const processCategoriesWithFallback = (data: FAQCategory[], preferredLanguage: string): FAQCategory[] => {
-    const categoryMap = new Map<string, FAQCategory>();
-
-    // Group by key and prioritize preferred language
-    data.forEach(category => {
-      const existing = categoryMap.get(category.key);
-      if (!existing || category.language === preferredLanguage) {
-        categoryMap.set(category.key, category);
-      }
-    });
-
-    return Array.from(categoryMap.values());
-  };
+  }, [currentLanguage]); // Re-run when language changes
 
   // Enhanced search with voice query optimization and metadata filtering
   const filteredFAQs = useMemo(() => {
@@ -180,17 +177,31 @@ export const useSupabaseFAQ = () => {
     return filtered;
   }, [searchTerm, selectedCategory, selectedTargetArea, selectedPropertyType, faqs]);
 
-  const categoryNames = {
-    all: 'All Questions',
-    ...Object.fromEntries(
-      categories.map(category => [category.key, category.name])
-    )
-  };
+  // Create category names mapping with better fallback handling
+  const categoryNames = useMemo(() => {
+    const baseCategories = {
+      all: 'All Questions'
+    };
+    
+    // Add categories from current data
+    categories.forEach(category => {
+      baseCategories[category.key] = category.name;
+    });
+    
+    return baseCategories;
+  }, [categories]);
 
-  const getCategoryCount = (categoryKey: string) => {
-    if (categoryKey === "all") return faqs.length;
-    return faqs.filter(faq => faq.category === categoryKey).length;
-  };
+  // Get category count with memoization for performance
+  const getCategoryCount = useMemo(() => {
+    const counts = {};
+    counts['all'] = faqs.length;
+    
+    faqs.forEach(faq => {
+      counts[faq.category] = (counts[faq.category] || 0) + 1;
+    });
+    
+    return (categoryKey: string) => counts[categoryKey] || 0;
+  }, [faqs]);
 
   const getRelatedFAQs = async (currentFAQ: FAQ, limit: number = 3): Promise<FAQ[]> => {
     try {
@@ -239,23 +250,23 @@ export const useSupabaseFAQ = () => {
     );
   };
 
-  // Get unique target areas from all FAQs
-  const getTargetAreas = (): string[] => {
+  // Get unique target areas from current language FAQs
+  const getTargetAreas = useMemo((): string[] => {
     const areas = new Set<string>();
     faqs.forEach(faq => {
       faq.target_areas?.forEach(area => areas.add(area));
     });
     return Array.from(areas).sort();
-  };
+  }, [faqs]);
 
-  // Get unique property types from all FAQs
-  const getPropertyTypes = (): string[] => {
+  // Get unique property types from current language FAQs
+  const getPropertyTypes = useMemo((): string[] => {
     const types = new Set<string>();
     faqs.forEach(faq => {
       faq.property_types?.forEach(type => types.add(type));
     });
     return Array.from(types).sort();
-  };
+  }, [faqs]);
 
   // Get FAQs by target area
   const getFAQsByTargetArea = (area: string): FAQ[] => {
@@ -271,11 +282,27 @@ export const useSupabaseFAQ = () => {
     );
   };
 
+  // Language detection utility
+  const getCurrentLanguageInfo = () => {
+    const hasDataInCurrentLanguage = faqs.some(faq => faq.language === currentLanguage);
+    const fallbackUsed = !hasDataInCurrentLanguage && currentLanguage !== 'en';
+    
+    return {
+      currentLanguage,
+      hasDataInCurrentLanguage,
+      fallbackUsed,
+      effectiveLanguage: hasDataInCurrentLanguage ? currentLanguage : 'en'
+    };
+  };
+
   return {
+    // Core data
     categories: Object.fromEntries(categories.map(cat => [cat.key, cat])),
     faqs,
     filteredFAQs,
     categoryNames,
+    
+    // Search and filtering state
     searchTerm,
     setSearchTerm,
     selectedCategory,
@@ -284,6 +311,8 @@ export const useSupabaseFAQ = () => {
     setSelectedTargetArea,
     selectedPropertyType,
     setSelectedPropertyType,
+    
+    // Utility functions
     getCategoryCount,
     getRelatedFAQs,
     getFeaturedFAQs,
@@ -293,6 +322,11 @@ export const useSupabaseFAQ = () => {
     getPropertyTypes,
     getFAQsByTargetArea,
     getFAQsByPropertyType,
+    
+    // Language info
+    getCurrentLanguageInfo,
+    
+    // Loading states
     loading,
     error
   };
