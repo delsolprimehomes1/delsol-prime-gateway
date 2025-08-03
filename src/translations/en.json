@@ -182,7 +182,45 @@
   "blog": {
     "title": "What's New in Costa Del Sol Real Estate?",
     "subtitle": "Stay informed with expert analysis, market trends, and insider knowledge from Costa Del Sol's premier real estate professionals.",
-    "viewAllPosts": "View All Posts"
+    "viewAllPosts": "View All Posts",
+    "categories": {
+      "allPosts": "All Posts",
+      "marketAnalysis": "Market Analysis",
+      "investment": "Investment",
+      "buyersGuide": "Buyer's Guide",
+      "lifestyle": "Lifestyle",
+      "legal": "Legal"
+    },
+    "readMore": "Read More"
+  },
+  "locations": {
+    "badge": "FEATURED LOCATIONS",
+    "title": "Which Costa Del Sol Location",
+    "titleHighlight": "Should You Choose?",
+    "subtitle": "Explore our premium properties across the most sought-after locations along the stunning Costa Del Sol coastline.",
+    "viewAllLocations": "View All Locations",
+    "exploreProperties": "Explore Properties",
+    "available": "Available:",
+    "priceRange": "Price Range:",
+    "descriptions": {
+      "marbella": "Luxury beachfront living",
+      "estepona": "Charming coastal town",
+      "mijas": "Traditional Spanish charm",
+      "fuengirola": "Modern amenities",
+      "benalmadena": "Entertainment hub"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Get answers to common questions about buying property in Costa Del Sol",
+    "searchPlaceholder": "Search questions...",
+    "noResults": "No results found",
+    "viewAllFAQs": "View All FAQs",
+    "contactExpert": "Contact an Expert"
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Real experiences from satisfied property owners"
   },
   "common": {
     "search": "Search",

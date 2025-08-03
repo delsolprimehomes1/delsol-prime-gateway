@@ -184,6 +184,54 @@
     "se": "Svenska",
     "dk": "Dansk"
   },
+  "blog": {
+    "categories": {
+      "allPosts": "Tous les Articles",
+      "marketAnalysis": "Analyse de Marché",
+      "investment": "Investissement",
+      "buyersGuide": "Guide d'Achat",
+      "lifestyle": "Style de Vie",
+      "legal": "Juridique"
+    },
+    "readMore": "Lire Plus"
+  },
+  "locations": {
+    "badge": "EMPLACEMENTS EN VEDETTE",
+    "title": "Quel Emplacement Costa Del Sol",
+    "titleHighlight": "Devriez-Vous Choisir?",
+    "subtitle": "Explorez nos propriétés premium dans les emplacements les plus recherchés le long de la magnifique côte de Costa Del Sol.",
+    "viewAllLocations": "Voir Tous les Emplacements",
+    "exploreProperties": "Explorer les Propriétés",
+    "available": "Disponibles:",
+    "priceRange": "Gamme de Prix:",
+    "descriptions": {
+      "marbella": "Vie de luxe en bord de mer",
+      "estepona": "Ville côtière charmante",
+      "mijas": "Charme traditionnel espagnol",
+      "fuengirola": "Commodités modernes",
+      "benalmadena": "Centre de divertissement"
+    }
+  },
+  "faq": {
+    "title": "Questions Fréquemment Posées"
+  },
+  "footer": {
+    "servicesLinks": {
+      "propertySearch": "Recherche de Propriétés",
+      "legalServices": "Services Juridiques",
+      "investmentAdvice": "Conseils d'Investissement",
+      "propertyManagement": "Gestion de Propriétés"
+    },
+    "featuredLocationsLinks": {
+      "marbella": "Marbella",
+      "puertoBAnus": "Puerto Banús",
+      "estepona": "Estepona",
+      "benahavis": "Benahavís"
+    },
+    "privacyPolicy": "Politique de Confidentialité",
+    "termsOfService": "Conditions de Service",
+    "cookiePolicy": "Politique de Cookies"
+  },
   "common": {
     "search": "Rechercher",
     "notifications": "Notifications",

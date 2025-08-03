@@ -189,6 +189,54 @@
     "subtitle": "Blijf op de hoogte met deskundige analyses, marktttrends en inside kennis van Costa del Sol's premier vastgoedprofessionals.",
     "viewAllPosts": "Bekijk Alle Posts"
   },
+  "blog": {
+    "categories": {
+      "allPosts": "Alle Berichten",
+      "marketAnalysis": "Marktanalyse",
+      "investment": "Investering",
+      "buyersGuide": "Kopershandleiding",
+      "lifestyle": "Levensstijl",
+      "legal": "Juridisch"
+    },
+    "readMore": "Lees Meer"
+  },
+  "locations": {
+    "badge": "UITGELICHTE LOCATIES",
+    "title": "Welke Costa Del Sol Locatie",
+    "titleHighlight": "Zou U Moeten Kiezen?",
+    "subtitle": "Ontdek onze premium eigendommen op de meest gewilde locaties langs de prachtige Costa Del Sol kustlijn.",
+    "viewAllLocations": "Bekijk Alle Locaties",
+    "exploreProperties": "Verken Eigendommen",
+    "available": "Beschikbaar:",
+    "priceRange": "Prijsklasse:",
+    "descriptions": {
+      "marbella": "Luxueus strandleven",
+      "estepona": "Charmante kustplaats",
+      "mijas": "Traditionele Spaanse charme",
+      "fuengirola": "Moderne voorzieningen",
+      "benalmadena": "Entertainmentcentrum"
+    }
+  },
+  "faq": {
+    "title": "Veelgestelde Vragen"
+  },
+  "footer": {
+    "servicesLinks": {
+      "propertySearch": "Eigendom Zoeken",
+      "legalServices": "Juridische Diensten",
+      "investmentAdvice": "Investeringsadvies",
+      "propertyManagement": "Vastgoedbeheer"
+    },
+    "featuredLocationsLinks": {
+      "marbella": "Marbella",
+      "puertoBAnus": "Puerto Banús",
+      "estepona": "Estepona",
+      "benahavis": "Benahavís"
+    },
+    "privacyPolicy": "Privacybeleid",
+    "termsOfService": "Servicevoorwaarden",
+    "cookiePolicy": "Cookiebeleid"
+  },
   "common": {
     "search": "Zoeken",
     "notifications": "Meldingen",

@@ -8,26 +8,26 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { label: "Properties", href: "/properties" },
-    { label: "Locations", href: "/locations" },
-    { label: "About", href: "/about" },
-    { label: "Blog", href: "/blog" },
-    { label: "FAQ", href: "/faq" },
-    { label: "Contact", href: "/contact" },
+    { label: t('nav.properties'), href: "/properties" },
+    { label: t('nav.locations'), href: "/locations" },
+    { label: t('nav.about'), href: "/about" },
+    { label: t('nav.blog'), href: "/blog" },
+    { label: t('faq.title'), href: "/faq" },
+    { label: t('nav.contact'), href: "/contact" },
   ];
 
   const services = [
-    { label: "Property Search", href: "/properties" },
-    { label: "Legal Services", href: "/contact" },
-    { label: "Investment Advice", href: "/contact" },
-    { label: "Property Management", href: "/contact" },
+    { label: t('footer.servicesLinks.propertySearch'), href: "/properties" },
+    { label: t('footer.servicesLinks.legalServices'), href: "/contact" },
+    { label: t('footer.servicesLinks.investmentAdvice'), href: "/contact" },
+    { label: t('footer.servicesLinks.propertyManagement'), href: "/contact" },
   ];
 
   const locations = [
-    { label: "Marbella", href: "/locations/marbella" },
-    { label: "Puerto Banús", href: "/locations/puerto-banus" },
-    { label: "Estepona", href: "/locations/estepona" },
-    { label: "Benahavís", href: "/locations/benahavis" },
+    { label: t('footer.featuredLocationsLinks.marbella'), href: "/locations/marbella" },
+    { label: t('footer.featuredLocationsLinks.puertoBAnus'), href: "/locations/puerto-banus" },
+    { label: t('footer.featuredLocationsLinks.estepona'), href: "/locations/estepona" },
+    { label: t('footer.featuredLocationsLinks.benahavis'), href: "/locations/benahavis" },
   ];
 
   return (
@@ -77,7 +77,7 @@ export default function Footer() {
 
           {/* Services */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Services</h3>
+            <h3 className="text-lg font-semibold">{t('footer.services')}</h3>
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service.label}>
@@ -94,7 +94,7 @@ export default function Footer() {
 
           {/* Locations */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Featured Locations</h3>
+            <h3 className="text-lg font-semibold">{t('footer.featuredLocations')}</h3>
             <ul className="space-y-2">
               {locations.map((location) => (
                 <li key={location.label}>
@@ -114,7 +114,7 @@ export default function Footer() {
         <div className="border-t border-slate-700 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-4">
-              <span className="text-sm text-slate-300">Follow us:</span>
+              <span className="text-sm text-slate-300">{t('footer.followUs')}</span>
               <div className="flex gap-3">
                 <Button variant="ghost" size="sm" className="text-slate-300 hover:text-primary">
                   <Facebook className="w-4 h-4" />
@@ -132,9 +132,9 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-col md:flex-row items-center gap-4">
-              <span className="text-sm text-slate-300">Stay updated with our newsletter</span>
+              <span className="text-sm text-slate-300">{t('footer.newsletter')}</span>
               <Button variant="hero" size="sm">
-                Subscribe
+                {t('footer.subscribe')}
               </Button>
             </div>
           </div>
@@ -143,16 +143,16 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-slate-700 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
-            <p>© {currentYear} DelSolPrimeHomes. All rights reserved.</p>
+            <p>© {currentYear} {t('footer.copyright')}</p>
             <div className="flex gap-6">
               <a href="/privacy" className="hover:text-primary transition-colors">
-                Privacy Policy
+                {t('footer.privacyPolicy')}
               </a>
               <a href="/terms" className="hover:text-primary transition-colors">
-                Terms of Service
+                {t('footer.termsOfService')}
               </a>
               <a href="/cookies" className="hover:text-primary transition-colors">
-                Cookie Policy
+                {t('footer.cookiePolicy')}
               </a>
             </div>
           </div>

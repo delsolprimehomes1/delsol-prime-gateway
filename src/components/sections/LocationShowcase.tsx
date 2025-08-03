@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
 import { InteractiveCard } from "@/components/ui/InteractiveCard";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import { useLanguage } from "@/contexts/LanguageContext";
 import marbellaImage from "@/assets/location-marbella-golden-mile.jpg";
 import esteponaImage from "@/assets/location-estepona-old-town.jpg";
 import mijasImage from "@/assets/location-mijas-pueblo.jpg";
@@ -14,10 +15,12 @@ import fuengirolaImage from "@/assets/location-fuengirola-beach.jpg";
 import benalmadenaImage from "@/assets/location-benalmadena-marina.jpg";
 
 const LocationShowcase = () => {
+  const { t } = useLanguage();
+  
   const locations = [
     {
       name: "Marbella",
-      description: "Luxury beachfront living",
+      description: t('locations.descriptions.marbella'),
       properties: "120+ Properties",
       priceRange: "€500K - €15M",
       image: marbellaImage,
@@ -26,7 +29,7 @@ const LocationShowcase = () => {
     },
     {
       name: "Estepona", 
-      description: "Charming coastal town",
+      description: t('locations.descriptions.estepona'),
       properties: "85+ Properties",
       priceRange: "€300K - €8M",
       image: esteponaImage,
@@ -35,7 +38,7 @@ const LocationShowcase = () => {
     },
     {
       name: "Mijas",
-      description: "Traditional Spanish charm", 
+      description: t('locations.descriptions.mijas'), 
       properties: "65+ Properties",
       priceRange: "€250K - €5M",
       image: mijasImage,
@@ -44,7 +47,7 @@ const LocationShowcase = () => {
     },
     {
       name: "Fuengirola",
-      description: "Modern amenities",
+      description: t('locations.descriptions.fuengirola'),
       properties: "95+ Properties", 
       priceRange: "€200K - €4M",
       image: fuengirolaImage,
@@ -53,7 +56,7 @@ const LocationShowcase = () => {
     },
     {
       name: "Benalmádena",
-      description: "Entertainment hub",
+      description: t('locations.descriptions.benalmadena'),
       properties: "70+ Properties",
       priceRange: "€180K - €3M", 
       image: benalmadenaImage,
@@ -68,17 +71,16 @@ const LocationShowcase = () => {
         {/* Section Header */}
         <AnimatedElement animation="fade-in-up" className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-medium mb-6">
-            FEATURED LOCATIONS
+            {t('locations.badge')}
           </div>
           
           <h2 className="text-4xl lg:text-5xl font-bold font-display mb-6">
-            Which Costa Del Sol Location
-            <span className="text-primary"> Should You Choose?</span>
+            {t('locations.title')}
+            <span className="text-primary"> {t('locations.titleHighlight')}</span>
           </h2>
           
           <p className="text-lg text-muted-foreground">
-            Explore our premium properties across the most sought-after locations 
-            along the stunning Costa Del Sol coastline.
+            {t('locations.subtitle')}
           </p>
         </AnimatedElement>
 
@@ -120,11 +122,11 @@ const LocationShowcase = () => {
                 {/* Quick Facts */}
                 <div className="space-y-2 mb-6">
                   <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Available:</span>
+                    <span className="text-muted-foreground">{t('locations.available')}</span>
                     <span className="font-medium">{location.properties}</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Price Range:</span>
+                    <span className="text-muted-foreground">{t('locations.priceRange')}</span>
                     <span className="font-medium">{location.priceRange}</span>
                   </div>
                 </div>
@@ -135,7 +137,7 @@ const LocationShowcase = () => {
                     className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
                     variant="outline"
                   >
-                    Explore Properties
+                    {t('locations.exploreProperties')}
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                   </MagneticButton>
                 </Link>
@@ -148,7 +150,7 @@ const LocationShowcase = () => {
         {/* View All Locations */}
         <AnimatedElement animation="fade-in-up" delay={600} className="text-center mt-12">
           <MagneticButton size="lg" className="font-medium">
-            View All Locations
+            {t('locations.viewAllLocations')}
             <ArrowRight className="w-5 h-5 ml-2" />
           </MagneticButton>
         </AnimatedElement>

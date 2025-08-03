@@ -180,9 +180,38 @@
     }
   },
   "blog": {
-    "title": "¿Qué Hay de Nuevo en Inmobiliaria Costa del Sol?",
-    "subtitle": "Manténgase informado con análisis de expertos, tendencias del mercado y conocimiento interno de los profesionales inmobiliarios más destacados de Costa del Sol.",
-    "viewAllPosts": "Ver Todas las Publicaciones"
+    "title": "¿Qué Hay de Nuevo en Inmobiliaria Costa Del Sol?",
+    "subtitle": "Manténgase informado con análisis de expertos, tendencias del mercado y conocimiento interno de los profesionales inmobiliarios más destacados de Costa Del Sol.",
+    "viewAllPosts": "Ver Todas las Publicaciones",
+    "categories": {
+      "allPosts": "Todas las Publicaciones",
+      "marketAnalysis": "Análisis de Mercado",
+      "investment": "Inversión",
+      "buyersGuide": "Guía del Comprador",
+      "lifestyle": "Estilo de Vida",
+      "legal": "Legal"
+    },
+    "readMore": "Leer Más"
+  },
+  "locations": {
+    "badge": "UBICACIONES DESTACADAS",
+    "title": "¿Qué Ubicación de Costa Del Sol",
+    "titleHighlight": "Deberías Elegir?",
+    "subtitle": "Explora nuestras propiedades premium en las ubicaciones más codiciadas a lo largo de la impresionante costa de Costa Del Sol.",
+    "viewAllLocations": "Ver Todas las Ubicaciones",
+    "exploreProperties": "Explorar Propiedades",
+    "available": "Disponibles:",
+    "priceRange": "Rango de Precios:",
+    "descriptions": {
+      "marbella": "Vida frente al mar de lujo",
+      "estepona": "Encantador pueblo costero",
+      "mijas": "Encanto tradicional español",
+      "fuengirola": "Amenidades modernas",
+      "benalmadena": "Centro de entretenimiento"
+    }
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes"
   },
   "common": {
     "search": "Buscar",

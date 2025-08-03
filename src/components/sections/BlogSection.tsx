@@ -46,17 +46,18 @@ const featuredPosts = [
   }
 ];
 
-const categories = [
-  "All Posts",
-  "Market Analysis",
-  "Investment",
-  "Buyer's Guide",
-  "Lifestyle",
-  "Legal"
-];
-
-export default function BlogSection() {
+const BlogSectionComponent = () => {
   const { t } = useLanguage();
+  
+  const categories = [
+    t('blog.categories.allPosts'),
+    t('blog.categories.marketAnalysis'),
+    t('blog.categories.investment'),
+    t('blog.categories.buyersGuide'),
+    t('blog.categories.lifestyle'),
+    t('blog.categories.legal')
+  ];
+
   
   return (
     <Section 
@@ -78,10 +79,10 @@ export default function BlogSection() {
 
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-3">
-          {categories.map((category) => (
+          {categories.map((category, index) => (
             <Button
               key={category}
-              variant={category === "All Posts" ? "default" : "outline"}
+              variant={index === 0 ? "default" : "outline"}
               size="sm"
               className="rounded-full transition-all duration-300"
             >
@@ -148,7 +149,7 @@ export default function BlogSection() {
                     to={`/blog/${post.slug}`}
                     className="text-primary hover:text-primary/80 font-medium text-sm flex items-center gap-1 group/link"
                   >
-                    Read More
+                    {t('blog.readMore')}
                     <ArrowRight className="h-4 w-4 group-hover/link:translate-x-1 transition-transform duration-300" />
                   </Link>
                 </div>
@@ -170,3 +171,5 @@ export default function BlogSection() {
     </Section>
   );
 }
+
+export default BlogSectionComponent;
