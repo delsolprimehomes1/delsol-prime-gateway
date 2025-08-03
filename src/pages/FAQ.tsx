@@ -66,13 +66,18 @@ const FAQ = () => {
     const initializeFAQData = async () => {
       try {
         await migrateLegacyFAQData();
+        // Refresh FAQs after migration
+        window.location.reload();
       } catch (error) {
         console.error('Failed to initialize FAQ data:', error);
       }
     };
 
-    initializeFAQData();
-  }, []);
+    // Only run migration if no FAQs exist
+    if (!loading && faqs.length === 0) {
+      initializeFAQData();
+    }
+  }, [loading, faqs.length]);
 
   const targetAreas = getTargetAreas;
   const propertyTypes = getPropertyTypes;
