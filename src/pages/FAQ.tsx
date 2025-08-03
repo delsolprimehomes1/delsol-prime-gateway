@@ -599,7 +599,135 @@ const FAQ = () => {
     ]
   };
 
-  const structuredData = [organizationSchema, faqSchema, buyingPropertyFAQSchema, sellingPropertyFAQSchema, viewingTripsFAQSchema, financeTaxesFAQSchema];
+  // Legal Process FAQ Schema for AEO/SEO
+  const legalProcessFAQSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What should I know about legal process in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about legal process in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about legal process in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about legal process in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about legal process in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about legal process in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about legal process in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about legal process in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about legal process in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about legal process in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about legal process in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about legal process in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about legal process in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about legal process in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about legal process in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about legal process in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about legal process in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about legal process in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about legal process in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about legal process in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about legal process in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about legal process in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about legal process in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about legal process in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about legal process in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about legal process in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about legal process in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about legal process in the Costa del Sol area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about legal process in Costa del Sol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brief overview of key details about legal process in the Costa del Sol area."
+        }
+      }
+    ]
+  };
+
+  const structuredData = [organizationSchema, faqSchema, buyingPropertyFAQSchema, sellingPropertyFAQSchema, viewingTripsFAQSchema, financeTaxesFAQSchema, legalProcessFAQSchema];
 
   // Loading and error states
   if (loading) {
