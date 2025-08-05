@@ -23,9 +23,14 @@ import {
 } from "lucide-react";
 import { generateTitle, META_DESCRIPTIONS } from "@/utils/seo/metaUtils";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { PAGE_METADATA, generateHreflangLinks } from "@/utils/seo/contentMetadata";
+import ogAboutImage from "@/assets/og-about-team.jpg";
 
 const About = () => {
   const { t } = useLanguage();
+  const metadata = PAGE_METADATA['/about'];
+  const hreflangLinks = generateHreflangLinks('/about');
+  
   const founderSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -138,9 +143,15 @@ const About = () => {
     >
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30">
         <SEOHead
-          title={generateTitle("About DelSolPrimeHomes - Meet Our Expert Team")}
-          description="Meet Hans van der Berg and the DelSolPrimeHomes team. 15+ years of expertise in Costa del Sol real estate, helping international clients find their dream properties in Spain."
-          canonical="/about"
+          title={metadata.title}
+          description={metadata.description}
+          canonical={metadata.canonical}
+          ogImage={ogAboutImage}
+          ogType={metadata.ogType}
+          twitterCard={metadata.twitterCard}
+          keywords={metadata.keywords}
+          lastModified={metadata.lastModified}
+          hreflangLinks={hreflangLinks}
         />
       
       <BreadcrumbNavigation 

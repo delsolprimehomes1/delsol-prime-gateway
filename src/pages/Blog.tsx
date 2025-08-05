@@ -8,6 +8,8 @@ import { organizationSchema } from "@/utils/seo/structuredData";
 import SEOHead from "@/components/seo/SEOHead";
 import { generateTitle, META_DESCRIPTIONS } from "@/utils/seo/metaUtils";
 import BreadcrumbNavigation from "@/components/seo/BreadcrumbNavigation";
+import { PAGE_METADATA } from "@/utils/seo/contentMetadata";
+import ogBlogImage from "@/assets/og-blog-insights.jpg";
 import costaDelSolMarketImage from "@/assets/blog-costa-del-sol-market.jpg";
 import marbellaEsteponaVillasImage from "@/assets/blog-marbella-estepona-villas.jpg";
 import buyingGuideSpainImage from "@/assets/blog-buying-guide-spain.jpg";
@@ -60,6 +62,7 @@ const categories = [
 
 const Blog = () => {
   const { slug } = useParams<{ slug?: string }>();
+  const metadata = PAGE_METADATA['/blog'];
   
   const [selectedCategory, setSelectedCategory] = useState("All Posts");
 
@@ -89,9 +92,14 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title={generateTitle("Expert Real Estate Insights & Market Analysis")}
-        description={META_DESCRIPTIONS.blog}
-        canonical="/blog"
+        title={metadata.title}
+        description={metadata.description}
+        canonical={metadata.canonical}
+        ogImage={ogBlogImage}
+        ogType={metadata.ogType}
+        twitterCard={metadata.twitterCard}
+        keywords={metadata.keywords}
+        lastModified={metadata.lastModified}
         structuredData={structuredData}
       />
       

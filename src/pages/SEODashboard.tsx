@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SitemapManager } from '@/components/admin/SitemapManager';
 import { SearchConsoleManager } from '@/components/admin/SearchConsoleManager';
 import { DeploymentChecklist } from '@/components/admin/DeploymentChecklist';
+import TwitterCardValidator from '@/components/seo/TwitterCardValidator';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -254,7 +255,7 @@ const SEODashboard = () => {
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-7">
+          <TabsList className="grid w-full grid-cols-8">
             <TabsTrigger value="overview">Overview</TabsTrigger>
             <TabsTrigger value="keywords">Keywords</TabsTrigger>
             <TabsTrigger value="analytics">Analytics</TabsTrigger>
@@ -262,6 +263,7 @@ const SEODashboard = () => {
             <TabsTrigger value="tasks">Tasks</TabsTrigger>
             <TabsTrigger value="sitemaps">Sitemaps</TabsTrigger>
             <TabsTrigger value="search-console">Search Console</TabsTrigger>
+            <TabsTrigger value="social-media">Social Media</TabsTrigger>
           </TabsList>
 
           {/* Overview Tab */}
@@ -585,6 +587,11 @@ const SEODashboard = () => {
           {/* Search Console Tab */}
           <TabsContent value="search-console" className="space-y-6">
             <SearchConsoleManager />
+          </TabsContent>
+
+          {/* Social Media Tab */}
+          <TabsContent value="social-media" className="space-y-6">
+            <TwitterCardValidator />
           </TabsContent>
         </Tabs>
       </div>

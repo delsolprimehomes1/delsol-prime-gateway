@@ -21,6 +21,9 @@ interface SEOHeadProps {
     hreflang: string;
   }>;
   currentLanguage?: string;
+  keywords?: string[];
+  lastModified?: string;
+  twitterCard?: 'summary' | 'summary_large_image';
 }
 
 export default function SEOHead({
@@ -33,7 +36,10 @@ export default function SEOHead({
   noindex = false,
   structuredData = [],
   hreflangLinks = [],
-  currentLanguage = 'en'
+  currentLanguage = 'en',
+  keywords = [],
+  lastModified,
+  twitterCard = 'summary_large_image'
 }: SEOHeadProps) {
   const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
   const canonicalUrl = canonical || currentUrl;
@@ -45,8 +51,22 @@ export default function SEOHead({
       <meta name="description" content={description} />
       <link rel="canonical" href={canonicalUrl} />
       
+      {/* Keywords */}
+      {keywords.length > 0 && (
+        <meta name="keywords" content={keywords.join(', ')} />
+      )}
+      
+      {/* Last Modified */}
+      {lastModified && (
+        <meta name="last-modified" content={lastModified} />
+      )}
+      
       {/* Robots */}
       {noindex && <meta name="robots" content="noindex,nofollow" />}
+      
+      {/* Viewport and Mobile Optimization */}
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+      <meta name="format-detection" content="telephone=no" />
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={ogType} />
@@ -54,6 +74,9 @@ export default function SEOHead({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={title} />
       <meta property="og:site_name" content="DelSolPrimeHomes" />
       <meta property="og:locale" content={currentLanguage === 'en' ? 'en_US' : currentLanguage} />
       
@@ -66,12 +89,18 @@ export default function SEOHead({
       )}
       
       {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:url" content={canonicalUrl} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image:alt" content={title} />
       <meta name="twitter:site" content="@delsolprimehomes" />
+      <meta name="twitter:creator" content="@delsolprimehomes" />
+      
+      {/* Mobile Twitter Card Optimization */}
+      <meta name="twitter:app:name:iphone" content="DelSolPrimeHomes" />
+      <meta name="twitter:app:name:googleplay" content="DelSolPrimeHomes" />
       
       {/* Article specific meta tags */}
       {article && ogType === 'article' && (

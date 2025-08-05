@@ -11,21 +11,20 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import SEOHead from "@/components/seo/SEOHead";
 import { StructuredDataProvider } from "@/components/seo/StructuredDataProvider";
 import { generateTitle, META_DESCRIPTIONS } from "@/utils/seo/metaUtils";
+import { PAGE_METADATA, generateHreflangLinks } from "@/utils/seo/contentMetadata";
+import ogMainImage from "@/assets/og-delsolprimehomes-main.jpg";
 import ROICalculatorSection from "@/components/sections/ROICalculatorSection";
 import { AIOptimizationConfig } from "@/components/seo/AIOptimizationConfig";
 
 const Index = () => {
+  // Get metadata for homepage
+  const metadata = PAGE_METADATA['/'];
+  const hreflangLinks = generateHreflangLinks('/');
+
   // AEO Configuration
   const aeoConfig = {
     pageType: 'homepage' as const,
-    primaryKeywords: [
-      'Costa Del Sol real estate',
-      'Marbella properties',
-      'Estepona luxury homes',
-      'Spanish property investment',
-      'Costa Del Sol property prices',
-      'DelSolPrimeHomes'
-    ],
+    primaryKeywords: metadata.keywords,
     voiceSearchQueries: [
       'How much does property cost in Costa Del Sol?',
       'What are the best areas to buy property in Costa Del Sol?',
@@ -48,9 +47,15 @@ const Index = () => {
       <AIOptimizationConfig {...aeoConfig}>
         <div className="min-h-screen bg-background" itemScope itemType="https://schema.org/WebPage">
           <SEOHead
-            title={generateTitle()}
-            description={META_DESCRIPTIONS.homepage}
-            canonical="/"
+            title={metadata.title}
+            description={metadata.description}
+            canonical={metadata.canonical}
+            ogImage={ogMainImage}
+            ogType={metadata.ogType}
+            twitterCard={metadata.twitterCard}
+            keywords={metadata.keywords}
+            lastModified={metadata.lastModified}
+            hreflangLinks={hreflangLinks}
           />
         
         {/* Main Content with AEO Optimization */}

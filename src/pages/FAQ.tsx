@@ -6,23 +6,18 @@ import { generateTitle } from "@/utils/seo/metaUtils";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSupabaseFAQ } from "@/hooks/useSupabaseFAQ";
 import MultilingualFAQSection from "@/components/sections/MultilingualFAQSection";
+import { PAGE_METADATA, generateHreflangLinks } from "@/utils/seo/contentMetadata";
+import ogFaqImage from "@/assets/og-faq-help.jpg";
 
 const FAQ = () => {
   const { t, currentLanguage } = useLanguage();
   const { faqs } = useSupabaseFAQ();
+  const metadata = PAGE_METADATA['/faq'];
 
   // Generate hreflang links for multilingual SEO
   const hreflangLinks = useMemo(() => {
-    const supportedLanguages = ['en', 'es', 'fr', 'nl', 'de', 'pl', 'dk', 'se'];
-    const baseUrl = 'https://delsolprimehomes.com/faq';
-    
-    return supportedLanguages
-      .filter(lang => lang !== currentLanguage)
-      .map(lang => ({
-        href: `${baseUrl}?lang=${lang}`,
-        hreflang: lang === 'dk' ? 'da' : lang === 'se' ? 'sv' : lang
-      }));
-  }, [currentLanguage]);
+    return generateHreflangLinks('/faq', ['en', 'es', 'fr', 'nl', 'de', 'pl', 'da', 'sv']);
+  }, []);
 
   // Prepare FAQ data for structured data
   const faqData = useMemo(() => {
@@ -47,8 +42,14 @@ const FAQ = () => {
     >
       <div className="min-h-screen">
         <SEOHead
-          title={generateTitle(t('faq.title') || `Costa del Sol Real Estate FAQ - ${faqs.length}+ Expert Property Answers`)}
-          description={t('faq.subtitle') || "Get instant answers to all your Costa del Sol property questions. Expert advice on buying, selling, legal requirements, taxes, and more from DelSolPrimeHomes in 7 languages."}
+          title={metadata.title}
+          description={metadata.description}
+          canonical={metadata.canonical}
+          ogImage={ogFaqImage}
+          ogType={metadata.ogType}
+          twitterCard={metadata.twitterCard}
+          keywords={metadata.keywords}
+          lastModified={metadata.lastModified}
           hreflangLinks={hreflangLinks}
           currentLanguage={currentLanguage}
         />
