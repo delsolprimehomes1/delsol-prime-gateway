@@ -216,7 +216,7 @@ export default function MultilingualFAQSection() {
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold font-display mb-6">
-              {t('faq.title') || 'Frequently Asked'} <span className="text-primary">{t('faq.questions') || 'Questions'}</span>
+              {t('faq.title') || 'Frequently Asked'} <span className="text-primary">Questions</span>
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
@@ -245,7 +245,7 @@ export default function MultilingualFAQSection() {
             <AnimatedElement animation="fade-in-up" delay={150} className="mb-12">
               <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
                 <Star className="w-6 h-6 text-primary" />
-                {t('faq.quickAnswers') || 'Quick Answers'}
+                Answers
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
