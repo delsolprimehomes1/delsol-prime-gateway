@@ -6,50 +6,20 @@ import { Calendar, Clock, User, Tag } from "lucide-react";
 import SEOHead from "@/components/seo/SEOHead";
 import BreadcrumbNavigation from "@/components/seo/BreadcrumbNavigation";
 import { StructuredDataProvider } from "@/components/seo/StructuredDataProvider";
+import { ShortAnswerSection } from "@/components/content/ShortAnswerSection";
 import { generateTitle, truncateDescription, formatDateForSchema } from "@/utils/seo/metaUtils";
+import voiceOptimizedBlogData from "@/data/voiceOptimizedBlogData.json";
 import costaDelSolMarketImage from "@/assets/blog-costa-del-sol-market.jpg";
 import marbellaEsteponaVillasImage from "@/assets/blog-marbella-estepona-villas.jpg";
 import buyingGuideSpainImage from "@/assets/blog-buying-guide-spain.jpg";
 
-// Sample blog data - in real app this would come from CMS/API
-const blogPosts = [
-  {
-    id: 1,
-    title: "Costa del Sol Property Market Outlook 2024",
-    excerpt: "Discover the latest trends and investment opportunities in Spain's premier coastal real estate market.",
-    image: costaDelSolMarketImage,
-    category: "Market Analysis",
-    author: "Maria Rodriguez",
-    publishDate: "2024-01-15",
-    readTime: "5 min read",
-    content: "Detailed analysis of the Costa del Sol property market in 2024...",
-    slug: "costa-del-sol-market-outlook-2024"
-  },
-  {
-    id: 2,
-    title: "Luxury Villa Investment Guide: Marbella vs Estepona",
-    excerpt: "Compare investment potential between two of Costa del Sol's most prestigious locations.",
-    image: marbellaEsteponaVillasImage,
-    category: "Investment",
-    author: "James Thompson",
-    publishDate: "2024-01-12",
-    readTime: "8 min read",
-    content: "Comparison of luxury villa investments in Marbella and Estepona...",
-    slug: "luxury-villa-investment-marbella-estepona"
-  },
-  {
-    id: 3,
-    title: "Complete Guide to Buying Property in Spain as a Foreigner",
-    excerpt: "Everything you need to know about the legal process, taxes, and requirements for international buyers.",
-    image: buyingGuideSpainImage,
-    category: "Buyer's Guide",
-    author: "Ana Fernandez",
-    publishDate: "2024-01-10",
-    readTime: "12 min read",
-    content: "Step-by-step guide for foreigners buying property in Spain...",
-    slug: "buying-property-spain-foreigner-guide"
-  }
-];
+// Voice-optimized blog data with short answers
+const blogPosts = voiceOptimizedBlogData.blogPosts.map(post => ({
+  ...post,
+  image: post.id === 1 ? costaDelSolMarketImage : 
+         post.id === 2 ? marbellaEsteponaVillasImage : 
+         buyingGuideSpainImage
+}));
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -64,8 +34,8 @@ const BlogPost = () => {
     <StructuredDataProvider
       pageType="article"
       pageData={{
-        title: post.title,
-        description: post.excerpt,
+        title: post.seoMetadata?.metaTitle || post.title,
+        description: post.seoMetadata?.metaDescription || post.excerpt,
         author: post.author,
         datePublished: post.publishDate,
         dateModified: post.publishDate,
@@ -79,9 +49,9 @@ const BlogPost = () => {
     >
       <div className="min-h-screen bg-background">
         <SEOHead
-          title={generateTitle(post.title)}
-          description={truncateDescription(post.excerpt)}
-          canonical={`/blog/${slug}`}
+          title={generateTitle(post.seoMetadata?.metaTitle || post.title)}
+          description={truncateDescription(post.seoMetadata?.metaDescription || post.excerpt)}
+          canonical={post.seoMetadata?.canonicalUrl || `/blog/${slug}`}
           ogType="article"
           ogImage={post.image}
           article={{
@@ -141,8 +111,18 @@ const BlogPost = () => {
               />
             </div>
 
+            {/* Short Answer Section for Voice Search */}
+            {post.shortAnswer && (
+              <ShortAnswerSection
+                shortAnswer={post.shortAnswer}
+                voiceSearchReady={post.voiceSearchReady}
+                lastUpdated={post.lastModified}
+                variant="featured"
+              />
+            )}
+
             <div className="prose prose-lg prose-stone dark:prose-invert mx-auto">
-              <p>{post.content}</p>
+              <div dangerouslySetInnerHTML={{ __html: post.content.replace(/\n\n/g, '</p><p>').replace(/^/, '<p>').replace(/$/, '</p>') }} />
             </div>
           </article>
         </Container>

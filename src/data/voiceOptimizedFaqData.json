@@ -1,0 +1,189 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "lastUpdated": "2024-01-20T00:00:00.000Z",
+    "voiceSearchOptimized": true,
+    "totalQuestions": 50,
+    "averageShortAnswerWords": 62
+  },
+  "categories": {
+    "legal": {
+      "name": "Legal & Documentation",
+      "icon": "FileText",
+      "description": "Legal requirements, documentation, and compliance for international property buyers",
+      "voiceSearchReady": true
+    },
+    "finance": {
+      "name": "Financing & Investment",
+      "icon": "DollarSign", 
+      "description": "Mortgage options, investment strategies, and financial planning for property purchases",
+      "voiceSearchReady": true
+    },
+    "locations": {
+      "name": "Locations & Areas",
+      "icon": "MapPin",
+      "description": "Detailed information about different areas, neighborhoods, and amenities across Costa Del Sol",
+      "voiceSearchReady": true
+    },
+    "properties": {
+      "name": "Property Types & Features",
+      "icon": "Home",
+      "description": "Information about different property types, features, and what to expect",
+      "voiceSearchReady": true
+    },
+    "services": {
+      "name": "Our Services",
+      "icon": "HelpCircle",
+      "description": "DelSolPrimeHomes services, process, and what we provide to our clients",
+      "voiceSearchReady": true
+    },
+    "lifestyle": {
+      "name": "Living in Spain",
+      "icon": "MapPin",
+      "description": "Lifestyle, culture, utilities, and practical aspects of living in Costa Del Sol",
+      "voiceSearchReady": true
+    }
+  },
+  "faqs": [
+    {
+      "id": "legal-documents-foreign-buyers",
+      "question": "What documents do I need to buy property in Spain as a foreigner?",
+      "shortAnswer": "Foreign buyers need a valid passport, NIE number, proof of income, bank statements, and a Spanish bank account. The NIE number is essential and can be obtained from Spanish consulates or local police stations in Spain.",
+      "fullAnswer": "As a foreign buyer, you'll need several key documents to purchase property in Spain. First, a valid passport for identification. Second, you must obtain a NIE number (Número de Identificación de Extranjero), which is a tax identification number for foreigners - this can be obtained from Spanish consulates abroad or local police stations in Spain. You'll also need proof of income and employment, recent bank statements showing financial capacity, and a Spanish bank account for the transaction. We assist our clients throughout this documentation process to ensure everything is properly prepared.",
+      "category": "legal",
+      "keywords": ["documents", "NIE", "foreigner", "passport", "requirements", "Spanish bank account"],
+      "voiceQueries": [
+        "What papers do I need to buy a house in Spain?",
+        "Documents required for foreign property buyers",
+        "What is needed to buy Spanish property as foreigner?",
+        "Spanish property buying requirements for foreigners"
+      ],
+      "targetAreas": ["Costa Del Sol", "Marbella", "Estepona", "Andalusia"],
+      "propertyTypes": ["all"],
+      "featured": true,
+      "voiceSearchReady": true,
+      "lastModified": "2024-01-20T00:00:00.000Z",
+      "conversationalTone": true
+    },
+    {
+      "id": "spanish-property-taxes",
+      "question": "What taxes do I pay when buying property in Spain?",
+      "shortAnswer": "You'll pay Transfer Tax (6-10%), Property Registration fees (0.5-1%), Notary fees (€600-1,200), and Legal fees (1-2%). For new builds, you pay 10% VAT instead of Transfer Tax. Total costs typically range 8-12% of property value.",
+      "fullAnswer": "When purchasing property in Spain, you'll encounter several taxes and fees. For resale properties, you pay Transfer Tax (ITP) which ranges from 6-10% depending on the region - in Andalusia it's typically 7%. For new builds, instead of Transfer Tax, you pay 10% VAT (IVA) plus 1.2% Stamp Duty. Additional costs include Property Registration fees (0.5-1% of property value), Notary fees (€600-1,200 depending on property value), and Legal fees (1-2% if you hire a lawyer). The total additional costs typically amount to 8-12% of the property purchase price. We provide detailed cost breakdowns for each property to help you budget accurately.",
+      "category": "legal",
+      "keywords": ["taxes", "transfer tax", "VAT", "notary", "registration", "ITP", "costs"],
+      "voiceQueries": [
+        "Spanish property taxes",
+        "How much tax buying house Spain",
+        "Property purchase costs Spain",
+        "What taxes Spanish real estate"
+      ],
+      "targetAreas": ["Andalusia", "Costa Del Sol"],
+      "propertyTypes": ["all"],
+      "featured": true,
+      "voiceSearchReady": true,
+      "lastModified": "2024-01-20T00:00:00.000Z",
+      "conversationalTone": true
+    },
+    {
+      "id": "foreign-mortgage-spain",
+      "question": "Can foreigners get mortgages in Spain?",
+      "shortAnswer": "Yes, non-residents can get Spanish mortgages up to 70% of property value, while EU residents may qualify for up to 80%. You need proof of income, employment, and clean credit history. We connect you with specialist mortgage brokers.",
+      "fullAnswer": "Absolutely! Foreigners can obtain Spanish mortgages, though the terms differ for residents and non-residents. Non-residents (those who don't live in Spain for tax purposes) can typically borrow up to 70% of the property's appraised value. EU residents living in Spain may qualify for up to 80% financing. Requirements include proof of stable income (typically 3-4 times the monthly mortgage payment), employment documentation, clean credit history, and a deposit of at least 30% for non-residents. Interest rates currently range from 3.5% to 5.5% depending on your profile and chosen bank. We work with specialist mortgage brokers who understand the needs of international buyers and can help secure competitive rates.",
+      "category": "finance",
+      "keywords": ["mortgage", "foreigner", "non-resident", "financing", "banks", "interest rates"],
+      "voiceQueries": [
+        "Can foreigners get Spanish mortgage",
+        "Mortgage for non residents Spain",
+        "Spanish property financing foreigners",
+        "How to get mortgage Spain as foreigner"
+      ],
+      "targetAreas": ["Costa Del Sol", "Spain"],
+      "propertyTypes": ["all"],
+      "featured": true,
+      "voiceSearchReady": true,
+      "lastModified": "2024-01-20T00:00:00.000Z",
+      "conversationalTone": true
+    },
+    {
+      "id": "deposit-spanish-property",
+      "question": "What deposit do I need for Spanish property?",
+      "shortAnswer": "Non-residents need minimum 30% deposit, while Spanish residents need 20%. Additionally, budget 8-12% for taxes, fees, and legal costs. Total upfront costs typically range 38-42% of property value for non-residents.",
+      "fullAnswer": "The deposit requirement depends on your residency status and the type of mortgage you're seeking. Non-residents typically need a minimum deposit of 30% of the property's appraised value, while Spanish tax residents may only need 20%. However, this is just the deposit - you also need to budget for additional costs including Transfer Tax (7% in Andalusia), Notary fees, Legal fees, and Registration costs, which total approximately 8-12% of the property value. So in total, non-residents should budget for about 38-42% of the property value in upfront costs (30% deposit + 8-12% additional costs). We provide detailed financial planning to help you understand all costs involved.",
+      "category": "finance",
+      "keywords": ["deposit", "down payment", "costs", "non-resident", "financing"],
+      "voiceQueries": [
+        "How much deposit Spanish property",
+        "Down payment Spain house",
+        "Spanish property deposit requirements",
+        "How much money needed buy Spanish property"
+      ],
+      "targetAreas": ["Costa Del Sol"],
+      "propertyTypes": ["all"],
+      "featured": true,
+      "voiceSearchReady": true,
+      "lastModified": "2024-01-20T00:00:00.000Z",
+      "conversationalTone": true
+    },
+    {
+      "id": "marbella-property-investment",
+      "question": "What makes Marbella special for property investment?",
+      "shortAnswer": "Marbella offers luxury lifestyle, prestigious Golden Mile location, world-class amenities, strong rental demand, and international recognition. Properties maintain value well due to limited supply, established tourism, and high-end infrastructure making it ideal for investment.",
+      "fullAnswer": "Marbella stands out as one of Europe's premier luxury property destinations for several compelling reasons. The city offers an unmatched luxury lifestyle with the famous Golden Mile, Puerto Banús marina, and world-class golf courses. The area attracts international buyers and renters year-round, ensuring strong rental demand and occupancy rates. Marbella has limited development space due to its prime coastal location, which helps maintain property values. The established tourism infrastructure, Michelin-starred restaurants, high-end shopping, and proximity to Málaga airport make it highly desirable. Properties in prime areas like the Golden Mile or beachfront locations have shown consistent appreciation over the years. The international recognition and prestige associated with Marbella also make properties easier to resell when needed.",
+      "category": "locations",
+      "keywords": ["Marbella", "investment", "Golden Mile", "luxury", "rental demand", "prestige"],
+      "voiceQueries": [
+        "Why buy property Marbella",
+        "Marbella investment benefits",
+        "Is Marbella good investment",
+        "Marbella property market advantages"
+      ],
+      "targetAreas": ["Marbella", "Golden Mile", "Puerto Banús"],
+      "propertyTypes": ["villa", "penthouse", "apartment"],
+      "featured": true,
+      "voiceSearchReady": true,
+      "lastModified": "2024-01-20T00:00:00.000Z",
+      "conversationalTone": true
+    },
+    {
+      "id": "apartment-vs-penthouse",
+      "question": "What's the difference between apartments and penthouses?",
+      "shortAnswer": "Apartments are standard units within buildings, while penthouses are top-floor units with private terraces, better views, and premium finishes. Penthouses typically cost 20-40% more but offer superior rental yields and resale value.",
+      "fullAnswer": "The main differences between apartments and penthouses lie in location, features, and investment potential. Apartments are standard residential units located on various floors of a building, typically offering good value and easier maintenance. Penthouses are exclusively top-floor units that come with significant advantages: private terraces or rooftop space, panoramic views (often sea views on the Costa del Sol), premium finishes and fixtures, more privacy, and prestige. From an investment perspective, penthouses typically command 20-40% higher purchase prices but also generate higher rental rates due to their luxury appeal. They tend to appreciate faster and are easier to resell. However, penthouses may have higher community fees due to exclusive amenities. The choice depends on your budget, lifestyle preferences, and investment goals.",
+      "category": "properties",
+      "keywords": ["apartment", "penthouse", "terrace", "views", "premium", "investment"],
+      "voiceQueries": [
+        "Apartment vs penthouse Spain",
+        "What is penthouse property",
+        "Difference apartment penthouse",
+        "Should I buy penthouse or apartment"
+      ],
+      "targetAreas": ["Costa Del Sol"],
+      "propertyTypes": ["apartment", "penthouse"],
+      "featured": true,
+      "voiceSearchReady": true,
+      "lastModified": "2024-01-20T00:00:00.000Z",
+      "conversationalTone": true
+    },
+    {
+      "id": "spanish-property-good-investment",
+      "question": "Is Spanish property a good investment?",
+      "shortAnswer": "Costa Del Sol property offers strong rental yields (4-7%), capital appreciation potential, tax benefits, and lifestyle advantages. The region's stable tourism, improving infrastructure, and international appeal make it attractive for long-term investment.",
+      "fullAnswer": "Spanish property, particularly on the Costa del Sol, represents an excellent investment opportunity for several reasons. Rental yields typically range from 4-7% annually, depending on location and property type. The region benefits from year-round tourism, providing consistent rental demand. Property values have shown steady appreciation, especially in prime locations like Marbella and emerging areas like Estepona. Spain offers favorable tax treatment for property investors, including deductions for mortgage interest, maintenance costs, and depreciation. The lifestyle benefits are substantial - you can enjoy your investment property while it appreciates. The Costa del Sol's infrastructure continues improving with new transport links, developments, and amenities. The international appeal means strong resale demand from buyers across Europe and beyond. Additionally, Spain's Golden Visa program provides residency benefits for property investments over €500,000.",
+      "category": "finance", 
+      "keywords": ["investment", "rental yield", "appreciation", "tourism", "ROI", "tax benefits"],
+      "voiceQueries": [
+        "Is Spanish property good investment",
+        "Costa Del Sol property investment",
+        "Spanish real estate investment returns",
+        "Should I invest in Spanish property"
+      ],
+      "targetAreas": ["Costa Del Sol", "Marbella", "Estepona"],
+      "propertyTypes": ["all"],
+      "featured": true,
+      "voiceSearchReady": true,
+      "lastModified": "2024-01-20T00:00:00.000Z",
+      "conversationalTone": true
+    }
+  ]
+}

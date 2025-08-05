@@ -17,6 +17,7 @@ import Section from '@/components/layout/Section';
 import { AnimatedElement } from '@/components/ui/AnimatedElement';
 import { MagneticButton } from '@/components/ui/MagneticButton';
 import { AIOptimizedFAQ, FeaturedSnippet } from '@/components/seo/EnhancedAIContent';
+import { ShortAnswerSection } from '@/components/content/ShortAnswerSection';
 
 // Category icons mapping
 const categoryIcons = {
@@ -251,11 +252,13 @@ export default function MultilingualFAQSection() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 {featuredFAQs.map((faq, index) => (
                   <AnimatedElement key={faq.id} animation="fade-in-up" delay={index * 100}>
-                    <FeaturedSnippet
-                      title={faq.question}
-                      content={faq.conversationalAnswer}
-                      type="paragraph"
-                      source="DelSolPrimeHomes Expert Team"
+                    <ShortAnswerSection
+                      question={faq.question}
+                      shortAnswer={faq.answer_short}
+                      voiceSearchReady={Boolean(faq.voice_queries?.length)}
+                      lastUpdated={faq.updated_at}
+                      variant="featured"
+                      className="h-full"
                     />
                   </AnimatedElement>
                 ))}
@@ -349,7 +352,16 @@ export default function MultilingualFAQSection() {
                       
                       <AccordionContent className="pb-6">
                         <div className="space-y-4">
+                          {/* Short Answer Section for Voice Search */}
+                          <ShortAnswerSection
+                            shortAnswer={faq.answer_short}
+                            voiceSearchReady={Boolean(faq.voice_queries?.length)}
+                            lastUpdated={faq.updated_at}
+                            variant="compact"
+                          />
+                          
                           <div className="prose prose-sm max-w-none dark:prose-invert">
+                            <h3 className="text-lg font-semibold mb-3">Complete Answer</h3>
                             <p className="text-foreground leading-relaxed">
                               {faq.answer_long || faq.answer_short}
                             </p>
