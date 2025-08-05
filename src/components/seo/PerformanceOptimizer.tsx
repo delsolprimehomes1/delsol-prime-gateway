@@ -1,5 +1,5 @@
 
-import { lazy, Suspense, ReactNode } from 'react';
+import { lazy, Suspense, ReactNode, useState } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
 
 interface LazyComponentProps {
@@ -34,7 +34,7 @@ export function LazySection({ children, fallback, className }: LazyComponentProp
   );
 }
 
-// Image optimization component
+// Enhanced image optimization component for Core Web Vitals
 interface OptimizedImageProps {
   src: string;
   alt: string;
@@ -43,6 +43,8 @@ interface OptimizedImageProps {
   className?: string;
   priority?: boolean;
   sizes?: string;
+  aspectRatio?: string;
+  fetchPriority?: 'high' | 'low' | 'auto';
 }
 
 export function OptimizedImage({ 
@@ -52,20 +54,42 @@ export function OptimizedImage({
   height, 
   className, 
   priority = false,
-  sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
+  aspectRatio,
+  fetchPriority = 'auto'
 }: OptimizedImageProps) {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
+
   return (
-    <img
-      src={src}
-      alt={alt}
-      width={width}
-      height={height}
+    <div 
       className={className}
-      loading={priority ? "eager" : "lazy"}
-      decoding="async"
-      sizes={sizes}
-      style={{ contentVisibility: 'auto' }}
-    />
+      style={{
+        aspectRatio: aspectRatio || (width && height ? `${width}/${height}` : undefined),
+        backgroundColor: isLoaded ? 'transparent' : 'hsl(var(--muted))',
+      }}
+    >
+      <img
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className="w-full h-full object-cover transition-opacity duration-300"
+        loading={priority ? "eager" : "lazy"}
+        decoding="async"
+        sizes={sizes}
+        fetchPriority={fetchPriority}
+        style={{ 
+          contentVisibility: 'auto',
+          opacity: isLoaded ? 1 : 0,
+        }}
+        onLoad={() => setIsLoaded(true)}
+        onError={() => setHasError(true)}
+      />
+      {!isLoaded && !hasError && (
+        <Skeleton className="absolute inset-0" />
+      )}
+    </div>
   );
 }
 

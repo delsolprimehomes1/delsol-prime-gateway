@@ -3,11 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Preload critical resources for Core Web Vitals -->
+    <link rel="preload" href="/assets/hero-costa-del-sol-luxury.jpg" as="image" fetchpriority="high">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <!-- Critical CSS inline for LCP optimization -->
+    <style>
+      body { margin: 0; font-family: Inter, system-ui, -apple-system, sans-serif; }
+      .hero-section { min-height: 100vh; }
+      img { content-visibility: auto; }
+      * { box-sizing: border-box; }
+    </style>
+    
     <title>DelSolPrimeHomes - Luxury Costa del Sol Real Estate</title>
     <meta name="description" content="Discover luxury properties on the Costa del Sol with DelSolPrimeHomes' expert guidance. From Marbella to Estepona, find your dream home in Spain." />
     <meta name="author" content="DelSolPrimeHomes" />
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts with font-display: swap -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
