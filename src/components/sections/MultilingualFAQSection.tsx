@@ -296,8 +296,8 @@ export default function MultilingualFAQSection() {
           <AnimatedElement animation="fade-in-up" delay={250} className="mb-6">
             <p className="text-center text-muted-foreground">
               {filteredFAQs.length === 0 
-                ? t('faq.noResults') || 'No results found'
-                : `${filteredFAQs.length} ${t('faq.questionsFound') || 'questions found'}`
+                ? 'No results found'
+                : `${filteredFAQs.length} questions found`
               }
             </p>
           </AnimatedElement>
@@ -437,10 +437,10 @@ export default function MultilingualFAQSection() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <MagneticButton size="lg">
                     <MessageCircle className="w-5 h-5 mr-2" />
-                    {t('faq.askExpert') || 'Ask Our Costa Del Sol Expert'}
+                    Ask Our Costa Del Sol Expert
                   </MagneticButton>
                   <MagneticButton variant="outline" size="lg">
-                    {t('faq.viewAllAnswers') || 'View All Expert Answers'}
+                    All Answers
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </MagneticButton>
                 </div>
