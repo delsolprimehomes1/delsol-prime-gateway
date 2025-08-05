@@ -48,10 +48,9 @@ export function ResponsiveImage({
     fill: 'object-fill'
   };
 
-  // Generate WebP source and fallback
-  const webpSrc = src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-  const srcSet = imageUtils.generateSrcSet(webpSrc);
-  const fallbackSrcSet = imageUtils.generateSrcSet(src);
+  // Use original image format - no WebP conversion for now
+  const srcSet = src; // Single source for now
+  const fallbackSrcSet = src;
 
   return (
     <figure 
@@ -79,40 +78,26 @@ export function ResponsiveImage({
           </div>
         )}
 
-        <picture>
-          {/* WebP source for modern browsers */}
-          <source
-            srcSet={srcSet}
-            sizes={sizes}
-            type="image/webp"
-          />
-          {/* Fallback for older browsers */}
-          <source
-            srcSet={fallbackSrcSet}
-            sizes={sizes}
-            type={src.includes('.jpg') || src.includes('.jpeg') ? 'image/jpeg' : 'image/png'}
-          />
-          <img
-            src={src}
-            alt={alt}
-            width={width}
-            height={height}
-            sizes={sizes}
-            loading={priority ? "eager" : "lazy"}
-            decoding="async"
-            className={cn(
-              'w-full h-full transition-all duration-500',
-              objectFitClasses[objectFit],
-              isLoading ? 'opacity-0 scale-110' : 'opacity-100 scale-100',
-              'hover:scale-105 transition-transform duration-700'
-            )}
-            onLoad={() => setIsLoading(false)}
-            onError={() => {
-              setIsLoading(false);
-              setHasError(true);
-            }}
-          />
-        </picture>
+        <img
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          sizes={sizes}
+          loading={priority ? "eager" : "lazy"}
+          decoding="async"
+          className={cn(
+            'w-full h-full transition-all duration-500',
+            objectFitClasses[objectFit],
+            isLoading ? 'opacity-0 scale-110' : 'opacity-100 scale-100',
+            'hover:scale-105 transition-transform duration-700'
+          )}
+          onLoad={() => setIsLoading(false)}
+          onError={() => {
+            setIsLoading(false);
+            setHasError(true);
+          }}
+        />
       </div>
 
       {/* Image caption */}

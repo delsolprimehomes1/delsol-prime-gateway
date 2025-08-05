@@ -46,22 +46,15 @@ export default function Hero({ className }: HeroProps) {
     >
       {/* Modern Background with Clean Overlay */}
       <div className="absolute inset-0 z-0">
-        <picture>
-          <source 
-            srcSet={heroImage.replace('.jpg', '-1920w.webp') + ' 1920w, ' + heroImage.replace('.jpg', '-1280w.webp') + ' 1280w'} 
-            sizes="100vw"
-            type="image/webp" 
-          />
-          <img
-            src={heroImage}
-            alt="Luxury Costa del Sol beachfront properties Mediterranean view"
-            width={1920}
-            height={1080}
-            loading="eager"
-            decoding="async"
-            className="w-full h-full object-cover"
-          />
-        </picture>
+        <img
+          src={heroImage}
+          alt="Luxury Costa del Sol beachfront properties Mediterranean view"
+          width={1920}
+          height={1080}
+          loading="eager"
+          decoding="async"
+          className="w-full h-full object-cover"
+        />
         {/* Simplified, more professional overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

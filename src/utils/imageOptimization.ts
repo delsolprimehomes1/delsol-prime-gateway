@@ -34,14 +34,10 @@ export const getWebPPath = (src: string): string => {
   return src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
 };
 
-// Generate srcset for responsive images
+// Generate srcset for responsive images - simplified for existing images
 export const generateSrcSet = (baseSrc: string, sizes: number[] = RESPONSIVE_SIZES): string => {
-  const extension = baseSrc.split('.').pop()?.toLowerCase();
-  const basePath = baseSrc.replace(/\.[^/.]+$/, '');
-  
-  return sizes
-    .map(size => `${basePath}-${size}w.${extension} ${size}w`)
-    .join(', ');
+  // For now, just return the original src since we don't have multiple sizes
+  return baseSrc;
 };
 
 // SEO-optimized alt text guidelines
