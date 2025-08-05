@@ -112,16 +112,19 @@ export const realEstateAgentSchema = {
   "currenciesAccepted": "EUR"
 };
 
-// Website Schema
+// Enhanced Website Schema with additional properties
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "DelSolPrimeHomes",
+  "alternateName": "Del Sol Prime Homes",
   "url": "https://delsolprimehomes.com",
   "description": "Luxury Costa del Sol real estate - Find your dream property in Marbella, Estepona and surrounding areas",
+  "inLanguage": "en",
   "publisher": {
     "@type": "Organization",
-    "name": "DelSolPrimeHomes"
+    "name": "DelSolPrimeHomes",
+    "@id": "https://delsolprimehomes.com/#organization"
   },
   "potentialAction": {
     "@type": "SearchAction",
@@ -132,7 +135,13 @@ export const websiteSchema = {
     "@type": "ItemList",
     "name": "Costa Del Sol Properties",
     "description": "Premium real estate listings in Costa Del Sol region"
-  }
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Costa del Sol Real Estate",
+    "description": "Luxury property market in southern Spain"
+  },
+  "keywords": "luxury real estate, Costa del Sol, Marbella, Estepona, property investment, Spain real estate"
 };
 
 // FAQ Page Schema Generator with Multilingual Support

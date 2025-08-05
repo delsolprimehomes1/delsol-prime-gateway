@@ -9,18 +9,12 @@ import BlogSection from "@/components/sections/BlogSection";
 import FAQSection from "@/components/sections/FAQSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import SEOHead from "@/components/seo/SEOHead";
-import { enhancedOrganizationSchema, localBusinessSchema, propertyBuyingGuideSchema } from "@/utils/seo/enhancedStructuredData";
+import { StructuredDataProvider } from "@/components/seo/StructuredDataProvider";
 import { generateTitle, META_DESCRIPTIONS } from "@/utils/seo/metaUtils";
 import ROICalculatorSection from "@/components/sections/ROICalculatorSection";
 import { AIOptimizationConfig } from "@/components/seo/AIOptimizationConfig";
 
 const Index = () => {
-  const structuredData = [
-    enhancedOrganizationSchema,
-    localBusinessSchema,
-    propertyBuyingGuideSchema
-  ];
-
   // AEO Configuration
   const aeoConfig = {
     pageType: 'homepage' as const,
@@ -44,14 +38,20 @@ const Index = () => {
   };
 
   return (
-    <AIOptimizationConfig {...aeoConfig}>
-      <div className="min-h-screen bg-background" itemScope itemType="https://schema.org/WebPage">
-        <SEOHead
-          title={generateTitle()}
-          description={META_DESCRIPTIONS.homepage}
-          canonical="/"
-          structuredData={structuredData}
-        />
+    <StructuredDataProvider 
+      pageType="home"
+      pageData={{
+        title: "DelSolPrimeHomes - Luxury Costa Del Sol Real Estate",
+        description: "Discover luxury properties on the Costa Del Sol with expert guidance. Find your dream home in Marbella, Estepona, Mijas, and surrounding areas."
+      }}
+    >
+      <AIOptimizationConfig {...aeoConfig}>
+        <div className="min-h-screen bg-background" itemScope itemType="https://schema.org/WebPage">
+          <SEOHead
+            title={generateTitle()}
+            description={META_DESCRIPTIONS.homepage}
+            canonical="/"
+          />
         
         {/* Main Content with AEO Optimization */}
         <main itemProp="mainEntity" itemScope itemType="https://schema.org/RealEstateAgent">
@@ -118,8 +118,9 @@ const Index = () => {
             </span>
           </div>
         </div>
-      </div>
-    </AIOptimizationConfig>
+        </div>
+      </AIOptimizationConfig>
+    </StructuredDataProvider>
   );
 };
 

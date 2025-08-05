@@ -5,7 +5,7 @@ import Container from "@/components/layout/Container";
 import { Calendar, Clock, User, Tag } from "lucide-react";
 import SEOHead from "@/components/seo/SEOHead";
 import BreadcrumbNavigation from "@/components/seo/BreadcrumbNavigation";
-import { generateArticleSchema, organizationSchema } from "@/utils/seo/structuredData";
+import { StructuredDataProvider } from "@/components/seo/StructuredDataProvider";
 import { generateTitle, truncateDescription, formatDateForSchema } from "@/utils/seo/metaUtils";
 import costaDelSolMarketImage from "@/assets/blog-costa-del-sol-market.jpg";
 import marbellaEsteponaVillasImage from "@/assets/blog-marbella-estepona-villas.jpg";
@@ -60,34 +60,37 @@ const BlogPost = () => {
     return <NotFound />;
   }
 
-  const articleSchema = generateArticleSchema({
-    headline: post.title,
-    description: post.excerpt,
-    author: post.author,
-    datePublished: post.publishDate,
-    dateModified: post.publishDate,
-    image: post.image,
-    url: `/blog/${slug}`
-  });
-
-  const structuredData = [organizationSchema, articleSchema];
-
   return (
-    <div className="min-h-screen bg-background">
-      <SEOHead
-        title={generateTitle(post.title)}
-        description={truncateDescription(post.excerpt)}
-        canonical={`/blog/${slug}`}
-        ogType="article"
-        ogImage={post.image}
-        article={{
-          publishedTime: formatDateForSchema(post.publishDate),
-          author: post.author,
-          section: post.category,
-          tags: [post.category, "Costa del Sol", "Real Estate"]
-        }}
-        structuredData={structuredData}
-      />
+    <StructuredDataProvider
+      pageType="article"
+      pageData={{
+        title: post.title,
+        description: post.excerpt,
+        author: post.author,
+        datePublished: post.publishDate,
+        dateModified: post.publishDate,
+        image: post.image,
+        breadcrumbs: [
+          { name: "Home", url: "https://delsolprimehomes.com" },
+          { name: "Blog", url: "https://delsolprimehomes.com/blog" },
+          { name: post.title, url: `https://delsolprimehomes.com/blog/${slug}` }
+        ]
+      }}
+    >
+      <div className="min-h-screen bg-background">
+        <SEOHead
+          title={generateTitle(post.title)}
+          description={truncateDescription(post.excerpt)}
+          canonical={`/blog/${slug}`}
+          ogType="article"
+          ogImage={post.image}
+          article={{
+            publishedTime: formatDateForSchema(post.publishDate),
+            author: post.author,
+            section: post.category,
+            tags: [post.category, "Costa del Sol", "Real Estate"]
+          }}
+        />
       
       <BreadcrumbNavigation 
         items={[
@@ -145,6 +148,7 @@ const BlogPost = () => {
         </Container>
       </Section>
     </div>
+    </StructuredDataProvider>
   );
 };
 

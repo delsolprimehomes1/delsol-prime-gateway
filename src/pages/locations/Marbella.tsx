@@ -10,6 +10,7 @@ import { AnimatedElement } from "@/components/ui/AnimatedElement";
 import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import SEOHead from "@/components/seo/SEOHead";
+import { StructuredDataProvider } from "@/components/seo/StructuredDataProvider";
 import marbellaHero from "@/assets/location-marbella-golden-mile.jpg";
 
 const Marbella = () => {
@@ -38,12 +39,24 @@ const Marbella = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <SEOHead
-        title="Luxury Properties in Marbella | Costa del Sol Real Estate"
-        description="Discover exclusive luxury properties in Marbella, Costa del Sol. Premium beachfront villas, penthouses and apartments from €500K to €15M."
-        canonical="/locations/marbella"
-      />
+    <StructuredDataProvider
+      pageType="location"
+      pageData={{
+        title: "Luxury Properties in Marbella | Costa del Sol Real Estate",
+        description: "Discover exclusive luxury properties in Marbella, Costa del Sol. Premium beachfront villas, penthouses and apartments from €500K to €15M.",
+        breadcrumbs: [
+          { name: "Home", url: "https://delsolprimehomes.com" },
+          { name: "Locations", url: "https://delsolprimehomes.com#locations" },
+          { name: "Marbella", url: "https://delsolprimehomes.com/locations/marbella" }
+        ]
+      }}
+    >
+      <div className="min-h-screen bg-background">
+        <SEOHead
+          title="Luxury Properties in Marbella | Costa del Sol Real Estate"
+          description="Discover exclusive luxury properties in Marbella, Costa del Sol. Premium beachfront villas, penthouses and apartments from €500K to €15M."
+          canonical="/locations/marbella"
+        />
       
       <Navigation />
       
@@ -228,7 +241,8 @@ const Marbella = () => {
       </section>
 
       <Footer />
-    </div>
+      </div>
+    </StructuredDataProvider>
   );
 };
 

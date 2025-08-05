@@ -4,6 +4,7 @@ import Footer from "@/components/layout/Footer";
 import Section from "@/components/layout/Section";
 import SEOHead from "@/components/seo/SEOHead";
 import BreadcrumbNavigation from "@/components/seo/BreadcrumbNavigation";
+import { StructuredDataProvider } from "@/components/seo/StructuredDataProvider";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -20,7 +21,6 @@ import {
   Calendar,
   CheckCircle
 } from "lucide-react";
-import { enhancedOrganizationSchema } from "@/utils/seo/enhancedStructuredData";
 import { generateTitle, META_DESCRIPTIONS } from "@/utils/seo/metaUtils";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -124,16 +124,24 @@ const About = () => {
     }
   ];
 
-  const structuredData = [enhancedOrganizationSchema, founderSchema];
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30">
-      <SEOHead
-        title={generateTitle("About DelSolPrimeHomes - Meet Our Expert Team")}
-        description="Meet Hans van der Berg and the DelSolPrimeHomes team. 15+ years of expertise in Costa del Sol real estate, helping international clients find their dream properties in Spain."
-        canonical="/about"
-        structuredData={structuredData}
-      />
+    <StructuredDataProvider
+      pageType="about"
+      pageData={{
+        title: "About DelSolPrimeHomes - Meet Our Expert Team",
+        description: "Meet Hans van der Berg and the DelSolPrimeHomes team. 15+ years of expertise in Costa del Sol real estate, helping international clients find their dream properties in Spain.",
+        breadcrumbs: [
+          { name: "Home", url: "https://delsolprimehomes.com" },
+          { name: "About", url: "https://delsolprimehomes.com/about" }
+        ]
+      }}
+    >
+      <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30">
+        <SEOHead
+          title={generateTitle("About DelSolPrimeHomes - Meet Our Expert Team")}
+          description="Meet Hans van der Berg and the DelSolPrimeHomes team. 15+ years of expertise in Costa del Sol real estate, helping international clients find their dream properties in Spain."
+          canonical="/about"
+        />
       
       <BreadcrumbNavigation 
         items={[{ name: "About", href: "/about" }]}
@@ -472,7 +480,8 @@ const About = () => {
       </Section>
 
       <Footer />
-    </div>
+      </div>
+    </StructuredDataProvider>
   );
 };
 
