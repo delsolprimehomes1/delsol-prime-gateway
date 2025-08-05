@@ -145,16 +145,16 @@ export default function MultilingualFAQSection() {
   const featuredFAQs = getFeaturedSnippetFAQs(3);
   const voiceSearchFAQs = getVoiceSearchFAQs();
   
-  // Display FAQs with pagination
-  const displayFAQs = showAllFAQs ? filteredFAQs : filteredFAQs.slice(0, 12);
+  // Display FAQs with pagination - use voice optimized FAQs
+  const displayFAQs = showAllFAQs ? voiceOptimizedFAQs : voiceOptimizedFAQs.slice(0, 12);
   
   // Generate multilingual schema
   const multilingualSchema = useMemo(() => {
-    if (filteredFAQs.length > 0) {
-      return generateMultilingualFAQSchema(filteredFAQs, currentLanguage);
+    if (voiceOptimizedFAQs.length > 0) {
+      return generateMultilingualFAQSchema(voiceOptimizedFAQs, currentLanguage);
     }
     return null;
-  }, [filteredFAQs, currentLanguage]);
+  }, [voiceOptimizedFAQs, currentLanguage]);
 
   if (loading) {
     return (
@@ -254,9 +254,9 @@ export default function MultilingualFAQSection() {
                   <AnimatedElement key={faq.id} animation="fade-in-up" delay={index * 100}>
                     <ShortAnswerSection
                       question={faq.question}
-                      shortAnswer={faq.answer_short}
-                      voiceSearchReady={Boolean(faq.voice_queries?.length)}
-                      lastUpdated={faq.updated_at}
+                      shortAnswer={faq.conversationalAnswer}
+                      voiceSearchReady={Boolean(faq.voiceQueries?.length)}
+                      lastUpdated={new Date().toISOString()}
                       variant="featured"
                       className="h-full"
                     />
@@ -298,20 +298,20 @@ export default function MultilingualFAQSection() {
           {/* FAQ Results Count */}
           <AnimatedElement animation="fade-in-up" delay={250} className="mb-6">
             <p className="text-center text-muted-foreground">
-              {filteredFAQs.length === 0 
+              {voiceOptimizedFAQs.length === 0 
                 ? 'No results found'
-                : `${filteredFAQs.length} Questions Found`
+                : `${voiceOptimizedFAQs.length} Questions Found`
               }
             </p>
           </AnimatedElement>
 
           {/* FAQ List */}
-          {filteredFAQs.length > 0 ? (
+          {voiceOptimizedFAQs.length > 0 ? (
             <AnimatedElement animation="fade-in-up" delay={300}>
               <Accordion type="single" collapsible className="space-y-4">
                 {displayFAQs.map((faq, index) => {
                   const IconComponent = categoryIcons[faq.category as keyof typeof categoryIcons] || Building;
-                  const isVoiceOptimized = faq.voice_queries && faq.voice_queries.length > 0;
+                  const isVoiceOptimized = faq.voiceSearchKeywords && faq.voiceSearchKeywords.length > 0;
                   
                   return (
                     <AccordionItem 
@@ -336,7 +336,7 @@ export default function MultilingualFAQSection() {
                                   Voice Ready
                                 </Badge>
                               )}
-                              {faq.is_featured && (
+                              {faq.responseLength === 'short' && (
                                 <Badge variant="outline" className="text-xs bg-yellow-50 text-yellow-700 border-yellow-200 dark:bg-yellow-950 dark:text-yellow-300">
                                   <Star className="w-3 h-3 mr-1" />
                                   Featured
@@ -344,7 +344,7 @@ export default function MultilingualFAQSection() {
                               )}
                             </div>
                             <p className="text-sm text-muted-foreground mt-2 line-clamp-2">
-                              {faq.answer_short}
+                              {faq.conversationalAnswer.substring(0, 120)}...
                             </p>
                           </div>
                         </div>
@@ -353,29 +353,29 @@ export default function MultilingualFAQSection() {
                       <AccordionContent className="pb-6">
                         <div className="space-y-4">
                           {/* Short Answer Section for Voice Search */}
-                          <ShortAnswerSection
-                            shortAnswer={faq.answer_short}
-                            voiceSearchReady={Boolean(faq.voice_queries?.length)}
-                            lastUpdated={faq.updated_at}
+                            <ShortAnswerSection
+                              shortAnswer={faq.conversationalAnswer}
+                              voiceSearchReady={Boolean(faq.voiceSearchKeywords?.length)}
+                              lastUpdated={new Date().toISOString()}
                             variant="compact"
                           />
                           
                           <div className="prose prose-sm max-w-none dark:prose-invert">
                             <h3 className="text-lg font-semibold mb-3">Complete Answer</h3>
                             <p className="text-foreground leading-relaxed">
-                              {faq.answer_long || faq.answer_short}
+                              {faq.answer}
                             </p>
                           </div>
                           
                           {/* Voice Search Keywords */}
-                          {faq.voice_queries && faq.voice_queries.length > 0 && (
+                          {faq.voiceSearchKeywords && faq.voiceSearchKeywords.length > 0 && (
                             <div className="p-4 bg-muted/30 rounded-lg">
                               <p className="text-sm font-medium mb-2 flex items-center gap-2">
                                 <Mic className="w-4 h-4 text-primary" />
                                 Voice Search Optimized For:
                               </p>
                               <div className="flex flex-wrap gap-1">
-                                {faq.voice_queries.slice(0, 5).map((query: string, i: number) => (
+                                {faq.voiceSearchKeywords.slice(0, 5).map((query: string, i: number) => (
                                   <Badge key={i} variant="outline" className="text-xs">
                                     "{query}"
                                   </Badge>
@@ -402,14 +402,14 @@ export default function MultilingualFAQSection() {
               </Accordion>
               
               {/* Show More Button */}
-              {!showAllFAQs && filteredFAQs.length > 12 && (
+              {!showAllFAQs && voiceOptimizedFAQs.length > 12 && (
                 <div className="text-center mt-8">
                   <MagneticButton 
                     variant="outline" 
                     onClick={() => setShowAllFAQs(true)}
                     className="px-8"
                   >
-                    Show More ({filteredFAQs.length - 12} remaining)
+                    Show More ({voiceOptimizedFAQs.length - 12} remaining)
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </MagneticButton>
                 </div>
@@ -464,13 +464,13 @@ export default function MultilingualFAQSection() {
       
       {/* Hidden AEO Content for Voice Search */}
       <div className="sr-only" aria-hidden="true">
-        {filteredFAQs.slice(0, 10).map((faq) => (
+        {voiceOptimizedFAQs.slice(0, 10).map((faq) => (
           <div key={`aeo-${faq.id}`}>
             <h4 itemProp="name">{faq.question}</h4>
             <div itemProp="acceptedAnswer" itemScope itemType="https://schema.org/Answer">
-              <div itemProp="text">{faq.answer_short}</div>
+              <div itemProp="text">{faq.conversationalAnswer}</div>
             </div>
-            {faq.voice_queries?.map((query, index) => (
+            {faq.voiceSearchKeywords?.map((query, index) => (
               <span key={index} data-voice-query={query} />
             ))}
           </div>
