@@ -161,6 +161,26 @@ export default function Navigation({ className }: NavigationProps) {
                 )}
               />
 
+              {/* Contact Us Button */}
+              <MagneticButton
+                variant="hero"
+                size="sm"
+                className={cn(
+                  "relative overflow-hidden group font-semibold tracking-wide",
+                  "bg-gradient-to-r from-primary via-primary-glow to-primary",
+                  "hover:from-primary-glow hover:via-primary hover:to-primary-glow",
+                  "animate-gradient-x shadow-glow hover:shadow-luxury",
+                  "border border-primary-glow/30 hover:border-primary-glow/60",
+                  "transition-all duration-500 ease-premium"
+                )}
+                asChild
+              >
+                <a href="/contact">
+                  <span className="relative z-10">Contact Us</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-shimmer" />
+                </a>
+              </MagneticButton>
+
               {/* User Account */}
               {user ? (
                 <DropdownMenu>
