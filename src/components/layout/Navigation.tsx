@@ -175,10 +175,7 @@ export default function Navigation({ className }: NavigationProps) {
                 )}
                 asChild
               >
-                <a href="/contact">
-                  <span className="relative z-10">Contact Us</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-shimmer" />
-                </a>
+                <a href="/contact">Contact Us</a>
               </MagneticButton>
 
               {/* User Account */}
