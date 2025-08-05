@@ -99,11 +99,22 @@ const BlogSectionComponent = () => {
               className="group hover:shadow-luxury transition-all duration-500 overflow-hidden border-0 bg-background"
             >
               <div className="relative overflow-hidden">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                <picture>
+                  <source 
+                    srcSet={post.image.replace(/\.(jpg|jpeg|png)$/i, '-640w.webp') + ' 640w, ' + post.image.replace(/\.(jpg|jpeg|png)$/i, '-480w.webp') + ' 480w'} 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    type="image/webp" 
+                  />
+                  <img
+                    src={post.image}
+                    alt={`Spain real estate buying guide ${post.category} market insights`}
+                    width={640}
+                    height={192}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </picture>
                 <div className="absolute top-4 left-4">
                   <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
                     {post.category}

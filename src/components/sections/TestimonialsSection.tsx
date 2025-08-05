@@ -197,11 +197,22 @@ export default function TestimonialsSection() {
               <div className="lg:col-span-1 bg-gradient-to-br from-primary/5 to-secondary/5 p-8 flex flex-col items-center justify-center text-center border-r border-border/20">
                 <div className="relative mb-6">
                   <div className="w-28 h-28 rounded-full overflow-hidden mx-auto border-4 border-white shadow-elegant">
-                    <img
-                      src={currentTestimonial.image}
-                      alt={currentTestimonial.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
+                    <picture>
+                      <source 
+                        srcSet={currentTestimonial.image + '&fm=webp&w=150 150w, ' + currentTestimonial.image + '&fm=webp&w=300 300w'} 
+                        sizes="150px"
+                        type="image/webp" 
+                      />
+                      <img
+                        src={currentTestimonial.image}
+                        alt={`${currentTestimonial.name} DelSol client testimonial professional headshot`}
+                        width={150}
+                        height={150}
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                    </picture>
                   </div>
                   <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-lg">
                     <Quote className="w-4 h-4 text-white" />
