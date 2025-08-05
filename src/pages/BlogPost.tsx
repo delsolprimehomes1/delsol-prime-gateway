@@ -124,6 +124,76 @@ const BlogPost = () => {
             <div className="prose prose-lg prose-stone dark:prose-invert mx-auto">
               <div dangerouslySetInnerHTML={{ __html: post.content.replace(/\n\n/g, '</p><p>').replace(/^/, '<p>').replace(/$/, '</p>') }} />
             </div>
+
+            {/* Related Content Links */}
+            <div className="mt-12 pt-8 border-t border-border">
+              <h3 className="text-2xl font-bold text-foreground mb-6">Related Resources</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* Q&A Links */}
+                <div className="p-6 rounded-lg border bg-card">
+                  <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
+                    <span className="w-2 h-2 bg-primary rounded-full"></span>
+                    Related Questions & Answers
+                  </h4>
+                  <div className="space-y-3">
+                    <a href="/faq" className="block text-primary hover:text-primary/80 transition-colors">
+                      → Complete FAQ about Costa del Sol properties
+                    </a>
+                    {post.slug.includes('buying') && (
+                      <a href="/faq#buying-process" className="block text-primary hover:text-primary/80 transition-colors">
+                        → Property buying process in Spain
+                      </a>
+                    )}
+                    {post.slug.includes('investment') && (
+                      <a href="/faq#investment" className="block text-primary hover:text-primary/80 transition-colors">
+                        → Investment property questions
+                      </a>
+                    )}
+                    {post.slug.includes('marbella') && (
+                      <a href="/faq#marbella" className="block text-primary hover:text-primary/80 transition-colors">
+                        → Marbella property questions
+                      </a>
+                    )}
+                  </div>
+                </div>
+
+                {/* Location Hub Links */}
+                <div className="p-6 rounded-lg border bg-card">
+                  <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
+                    <span className="w-2 h-2 bg-primary rounded-full"></span>
+                    Explore Locations
+                  </h4>
+                  <div className="space-y-3">
+                    {post.slug.includes('marbella') && (
+                      <a href="/locations/marbella" className="block text-primary hover:text-primary/80 transition-colors">
+                        → Marbella Properties & Market Guide
+                      </a>
+                    )}
+                    {post.slug.includes('estepona') && (
+                      <a href="/locations/estepona" className="block text-primary hover:text-primary/80 transition-colors">
+                        → Estepona Properties & Market Guide
+                      </a>
+                    )}
+                    {(post.slug.includes('costa') || post.slug.includes('market')) && (
+                      <>
+                        <a href="/locations/marbella" className="block text-primary hover:text-primary/80 transition-colors">
+                          → Marbella Properties
+                        </a>
+                        <a href="/locations/estepona" className="block text-primary hover:text-primary/80 transition-colors">
+                          → Estepona Properties
+                        </a>
+                        <a href="/locations/mijas" className="block text-primary hover:text-primary/80 transition-colors">
+                          → Mijas Properties
+                        </a>
+                      </>
+                    )}
+                    <a href="/glossary" className="block text-primary hover:text-primary/80 transition-colors">
+                      → Real Estate Terms Glossary
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </article>
         </Container>
       </Section>

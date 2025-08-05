@@ -20,6 +20,7 @@ import About from "./pages/About";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import FAQ from "./pages/FAQ";
+import Glossary from "./pages/Glossary";
 import Auth from "./pages/Auth";
 import Calendar from "./pages/Calendar";
 import SEODashboard from "./pages/SEODashboard";
@@ -68,6 +69,7 @@ const App = () => (
                     <Route path="/blog" element={<Blog />} />
                     <Route path="/blog/:slug" element={<BlogPost />} />
                     <Route path="/faq" element={<FAQ />} />
+                    <Route path="/glossary" element={<Glossary />} />
                     <Route path="/auth" element={<Auth />} />
                     <Route path="/calendar" element={<Calendar />} />
                     <Route path="/locations/marbella" element={<Marbella />} />

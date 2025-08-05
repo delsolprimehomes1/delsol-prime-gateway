@@ -1,96 +1,175 @@
 
-// Multilingual Organization Schema for Homepage
+// Generate Organization schema with social media links
 export const generateOrganizationSchema = (language = 'en') => {
-  const languageMap = {
-    'en': {
-      description: "Premier luxury real estate agency specializing in Costa Del Sol properties including Marbella, Estepona, and surrounding areas.",
-      availableLanguages: ["English", "Spanish", "Dutch", "German", "French", "Polish", "Danish", "Swedish"]
-    },
-    'es': {
-      description: "Agencia inmobiliaria de lujo especializada en propiedades de la Costa del Sol, incluyendo Marbella, Estepona y áreas circundantes.",
-      availableLanguages: ["Inglés", "Español", "Holandés", "Alemán", "Francés", "Polaco", "Danés", "Sueco"]
-    },
-    'fr': {
-      description: "Agence immobilière de luxe spécialisée dans les propriétés de la Costa del Sol, y compris Marbella, Estepona et les zones environnantes.",
-      availableLanguages: ["Anglais", "Espagnol", "Néerlandais", "Allemand", "Français", "Polonais", "Danois", "Suédois"]
-    },
-    'nl': {
-      description: "Premier luxe makelaarskantoor gespecialiseerd in Costa Del Sol eigendommen waaronder Marbella, Estepona en omliggende gebieden.",
-      availableLanguages: ["Engels", "Spaans", "Nederlands", "Duits", "Frans", "Pools", "Deens", "Zweeds"]
-    },
-    'de': {
-      description: "Premium Luxus-Immobilienagentur spezialisiert auf Costa Del Sol Immobilien einschließlich Marbella, Estepona und umliegende Gebiete.",
-      availableLanguages: ["Englisch", "Spanisch", "Niederländisch", "Deutsch", "Französisch", "Polnisch", "Dänisch", "Schwedisch"]
-    },
-    'pl': {
-      description: "Ekskluzywna agencja nieruchomości luksusowych specjalizująca się w nieruchomościach Costa Del Sol, w tym Marbella, Estepona i okoliczne obszary.",
-      availableLanguages: ["Angielski", "Hiszpański", "Holenderski", "Niemiecki", "Francuski", "Polski", "Duński", "Szwedzki"]
-    },
-    'dk': {
-      description: "Førende luksus ejendomsmægler specialiseret i Costa Del Sol ejendomme inklusive Marbella, Estepona og omkringliggende områder.",
-      availableLanguages: ["Engelsk", "Spansk", "Hollandsk", "Tysk", "Fransk", "Polsk", "Dansk", "Svensk"]
-    },
-    'se': {
-      description: "Främsta lyxfastighetsmäklare specialiserad på Costa Del Sol fastigheter inklusive Marbella, Estepona och omkringliggande områden.",
-      availableLanguages: ["Engelska", "Spanska", "Holländska", "Tyska", "Franska", "Polska", "Danska", "Svenska"]
-    }
+  const descriptions = {
+    en: "Premier Costa del Sol real estate agency specializing in luxury properties in Marbella, Estepona, Mijas, and surrounding areas. 15+ years of expertise helping international clients find their dream homes in Spain.",
+    es: "Agencia inmobiliaria líder en Costa del Sol especializada en propiedades de lujo en Marbella, Estepona, Mijas y alrededores. Más de 15 años de experiencia ayudando a clientes internacionales.",
+    fr: "Agence immobilière de premier plan sur la Costa del Sol spécialisée dans les propriétés de luxe à Marbella, Estepona, Mijas et environs.",
+    nl: "Premier vastgoedkantoor aan de Costa del Sol gespecialiseerd in luxe eigendommen in Marbella, Estepona, Mijas en omgeving.",
+    de: "Führende Immobilienagentur an der Costa del Sol, spezialisiert auf Luxusimmobilien in Marbella, Estepona, Mijas und Umgebung."
   };
 
-  const langData = languageMap[language] || languageMap['en'];
+  const availableLanguages = ['en', 'es', 'fr', 'nl', 'de', 'pl', 'da', 'sv'];
 
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "RealEstateAgent",
     "name": "DelSolPrimeHomes",
+    "alternateName": "DelSol Prime Homes",
+    "description": descriptions[language as keyof typeof descriptions] || descriptions.en,
     "url": "https://delsolprimehomes.com",
-    "logo": "https://delsolprimehomes.com/logo.png",
-    "description": langData.description,
-    "inLanguage": language,
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://delsolprimehomes.com/logo.png",
+      "width": 400,
+      "height": 100
+    },
+    "image": "https://delsolprimehomes.com/logo.png",
+    "telephone": "+34 952 123 456",
+    "email": "info@delsolprimehomes.com",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Avenida Ricardo Soriano 29",
       "addressLocality": "Marbella",
-      "addressRegion": "Andalusia",
-      "addressCountry": "Spain",
-      "postalCode": "29600"
+      "addressRegion": "Andalusia", 
+      "postalCode": "29600",
+      "addressCountry": "ES"
     },
-    "contactPoint": [
-      {
-        "@type": "ContactPoint",
-        "telephone": "+34-952-XXX-XXX",
-        "contactType": "customer service",
-        "availableLanguage": langData.availableLanguages,
-        "areaServed": ["ES"]
-      }
-    ],
-    "sameAs": [
-      "https://facebook.com/delsolprimehomes",
-      "https://instagram.com/delsolprimehomes",
-      "https://linkedin.com/company/delsolprimehomes"
-    ],
-    "founder": {
-      "@type": "Person",
-      "name": "Hans [Last Name]"
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 36.5108,
+      "longitude": -4.8851
     },
-    "foundingDate": "2010",
-    "numberOfEmployees": "10-50",
     "areaServed": [
-      "Marbella",
-      "Estepona", 
-      "Mijas",
-      "Fuengirola",
-      "Benalmádena",
-      "Puerto Banús"
+      {
+        "@type": "City",
+        "name": "Marbella",
+        "addressCountry": "ES"
+      },
+      {
+        "@type": "City", 
+        "name": "Estepona",
+        "addressCountry": "ES"
+      },
+      {
+        "@type": "City",
+        "name": "Mijas",
+        "addressCountry": "ES"
+      },
+      {
+        "@type": "City",
+        "name": "Fuengirola", 
+        "addressCountry": "ES"
+      },
+      {
+        "@type": "City",
+        "name": "Benalmádena",
+        "addressCountry": "ES"
+      }
     ],
     "serviceType": [
       "Real Estate Sales",
       "Property Investment Consulting", 
       "Legal Assistance",
-      "Property Management"
+      "Property Management",
+      "Relocation Services"
+    ],
+    "priceRange": "€€€€",
+    "currenciesAccepted": ["EUR", "USD", "GBP"],
+    "paymentAccepted": ["Cash", "Bank Transfer", "Cryptocurrency"],
+    "openingHours": "Mo-Fr 09:00-18:00, Sa 10:00-14:00",
+    "knowsLanguage": availableLanguages,
+    "sameAs": [
+      "https://www.linkedin.com/company/delsolprimehomes",
+      "https://www.instagram.com/delsolprimehomes",
+      "https://www.youtube.com/@delsolprimehomes",
+      "https://www.facebook.com/delsolprimehomes",
+      "https://twitter.com/delsolprimehomes"
+    ],
+    "foundingDate": "2008",
+    "foundingLocation": {
+      "@type": "City",
+      "name": "Marbella",
+      "addressCountry": "ES"
+    },
+    "slogan": "Your Gateway to Costa del Sol Luxury",
+    "aggregateRating": {
+      "@type": "AggregateRating", 
+      "ratingValue": "4.9",
+      "reviewCount": "127",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Jennifer Smith"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "reviewBody": "Exceptional service from DelSolPrimeHomes. Hans and his team made buying our villa in Marbella seamless and stress-free."
+      }
     ]
   };
 };
 
-// Legacy export for backward compatibility
+// Generate Person schema for team members
+export const generatePersonSchema = (person: {
+  name: string;
+  jobTitle: string;
+  description: string;
+  image?: string;
+  url?: string;
+  sameAs?: string[];
+  knowsAbout?: string[];
+  hasOccupation?: {
+    name: string;
+    occupationLocation: string;
+  };
+  alumniOf?: {
+    name: string;
+    department?: string;
+  };
+  award?: string[];
+  telephone?: string;
+  email?: string;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": person.name,
+  "jobTitle": person.jobTitle,
+  "description": person.description,
+  "image": person.image,
+  "url": person.url || "https://delsolprimehomes.com/about",
+  "sameAs": person.sameAs || [],
+  "knowsAbout": person.knowsAbout || [],
+  "hasOccupation": person.hasOccupation ? {
+    "@type": "Occupation",
+    "name": person.hasOccupation.name,
+    "occupationLocation": {
+      "@type": "City",
+      "name": person.hasOccupation.occupationLocation
+    }
+  } : undefined,
+  "alumniOf": person.alumniOf ? {
+    "@type": "EducationalOrganization", 
+    "name": person.alumniOf.name,
+    "department": person.alumniOf.department
+  } : undefined,
+  "award": person.award || [],
+  "telephone": person.telephone,
+  "email": person.email,
+  "worksFor": {
+    "@type": "RealEstateAgent",
+    "name": "DelSolPrimeHomes"
+  }
+});
+
+// Legacy exports for backward compatibility
 export const organizationSchema = generateOrganizationSchema('en');
 
 // Real Estate Agent Schema

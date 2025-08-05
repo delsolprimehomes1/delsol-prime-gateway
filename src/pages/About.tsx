@@ -5,6 +5,7 @@ import Section from "@/components/layout/Section";
 import SEOHead from "@/components/seo/SEOHead";
 import BreadcrumbNavigation from "@/components/seo/BreadcrumbNavigation";
 import { StructuredDataProvider } from "@/components/seo/StructuredDataProvider";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -24,6 +25,7 @@ import {
 import { generateTitle, META_DESCRIPTIONS } from "@/utils/seo/metaUtils";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { PAGE_METADATA, generateHreflangLinks } from "@/utils/seo/contentMetadata";
+import { generatePersonSchema } from "@/utils/seo/structuredData";
 import ogAboutImage from "@/assets/og-about-team.jpg";
 
 const About = () => {
@@ -31,43 +33,68 @@ const About = () => {
   const metadata = PAGE_METADATA['/about'];
   const hreflangLinks = generateHreflangLinks('/about');
   
-  const founderSchema = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Hans van der Berg",
-    "jobTitle": "Founder & CEO of DelSolPrimeHomes",
-    "description": "International real estate expert with 15+ years experience in Spanish property market",
-    "image": "https://delsolprimehomes.com/hans-founder.jpg",
-    "url": "https://delsolprimehomes.com/about",
-    "sameAs": [
+  // Enhanced Person schema for Hans van der Berg
+  const founderSchema = generatePersonSchema({
+    name: "Hans van der Berg",
+    jobTitle: "Founder & CEO of DelSolPrimeHomes",
+    description: "International real estate expert with 15+ years experience in Spanish property market. Specializes in helping international clients navigate Costa del Sol real estate investments.",
+    image: "https://delsolprimehomes.com/hans-founder.jpg",
+    url: "https://delsolprimehomes.com/about",
+    sameAs: [
       "https://linkedin.com/in/hansvanderberg-realestate",
-      "https://instagram.com/hansdelsolhomes"
+      "https://instagram.com/hansdelsolhomes",
+      "https://twitter.com/hansvanderberg"
     ],
-    "knowsAbout": [
+    knowsAbout: [
       "Spanish Real Estate Law",
       "International Property Investment", 
       "Costa del Sol Market Analysis",
       "Property Development",
-      "Investment Advisory"
+      "Investment Advisory",
+      "NIE Number Process",
+      "Spanish Property Taxes",
+      "Luxury Property Sales"
     ],
-    "hasOccupation": {
-      "@type": "Occupation",
-      "name": "Real Estate Agent",
-      "occupationLocation": {
-        "@type": "City",
-        "name": "Marbella, Spain"
-      }
+    hasOccupation: {
+      name: "Real Estate Agent",
+      occupationLocation: "Marbella, Spain"
     },
-    "alumniOf": {
-      "@type": "EducationalOrganization",
-      "name": "University of Amsterdam",
-      "department": "Business Administration"
+    alumniOf: {
+      name: "University of Amsterdam",
+      department: "Business Administration"
     },
-    "award": [
+    award: [
       "Top Real Estate Professional 2023",
-      "International Service Excellence Award 2022"
-    ]
-  };
+      "International Service Excellence Award 2022",
+      "AIPP Member of the Year 2020"
+    ],
+    telephone: "+34 952 123 456",
+    email: "hans@delsolprimehomes.com"
+  });
+
+  // Person schemas for team members
+  const teamSchemas = [
+    generatePersonSchema({
+      name: "Maria Gonzalez",
+      jobTitle: "Senior Property Consultant at DelSolPrimeHomes",
+      description: "Senior property consultant specializing in luxury properties and Spanish legal compliance with 10+ years experience.",
+      knowsAbout: ["Luxury Properties", "Legal Compliance", "Spanish Market", "Property Law"],
+      hasOccupation: {
+        name: "Property Consultant",
+        occupationLocation: "Marbella, Spain"
+      }
+    }),
+    generatePersonSchema({
+      name: "James Mitchell", 
+      jobTitle: "International Relations Manager at DelSolPrimeHomes",
+      description: "International relations manager specializing in helping foreign clients relocate and invest in Costa del Sol properties.",
+      knowsAbout: ["International Clients", "Investment Analysis", "Relocation", "Property Investment"],
+      hasOccupation: {
+        name: "International Relations Manager",
+        occupationLocation: "Marbella, Spain"
+      }
+    })
+  ];
 
   const teamMembers = [
     {
@@ -141,6 +168,16 @@ const About = () => {
         ]
       }}
     >
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(founderSchema)}
+        </script>
+        {teamSchemas.map((schema, index) => (
+          <script key={index} type="application/ld+json">
+            {JSON.stringify(schema)}
+          </script>
+        ))}
+      </Helmet>
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30">
         <SEOHead
           title={metadata.title}

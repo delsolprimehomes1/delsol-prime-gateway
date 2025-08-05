@@ -1,0 +1,162 @@
+[
+  {
+    "id": "costa-del-sol",
+    "term": "Costa del Sol",
+    "definition": "A coastal region in southern Spain along the Mediterranean Sea, known for its beaches, golf courses, and luxury real estate. The name means 'Coast of the Sun' in Spanish.",
+    "category": "Location",
+    "relatedTerms": ["Marbella", "Estepona", "Andalusia"],
+    "seoKeywords": ["Costa del Sol real estate", "Spanish coast properties"]
+  },
+  {
+    "id": "marbella",
+    "term": "Marbella", 
+    "definition": "A prestigious resort city on the Costa del Sol, famous for luxury properties, Puerto Banús marina, and the Golden Mile. One of Spain's most exclusive real estate markets.",
+    "category": "Location",
+    "relatedTerms": ["Puerto Banús", "Golden Mile", "Nueva Andalucía"],
+    "seoKeywords": ["Marbella properties", "luxury Marbella real estate"]
+  },
+  {
+    "id": "puerto-banus",
+    "term": "Puerto Banús",
+    "definition": "An exclusive marina and luxury shopping area in Marbella, known for high-end boutiques, restaurants, and some of the most expensive properties in Spain.",
+    "category": "Location",
+    "relatedTerms": ["Marbella", "Golden Mile", "luxury marina"],
+    "seoKeywords": ["Puerto Banús properties", "luxury marina real estate"]
+  },
+  {
+    "id": "golden-mile",
+    "term": "Golden Mile",
+    "definition": "A prestigious stretch of coastline between Marbella city center and Puerto Banús, featuring luxury hotels, exclusive residences, and prime beachfront properties.",
+    "category": "Location",
+    "relatedTerms": ["Marbella", "Puerto Banús", "beachfront properties"],
+    "seoKeywords": ["Golden Mile properties", "Marbella Golden Mile real estate"]
+  },
+  {
+    "id": "nie-number",
+    "term": "NIE Number",
+    "definition": "Número de Identificación de Extranjero - A tax identification number required for all foreigners conducting financial transactions in Spain, including property purchases.",
+    "category": "Legal",
+    "relatedTerms": ["Spanish property law", "foreigner identification", "tax number"],
+    "seoKeywords": ["NIE number Spain", "property purchase requirements"]
+  },
+  {
+    "id": "escritura",
+    "term": "Escritura",
+    "definition": "The Spanish property deed or title deed that proves legal ownership of a property. Essential document in Spanish real estate transactions.",
+    "category": "Legal",
+    "relatedTerms": ["property deed", "title deed", "Spanish property law"],
+    "seoKeywords": ["Spanish property deed", "escritura real estate"]
+  },
+  {
+    "id": "nota-simple",
+    "term": "Nota Simple",
+    "definition": "An official property registry document that shows current ownership, mortgages, and any legal charges on a Spanish property.",
+    "category": "Legal",
+    "relatedTerms": ["property registry", "ownership verification", "due diligence"],
+    "seoKeywords": ["Spanish property registry", "nota simple property"]
+  },
+  {
+    "id": "itp-tax",
+    "term": "ITP Tax",
+    "definition": "Impuesto de Transmisiones Patrimoniales - Transfer tax paid when purchasing second-hand properties in Spain, typically 8-10% of the purchase price.",
+    "category": "Financial",
+    "relatedTerms": ["property transfer tax", "Spanish property taxes", "purchase costs"],
+    "seoKeywords": ["ITP tax Spain", "property transfer tax"]
+  },
+  {
+    "id": "iva-tax",
+    "term": "IVA Tax",
+    "definition": "Spanish VAT (Value Added Tax) applied to new property purchases, typically 10% for residential properties and 21% for commercial properties.",
+    "category": "Financial",
+    "relatedTerms": ["Spanish VAT", "new property tax", "purchase costs"],
+    "seoKeywords": ["IVA tax Spain", "Spanish property VAT"]
+  },
+  {
+    "id": "plus-valia",
+    "term": "Plusvalía",
+    "definition": "Municipal capital gains tax paid when selling a property in Spain, calculated based on the increase in land value during the ownership period.",
+    "category": "Financial",
+    "relatedTerms": ["capital gains tax", "property sale tax", "municipal tax"],
+    "seoKeywords": ["plusvalia tax Spain", "property sale taxes"]
+  },
+  {
+    "id": "banco-espana",
+    "term": "Banco de España",
+    "definition": "Spain's central bank that regulates mortgage lending and sets monetary policy. Important for foreign buyers seeking Spanish mortgages.",
+    "category": "Financial",
+    "relatedTerms": ["Spanish central bank", "mortgage regulations", "banking"],
+    "seoKeywords": ["Spanish mortgage regulations", "Banco de España"]
+  },
+  {
+    "id": "empadronamiento",
+    "term": "Empadronamiento",
+    "definition": "Official registration with the local town hall (ayuntamiento) that proves Spanish residency. Required for various services and tax benefits.",
+    "category": "Legal",
+    "relatedTerms": ["Spanish residency", "town hall registration", "resident registration"],
+    "seoKeywords": ["Spanish residency registration", "empadronamiento Spain"]
+  },
+  {
+    "id": "cedula-habitabilidad",
+    "term": "Cédula de Habitabilidad",
+    "definition": "Certificate of habitability issued by local authorities confirming that a property meets minimum living standards and building regulations.",
+    "category": "Legal",
+    "relatedTerms": ["habitability certificate", "building standards", "property compliance"],
+    "seoKeywords": ["Spanish habitability certificate", "property building standards"]
+  },
+  {
+    "id": "catastral-value",
+    "term": "Catastral Value",
+    "definition": "Official property value set by Spanish authorities for tax purposes. Usually lower than market value and used to calculate property taxes.",
+    "category": "Financial",
+    "relatedTerms": ["property valuation", "tax assessment", "official value"],
+    "seoKeywords": ["Spanish property catastral value", "property tax valuation"]
+  },
+  {
+    "id": "ibi-tax",
+    "term": "IBI Tax",
+    "definition": "Impuesto sobre Bienes Inmuebles - Annual property tax paid to the local municipality, calculated based on the catastral value of the property.",
+    "category": "Financial",
+    "relatedTerms": ["annual property tax", "municipal tax", "property ownership costs"],
+    "seoKeywords": ["IBI tax Spain", "Spanish property tax"]
+  },
+  {
+    "id": "basura-tax",
+    "term": "Basura Tax",
+    "definition": "Annual waste collection tax (Tasa de Basura) paid to the local municipality for garbage collection and waste management services.",
+    "category": "Financial",
+    "relatedTerms": ["waste collection tax", "municipal services", "annual fees"],
+    "seoKeywords": ["Spanish waste tax", "basura tax property"]
+  },
+  {
+    "id": "community-fees",
+    "term": "Community Fees",
+    "definition": "Monthly or quarterly fees paid by property owners in developments or apartment buildings for maintenance of common areas, security, and shared facilities.",
+    "category": "Financial",
+    "relatedTerms": ["maintenance fees", "common areas", "homeowners association"],
+    "seoKeywords": ["Spanish community fees", "property maintenance costs"]
+  },
+  {
+    "id": "licencia-primera-ocupacion",
+    "term": "Licencia de Primera Ocupación",
+    "definition": "First occupation license certifying that a new build property has been completed according to approved plans and is ready for habitation.",
+    "category": "Legal",
+    "relatedTerms": ["new build certificate", "occupation permit", "construction completion"],
+    "seoKeywords": ["Spanish occupation license", "new build property certificate"]
+  },
+  {
+    "id": "suma-agua",
+    "term": "SUMA Agua",
+    "definition": "Water supply tax in certain Spanish regions, typically paid annually or semi-annually for water supply infrastructure and services.",
+    "category": "Financial",
+    "relatedTerms": ["water tax", "utility taxes", "municipal services"],
+    "seoKeywords": ["Spanish water tax", "SUMA agua property"]
+  },
+  {
+    "id": "power-attorney",
+    "term": "Power of Attorney",
+    "definition": "Legal document (Poder) allowing someone to act on your behalf in Spanish property transactions. Essential for buyers who cannot be present for completion.",
+    "category": "Legal",
+    "relatedTerms": ["legal representation", "property completion", "Spanish poder"],
+    "seoKeywords": ["Spanish power of attorney", "property purchase representation"]
+  }
+]
