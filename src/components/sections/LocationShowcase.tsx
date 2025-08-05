@@ -96,22 +96,15 @@ const LocationShowcase = () => {
               <InteractiveCard variant="luxury" hover="lift" className="group relative bg-card rounded-3xl overflow-hidden shadow-elegant hover:shadow-luxury transition-all duration-700 hover:-translate-y-4">
               {/* Image */}
               <div className="relative h-64 overflow-hidden">
-                <picture>
-                  <source 
-                    srcSet={location.image.replace(/\.(jpg|jpeg|png)$/i, '-640w.webp') + ' 640w, ' + location.image.replace(/\.(jpg|jpeg|png)$/i, '-480w.webp') + ' 480w'} 
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    type="image/webp" 
-                  />
-                  <img
-                    src={location.image}
-                    alt={`Luxury properties ${location.name} Costa del Sol coastal views`}
-                    width={640}
-                    height={256}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                </picture>
+                <img
+                  src={location.image}
+                  alt={`Luxury properties ${location.name} Costa del Sol coastal views`}
+                  width={640}
+                  height={256}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
                 <div className="absolute inset-0 bg-gradient-overlay opacity-40 group-hover:opacity-20 transition-opacity duration-300" />
                 
                 {/* Location Pin */}
