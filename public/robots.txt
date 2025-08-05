@@ -1,3 +1,5 @@
+# DelSolPrimeHomes Robots.txt
+# Updated: 2024-01-20
 
 User-agent: Googlebot
 Allow: /
@@ -13,24 +15,40 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+User-agent: LinkedInBot
+Allow: /
+
 User-agent: *
 Allow: /
 Crawl-delay: 2
 
 # Sitemaps
+Sitemap: https://delsolprimehomes.com/sitemap-index.xml
 Sitemap: https://delsolprimehomes.com/sitemap.xml
 Sitemap: https://delsolprimehomes.com/sitemap-blog.xml
-Sitemap: https://delsolprimehomes.com/sitemap-faq.xml
-Sitemap: https://delsolprimehomes.com/sitemap-properties.xml
+Sitemap: https://delsolprimehomes.com/sitemap-locations.xml
 
-# Disallow admin and internal pages
+# Allow important public pages
+Allow: /blog/
+Allow: /faq/
+Allow: /locations/
+Allow: /about/
+Allow: /calendar/
+
+# Disallow private, admin and development routes
 Disallow: /admin/
 Disallow: /api/
 Disallow: /_next/
 Disallow: /tmp/
+Disallow: /draft/
+Disallow: /preview/
+Disallow: /staging/
+Disallow: /test/
+Disallow: /dev/
+Disallow: /.well-known/
+Disallow: /auth/
+Disallow: /private/
 
-# Allow important pages
-Allow: /blog/
-Allow: /faq/
-Allow: /properties/
-Allow: /locations/
+# Allow specific well-known files for verification
+Allow: /.well-known/security.txt
+Allow: /.well-known/apple-app-site-association
