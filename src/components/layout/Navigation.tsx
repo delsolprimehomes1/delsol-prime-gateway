@@ -57,11 +57,8 @@ export default function Navigation({ className }: NavigationProps) {
       hasDropdown: true
     },
     { label: t('nav.about'), href: "/about" },
-    { label: "FAQ", href: "/faq" },
-    { label: "Glossary", href: "/glossary" },
     { label: "Investment Guide", href: "/guide/fix-flip-vs-buy-hold" },
     { label: t('nav.blog'), href: "/blog" },
-    { label: t('nav.contact'), href: "/contact" },
   ];
 
   const handleMenuClick = (e: React.MouseEvent, itemLabel: string, hasDropdown?: boolean) => {
@@ -155,20 +152,6 @@ export default function Navigation({ className }: NavigationProps) {
 
             {/* Desktop Actions */}
             <div className="hidden lg:flex items-center space-x-4">
-              {/* Search Button */}
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setIsSearchOpen(true)}
-                className={cn(
-                  "transition-all duration-300",
-                  isScrolled ? "text-foreground" : "text-white hover:bg-white/10"
-                )}
-                aria-label={t('common.search')}
-              >
-                <Search className="w-4 h-4" />
-              </Button>
-
               {/* Language Selector */}
               <LanguageSelector 
                 variant="navigation" 
@@ -219,15 +202,6 @@ export default function Navigation({ className }: NavigationProps) {
                   </a>
                 </Button>
               )}
-
-              {/* Contact Button */}
-              <MagneticButton
-                variant={isScrolled ? "hero" : "outline-white"}
-                size="sm"
-                className="font-semibold"
-              >
-                {t('nav.contactUs')}
-              </MagneticButton>
             </div>
 
             {/* Mobile Menu Button */}
