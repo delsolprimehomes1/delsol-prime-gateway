@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { SitemapManager } from '@/components/admin/SitemapManager';
+import { SearchConsoleManager } from '@/components/admin/SearchConsoleManager';
+import { DeploymentChecklist } from '@/components/admin/DeploymentChecklist';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -251,12 +254,14 @@ const SEODashboard = () => {
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-5">
+          <TabsList className="grid w-full grid-cols-7">
             <TabsTrigger value="overview">Overview</TabsTrigger>
             <TabsTrigger value="keywords">Keywords</TabsTrigger>
             <TabsTrigger value="analytics">Analytics</TabsTrigger>
             <TabsTrigger value="backlinks">Backlinks</TabsTrigger>
             <TabsTrigger value="tasks">Tasks</TabsTrigger>
+            <TabsTrigger value="sitemaps">Sitemaps</TabsTrigger>
+            <TabsTrigger value="search-console">Search Console</TabsTrigger>
           </TabsList>
 
           {/* Overview Tab */}
@@ -570,6 +575,16 @@ const SEODashboard = () => {
                 </div>
               </CardContent>
             </Card>
+          </TabsContent>
+
+          {/* Sitemaps Tab */}
+          <TabsContent value="sitemaps" className="space-y-6">
+            <SitemapManager />
+          </TabsContent>
+
+          {/* Search Console Tab */}
+          <TabsContent value="search-console" className="space-y-6">
+            <SearchConsoleManager />
           </TabsContent>
         </Tabs>
       </div>

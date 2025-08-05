@@ -10,6 +10,7 @@ import { AnalyticsProvider } from "@/components/integrations/AnalyticsProvider";
 import { PerformanceMonitor } from "@/components/performance/PerformanceMonitor";
 import { ServiceWorkerProvider } from "@/components/performance/ServiceWorker";
 import { CoreWebVitalsOptimizer } from "@/components/performance/CoreWebVitalsOptimizer";
+import { SearchEngineVerification } from "@/components/seo/SearchEngineVerification";
 import { AuthProvider } from "@/hooks/useAuth";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import ProtectedRoute from "@/components/ProtectedRoute";
@@ -50,6 +51,10 @@ const App = () => (
           <AuthProvider>
             <LanguageProvider>
               <TooltipProvider>
+                <SearchEngineVerification 
+                  googleVerificationCode={import.meta.env.VITE_GOOGLE_VERIFICATION}
+                  bingVerificationCode={import.meta.env.VITE_BING_VERIFICATION}
+                />
                 <PerformanceMonitor />
                 <CoreWebVitalsOptimizer />
                 <ServiceWorkerProvider />
