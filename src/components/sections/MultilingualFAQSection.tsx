@@ -216,7 +216,7 @@ export default function MultilingualFAQSection() {
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold font-display mb-6">
-              {t('faq.title') || 'Frequently Asked'} <span className="text-primary">Questions</span>
+              {t('faq.title') || 'Frequently Asked'}
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
