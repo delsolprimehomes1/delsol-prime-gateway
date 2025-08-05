@@ -297,7 +297,7 @@ export default function MultilingualFAQSection() {
             <p className="text-center text-muted-foreground">
               {filteredFAQs.length === 0 
                 ? 'No results found'
-                : `${filteredFAQs.length} questions found`
+                : `${filteredFAQs.length} Questions Found`
               }
             </p>
           </AnimatedElement>
@@ -397,7 +397,7 @@ export default function MultilingualFAQSection() {
                     onClick={() => setShowAllFAQs(true)}
                     className="px-8"
                   >
-                    {t('faq.showMore') || 'Show More Questions'} ({filteredFAQs.length - 12} {t('faq.remaining') || 'remaining'})
+                    Show More ({filteredFAQs.length - 12} remaining)
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </MagneticButton>
                 </div>
