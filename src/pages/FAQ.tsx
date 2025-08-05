@@ -8,7 +8,7 @@ import Section from "@/components/layout/Section";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/seo/SEOHead";
 import BreadcrumbNavigation from "@/components/seo/BreadcrumbNavigation";
-import { generateFAQSchema, organizationSchema } from "@/utils/seo/structuredData";
+import { generateFAQSchema, generateOrganizationSchema, generateMultilingualFAQSchema } from "@/utils/seo/structuredData";
 import { generateTitle } from "@/utils/seo/metaUtils";
 import { useSupabaseFAQ } from "@/hooks/useSupabaseFAQ";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -65,19 +65,80 @@ const FAQ = () => {
   const targetAreas = getTargetAreas;
   const propertyTypes = getPropertyTypes;
 
-  // Generate structured data for SEO with all FAQs
-  const faqSchema = useMemo(() => {
-    if (faqs.length === 0) return null;
+  // Generate hreflang links for multilingual SEO
+  const hreflangLinks = useMemo(() => {
+    const supportedLanguages = ['en', 'es', 'fr', 'nl', 'de', 'pl', 'dk', 'se'];
+    const baseUrl = 'https://delsolprimehomes.com/faq';
     
-    return generateFAQSchema(
-      faqs.map(faq => ({
-        question: faq.question,
-        answer: faq.answer_short
-      }))
-    );
-  }, [faqs]);
+    return supportedLanguages
+      .filter(lang => lang !== currentLanguage)
+      .map(lang => ({
+        href: `${baseUrl}?lang=${lang}`,
+        hreflang: lang === 'dk' ? 'da' : lang === 'se' ? 'sv' : lang
+      }));
+  }, [currentLanguage]);
 
-  const structuredData = [organizationSchema, faqSchema].filter(Boolean);
+  // Generate comprehensive multilingual structured data for SEO
+  const structuredData = useMemo(() => {
+    if (faqs.length === 0) return [];
+    
+    const schemas = [];
+    
+    // Current language FAQ schema
+    const currentLanguageFAQs = faqs.map(faq => ({
+      question: faq.question,
+      answer: faq.answer_short
+    }));
+    
+    schemas.push(generateFAQSchema(currentLanguageFAQs, currentLanguage));
+    
+    // Organization schema for current language
+    schemas.push(generateOrganizationSchema(currentLanguage));
+    
+    // Hreflang schema for all languages (this helps with international SEO)
+    const hreflangSchema = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "url": `https://delsolprimehomes.com/faq?lang=${currentLanguage}`,
+      "inLanguage": currentLanguage,
+      "name": t('faq.title') || 'Frequently Asked Questions',
+      "description": t('faq.subtitle') || 'Expert answers to Costa del Sol property questions',
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "DelSolPrimeHomes",
+        "url": "https://delsolprimehomes.com"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://delsolprimehomes.com/faq?q={search_term_string}",
+          "actionPlatform": [
+            "https://schema.org/DesktopWebPlatform",
+            "https://schema.org/MobileWebPlatform"
+          ]
+        },
+        "query-input": "required name=search_term_string"
+      }
+    };
+    
+    schemas.push(hreflangSchema);
+    
+    // Voice search optimization schema
+    const voiceSearchSchema = {
+      "@context": "https://schema.org",
+      "@type": "SpeakableSpecification",
+      "xpath": [
+        "/html/head/title",
+        "//*[@itemscope and @itemtype='https://schema.org/Question']//h3",
+        "//*[@itemscope and @itemtype='https://schema.org/Answer']//p"
+      ]
+    };
+    
+    schemas.push(voiceSearchSchema);
+    
+    return schemas;
+  }, [faqs, currentLanguage, t]);
 
   // Loading and error states
   if (loading) {
@@ -113,6 +174,8 @@ const FAQ = () => {
         title={generateTitle(t('faq.title') || "Costa del Sol Real Estate FAQ - 150+ Expert Property Answers")}
         description={t('faq.subtitle') || "Get instant answers to all your Costa del Sol property questions. Expert advice on buying, selling, legal requirements, taxes, and more from DelSolPrimeHomes."}
         structuredData={structuredData}
+        hreflangLinks={hreflangLinks}
+        currentLanguage={currentLanguage}
       />
 
       <BreadcrumbNavigation

@@ -16,6 +16,11 @@ interface SEOHeadProps {
   };
   noindex?: boolean;
   structuredData?: object[];
+  hreflangLinks?: Array<{
+    href: string;
+    hreflang: string;
+  }>;
+  currentLanguage?: string;
 }
 
 export default function SEOHead({
@@ -26,7 +31,9 @@ export default function SEOHead({
   ogType = "website",
   article,
   noindex = false,
-  structuredData = []
+  structuredData = [],
+  hreflangLinks = [],
+  currentLanguage = 'en'
 }: SEOHeadProps) {
   const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
   const canonicalUrl = canonical || currentUrl;
@@ -48,7 +55,15 @@ export default function SEOHead({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
       <meta property="og:site_name" content="DelSolPrimeHomes" />
-      <meta property="og:locale" content="en_US" />
+      <meta property="og:locale" content={currentLanguage === 'en' ? 'en_US' : currentLanguage} />
+      
+      {/* Hreflang Links for Multilingual SEO */}
+      {hreflangLinks.map((link, index) => (
+        <link key={index} rel="alternate" hrefLang={link.hreflang} href={link.href} />
+      ))}
+      {hreflangLinks.length > 0 && (
+        <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
+      )}
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
