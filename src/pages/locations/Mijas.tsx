@@ -1,6 +1,6 @@
-
 import { ArrowLeft, MapPin, Users, TrendingUp, Sun, Utensils, Palette, TreePine, Car, Phone, Mail, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
+import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import Container from "@/components/layout/Container";
 import { Button } from "@/components/ui/button";
@@ -45,7 +45,9 @@ const Mijas = () => {
         canonical="/locations/mijas"
       />
       
-      {/* Hero Section - adjusted for fixed navigation */}
+      <Navigation />
+      
+      {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img

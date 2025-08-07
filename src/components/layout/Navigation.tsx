@@ -1,7 +1,5 @@
-
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown, User, LogOut } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Menu, X, Search, ChevronDown, User, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -32,11 +30,8 @@ export default function Navigation({ className }: NavigationProps) {
       setIsScrolled(window.scrollY > 50);
     };
 
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      if (!target.closest('[data-mega-menu]')) {
-        setActiveMenu(null);
-      }
+    const handleClickOutside = () => {
+      setActiveMenu(null);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -47,19 +42,6 @@ export default function Navigation({ className }: NavigationProps) {
       document.removeEventListener("click", handleClickOutside);
     };
   }, []);
-
-  // Close mobile menu when clicking outside
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isOpen]);
 
   const navigationItems = [
     { label: t('nav.home'), href: "/" },
@@ -84,8 +66,6 @@ export default function Navigation({ className }: NavigationProps) {
       e.preventDefault();
       e.stopPropagation();
       setActiveMenu(activeMenu === itemLabel ? null : itemLabel);
-    } else {
-      setActiveMenu(null);
     }
   };
 
@@ -106,10 +86,10 @@ export default function Navigation({ className }: NavigationProps) {
   };
 
   return (
-    <div className="relative">
+    <>
       <nav
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-premium",
           isScrolled
             ? "bg-background/95 backdrop-blur-md shadow-elegant border-b border-border/50"
             : "bg-transparent",
@@ -118,28 +98,28 @@ export default function Navigation({ className }: NavigationProps) {
       >
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
-            {/* Logo */}
+            {/* Logo with scroll animation */}
             <div className="flex-shrink-0">
-              <Link
-                to="/"
+              <a
+                href="/"
                 className={cn(
-                  "text-2xl lg:text-3xl font-bold font-display bg-gradient-premium bg-clip-text text-transparent hover:scale-105 transition-all duration-500",
+                  "text-2xl lg:text-3xl font-bold font-display bg-gradient-premium bg-clip-text text-transparent hover:scale-105 transition-all duration-500 ease-premium",
                   isScrolled ? "scale-95" : "scale-100"
                 )}
               >
                 DelSolPrimeHomes
-              </Link>
+              </a>
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8" data-mega-menu>
+            <div className="hidden lg:flex items-center space-x-8">
               {navigationItems.map((item, index) => (
                 <div key={item.label} className="relative">
-                  <Link
-                    to={item.href}
+                  <a
+                    href={item.href}
                     onClick={(e) => handleMenuClick(e, item.label, item.hasDropdown)}
                     className={cn(
-                      "relative text-sm font-medium transition-all duration-300 group flex items-center gap-1",
+                      "relative text-sm font-medium transition-all duration-300 ease-premium group flex items-center gap-1",
                       isScrolled ? "text-foreground" : "text-white",
                       "hover:text-primary"
                     )}
@@ -157,7 +137,15 @@ export default function Navigation({ className }: NavigationProps) {
                       />
                     )}
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-premium transition-all duration-300 group-hover:w-full" />
-                  </Link>
+                  </a>
+                  
+                  {/* Enhanced Mega Menu */}
+                  {item.megaMenu && activeMenu === item.label && (
+                    <EnhancedMegaMenu 
+                      isOpen={true} 
+                      onClose={() => setActiveMenu(null)} 
+                    />
+                  )}
                 </div>
               ))}
             </div>
@@ -172,19 +160,6 @@ export default function Navigation({ className }: NavigationProps) {
                   isScrolled ? "text-foreground" : "text-white hover:bg-white/10"
                 )}
               />
-
-              {/* Contact Us Button */}
-              <MagneticButton
-                variant="default"
-                size="sm"
-                className={cn(
-                  "bg-gradient-premium text-primary-foreground font-semibold",
-                  "hover:shadow-glow transition-all duration-500"
-                )}
-                asChild
-              >
-                <Link to="/contact">Contact Us</Link>
-              </MagneticButton>
 
               {/* User Account */}
               {user ? (
@@ -201,7 +176,7 @@ export default function Navigation({ className }: NavigationProps) {
                       <User className="w-4 h-4" />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end" className="bg-background/95 backdrop-blur-md border border-border/50 z-50">
+                  <DropdownMenuContent align="end" className="bg-background/95 backdrop-blur-md border border-border/50">
                     <DropdownMenuItem className="font-medium">
                       {user.email}
                     </DropdownMenuItem>
@@ -222,9 +197,9 @@ export default function Navigation({ className }: NavigationProps) {
                     isScrolled ? "text-foreground" : "text-white hover:bg-white/10"
                   )}
                 >
-                  <Link to="/auth">
+                  <a href="/auth">
                     <User className="w-4 h-4" />
-                  </Link>
+                  </a>
                 </Button>
               )}
             </div>
@@ -244,14 +219,6 @@ export default function Navigation({ className }: NavigationProps) {
               </Button>
             </div>
           </div>
-
-          {/* Enhanced Mega Menu - positioned relative to navigation */}
-          {activeMenu === t('nav.properties') && (
-            <EnhancedMegaMenu 
-              isOpen={true} 
-              onClose={() => setActiveMenu(null)} 
-            />
-          )}
         </div>
       </nav>
 
@@ -267,6 +234,6 @@ export default function Navigation({ className }: NavigationProps) {
         isOpen={isSearchOpen}
         onClose={() => setIsSearchOpen(false)}
       />
-    </div>
+    </>
   );
 }

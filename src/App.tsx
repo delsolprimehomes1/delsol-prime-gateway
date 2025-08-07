@@ -15,7 +15,6 @@ import { AuthProvider } from "@/hooks/useAuth";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import ScrollToTop from "@/components/layout/ScrollToTop";
-import Navigation from "@/components/layout/Navigation";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
@@ -65,35 +64,32 @@ const App = () => (
                 <Sonner />
                 <BrowserRouter>
                   <ScrollToTop />
-                  <Navigation />
-                  <main className="pt-16 lg:pt-20">
-                    <Routes>
-                      <Route path="/" element={<Index />} />
-                      <Route path="/about" element={<About />} />
-                      <Route path="/blog" element={<Blog />} />
-                      <Route path="/blog/:slug" element={<BlogPost />} />
-                      <Route path="/faq" element={<FAQ />} />
-                      <Route path="/glossary" element={<Glossary />} />
-                      <Route path="/guide/fix-flip-vs-buy-hold" element={<FixFlipBuyHoldGuide />} />
-                      <Route path="/auth" element={<Auth />} />
-                      <Route path="/calendar" element={<Calendar />} />
-                      <Route path="/locations/marbella" element={<Marbella />} />
-                      <Route path="/locations/estepona" element={<Estepona />} />
-                      <Route path="/locations/mijas" element={<Mijas />} />
-                      <Route path="/locations/fuengirola" element={<Fuengirola />} />
-                      <Route path="/locations/benalmadena" element={<Benalmadena />} />
-                      <Route 
-                        path="/seo-dashboard" 
-                        element={
-                          <ProtectedRoute>
-                            <SEODashboard />
-                          </ProtectedRoute>
-                        } 
-                      />
-                      {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                      <Route path="*" element={<NotFound />} />
-                    </Routes>
-                  </main>
+                  <Routes>
+                    <Route path="/" element={<Index />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/blog" element={<Blog />} />
+                    <Route path="/blog/:slug" element={<BlogPost />} />
+                    <Route path="/faq" element={<FAQ />} />
+                    <Route path="/glossary" element={<Glossary />} />
+                    <Route path="/guide/fix-flip-vs-buy-hold" element={<FixFlipBuyHoldGuide />} />
+                    <Route path="/auth" element={<Auth />} />
+                    <Route path="/calendar" element={<Calendar />} />
+                    <Route path="/locations/marbella" element={<Marbella />} />
+                    <Route path="/locations/estepona" element={<Estepona />} />
+                    <Route path="/locations/mijas" element={<Mijas />} />
+                    <Route path="/locations/fuengirola" element={<Fuengirola />} />
+                    <Route path="/locations/benalmadena" element={<Benalmadena />} />
+                    <Route 
+                      path="/seo-dashboard" 
+                      element={
+                        <ProtectedRoute>
+                          <SEODashboard />
+                        </ProtectedRoute>
+                      } 
+                    />
+                    {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
                 </BrowserRouter>
               </TooltipProvider>
             </LanguageProvider>
