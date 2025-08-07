@@ -5,7 +5,7 @@ import { AnimatedElement } from '@/components/ui/AnimatedElement';
 import { InteractiveCard } from '@/components/ui/InteractiveCard';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { MapPin, Bed, Bath, Square, ArrowRight } from 'lucide-react';
+import { MapPin, Bed, Bath, Square, ArrowRight, X } from 'lucide-react';
 
 interface EnhancedMegaMenuProps {
   isOpen: boolean;
@@ -20,28 +20,28 @@ export function EnhancedMegaMenu({ isOpen, onClose, className }: EnhancedMegaMen
     { 
       name: 'Luxury Villas', 
       count: '120+', 
-      image: '/src/assets/property-type-villa.jpg',
+      image: '/assets/property-type-villa.jpg',
       description: 'Exclusive Mediterranean villas',
       priceFrom: '€1.5M'
     },
     { 
       name: 'Beachfront Apartments', 
       count: '85+', 
-      image: '/src/assets/property-type-apartment.jpg',
+      image: '/assets/property-type-apartment.jpg',
       description: 'Modern seaside living',
       priceFrom: '€750K'
     },
     { 
       name: 'Penthouses', 
       count: '45+', 
-      image: '/src/assets/property-type-penthouse.jpg',
+      image: '/assets/property-type-penthouse.jpg',
       description: 'Premium sky-high living',
       priceFrom: '€2.2M'
     },
     { 
       name: 'Townhouses', 
       count: '65+', 
-      image: '/src/assets/property-type-townhouse.jpg',
+      image: '/assets/property-type-townhouse.jpg',
       description: 'Contemporary family homes',
       priceFrom: '€980K'
     },
@@ -79,58 +79,65 @@ export function EnhancedMegaMenu({ isOpen, onClose, className }: EnhancedMegaMen
   ];
 
   return (
-    <div className={cn(
-      'fixed inset-0 z-50 bg-background/60 backdrop-blur-sm',
-      className
-    )}>
-      <div className="absolute top-[72px] left-0 right-0 bg-gradient-to-br from-background/95 via-background/98 to-background/95 backdrop-blur-xl border-t border-border/30 shadow-luxury shadow-elegant">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-6 md:py-8 lg:py-10 max-w-4xl md:max-w-6xl xl:max-w-7xl relative">
-          {/* Modern glass morphism overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 rounded-lg" />
-          
-          {/* Content wrapper with enhanced spacing */}
-          <div className="relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 lg:gap-10">
+    <>
+      {/* Backdrop overlay */}
+      <div 
+        className="fixed inset-0 z-40 bg-background/60 backdrop-blur-sm"
+        onClick={onClose}
+      />
+      
+      {/* Menu content */}
+      <div className={cn(
+        'absolute top-full left-0 right-0 z-50 bg-background/98 backdrop-blur-xl border border-border/50 shadow-luxury rounded-b-xl',
+        className
+      )}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-7xl relative">
+          {/* Close button */}
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            onClick={onClose}
+            className="absolute top-4 right-4 z-10 h-8 w-8 text-muted-foreground hover:text-foreground"
+          >
+            <X className="w-4 h-4" />
+          </Button>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
             
             {/* Property Types */}
             <div className="lg:col-span-4">
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-xl md:text-2xl font-bold text-foreground bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <h3 className="text-xl font-bold text-foreground bg-gradient-premium bg-clip-text text-transparent">
                   Property Types
                 </h3>
-                <Button variant="ghost" size="sm" className="text-primary hover:text-primary-foreground hover:bg-primary transition-all duration-300 ease-luxury">
-                  View All <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                <Button variant="ghost" size="sm" className="text-primary hover:text-primary-foreground hover:bg-primary transition-all duration-300">
+                  View All <ArrowRight className="w-4 h-4 ml-1" />
                 </Button>
               </div>
               <div className="space-y-3">
                 {propertyTypes.map((type, index) => (
                   <AnimatedElement key={type.name} delay={index * 100}>
-                    <InteractiveCard hover="lift" className="p-0 overflow-hidden cursor-pointer group bg-card/50 backdrop-blur-sm border-border/30 hover:border-primary/30 hover:shadow-glow transition-all duration-500 ease-luxury rounded-xl">
+                    <InteractiveCard hover="lift" className="p-0 overflow-hidden cursor-pointer group bg-card/80 backdrop-blur-sm border-border/30 hover:border-primary/30 transition-all duration-500 rounded-lg">
                       <div className="flex items-center">
-                        <div className="w-24 h-24 relative overflow-hidden bg-muted flex-shrink-0 rounded-l-xl">
+                        <div className="w-20 h-20 relative overflow-hidden bg-muted flex-shrink-0 rounded-l-lg">
                           <img 
                             src={type.image} 
                             alt={type.name}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-luxury"
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-primary/10 group-hover:to-primary/20 transition-all duration-500" />
                         </div>
-                        <div className="flex-1 p-5">
-                          <div className="flex items-start justify-between">
-                            <div>
-                              <h4 className="font-bold text-foreground group-hover:text-primary transition-colors duration-300 text-lg">
-                                {type.name}
-                              </h4>
-                              <p className="text-sm text-muted-foreground mt-1 leading-relaxed">{type.description}</p>
-                              <div className="flex items-center gap-3 mt-3">
-                                <Badge variant="secondary" className="text-xs px-3 py-1 bg-secondary/10 text-secondary border-secondary/20">
-                                  {type.count} available
-                                </Badge>
-                                <span className="text-sm font-bold text-primary bg-primary/10 px-3 py-1 rounded-full">
-                                  From {type.priceFrom}
-                                </span>
-                              </div>
-                            </div>
+                        <div className="flex-1 p-4">
+                          <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                            {type.name}
+                          </h4>
+                          <p className="text-sm text-muted-foreground mt-1">{type.description}</p>
+                          <div className="flex items-center gap-2 mt-2">
+                            <Badge variant="secondary" className="text-xs">
+                              {type.count}
+                            </Badge>
+                            <span className="text-sm font-semibold text-primary">
+                              From {type.priceFrom}
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -143,34 +150,31 @@ export function EnhancedMegaMenu({ isOpen, onClose, className }: EnhancedMegaMen
             {/* Locations */}
             <div className="lg:col-span-3">
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-xl md:text-2xl font-bold text-foreground bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">
+                <h3 className="text-xl font-bold text-foreground bg-gradient-premium bg-clip-text text-transparent">
                   Prime Locations
                 </h3>
-                <Button variant="ghost" size="sm" className="text-primary hover:text-primary-foreground hover:bg-primary transition-all duration-300 ease-luxury">
-                  Explore <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                </Button>
               </div>
               <div className="space-y-3">
                 {locations.map((location, index) => (
                   <AnimatedElement key={location.name} delay={index * 75}>
-                    <InteractiveCard hover="scale" className="p-4 cursor-pointer group bg-card/50 backdrop-blur-sm border-border/30 hover:border-secondary/30 hover:shadow-elegant transition-all duration-500 ease-luxury rounded-xl">
+                    <InteractiveCard hover="scale" className="p-4 cursor-pointer group bg-card/80 backdrop-blur-sm border-border/30 hover:border-secondary/30 transition-all duration-500 rounded-lg">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-full bg-gradient-to-r from-secondary/20 to-primary/20 flex items-center justify-center group-hover:from-secondary/30 group-hover:to-primary/30 transition-all duration-300">
-                            <MapPin className="w-5 h-5 text-secondary group-hover:text-primary transition-colors" />
+                          <div className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center">
+                            <MapPin className="w-4 h-4 text-secondary" />
                           </div>
                           <div>
-                            <h4 className="font-bold text-foreground group-hover:text-secondary transition-colors duration-300">
+                            <h4 className="font-semibold text-foreground group-hover:text-secondary transition-colors">
                               {location.name}
                             </h4>
-                            <p className="text-xs text-muted-foreground leading-relaxed">{location.type}</p>
+                            <p className="text-xs text-muted-foreground">{location.type}</p>
                           </div>
                         </div>
                         <div className="text-right">
-                          <span className="text-sm font-bold text-foreground bg-accent/50 px-2 py-1 rounded-lg group-hover:bg-secondary/10 group-hover:text-secondary transition-all duration-300">
+                          <span className="text-sm font-semibold text-foreground">
                             {location.properties}
                           </span>
-                          <p className="text-xs text-muted-foreground mt-1">properties</p>
+                          <p className="text-xs text-muted-foreground">properties</p>
                         </div>
                       </div>
                     </InteractiveCard>
@@ -182,51 +186,47 @@ export function EnhancedMegaMenu({ isOpen, onClose, className }: EnhancedMegaMen
             {/* Featured Properties */}
             <div className="lg:col-span-5">
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-xl md:text-2xl font-bold text-foreground bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
+                <h3 className="text-xl font-bold text-foreground bg-gradient-premium bg-clip-text text-transparent">
                   Featured Properties
                 </h3>
-                <Button variant="ghost" size="sm" className="text-primary hover:text-primary-foreground hover:bg-primary transition-all duration-300 ease-luxury">
-                  View All <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                </Button>
               </div>
               <div className="space-y-4">
                 {featuredProperties.map((property, index) => (
                   <AnimatedElement key={index} delay={index * 150}>
-                    <InteractiveCard hover="lift" className="p-0 overflow-hidden cursor-pointer group bg-card/50 backdrop-blur-sm border-border/30 hover:border-primary/30 hover:shadow-luxury transition-all duration-500 ease-luxury rounded-xl">
+                    <InteractiveCard hover="lift" className="p-0 overflow-hidden cursor-pointer group bg-card/80 backdrop-blur-sm border-border/30 hover:border-primary/30 transition-all duration-500 rounded-lg">
                       <div className="flex gap-0">
-                        <div className="w-36 h-28 relative overflow-hidden bg-muted flex-shrink-0 rounded-l-xl">
+                        <div className="w-32 h-24 relative overflow-hidden bg-muted flex-shrink-0 rounded-l-lg">
                           <img 
                             src={property.image} 
                             alt={property.title}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-luxury"
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-primary/10 group-hover:to-primary/20 transition-all duration-500" />
-                          <Badge className="absolute top-2 left-2 bg-gradient-to-r from-primary to-secondary text-primary-foreground text-xs px-2 py-1 rounded-full border-0 shadow-lg">
+                          <Badge className="absolute top-2 left-2 bg-primary text-primary-foreground text-xs">
                             {property.type}
                           </Badge>
                         </div>
-                        <div className="flex-1 p-5">
-                          <h4 className="font-bold text-foreground group-hover:text-primary transition-colors line-clamp-1 text-lg">
+                        <div className="flex-1 p-4">
+                          <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-1">
                             {property.title}
                           </h4>
-                          <div className="flex items-center gap-1 mt-1 mb-3">
-                            <MapPin className="w-4 h-4 text-secondary" />
+                          <div className="flex items-center gap-1 mt-1 mb-2">
+                            <MapPin className="w-3 h-3 text-secondary" />
                             <span className="text-sm text-muted-foreground">{property.location}</span>
                           </div>
-                          <p className="text-xl font-bold text-primary mb-3 bg-primary/10 px-3 py-1 rounded-lg inline-block">
+                          <p className="text-lg font-bold text-primary mb-2">
                             {property.price}
                           </p>
-                          <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                            <div className="flex items-center gap-1.5 bg-accent/30 px-2 py-1 rounded-lg">
-                              <Bed className="w-4 h-4" />
+                          <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                            <div className="flex items-center gap-1">
+                              <Bed className="w-3 h-3" />
                               <span>{property.beds}</span>
                             </div>
-                            <div className="flex items-center gap-1.5 bg-accent/30 px-2 py-1 rounded-lg">
-                              <Bath className="w-4 h-4" />
+                            <div className="flex items-center gap-1">
+                              <Bath className="w-3 h-3" />
                               <span>{property.baths}</span>
                             </div>
-                            <div className="flex items-center gap-1.5 bg-accent/30 px-2 py-1 rounded-lg">
-                              <Square className="w-4 h-4" />
+                            <div className="flex items-center gap-1">
+                              <Square className="w-3 h-3" />
                               <span>{property.area}</span>
                             </div>
                           </div>
@@ -237,29 +237,18 @@ export function EnhancedMegaMenu({ isOpen, onClose, className }: EnhancedMegaMen
                 ))}
               </div>
               
-              <div className="flex gap-3 mt-8">
-                <Button className="flex-1 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-primary-foreground shadow-luxury transition-all duration-300 ease-luxury rounded-xl py-6 font-bold">
-                  Browse All Properties
+              <div className="flex gap-3 mt-6">
+                <Button className="flex-1 bg-gradient-premium text-primary-foreground">
+                  Browse Properties
                 </Button>
-                <Button variant="outline" className="flex-1 border-primary/30 hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:border-primary/50 transition-all duration-300 ease-luxury rounded-xl py-6 font-semibold">
+                <Button variant="outline" className="flex-1">
                   Advanced Search
                 </Button>
               </div>
             </div>
           </div>
-          
-          {/* Close button */}
-          <Button 
-            variant="ghost" 
-            size="sm" 
-            onClick={onClose}
-            className="absolute top-4 right-4 text-muted-foreground hover:text-foreground z-20"
-          >
-            ×
-          </Button>
-          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
