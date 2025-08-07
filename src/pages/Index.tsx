@@ -1,6 +1,4 @@
 
-import Navigation from "@/components/layout/Navigation";
-import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import ServicesSection from "@/components/sections/ServicesSection";
 import LocationShowcase from "@/components/sections/LocationShowcase";
@@ -45,7 +43,7 @@ const Index = () => {
       }}
     >
       <AIOptimizationConfig {...aeoConfig}>
-        <div className="min-h-screen bg-background" itemScope itemType="https://schema.org/WebPage">
+        <div itemScope itemType="https://schema.org/WebPage">
           <SEOHead
             title={metadata.title}
             description={metadata.description}
@@ -59,8 +57,7 @@ const Index = () => {
           />
         
         {/* Main Content with AEO Optimization */}
-        <main itemProp="mainEntity" itemScope itemType="https://schema.org/RealEstateAgent">
-          <Navigation />
+        <div itemProp="mainEntity" itemScope itemType="https://schema.org/RealEstateAgent">
           <Hero />
           <ServicesSection />
           <LocationShowcase />
@@ -69,8 +66,7 @@ const Index = () => {
           <TestimonialsSection />
           <BlogSection />
           <FAQSection />
-          <Footer />
-        </main>
+        </div>
 
         {/* Hidden AEO Content for Enhanced AI Understanding */}
         <div className="sr-only" aria-hidden="true">
