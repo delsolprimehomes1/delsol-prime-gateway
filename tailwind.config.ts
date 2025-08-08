@@ -266,14 +266,6 @@ export default {
 					'100%': {
 						backgroundPosition: '200% 0'
 					}
-				},
-				'gradient-x': {
-					'0%, 100%': {
-						backgroundPosition: '0% 50%'
-					},
-					'50%': {
-						backgroundPosition: '100% 50%'
-					}
 				}
 			},
 			animation: {
@@ -293,8 +285,7 @@ export default {
 				'floating': 'floating 3s ease-in-out infinite',
 				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
 				'bounce-subtle': 'bounce-subtle 2s infinite',
-				'shimmer': 'shimmer 2s infinite',
-				'gradient-x': 'gradient-x 3s ease-in-out infinite'
+				'shimmer': 'shimmer 2s infinite'
 			}
 		}
 	},
