@@ -1,4 +1,3 @@
-
 import React, { useMemo } from "react";
 import SEOHead from "@/components/seo/SEOHead";
 import BreadcrumbNavigation from "@/components/seo/BreadcrumbNavigation";
@@ -41,7 +40,7 @@ const FAQ = () => {
         ]
       }}
     >
-      <div>
+      <div className="min-h-screen">
         <SEOHead
           title={metadata.title}
           description={metadata.description}

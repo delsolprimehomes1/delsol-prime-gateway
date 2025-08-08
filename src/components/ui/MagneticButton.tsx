@@ -11,6 +11,7 @@ export function MagneticButton({
   children,
   magneticStrength = 0.3,
   className,
+  asChild,
   ...props
 }: MagneticButtonProps) {
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -38,6 +39,29 @@ export function MagneticButton({
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
+
+  // If asChild is true, we need to return a single child for Slot to work
+  if (asChild) {
+    return (
+      <Button
+        ref={buttonRef}
+        className={cn(
+          'relative overflow-hidden transition-all duration-300 ease-premium',
+          className
+        )}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        onMouseEnter={handleMouseEnter}
+        style={{
+          transform: `translate(${position.x}px, ${position.y}px)`,
+        }}
+        asChild
+        {...props}
+      >
+        {children}
+      </Button>
+    );
+  }
 
   return (
     <Button
