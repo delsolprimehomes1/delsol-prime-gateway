@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, User, LogOut } from "lucide-react";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -120,23 +119,23 @@ export default function Navigation({ className }: NavigationProps) {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <Link
-                to="/"
+              <a
+                href="/"
                 className={cn(
                   "text-2xl lg:text-3xl font-bold font-display bg-gradient-premium bg-clip-text text-transparent hover:scale-105 transition-all duration-500",
                   isScrolled ? "scale-95" : "scale-100"
                 )}
               >
                 DelSolPrimeHomes
-              </Link>
+              </a>
             </div>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-8" data-mega-menu>
               {navigationItems.map((item, index) => (
                 <div key={item.label} className="relative">
-                  <Link
-                    to={item.href}
+                  <a
+                    href={item.href}
                     onClick={(e) => handleMenuClick(e, item.label, item.hasDropdown)}
                     className={cn(
                       "relative text-sm font-medium transition-all duration-300 group flex items-center gap-1",
@@ -157,7 +156,7 @@ export default function Navigation({ className }: NavigationProps) {
                       />
                     )}
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-premium transition-all duration-300 group-hover:w-full" />
-                  </Link>
+                  </a>
                 </div>
               ))}
             </div>
@@ -183,7 +182,7 @@ export default function Navigation({ className }: NavigationProps) {
                 )}
                 asChild
               >
-                <Link to="/contact">Contact Us</Link>
+                <a href="/contact">Contact Us</a>
               </MagneticButton>
 
               {/* User Account */}
@@ -222,9 +221,9 @@ export default function Navigation({ className }: NavigationProps) {
                     isScrolled ? "text-foreground" : "text-white hover:bg-white/10"
                   )}
                 >
-                  <Link to="/auth">
+                  <a href="/auth">
                     <User className="w-4 h-4" />
-                  </Link>
+                  </a>
                 </Button>
               )}
             </div>
