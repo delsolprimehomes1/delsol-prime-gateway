@@ -76,6 +76,7 @@ export default function Navigation({ className }: NavigationProps) {
     { label: t('nav.about'), href: "/about" },
     { label: "Investment Guide", href: "/guide/fix-flip-vs-buy-hold" },
     { label: t('nav.blog'), href: "/blog" },
+    { label: "FAQ", href: "/faq" },
   ];
 
   const handleMenuClick = (e: React.MouseEvent, itemLabel: string, hasDropdown?: boolean) => {
